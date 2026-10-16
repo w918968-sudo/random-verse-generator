@@ -7,6 +7,7 @@ import {
   TRANSLATION,
 } from '../config.mjs';
 import { ui } from '../i18n/en.mjs';
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -49,17 +50,6 @@ const ga4Loader = GA4_MEASUREMENT_ID
     {GA4_MEASUREMENT_ID && <script is:inline set:html={ga4Loader}></script>}
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <p class="site-title"><a href="/">{SITE_NAME}</a></p>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="/about/">{ui.nav.about}</a>
-          <a href="/privacy/">{ui.nav.privacy}</a>
-          <a href="/contact/">{ui.nav.contact}</a>
-        </nav>
-      </div>
-    </header>
-
     <main class="container">
       <slot />
     </main>
