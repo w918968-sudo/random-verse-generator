@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "deploy": "astro build && wrangler deploy",
+    "test": "node --test",
     "data:build": "node scripts/build-data.mjs",
     "data:validate": "node scripts/validate.mjs",
     "og:image": "node scripts/generate-og-image.mjs"
