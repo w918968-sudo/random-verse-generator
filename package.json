@@ -5,13 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/build-sw.mjs",
     "preview": "astro preview",
-    "deploy": "astro build && wrangler deploy",
+    "deploy": "npm run build && wrangler deploy",
     "test": "node --test",
     "data:build": "node scripts/build-data.mjs",
     "data:validate": "node scripts/validate.mjs",
-    "og:image": "node scripts/generate-og-image.mjs"
+    "og:image": "node scripts/generate-og-image.mjs",
+    "icons": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "astro": "^7.4.0"
