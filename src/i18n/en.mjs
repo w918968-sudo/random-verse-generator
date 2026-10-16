@@ -44,7 +44,7 @@ export const ui = {
   allVerses: 'All Verses',
   generate: { first: 'Generate Verse', again: 'Generate Another Verse' },
   guide:
-    'Choose a topic and press “Generate Verse” — or just press it for any verse. Your verse will appear here.',
+    'A verse will appear here automatically. Choose a topic and press “Generate Another Verse” for a new one.',
   result: {
     copy: 'Copy Verse',
     copied: 'Copied!',

@@ -307,11 +307,12 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   el.chapterBtn.addEventListener('click', openFullChapter);
   el.collapseBtn.addEventListener('click', collapseChapter);
 
-  // Load the verse library
+  // Load the verse library, then show a verse right away.
   fetch('/data/verses.json')
     .then((r) => r.json())
     .then((data) => {
       verses = data;
+      generate();
     })
     .catch(() => {
       showError(ui.errors.chapterLoad);
