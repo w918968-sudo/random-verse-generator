@@ -172,6 +172,98 @@
     "translationId": "WEBP"
   },
   {
+    "id": "heb-010-023-025",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 10,
+    "startVerse": 23,
+    "endVerse": 25,
+    "text": "let’s hold fast the confession of our hope without wavering; for he who promised is faithful. Let’s consider how to provoke one another to love and good works, not forsaking our own assembling together, as the custom of some is, but exhorting one another, and so much the more as you see the Day approaching.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1pe-003-015-017",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 3,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "But sanctify the Lord God in your hearts. Always be ready to give an answer to everyone who asks you a reason concerning the hope that is in you, with humility and fear, having a good conscience. Thus, while you are spoken against as evildoers, they may be disappointed who curse your good way of life in Christ. For it is better, if it is God’s will, that you suffer for doing what is right than for doing evil.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-071-005-007",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 71,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "For you are my hope, Lord GOD,\nmy confidence from my youth. I have relied on you from the womb.\nYou are he who took me out of my mother’s womb.\nI will always praise you. I am a marvel to many,\nbut you are my strong refuge.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "tit-002-011-013",
+    "bookId": "TIT",
+    "bookName": "Titus",
+    "chapter": 2,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "For the grace of God has appeared, bringing salvation to all men, instructing us to the intent that, denying ungodliness and worldly lusts, we would live soberly, righteously, and godly in this present age; looking for the blessed hope and appearing of the glory of our great God and Savior, Jesus Christ,",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-146-005-007",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 146,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "Happy is he who has the God of Jacob for his help,\nwhose hope is in the LORD, his God, who made heaven and earth,\nthe sea, and all that is in them;\nwho keeps truth forever; who executes justice for the oppressed;\nwho gives food to the hungry.\nThe LORD frees the prisoners.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1pe-001-020-022",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 1,
+    "startVerse": 20,
+    "endVerse": 22,
+    "text": "who was foreknown indeed before the foundation of the world, but was revealed in this last age for your sake, who through him are believers in God, who raised him from the dead and gave him glory, so that your faith and hope might be in God. Seeing you have purified your souls in your obedience to the truth through the Spirit in sincere brotherly affection, love one another from the heart fervently,",
+    "themes": [
+      "Faith",
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-012-011-013",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 12,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "not lagging in diligence, fervent in spirit, serving the Lord, rejoicing in hope, enduring in troubles, continuing steadfastly in prayer, contributing to the needs of the saints, and given to hospitality.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "php-004-004-007",
     "bookId": "PHP",
     "bookName": "Philippians",
@@ -328,6 +420,111 @@
     "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith, gentleness, and self-control. Against such things there is no law. Those who belong to Christ have crucified the flesh with its passions and lusts.",
     "themes": [
       "Love",
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-032-016-018",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 32,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "Then justice will dwell in the wilderness;\nand righteousness will remain in the fruitful field. The work of righteousness will be peace,\nand the effect of righteousness, quietness and confidence forever. My people will live in a peaceful habitation,\nin safe dwellings,\nand in quiet resting places,",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-034-012-014",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 34,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "Who is someone who desires life,\nand loves many days, that he may see good? Keep your tongue from evil,\nand your lips from speaking lies. Depart from evil, and do good.\nSeek peace, and pursue it.",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-014-017-019",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 14,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "for God’s Kingdom is not eating and drinking, but righteousness, peace, and joy in the Holy Spirit. For he who serves Christ in these things is acceptable to God and approved by men. So then, let’s follow after things which make for peace, and things by which we may build one another up.",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-085-008-010",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 85,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "I will hear what God, the LORD, will speak,\nfor he will speak peace to his people, his saints;\nbut let them not turn again to folly. Surely his salvation is near those who fear him,\nthat glory may dwell in our land. Mercy and truth meet together.\nRighteousness and peace have kissed each other.",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2th-003-016-018",
+    "bookId": "2TH",
+    "bookName": "2 Thessalonians",
+    "chapter": 3,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "Now may the Lord of peace himself give you peace at all times in all ways. The Lord be with you all. I, Paul, write this greeting with my own hand, which is the sign in every letter. This is how I write. The grace of our Lord Jesus Christ be with you all. Amen.",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jas-003-016-018",
+    "bookId": "JAS",
+    "bookName": "James",
+    "chapter": 3,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "For where jealousy and selfish ambition are, there is confusion and every evil deed. But the wisdom that is from above is first pure, then peaceful, gentle, reasonable, full of mercy and good fruits, without partiality, and without hypocrisy. Now the fruit of righteousness is sown in peace by those who make peace.",
+    "themes": [
+      "Peace",
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-002-014-016",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 2,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "For he is our peace, who made both one, and broke down the middle wall of separation, having abolished in his flesh the hostility, the law of commandments contained in ordinances, that he might create in himself one new man of the two, making peace, and might reconcile them both in one body to God through the cross, having killed the hostility through it.",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-122-006-008",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 122,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Pray for the peace of Jerusalem.\nThose who love you will prosper. Peace be within your walls,\nand prosperity within your palaces. For my brothers’ and companions’ sakes,\nI will now say, “Peace be within you.”",
+    "themes": [
       "Peace"
     ],
     "translationId": "WEBP"
@@ -502,6 +699,97 @@
     "translationId": "WEBP"
   },
   {
+    "id": "1co-013-011-013",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 13,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "When I was a child, I spoke as a child, I felt as a child, I thought as a child. Now that I have become a man, I have put away childish things. For now we see in a mirror, dimly, but then face to face. Now I know in part, but then I will know fully, even as I was also fully known. But now faith, hope, and love remain—these three. The greatest of these is love.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-022-037-039",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 22,
+    "startVerse": 37,
+    "endVerse": 39,
+    "text": "Jesus said to him, “‘You shall love the Lord your God with all your heart, with all your soul, and with all your mind.’ This is the first and great commandment. A second likewise is this, ‘You shall love your neighbor as yourself.’",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1pe-004-008-010",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 4,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "And above all things be earnest in your love among yourselves, for love covers a multitude of sins. Be hospitable to one another without grumbling. As each has received a gift, employ it in serving one another, as good managers of the grace of God in its various forms.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gal-005-013-015",
+    "bookId": "GAL",
+    "bookName": "Galatians",
+    "chapter": 5,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "For you, brothers, were called for freedom. Only don’t use your freedom as an opportunity for the flesh, but through love be servants to one another. For the whole law is fulfilled in one word, in this: “You shall love your neighbor as yourself.” But if you bite and devour one another, be careful that you don’t consume one another.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-003-012-014",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 3,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "Put on therefore, as God’s chosen ones, holy and beloved, a heart of compassion, kindness, lowliness, humility, and perseverance; bearing with one another, and forgiving each other, if any man has a complaint against any; even as Christ forgave you, so you also do. Above all these things, walk in love, which is the bond of perfection.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2co-005-014-016",
+    "bookId": "2CO",
+    "bookName": "2 Corinthians",
+    "chapter": 5,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "For the love of Christ compels us; because we judge thus: that one died for all, therefore all died. He died for all, that those who live should no longer live to themselves, but to him who for their sakes died and rose again. Therefore we know no one according to the flesh from now on. Even though we have known Christ according to the flesh, yet now we know him so no more.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-005-043-045",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 5,
+    "startVerse": 43,
+    "endVerse": 45,
+    "text": "“You have heard that it was said, ‘You shall love your neighbor and hate your enemy.’ But I tell you, love your enemies, bless those who curse you, do good to those who hate you, and pray for those who mistreat you and persecute you, that you may be children of your Father who is in heaven. For he makes his sun to rise on the evil and the good, and sends rain on the just and the unjust.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "php-004-011-013",
     "bookId": "PHP",
     "bookName": "Philippians",
@@ -643,6 +931,123 @@
     "startVerse": 6,
     "endVerse": 8,
     "text": "Be strong and courageous. Don’t be afraid or scared of them, for the LORD your God himself is who goes with you. He will not fail you nor forsake you.” Moses called to Joshua, and said to him in the sight of all Israel, “Be strong and courageous, for you shall go with this people into the land which the LORD has sworn to their fathers to give them; and you shall cause them to inherit it. The LORD himself is who goes before you. He will be with you. He will not fail you nor forsake you. Don’t be afraid. Don’t be discouraged.”",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-028-007-009",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 28,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "The LORD is my strength and my shield.\nMy heart has trusted in him, and I am helped.\nTherefore my heart greatly rejoices.\nWith my song I will thank him. The LORD is their strength.\nHe is a stronghold of salvation to his anointed. Save your people,\nand bless your inheritance.\nBe their shepherd also,\nand bear them up forever.",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "neh-008-010-012",
+    "bookId": "NEH",
+    "bookName": "Nehemiah",
+    "chapter": 8,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "Then he said to them, “Go your way. Eat the fat, drink the sweet, and send portions to him for whom nothing is prepared, for today is holy to our Lord. Don’t be grieved, for the joy of the LORD is your strength.” So the Levites calmed all the people, saying, “Hold your peace, for the day is holy. Don’t be grieved.” All the people went their way to eat, to drink, to send portions, and to celebrate, because they had understood the words that were declared to them.",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "exo-015-002-004",
+    "bookId": "EXO",
+    "bookName": "Exodus",
+    "chapter": 15,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "The LORD is my strength and song.\nHe has become my salvation.\nThis is my God, and I will praise him;\nmy father’s God, and I will exalt him. The LORD is a man of war.\nThe LORD is his name. He has cast Pharaoh’s chariots and his army into the sea.\nHis chosen captains are sunk in the Red Sea.",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-118-014-016",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 118,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "The LORD is my strength and song.\nHe has become my salvation. The voice of rejoicing and salvation is in the tents of the righteous.\n“The right hand of the LORD does valiantly. The right hand of the LORD is exalted!\nThe right hand of the LORD does valiantly!”",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "hab-003-017-019",
+    "bookId": "HAB",
+    "bookName": "Habakkuk",
+    "chapter": 3,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "For even though the fig tree doesn’t flourish,\nnor fruit be in the vines,\nthe labor of the olive fails,\nthe fields yield no food,\nthe flocks are cut off from the fold,\nand there is no herd in the stalls, yet I will rejoice in the LORD.\nI will be joyful in the God of my salvation! GOD, the Lord, is my strength.\nHe makes my feet like deer’s feet,\nand enables me to go in high places.\nFor the music director, on my stringed instruments.",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2ti-001-007-009",
+    "bookId": "2TI",
+    "bookName": "2 Timothy",
+    "chapter": 1,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "For God didn’t give us a spirit of fear, but of power, love, and self-control. Therefore don’t be ashamed of the testimony of our Lord, nor of me his prisoner; but endure hardship for the Good News according to the power of God, who saved us and called us with a holy calling, not according to our works, but according to his own purpose and grace, which was given to us in Christ Jesus before times eternal,",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-012-002-004",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 12,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "Behold, God is my salvation. I will trust, and will not be afraid; for the LORD, the LORD, is my strength and song; and he has become my salvation.” Therefore with joy you will draw water out of the wells of salvation. In that day you will say, “Give thanks to the LORD! Call on his name! Declare his doings among the peoples! Proclaim that his name is exalted!",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-138-003-005",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 138,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "In the day that I called, you answered me.\nYou encouraged me with strength in my soul. All the kings of the earth will give you thanks, LORD,\nfor they have heard the words of your mouth. Yes, they will sing of the ways of the LORD,\nfor the LORD’s glory is great!",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-031-022-024",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 31,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "As for me, I said in my haste, “I am cut off from before your eyes.”\nNevertheless you heard the voice of my petitions when I cried to you. Oh love the LORD, all you his saints!\nThe LORD preserves the faithful,\nand fully recompenses him who behaves arrogantly. Be strong, and let your heart take courage,\nall you who hope in the LORD.",
     "themes": [
       "Strength"
     ],
@@ -794,6 +1199,123 @@
     "translationId": "WEBP"
   },
   {
+    "id": "mrk-009-022-024",
+    "bookId": "MRK",
+    "bookName": "Mark",
+    "chapter": 9,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "Often it has cast him both into the fire and into the water to destroy him. But if you can do anything, have compassion on us and help us.” Jesus said to him, “If you can believe, all things are possible to him who believes.” Immediately the father of the child cried out with tears, “I believe. Help my unbelief!”",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-017-018-020",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 17,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "Jesus rebuked the demon, and it went out of him, and the boy was cured from that hour. Then the disciples came to Jesus privately, and said, “Why weren’t we able to cast it out?” He said to them, “Because of your unbelief. For most certainly I tell you, if you have faith as a grain of mustard seed, you will tell this mountain, ‘Move from here to there,’ and it will move; and nothing will be impossible for you.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "heb-012-001-003",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 12,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Therefore let’s also, seeing we are surrounded by so great a cloud of witnesses, lay aside every weight and the sin which so easily entangles us, and let’s run with perseverance the race that is set before us, looking to Jesus, the author and perfecter of faith, who for the joy that was set before him endured the cross, despising its shame, and has sat down at the right hand of the throne of God. For consider him who has endured such contradiction of sinners against himself, that you don’t grow weary, fainting in your souls.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1jn-005-004-006",
+    "bookId": "1JN",
+    "bookName": "1 John",
+    "chapter": 5,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "For whatever is born of God overcomes the world. This is the victory that has overcome the world: your faith. Who is he who overcomes the world, but he who believes that Jesus is the Son of God? This is he who came by water and blood, Jesus Christ; not with the water only, but with the water and the blood. It is the Spirit who testifies, because the Spirit is the truth.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-010-016-018",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 10,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "But they didn’t all listen to the glad news. For Isaiah says, “Lord, who has believed our report?” So faith comes by hearing, and hearing by the word of God. But I say, didn’t they hear? Yes, most certainly,\n“Their sound went out into all the earth,\ntheir words to the ends of the world.”",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jas-002-017-019",
+    "bookId": "JAS",
+    "bookName": "James",
+    "chapter": 2,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "Even so faith, if it has no works, is dead in itself. Yes, a man will say, “You have faith, and I have works.” Show me your faith without works, and I will show you my faith by my works. You believe that God is one. You do well. The demons also believe—and shudder.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-002-004-006",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 2,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "My speech and my preaching were not in persuasive words of human wisdom, but in demonstration of the Spirit and of power, that your faith wouldn’t stand in the wisdom of men, but in the power of God. We speak wisdom, however, among those who are full grown, yet a wisdom not of this world nor of the rulers of this world who are coming to nothing.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-056-003-005",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 56,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "When I am afraid,\nI will put my trust in you. In God, I praise his word.\nIn God, I put my trust.\nI will not be afraid.\nWhat can flesh do to me? All day long they twist my words.\nAll their thoughts are against me for evil.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-020-006-008",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 20,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Now I know that the LORD saves his anointed.\nHe will answer him from his holy heaven,\nwith the saving strength of his right hand. Some trust in chariots, and some in horses,\nbut we trust in the name of the LORD our God. They are bowed down and fallen,\nbut we rise up, and stand upright.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "2co-001-003-005",
     "bookId": "2CO",
     "bookName": "2 Corinthians",
@@ -882,6 +1404,111 @@
     "themes": [
       "Comfort",
       "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-094-018-020",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 94,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "When I said, “My foot is slipping!”\nYour loving kindness, LORD, held me up. In the multitude of my thoughts within me,\nyour comforts delight my soul. Shall the throne of wickedness have fellowship with you,\nwhich brings about mischief by statute?",
+    "themes": [
+      "Comfort"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-049-013-015",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 49,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "Sing, heavens, and be joyful, earth!\nBreak out into singing, mountains!\nFor the LORD has comforted his people,\nand will have compassion on his afflicted. But Zion said, “The LORD has forsaken me,\nand the Lord has forgotten me.” “Can a woman forget her nursing child,\nthat she should not have compassion on the son of her womb?\nYes, these may forget,\nyet I will not forget you!",
+    "themes": [
+      "Comfort"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-030-004-006",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 30,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "Sing praise to the LORD, you saints of his.\nGive thanks to his holy name. For his anger is but for a moment.\nHis favor is for a lifetime.\nWeeping may stay for the night,\nbut joy comes in the morning. As for me, I said in my prosperity,\n“I shall never be moved.”",
+    "themes": [
+      "Comfort"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-008-018-020",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 8,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "For I consider that the sufferings of this present time are not worthy to be compared with the glory which will be revealed toward us. For the creation waits with eager expectation for the children of God to be revealed. For the creation was subjected to vanity, not of its own will, but because of him who subjected it, in hope",
+    "themes": [
+      "Comfort",
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jer-031-012-014",
+    "bookId": "JER",
+    "bookName": "Jeremiah",
+    "chapter": 31,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "They will come and sing in the height of Zion,\nand will flow to the goodness of the LORD,\nto the grain, to the new wine, to the oil,\nand to the young of the flock and of the herd.\nTheir soul will be as a watered garden.\nThey will not sorrow any more at all. Then the virgin will rejoice in the dance,\nthe young men and the old together;\nfor I will turn their mourning into joy,\nand will comfort them, and make them rejoice from their sorrow. I will satiate the soul of the priests with fatness,\nand my people will be satisfied with my goodness,” says the LORD.",
+    "themes": [
+      "Comfort"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-040-001-003",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 40,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "“Comfort, comfort my people,” says your God. “Speak comfortably to Jerusalem, and call out to her that her warfare is accomplished, that her iniquity is pardoned, that she has received of the LORD’s hand double for all her sins.” The voice of one who calls out,\n“Prepare the way of the LORD in the wilderness!\nMake a level highway in the desert for our God.",
+    "themes": [
+      "Comfort"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1pe-005-006-008",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 5,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time, casting all your worries on him, because he cares for you. Be sober and self-controlled. Be watchful. Your adversary, the devil, walks around like a roaring lion, seeking whom he may devour.",
+    "themes": [
+      "Comfort"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-091-001-004",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 91,
+    "startVerse": 1,
+    "endVerse": 4,
+    "text": "He who dwells in the secret place of the Most High\nwill rest in the shadow of the Almighty. I will say of the LORD, “He is my refuge and my fortress;\nmy God, in whom I trust.” For he will deliver you from the snare of the fowler,\nand from the deadly pestilence. He will cover you with his feathers.\nUnder his wings you will take refuge.\nHis faithfulness is your shield and rampart.",
+    "themes": [
+      "Comfort"
     ],
     "translationId": "WEBP"
   },
@@ -1029,6 +1656,123 @@
     "translationId": "WEBP"
   },
   {
+    "id": "pro-016-003-005",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 16,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "Commit your deeds to the LORD,\nand your plans shall succeed. The LORD has made everything for its own end—\nyes, even the wicked for the day of evil. Everyone who is proud in heart is an abomination to the LORD;\nthey shall certainly not be unpunished.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ecc-007-011-013",
+    "bookId": "ECC",
+    "bookName": "Ecclesiastes",
+    "chapter": 7,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "Wisdom is as good as an inheritance. Yes, it is more excellent for those who see the sun. For wisdom is a defense, even as money is a defense; but the excellency of knowledge is that wisdom preserves the life of him who has it. Consider the work of God, for who can make that straight which he has made crooked?",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-015-031-033",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 15,
+    "startVerse": 31,
+    "endVerse": 33,
+    "text": "The ear that listens to reproof lives,\nand will be at home among the wise. He who refuses correction despises his own soul,\nbut he who listens to reproof gets understanding. The fear of the LORD teaches wisdom.\nBefore honor is humility.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-019-020-022",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 19,
+    "startVerse": 20,
+    "endVerse": 22,
+    "text": "Listen to counsel and receive instruction,\nthat you may be wise in your latter end. There are many plans in a man’s heart,\nbut the LORD’s counsel will prevail. That which makes a man to be desired is his kindness.\nA poor man is better than a liar.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-011-002-004",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 11,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "When pride comes, then comes shame,\nbut with humility comes wisdom. The integrity of the upright shall guide them,\nbut the perverseness of the treacherous shall destroy them. Riches don’t profit in the day of wrath,\nbut righteousness delivers from death.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-111-008-010",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 111,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "They are established forever and ever.\nThey are done in truth and uprightness. He has sent redemption to his people.\nHe has ordained his covenant forever.\nHis name is holy and awesome! The fear of the LORD is the beginning of wisdom.\nAll those who do his work have a good understanding.\nHis praise endures forever!",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-013-019-021",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 13,
+    "startVerse": 19,
+    "endVerse": 21,
+    "text": "Longing fulfilled is sweet to the soul,\nbut fools detest turning from evil. One who walks with wise men grows wise,\nbut a companion of fools suffers harm. Misfortune pursues sinners,\nbut prosperity rewards the righteous.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-018-015-017",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 18,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "The heart of the discerning gets knowledge.\nThe ear of the wise seeks knowledge. A man’s gift makes room for him,\nand brings him before great men. He who pleads his cause first seems right—\nuntil another comes and questions him.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-090-012-014",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 90,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "So teach us to count our days,\nthat we may gain a heart of wisdom. Relent, LORD!\nHow long?\nHave compassion on your servants! Satisfy us in the morning with your loving kindness,\nthat we may rejoice and be glad all our days.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "1th-005-016-018",
     "bookId": "1TH",
     "bookName": "1 Thessalonians",
@@ -1153,6 +1897,136 @@
     "startVerse": 15,
     "endVerse": 17,
     "text": "One of them, when he saw that he was healed, turned back, glorifying God with a loud voice. He fell on his face at Jesus’ feet, giving him thanks; and he was a Samaritan. Jesus answered, “Weren’t the ten cleansed? But where are the nine?",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-136-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 136,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Give thanks to the LORD, for he is good,\nfor his loving kindness endures forever. Give thanks to the God of gods,\nfor his loving kindness endures forever. Give thanks to the Lord of lords,\nfor his loving kindness endures forever;",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-116-016-018",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 116,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "LORD, truly I am your servant.\nI am your servant, the son of your servant girl.\nYou have freed me from my chains. I will offer to you the sacrifice of thanksgiving,\nand will call on the LORD’s name. I will pay my vows to the LORD,\nyes, in the presence of all his people,",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-002-005-007",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 2,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "For though I am absent in the flesh, yet I am with you in the spirit, rejoicing and seeing your order, and the steadfastness of your faith in Christ. As therefore you received Christ Jesus the Lord, walk in him, rooted and built up in him and established in the faith, even as you were taught, abounding in it in thanksgiving.",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-050-013-015",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 50,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "Will I eat the meat of bulls,\nor drink the blood of goats? Offer to God the sacrifice of thanksgiving.\nPay your vows to the Most High. Call on me in the day of trouble.\nI will deliver you, and you will honor me.”",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2co-009-012-015",
+    "bookId": "2CO",
+    "bookName": "2 Corinthians",
+    "chapter": 9,
+    "startVerse": 12,
+    "endVerse": 15,
+    "text": "For this service of giving that you perform not only makes up for lack among the saints, but abounds also through much giving of thanks to God, seeing that through the proof given by this service, they glorify God for the obedience of your confession to the Good News of Christ and for the generosity of your contribution to them and to all, while they themselves also, with supplication on your behalf, yearn for you by reason of the exceeding grace of God in you. Now thanks be to God for his unspeakable gift!",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-069-030-032",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 69,
+    "startVerse": 30,
+    "endVerse": 32,
+    "text": "I will praise the name of God with a song,\nand will magnify him with thanksgiving. It will please the LORD better than an ox,\nor a bull that has horns and hoofs. The humble have seen it, and are glad.\nYou who seek after God, let your heart live.",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1ch-016-034-036",
+    "bookId": "1CH",
+    "bookName": "1 Chronicles",
+    "chapter": 16,
+    "startVerse": 34,
+    "endVerse": 36,
+    "text": "Oh give thanks to the LORD, for he is good,\nfor his loving kindness endures forever. Say, “Save us, God of our salvation!\nGather us together and deliver us from the nations,\nto give thanks to your holy name,\nto triumph in your praise.” Blessed be the LORD, the God of Israel,\nfrom everlasting even to everlasting.\nAll the people said, “Amen,” and praised the LORD.",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-009-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 9,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "I will give thanks to the LORD with my whole heart.\nI will tell of all your marvelous works. I will be glad and rejoice in you.\nI will sing praise to your name, O Most High. When my enemies turn back,\nthey stumble and perish in your presence.",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "php-001-003-005",
+    "bookId": "PHP",
+    "bookName": "Philippians",
+    "chapter": 1,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "I thank my God whenever I remember you, always in every request of mine on behalf of you all, making my requests with joy, for your partnership in furtherance of the Good News from the first day until now;",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-034-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 34,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "I will bless the LORD at all times.\nHis praise will always be in my mouth. My soul shall boast in the LORD.\nThe humble shall hear of it and be glad. Oh magnify the LORD with me.\nLet’s exalt his name together.",
     "themes": [
       "Gratitude"
     ],
