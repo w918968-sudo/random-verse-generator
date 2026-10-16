@@ -17,6 +17,7 @@ export const ui = {
   metaDescription:
     'Generate a random Bible verse, or pick a topic like hope, peace, love, strength, faith, comfort, wisdom, or gratitude. Free, from the World English Bible.',
   nav: { about: 'About', privacy: 'Privacy Policy', contact: 'Contact' },
+  brand: 'VerseWell',
   h1: 'Random Bible Verse Generator',
   intro:
     'Generate a random Bible verse, or choose a topic to get a verse on that theme. Every verse comes from the World English Bible (Protestant Edition).',
