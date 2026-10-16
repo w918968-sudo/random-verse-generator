@@ -52,7 +52,7 @@
 
 **推荐优先级**：P1。
 
-### B-05 分享 / 复制链接按钮
+### B-05 分享 / 复制链接按钮 ✅ 已完成 2026-10-17
 **描述**：经文卡增加「分享」按钮。优先 `navigator.share`（移动端），不支持时回退到复制链接；链接带 `?theme=Hope` 参数，打开后预选主题。
 **验收标准**：
 - 点击后能调起系统分享或复制出 `https://randomversegenerator.info/?theme=<主题>`；
@@ -60,30 +60,29 @@
 - 不破坏现有复制按钮行为。
 
 **推荐优先级**：P1。
+**状态**：已加 `share-btn` + `shareVerse()`（`navigator.share` → clipboard 回退，上报通用 `share_verse`），并加 `applyUrlTheme()` 解析 `?theme=` 预选。构建通过，待部署。
 
-### B-06 复制经文时附带出处（⚠️ 与原始 PRD 冲突，需先决策）
-**描述**：当前「Copy Verse」只复制经文文本。原始 PRD 明确要求 *"copies verse text only (no reference/theme/button text)"*。本项若要改成附带引用，属于推翻原 PRD 的产品决策，需先确认再做。
-**验收标准**（若决定做）：
-- 复制内容形如 `经文文本 — Psalm 23:1–4 (WEBP)`；
-- 复制成功提示仍正常；格式用 `—` 与换行明确分隔。
+### B-06 复制经文时附带出处（❌ 已取消 2026-10-17）
+**描述**：原本提议复制时附带引用。经确认，**保持原始 PRD**：Copy 只复制经文文本（不含引用/主题/按钮文字）。当前代码已符合，无需改动。
+**决定**：2026-10-17 用户确认「保持只复制经文」，本项取消。
 
-**推荐优先级**：P1（但需先产品确认）。
-
-### B-07 CI 流水线（GitHub Actions）
+### B-07 CI 流水线（GitHub Actions）✅ 已完成 2026-10-17
 **描述**：push / PR 时自动跑 `npm ci && npm run data:validate && npm run build`。
 **验收标准**：
 - PR 出现构建/校验状态；`data:validate` 失败或 build 失败会阻塞合并；
 - CI 不执行 `deploy`（部署仍手动）。
 
 **推荐优先级**：P1。
+**状态**：已加 `.github/workflows/ci.yml`（checkout → setup-node(用 `.node-version`) → `npm ci` → `data:validate` → `npm test` → `build`）。同时让 `validate.mjs` 在缺少 `data/raw/usfm/`（gitignore）时优雅降级为结构性检查，CI 干净克隆可用。首次 push 后观察运行结果。
 
-### B-08 USFM 解析器单元测试
+### B-08 USFM 解析器单元测试 ✅ 已完成 2026-10-17
 **描述**：为 `scripts/usfm.mjs` 补单元测试，覆盖脚注/交叉引用删除、诗歌换行、Strong's/词条属性剥离、未知 marker 防御、跨行续写。
 **验收标准**：
 - 用真实 WEBP 片段做 fixtures，断言输出文本；
 - 测试可在 CI 中运行（需先引入测试运行器，如 `node:test` 或 vitest）。
 
 **推荐优先级**：P1。
+**状态**：已加 `test/usfm.test.mjs`（12 个用例，`node:test` 零依赖）+ `package.json` 的 `test` 脚本，全绿，已并入 CI。
 
 ---
 
