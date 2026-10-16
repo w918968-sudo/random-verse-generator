@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_NAME, TRANSLATION } from '../config.mjs';
+import { ui } from '../i18n/en.mjs';
+---
+
+<Layout title={`About – ${ui.siteName}`}>
+  <h1>About</h1>
+  <p>
+    {SITE_NAME} is a simple, free tool for drawing a random Bible verse — either a completely
+    random pick, or one chosen from a topic such as hope, peace, love, strength, faith, comfort,
+    wisdom, or gratitude.
+  </p>
+  <p>
+    The whole tool runs in your browser. It does not require an account, and it does not send your
+    chosen topic or the verse you received to any server. The verse library is a small, curated
+    selection of well-known passages, so you get a meaningful verse every time rather than a random
+    line of Scripture.
+  </p>
+
+  <h2>Translation and source</h2>
+  <p>
+    All Scripture on this site is taken from the {TRANSLATION.name} ({TRANSLATION.id}). The WEB is
+    a modern English translation of the Bible that has been released into the public domain, so you
+    may freely quote, copy, and share any verse you find here. The text is extracted from the
+    official source at <a href={TRANSLATION.sourceUrl}>{TRANSLATION.sourceUrl}</a>.
+  </p>
+  <p>
+    “World English Bible” is a trademark of eBible.org. This site is an independent project and is
+    not operated by, endorsed by, or affiliated with eBible.org.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>Generate a random verse, or filter by one of eight topics.</li>
+    <li>Copy a verse with one click.</li>
+    <li>Read a verse in context, or open its full chapter.</li>
+    <li>Works on phone, tablet, and desktop.</li>
+  </ul>
+</Layout>

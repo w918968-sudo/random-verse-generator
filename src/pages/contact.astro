@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL } from '../config.mjs';
+import { ui } from '../i18n/en.mjs';
+---
+
+<Layout title={`Contact – ${ui.siteName}`}>
+  <h1>Contact</h1>
+  {CONTACT_EMAIL ? (
+    <p>
+      Questions, feedback, or corrections? Email us at{' '}
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> and we will get back to you as soon as
+      we can.
+    </p>
+  ) : (
+    <p>
+      The contact email has not been configured yet. Please check back soon — this page will show a
+      direct email address once it is set up.
+    </p>
+  )}
+</Layout>

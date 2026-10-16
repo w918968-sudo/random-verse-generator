@@ -1,0 +1,81 @@
+---
+import {
+  SITE_NAME,
+  SITE_URL,
+  GA4_MEASUREMENT_ID,
+  SEARCH_CONSOLE_VERIFICATION,
+  TRANSLATION,
+} from '../config.mjs';
+import { ui } from '../i18n/en.mjs';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title || `${SITE_NAME} – Free Bible Verses by Topic`;
+const pageDesc = description || ui.metaDescription;
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+
+const ga4Loader = GA4_MEASUREMENT_ID
+  ? `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GA4_MEASUREMENT_ID}');`
+  : '';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={canonical} />
+
+    {SEARCH_CONSOLE_VERIFICATION && (
+      <meta name="google-site-verification" content={SEARCH_CONSOLE_VERIFICATION} />
+    )}
+
+    {GA4_MEASUREMENT_ID && (
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}></script>
+    )}
+    {GA4_MEASUREMENT_ID && <script is:inline set:html={ga4Loader}></script>}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <p class="site-title"><a href="/">{SITE_NAME}</a></p>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/about/">{ui.nav.about}</a>
+          <a href="/privacy/">{ui.nav.privacy}</a>
+          <a href="/contact/">{ui.nav.contact}</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          Scripture taken from the {TRANSLATION.name} ({TRANSLATION.id}), which is in the public
+          domain. “World English Bible” is a trademark of eBible.org; this site is not operated by
+          or affiliated with eBible.org. Source: <a href={TRANSLATION.sourceUrl}>{TRANSLATION.sourceUrl}</a>.
+        </p>
+        <p>
+          <a href="/about/">{ui.nav.about}</a> · <a href="/privacy/">{ui.nav.privacy}</a> · <a
+            href="/contact/">{ui.nav.contact}</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

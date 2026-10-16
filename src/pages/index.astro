@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VerseGenerator from '../components/VerseGenerator.astro';
+import { THEMES, ui } from '../i18n/en.mjs';
+import { TRANSLATION } from '../config.mjs';
+---
+
+<Layout title={`${ui.siteName} – Free Bible Verses by Topic`}>
+  <h1>{ui.h1}</h1>
+  <p class="lede">{ui.intro}</p>
+
+  <VerseGenerator />
+
+  <section class="seo-content">
+    <h2>How this Bible verse generator works</h2>
+    <p>
+      Press <strong>Generate Verse</strong> to receive a random verse, or pick one of the topics
+      below first to receive a verse on that theme. Every draw is picked from a curated library of
+      well-known Bible verses, and the generator avoids repeating a verse until you have worked
+      through the whole list.
+    </p>
+
+    <h2>Choose a topic</h2>
+    <ul>
+      {THEMES.map((t) => (
+        <li>
+          <strong>{t.id}</strong> — {t.desc}
+        </li>
+      ))}
+    </ul>
+
+    <h2>About the translation</h2>
+    <p>
+      All verses come from the {TRANSLATION.name} ({TRANSLATION.id}), a modern English translation
+      that is in the public domain. This means you are free to quote and share every verse without
+      worrying about copyright. The text is drawn directly from the official source at{' '}
+      <a href={TRANSLATION.sourceUrl}>{TRANSLATION.sourceUrl}</a>.
+    </p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>Is this random Bible verse generator free?</h3>
+    <p>
+      Yes. It is completely free, with no sign-up and no account required. The whole tool runs in
+      your browser.
+    </p>
+    <h3>Which Bible translation is used?</h3>
+    <p>
+      The {TRANSLATION.name} ({TRANSLATION.id}), a public-domain English translation published by
+      eBible.org.
+    </p>
+    <h3>Can I choose a specific topic?</h3>
+    <p>
+      Yes — choose from hope, peace, love, strength, faith, comfort, wisdom, or gratitude, or leave
+      it on “All Verses” for a completely random pick.
+    </p>
+    <h3>Can I read more of the passage?</h3>
+    <p>
+      Yes. After a verse appears, use <strong>Read Context</strong> to see a few verses around it,
+      or <strong>Read Full Chapter</strong> to open the whole chapter.
+    </p>
+  </section>
+</Layout>

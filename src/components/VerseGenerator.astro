@@ -1,0 +1,318 @@
+---
+import { THEMES, ui } from '../i18n/en.mjs';
+
+const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => ({ id: t.id, label: t.id }))];
+---
+
+<div class="generator">
+  <div class="theme-group" role="group" aria-label={ui.themeGroupLabel}>
+    {themeButtons.map((t) => (
+      <button
+        type="button"
+        class="theme-btn"
+        data-theme={t.id}
+        aria-pressed={t.id === 'All' ? 'true' : 'false'}
+      >
+        {t.label}
+      </button>
+    ))}
+  </div>
+
+  <div class="action-row">
+    <button type="button" class="btn btn-primary" id="generate-btn">
+      {ui.generate.first}
+    </button>
+  </div>
+
+  <div class="guide" id="guide" role="status">
+    <p>{ui.guide}</p>
+  </div>
+
+  <div class="result" id="result" hidden>
+    <figure class="verse-card">
+      <blockquote class="verse-text" id="verse-text"></blockquote>
+      <figcaption class="verse-meta">
+        <span class="badge" id="verse-theme" hidden></span>
+        <span class="verse-ref" id="verse-ref"></span>
+      </figcaption>
+      <div class="verse-actions">
+        <button type="button" class="btn btn-secondary" id="copy-btn">{ui.result.copy}</button>
+        <button type="button" class="btn btn-secondary" id="context-btn" aria-expanded="false">
+          {ui.result.context}
+        </button>
+      </div>
+    </figure>
+
+    <section class="reading-panel" id="reading-panel" hidden aria-live="polite">
+      <div id="reading-content"></div>
+      <div class="verse-actions">
+        <button type="button" class="btn btn-secondary" id="chapter-btn" hidden>
+          {ui.result.fullChapter}
+        </button>
+        <button type="button" class="btn btn-secondary" id="collapse-btn" hidden>
+          {ui.result.collapseChapter}
+        </button>
+      </div>
+    </section>
+
+    <p class="copy-fallback" id="copy-fallback" hidden role="alert">{ui.result.copyFallback}</p>
+    <p class="error" id="error" hidden role="alert"></p>
+  </div>
+
+  <div class="sr-only" id="sr-live" aria-live="polite"></div>
+</div>
+
+<script>
+  import { ui } from '../i18n/en.mjs';
+
+  const el = {
+    themeGroup: document.querySelector('.theme-group'),
+    generateBtn: document.getElementById('generate-btn'),
+    guide: document.getElementById('guide'),
+    result: document.getElementById('result'),
+    verseText: document.getElementById('verse-text'),
+    verseRef: document.getElementById('verse-ref'),
+    verseTheme: document.getElementById('verse-theme'),
+    copyBtn: document.getElementById('copy-btn'),
+    contextBtn: document.getElementById('context-btn'),
+    panel: document.getElementById('reading-panel'),
+    readingContent: document.getElementById('reading-content'),
+    chapterBtn: document.getElementById('chapter-btn'),
+    collapseBtn: document.getElementById('collapse-btn'),
+    copyFallback: document.getElementById('copy-fallback'),
+    error: document.getElementById('error'),
+    live: document.getElementById('sr-live'),
+  };
+
+  const themeButtons = Array.from(el.themeGroup.querySelectorAll('.theme-btn'));
+  let verses = []; // library loaded from /data/verses.json
+  let currentVerse = null; // { ...verse, usedTheme }
+  let currentTheme = 'All';
+  let lastDrawnId = null;
+  let chapterData = null;
+  let panelState = 'closed'; // 'closed' | 'context' | 'chapter'
+  const bags = new Map(); // poolKey -> shuffled verse objects
+
+  function track(name) {
+    if (typeof window.gtag === 'function') window.gtag('event', name);
+  }
+  function announce(msg) {
+    el.live.textContent = '';
+    el.live.textContent = msg;
+  }
+  function clearError() {
+    el.error.hidden = true;
+    el.error.textContent = '';
+  }
+  function showError(msg) {
+    el.error.textContent = msg;
+    el.error.hidden = false;
+  }
+
+  function shuffled(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function draw(poolKey) {
+    const pool = poolKey === 'All' ? verses : verses.filter((v) => v.themes.includes(poolKey));
+    if (!pool.length) return null;
+    let bag = bags.get(poolKey);
+    if (!bag || bag.length === 0) {
+      bag = shuffled(pool);
+      if (lastDrawnId && bag.length > 1 && bag[bag.length - 1].id === lastDrawnId) {
+        const swapIdx = Math.floor(Math.random() * (bag.length - 1));
+        [bag[bag.length - 1], bag[swapIdx]] = [bag[swapIdx], bag[bag.length - 1]];
+      }
+      bags.set(poolKey, bag);
+    }
+    const v = bag.pop();
+    lastDrawnId = v.id;
+    return v;
+  }
+
+  function reference(v) {
+    const range = v.startVerse === v.endVerse ? String(v.startVerse) : `${v.startVerse}–${v.endVerse}`;
+    return `${v.bookName} ${v.chapter}:${range}`;
+  }
+
+  function renderCard() {
+    el.verseText.textContent = currentVerse.text;
+    el.verseRef.textContent = reference(currentVerse);
+    if (currentVerse.usedTheme) {
+      el.verseTheme.hidden = false;
+      el.verseTheme.textContent = currentVerse.usedTheme;
+    } else {
+      el.verseTheme.hidden = true;
+    }
+  }
+
+  function scrollToCardIfNeeded() {
+    const rect = el.result.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom < 0 || rect.top > vh) {
+      el.result.scrollIntoView({ block: rect.top > vh ? 'start' : 'end' });
+    }
+  }
+
+  function closeReading() {
+    panelState = 'closed';
+    el.panel.hidden = true;
+    el.contextBtn.setAttribute('aria-expanded', 'false');
+    el.chapterBtn.hidden = true;
+    el.collapseBtn.hidden = true;
+    el.readingContent.replaceChildren();
+    chapterData = null;
+  }
+
+  function generate() {
+    if (!verses.length) {
+      showError(ui.errors.themeUnavailable);
+      return;
+    }
+    const v = draw(currentTheme);
+    if (!v) {
+      showError(ui.errors.themeUnavailable);
+      return;
+    }
+    currentVerse = { ...v, usedTheme: currentTheme === 'All' ? null : currentTheme };
+    closeReading();
+    renderCard();
+    clearError();
+    el.result.hidden = false;
+    el.guide.hidden = true;
+    el.generateBtn.textContent = ui.generate.again;
+    track('generate_verse');
+    scrollToCardIfNeeded();
+  }
+
+  async function loadChapter(bookId, chapter) {
+    const res = await fetch(`/data/chapters/${bookId}/${chapter}.json`);
+    if (!res.ok) throw new Error('chapter load failed');
+    return res.json();
+  }
+
+  function makeVerseRow(number, text, isCurrent) {
+    const row = document.createElement('p');
+    row.className = 'chapter-verse' + (isCurrent ? ' is-current' : '');
+    row.id = `v-${number}`;
+    const num = document.createElement('span');
+    num.className = 'verse-num';
+    num.textContent = String(number);
+    const body = document.createElement('span');
+    body.className = 'verse-body';
+    body.textContent = text;
+    row.append(num, body);
+    return row;
+  }
+
+  function renderChapterPanel(chapter, range) {
+    const frag = document.createDocumentFragment();
+    chapter.verses.forEach((v) => {
+      const isCurrent = v.number >= range.start && v.number <= range.end;
+      frag.appendChild(makeVerseRow(v.number, v.text, isCurrent));
+    });
+    el.readingContent.replaceChildren(frag);
+  }
+
+  async function openContext() {
+    if (!currentVerse) return;
+    try {
+      const chapter = await loadChapter(currentVerse.bookId, currentVerse.chapter);
+      chapterData = chapter;
+      const list = chapter.verses;
+      const startIdx = list.findIndex((v) => v.number === currentVerse.startVerse);
+      const endIdx = list.findIndex((v) => v.number === currentVerse.endVerse);
+      const from = Math.max(0, startIdx - 2);
+      const to = Math.min(list.length - 1, endIdx + 2);
+      const slice = list.slice(from, to + 1);
+      const frag = document.createDocumentFragment();
+      slice.forEach((v) => {
+        const isCurrent = v.number >= currentVerse.startVerse && v.number <= currentVerse.endVerse;
+        frag.appendChild(makeVerseRow(v.number, v.text, isCurrent));
+      });
+      el.readingContent.replaceChildren(frag);
+      panelState = 'context';
+      el.panel.hidden = false;
+      el.contextBtn.setAttribute('aria-expanded', 'true');
+      el.chapterBtn.hidden = false;
+      el.collapseBtn.hidden = true;
+      track('open_context');
+    } catch {
+      showError(ui.errors.chapterLoad);
+    }
+  }
+
+  function openFullChapter() {
+    if (!chapterData || !currentVerse) return;
+    renderChapterPanel(chapterData, {
+      start: currentVerse.startVerse,
+      end: currentVerse.endVerse,
+    });
+    panelState = 'chapter';
+    el.chapterBtn.hidden = true;
+    el.collapseBtn.hidden = false;
+    track('open_chapter');
+    requestAnimationFrame(() => {
+      const first = document.getElementById(`v-${currentVerse.startVerse}`);
+      if (first) first.scrollIntoView({ block: 'center' });
+    });
+  }
+
+  function collapseChapter() {
+    closeReading();
+    el.result.scrollIntoView({ block: 'start' });
+  }
+
+  // Wire up events
+  themeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      currentTheme = btn.dataset.theme;
+      themeButtons.forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+    });
+  });
+
+  el.generateBtn.addEventListener('click', generate);
+
+  el.copyBtn.addEventListener('click', async () => {
+    if (!currentVerse) return;
+    try {
+      await navigator.clipboard.writeText(currentVerse.text);
+      const original = ui.result.copy;
+      el.copyBtn.textContent = ui.result.copied;
+      el.copyFallback.hidden = true;
+      announce(ui.result.copied);
+      track('copy_verse');
+      setTimeout(() => {
+        el.copyBtn.textContent = original;
+      }, 2000);
+    } catch {
+      el.copyFallback.hidden = false;
+    }
+  });
+
+  el.contextBtn.addEventListener('click', () => {
+    if (panelState === 'context' || panelState === 'chapter') {
+      closeReading();
+      return;
+    }
+    openContext();
+  });
+
+  el.chapterBtn.addEventListener('click', openFullChapter);
+  el.collapseBtn.addEventListener('click', collapseChapter);
+
+  // Load the verse library
+  fetch('/data/verses.json')
+    .then((r) => r.json())
+    .then((data) => {
+      verses = data;
+    })
+    .catch(() => {
+      showError(ui.errors.chapterLoad);
+    });
+</script>
