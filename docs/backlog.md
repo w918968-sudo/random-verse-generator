@@ -106,7 +106,7 @@
 - 卡片、按钮、分享图不受影响；浅色保持现状。
 
 **推荐优先级**：P2。
-**状态**：在 `global.css` 增加 `@media (prefers-color-scheme: dark)` token 覆盖（暖炭黑底 `#17130E`、表面 `#221C15`、亮墨 `#EDE7DA`），并解耦 `--color-primary`（文本强调）与新增 `--color-primary-solid`/`--color-on-primary`/`--color-primary-hover`/`--color-primary-soft`（实心按钮背景/其上文字/悬停/次级悬停）以在深色下分别保持对比度；`color-scheme` 同步切 dark 使滚动条/控件匹配。浅色 token 未变（视觉零回归）。分享图/ favicon 为静态文件不受影响。build + 12 测试全绿。
+**状态**：在 `global.css` 增加 `@media (prefers-color-scheme: dark)` token 覆盖（暖炭黑底 `#17130E`、表面 `#221C15`、亮墨 `#EDE7DA`），并解耦 `--color-primary`（文本强调）与新增 `--color-primary-solid`/`--color-on-primary`/`--color-primary-hover`/`--color-primary-soft`（实心按钮背景/其上文字/悬停/次级悬停）以在深色下分别保持对比度；`color-scheme` 同步切 dark 使滚动条/控件匹配。浅色 token 未变（视觉零回归）。分享图/ favicon 为静态文件不受影响。build + 12 测试全绿。已部署生效（2026-10-17，Version `14444403`）。
 
 ### B-11 PWA / 添加到主屏幕
 **描述**：加 `manifest.json` + service worker，离线可开、可「添加到主屏幕」。
