@@ -1,11 +1,15 @@
 /* Design tokens — "warm paper classic" palette. */
 :root {
+  color-scheme: light;
   --color-bg: #F7F3EA;
   --color-surface: #FFFDF7;
   --color-ink: #2B2620;
   --color-ink-soft: #6B6355;
   --color-primary: #8C4A2F;
-  --color-primary-dark: #6E3A24;
+  --color-primary-solid: #8C4A2F;
+  --color-primary-hover: #6E3A24;
+  --color-primary-soft: rgba(140, 74, 47, 0.08);
+  --color-on-primary: #FFFDF7;
   --color-accent: #C9A227;
   --color-border: #E4DCC8;
   --color-highlight: #F1E5C9;
@@ -15,6 +19,28 @@
   --font-serif: Georgia, 'Times New Roman', serif;
   --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --shadow-card: 0 1px 2px rgba(43, 38, 32, 0.06), 0 6px 20px rgba(43, 38, 32, 0.08);
+}
+
+/* Dark mode — warm charcoal, keeps the paper warmth without glare. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-bg: #17130E;
+    --color-surface: #221C15;
+    --color-ink: #EDE7DA;
+    --color-ink-soft: #B6AC99;
+    --color-primary: #D89A68;
+    --color-primary-solid: #A6532F;
+    --color-primary-hover: #C06B40;
+    --color-primary-soft: rgba(216, 154, 104, 0.14);
+    --color-on-primary: #FFFDF7;
+    --color-accent: #D4AD3A;
+    --color-border: #3A3328;
+    --color-highlight: #3A3122;
+    --color-focus: #7FB3E8;
+    --color-error: #F28B82;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 20px rgba(0, 0, 0, 0.45);
+  }
 }
 
 * { box-sizing: border-box; }
@@ -87,10 +113,10 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
   cursor: pointer;
   transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
-.btn-primary { background: var(--color-primary); color: #FFFDF7; }
-.btn-primary:hover { background: var(--color-primary-dark); }
+.btn-primary { background: var(--color-primary-solid); border-color: var(--color-primary-solid); color: var(--color-on-primary); }
+.btn-primary:hover { background: var(--color-primary-hover); }
 .btn-secondary { background: transparent; color: var(--color-primary); }
-.btn-secondary:hover { background: rgba(140, 74, 47, 0.08); }
+.btn-secondary:hover { background: var(--color-primary-soft); }
 
 /* Theme buttons */
 .theme-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
@@ -108,9 +134,9 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 }
 .theme-btn:hover { border-color: var(--color-primary); }
 .theme-btn[aria-pressed='true'] {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #FFFDF7;
+  background: var(--color-primary-solid);
+  border-color: var(--color-primary-solid);
+  color: var(--color-on-primary);
 }
 .theme-btn[aria-pressed='true']::before { content: '✓ '; }
 

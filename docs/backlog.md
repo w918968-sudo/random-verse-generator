@@ -99,13 +99,14 @@
 **推荐优先级**：P2。
 **状态**：扩充到 **155 条**，主题分布 Hope 22 / Peace 20 / Love 21 / Strength 22 / Faith 22 / Comfort 22 / Wisdom 22 / Gratitude 22（差距 ≤2）。`data:build` + `data:validate` 全绿（文本逐字比对），已部署（Version `fd523e33`）。
 
-### B-10 深色模式
+### B-10 深色模式 ✅ 已完成 2026-10-17
 **描述**：基于 `prefers-color-scheme` 提供深色 token 变体。
 **验收标准**：
 - 系统深色时自动切换，对比度满足可读性；
 - 卡片、按钮、分享图不受影响；浅色保持现状。
 
 **推荐优先级**：P2。
+**状态**：在 `global.css` 增加 `@media (prefers-color-scheme: dark)` token 覆盖（暖炭黑底 `#17130E`、表面 `#221C15`、亮墨 `#EDE7DA`），并解耦 `--color-primary`（文本强调）与新增 `--color-primary-solid`/`--color-on-primary`/`--color-primary-hover`/`--color-primary-soft`（实心按钮背景/其上文字/悬停/次级悬停）以在深色下分别保持对比度；`color-scheme` 同步切 dark 使滚动条/控件匹配。浅色 token 未变（视觉零回归）。分享图/ favicon 为静态文件不受影响。build + 12 测试全绿。
 
 ### B-11 PWA / 添加到主屏幕
 **描述**：加 `manifest.json` + service worker，离线可开、可「添加到主屏幕」。
