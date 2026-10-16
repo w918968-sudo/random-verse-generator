@@ -107,6 +107,71 @@
     "translationId": "WEBP"
   },
   {
+    "id": "heb-006-018-020",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 6,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "that by two immutable things, in which it is impossible for God to lie, we may have a strong encouragement, who have fled for refuge to take hold of the hope set before us. This hope we have as an anchor of the soul, a hope both sure and steadfast and entering into that which is within the veil, where as a forerunner Jesus entered for us, having become a high priest forever after the order of Melchizedek.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-130-005-008",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 130,
+    "startVerse": 5,
+    "endVerse": 8,
+    "text": "I wait for the LORD.\nMy soul waits.\nI hope in his word. My soul longs for the Lord more than watchmen long for the morning,\nmore than watchmen for the morning. Israel, hope in the LORD,\nfor there is loving kindness with the LORD.\nAbundant redemption is with him. He will redeem Israel from all their sins.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-043-018-021",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 43,
+    "startVerse": 18,
+    "endVerse": 21,
+    "text": "“Don’t remember the former things,\nand don’t consider the things of old. Behold, I will do a new thing.\nIt springs out now.\nDon’t you know it?\nI will even make a way in the wilderness,\nand rivers in the desert. The animals of the field, the jackals and the ostriches, shall honor me,\nbecause I give water in the wilderness and rivers in the desert,\nto give drink to my people, my chosen, the people which I formed for myself,\nthat they might declare my praise.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mic-007-007-009",
+    "bookId": "MIC",
+    "bookName": "Micah",
+    "chapter": 7,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "But as for me, I will look to the LORD.\nI will wait for the God of my salvation.\nMy God will hear me. Don’t rejoice against me, my enemy.\nWhen I fall, I will arise.\nWhen I sit in darkness, the LORD will be a light to me. I will bear the indignation of the LORD,\nbecause I have sinned against him,\nuntil he pleads my case and executes judgment for me.\nHe will bring me out to the light.\nI will see his righteousness.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-015-004-006",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 15,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "For whatever things were written before were written for our learning, that through perseverance and through encouragement of the Scriptures we might have hope. Now the God of perseverance and of encouragement grant you to be of the same mind with one another according to Christ Jesus, that with one accord you may with one mouth glorify the God and Father of our Lord Jesus Christ.",
+    "themes": [
+      "Hope"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "php-004-004-007",
     "bookId": "PHP",
     "bookName": "Philippians",
@@ -215,6 +280,59 @@
     "translationId": "WEBP"
   },
   {
+    "id": "isa-026-003-005",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 26,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "You will keep whoever’s mind is steadfast in perfect peace,\nbecause he trusts in you. Trust in the LORD forever;\nfor in the LORD, the LORD, is an everlasting Rock. For he has brought down those who dwell on high, the lofty city.\nHe lays it low.\nHe lays it low even to the ground.\nHe brings it even to the dust.",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-004-006-008",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 4,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Many say, “Who will show us any good?”\nLORD, let the light of your face shine on us. You have put gladness in my heart,\nmore than when their grain and their new wine are increased. In peace I will both lay myself down and sleep,\nfor you alone, LORD, make me live in safety.",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-055-010-012",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 55,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "For as the rain comes down and the snow from the sky,\nand doesn’t return there, but waters the earth,\nand makes it grow and bud,\nand gives seed to the sower and bread to the eater; so is my word that goes out of my mouth:\nit will not return to me void,\nbut it will accomplish that which I please,\nand it will prosper in the thing I sent it to do. For you shall go out with joy,\nand be led out with peace.\nThe mountains and the hills will break out before you into singing;\nand all the trees of the fields will clap their hands.",
+    "themes": [
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gal-005-022-024",
+    "bookId": "GAL",
+    "bookName": "Galatians",
+    "chapter": 5,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith, gentleness, and self-control. Against such things there is no law. Those who belong to Christ have crucified the flesh with its passions and lusts.",
+    "themes": [
+      "Love",
+      "Peace"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "jhn-003-016-018",
     "bookId": "JHN",
     "bookName": "John",
@@ -313,6 +431,71 @@
     "startVerse": 4,
     "endVerse": 7,
     "text": "Hear, Israel: The LORD is our God. The LORD is one. You shall love the LORD your God with all your heart, with all your soul, and with all your might. These words, which I command you today, shall be on your heart; and you shall teach them diligently to your children, and shall talk of them when you sit in your house, and when you walk by the way, and when you lie down, and when you rise up.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1jn-004-007-011",
+    "bookId": "1JN",
+    "bookName": "1 John",
+    "chapter": 4,
+    "startVerse": 7,
+    "endVerse": 11,
+    "text": "Beloved, let’s love one another, for love is of God; and everyone who loves has been born of God and knows God. He who doesn’t love doesn’t know God, for God is love. By this God’s love was revealed in us, that God has sent his only born Son into the world that we might live through him. In this is love, not that we loved God, but that he loved us, and sent his Son as the atoning sacrifice for our sins. Beloved, if God loved us in this way, we also ought to love one another.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-013-008-010",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 13,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "Owe no one anything, except to love one another; for he who loves his neighbor has fulfilled the law. For the commandments, “You shall not commit adultery,” “You shall not murder,” “You shall not steal,” “You shall not covet,” and whatever other commandments there are, are all summed up in this saying, namely, “You shall love your neighbor as yourself.” Love doesn’t harm a neighbor. Love therefore is the fulfillment of the law.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jhn-015-012-014",
+    "bookId": "JHN",
+    "bookName": "John",
+    "chapter": 15,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "“This is my commandment, that you love one another, even as I have loved you. Greater love has no one than this, that someone lay down his life for his friends. You are my friends if you do whatever I command you.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-004-001-003",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 4,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "I therefore, the prisoner in the Lord, beg you to walk worthily of the calling with which you were called, with all lowliness and humility, with patience, bearing with one another in love, being eager to keep the unity of the Spirit in the bond of peace.",
+    "themes": [
+      "Love"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1jn-003-016-018",
+    "bookId": "1JN",
+    "bookName": "1 John",
+    "chapter": 3,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "By this we know love, because he laid down his life for us. And we ought to lay down our lives for the brothers. But whoever has the world’s goods and sees his brother in need, then closes his heart of compassion against him, how does God’s love remain in him? My little children, let’s not love in word only, or with the tongue only, but in deed and truth.",
     "themes": [
       "Love"
     ],
@@ -439,6 +622,33 @@
     "translationId": "WEBP"
   },
   {
+    "id": "psa-046-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 46,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "God is our refuge and strength,\na very present help in trouble. Therefore we won’t be afraid, though the earth changes,\nthough the mountains are shaken into the heart of the seas; though its waters roar and are troubled,\nthough the mountains tremble with their swelling. Selah.",
+    "themes": [
+      "Comfort",
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "deu-031-006-008",
+    "bookId": "DEU",
+    "bookName": "Deuteronomy",
+    "chapter": 31,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Be strong and courageous. Don’t be afraid or scared of them, for the LORD your God himself is who goes with you. He will not fail you nor forsake you.” Moses called to Joshua, and said to him in the sight of all Israel, “Be strong and courageous, for you shall go with this people into the land which the LORD has sworn to their fathers to give them; and you shall cause them to inherit it. The LORD himself is who goes before you. He will be with you. He will not fail you nor forsake you. Don’t be afraid. Don’t be discouraged.”",
+    "themes": [
+      "Strength"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "heb-011-001-003",
     "bookId": "HEB",
     "bookName": "Hebrews",
@@ -545,6 +755,45 @@
     "translationId": "WEBP"
   },
   {
+    "id": "heb-011-006-008",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 11,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Without faith it is impossible to be well pleasing to him, for he who comes to God must believe that he exists, and that he is a rewarder of those who seek him. By faith Noah, being warned about things not yet seen, moved with godly fear, prepared a ship for the saving of his house, through which he condemned the world and became heir of the righteousness which is according to faith. By faith Abraham, when he was called, obeyed to go out to the place which he was to receive for an inheritance. He went out, not knowing where he went.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2co-005-006-008",
+    "bookId": "2CO",
+    "bookName": "2 Corinthians",
+    "chapter": 5,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Therefore we are always confident and know that while we are at home in the body, we are absent from the Lord; for we walk by faith, not by sight. We are courageous, I say, and are willing rather to be absent from the body and to be at home with the Lord.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-004-018-021",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 4,
+    "startVerse": 18,
+    "endVerse": 21,
+    "text": "Against hope, Abraham in hope believed, to the end that he might become a father of many nations, according to that which had been spoken, “So will your offspring be.” Without being weakened in faith, he didn’t consider his own body, already having been worn out, (he being about a hundred years old), and the deadness of Sarah’s womb. Yet, looking to the promise of God, he didn’t waver through unbelief, but grew strong through faith, giving glory to God, and being fully assured that what he had promised, he was also able to perform.",
+    "themes": [
+      "Faith"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "2co-001-003-005",
     "bookId": "2CO",
     "bookName": "2 Corinthians",
@@ -606,6 +855,33 @@
     "text": "“Blessed are the poor in spirit,\nfor theirs is the Kingdom of Heaven. Blessed are those who mourn,\nfor they shall be comforted. Blessed are the gentle,\nfor they shall inherit the earth. Blessed are those who hunger and thirst for righteousness,\nfor they shall be filled.",
     "themes": [
       "Comfort"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-066-012-014",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 66,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "For the LORD says, “Behold, I will extend peace to her like a river,\nand the glory of the nations like an overflowing stream,\nand you will nurse.\nYou will be carried on her side,\nand will be dandled on her knees. As one whom his mother comforts,\nso I will comfort you.\nYou will be comforted in Jerusalem.” You will see it, and your heart shall rejoice,\nand your bones will flourish like the tender grass.\nThe LORD’s hand will be known among his servants;\nand he will have indignation against his enemies.",
+    "themes": [
+      "Comfort"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1th-004-016-018",
+    "bookId": "1TH",
+    "bookName": "1 Thessalonians",
+    "chapter": 4,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "For the Lord himself will descend from heaven with a shout, with the voice of the archangel and with God’s trumpet. The dead in Christ will rise first, then we who are alive, who are left, will be caught up together with them in the clouds to meet the Lord in the air. So we will be with the Lord forever. Therefore comfort one another with these words.",
+    "themes": [
+      "Comfort",
+      "Hope"
     ],
     "translationId": "WEBP"
   },
@@ -701,6 +977,58 @@
     "translationId": "WEBP"
   },
   {
+    "id": "pro-003-013-015",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 3,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "Happy is the man who finds wisdom,\nthe man who gets understanding. For her good profit is better than getting silver,\nand her return is better than fine gold. She is more precious than rubies.\nNone of the things you can desire are to be compared to her.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-002-001-005",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 2,
+    "startVerse": 1,
+    "endVerse": 5,
+    "text": "My son, if you will receive my words,\nand store up my commandments within you, so as to turn your ear to wisdom,\nand apply your heart to understanding; yes, if you call out for discernment,\nand lift up your voice for understanding; if you seek her as silver,\nand search for her as for hidden treasures; then you will understand the fear of the LORD,\nand find the knowledge of God.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-009-010-012",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 9,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "The fear of the LORD is the beginning of wisdom.\nThe knowledge of the Holy One is understanding. For by me your days will be multiplied.\nThe years of your life will be increased. If you are wise, you are wise for yourself.\nIf you mock, you alone will bear it.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-119-097-100",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 119,
+    "startVerse": 97,
+    "endVerse": 100,
+    "text": "How I love your law!\nIt is my meditation all day. Your commandments make me wiser than my enemies,\nfor your commandments are always with me. I have more understanding than all my teachers,\nfor your testimonies are my meditation. I understand more than the aged,\nbecause I have kept your precepts.",
+    "themes": [
+      "Wisdom"
+    ],
+    "translationId": "WEBP"
+  },
+  {
     "id": "1th-005-016-018",
     "bookId": "1TH",
     "bookName": "1 Thessalonians",
@@ -773,6 +1101,58 @@
     "startVerse": 1,
     "endVerse": 3,
     "text": "Oh come, let’s sing to the LORD.\nLet’s shout aloud to the rock of our salvation! Let’s come before his presence with thanksgiving.\nLet’s extol him with songs! For the LORD is a great God,\na great King above all gods.",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-118-001-004",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 118,
+    "startVerse": 1,
+    "endVerse": 4,
+    "text": "Give thanks to the LORD, for he is good,\nfor his loving kindness endures forever. Let Israel now say\nthat his loving kindness endures forever. Let the house of Aaron now say\nthat his loving kindness endures forever. Now let those who fear the LORD say\nthat his loving kindness endures forever.",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-092-001-004",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 92,
+    "startVerse": 1,
+    "endVerse": 4,
+    "text": "It is a good thing to give thanks to the LORD,\nto sing praises to your name, Most High, to proclaim your loving kindness in the morning,\nand your faithfulness every night, with the ten-stringed lute, with the harp,\nand with the melody of the lyre. For you, LORD, have made me glad through your work.\nI will triumph in the works of your hands.",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-004-002-004",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 4,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "Continue steadfastly in prayer, watching in it with thanksgiving, praying together for us also, that God may open to us a door for the word, to speak the mystery of Christ, for which I am also in bonds, that I may reveal it as I ought to speak.",
+    "themes": [
+      "Gratitude"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-017-015-017",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 17,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "One of them, when he saw that he was healed, turned back, glorifying God with a loud voice. He fell on his face at Jesus’ feet, giving him thanks; and he was a Samaritan. Jesus answered, “Weren’t the ten cleansed? But where are the nine?",
     "themes": [
       "Gratitude"
     ],

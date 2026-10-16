@@ -68,8 +68,8 @@ for (const theme of THEMES) {
 }
 
 // --- All Verses pool: unique ids (covered above), and count in range ---
-if (verses.length < 40 || verses.length > 60) {
-  errors.push(`library size ${verses.length} outside 40-60`);
+if (verses.length < 40 || verses.length > 200) {
+  errors.push(`library size ${verses.length} outside 40-200`);
 }
 
 // --- chapter files readable + verse order ---

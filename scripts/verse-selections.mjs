@@ -15,6 +15,11 @@ export const VERSE_SELECTIONS = [
   { bookId: '1PE', chapter: 1, startVerse: 3, endVerse: 5, themes: ['Hope'] },
   { bookId: 'REV', chapter: 21, startVerse: 1, endVerse: 4, themes: ['Hope', 'Comfort'] },
   { bookId: 'ROM', chapter: 8, startVerse: 26, endVerse: 28, themes: ['Hope', 'Comfort'] },
+  { bookId: 'HEB', chapter: 6, startVerse: 18, endVerse: 20, themes: ['Hope'] },
+  { bookId: 'PSA', chapter: 130, startVerse: 5, endVerse: 8, themes: ['Hope'] },
+  { bookId: 'ISA', chapter: 43, startVerse: 18, endVerse: 21, themes: ['Hope'] },
+  { bookId: 'MIC', chapter: 7, startVerse: 7, endVerse: 9, themes: ['Hope'] },
+  { bookId: 'ROM', chapter: 15, startVerse: 4, endVerse: 6, themes: ['Hope'] },
 
   // Peace
   { bookId: 'PHP', chapter: 4, startVerse: 4, endVerse: 7, themes: ['Peace', 'Gratitude'] },
@@ -25,6 +30,10 @@ export const VERSE_SELECTIONS = [
   { bookId: 'NUM', chapter: 6, startVerse: 24, endVerse: 26, themes: ['Peace'] },
   { bookId: 'MAT', chapter: 11, startVerse: 28, endVerse: 30, themes: ['Peace', 'Comfort'] },
   { bookId: 'JHN', chapter: 16, startVerse: 31, endVerse: 33, themes: ['Peace'] },
+  { bookId: 'ISA', chapter: 26, startVerse: 3, endVerse: 5, themes: ['Peace'] },
+  { bookId: 'PSA', chapter: 4, startVerse: 6, endVerse: 8, themes: ['Peace'] },
+  { bookId: 'ISA', chapter: 55, startVerse: 10, endVerse: 12, themes: ['Peace'] },
+  { bookId: 'GAL', chapter: 5, startVerse: 22, endVerse: 24, themes: ['Peace', 'Love'] },
 
   // Love
   { bookId: 'JHN', chapter: 3, startVerse: 16, endVerse: 18, themes: ['Love'] },
@@ -35,6 +44,11 @@ export const VERSE_SELECTIONS = [
   { bookId: 'ROM', chapter: 5, startVerse: 6, endVerse: 8, themes: ['Love'] },
   { bookId: 'JHN', chapter: 15, startVerse: 9, endVerse: 13, themes: ['Love'] },
   { bookId: 'DEU', chapter: 6, startVerse: 4, endVerse: 7, themes: ['Love'] },
+  { bookId: '1JN', chapter: 4, startVerse: 7, endVerse: 11, themes: ['Love'] },
+  { bookId: 'ROM', chapter: 13, startVerse: 8, endVerse: 10, themes: ['Love'] },
+  { bookId: 'JHN', chapter: 15, startVerse: 12, endVerse: 14, themes: ['Love'] },
+  { bookId: 'EPH', chapter: 4, startVerse: 1, endVerse: 3, themes: ['Love'] },
+  { bookId: '1JN', chapter: 3, startVerse: 16, endVerse: 18, themes: ['Love'] },
 
   // Strength
   { bookId: 'PHP', chapter: 4, startVerse: 11, endVerse: 13, themes: ['Strength'] },
@@ -46,6 +60,8 @@ export const VERSE_SELECTIONS = [
   { bookId: 'JOS', chapter: 1, startVerse: 7, endVerse: 9, themes: ['Strength'] },
   { bookId: 'PSA', chapter: 27, startVerse: 1, endVerse: 3, themes: ['Faith', 'Strength'] },
   { bookId: 'PSA', chapter: 121, startVerse: 1, endVerse: 4, themes: ['Comfort', 'Strength'] },
+  { bookId: 'PSA', chapter: 46, startVerse: 1, endVerse: 3, themes: ['Strength', 'Comfort'] },
+  { bookId: 'DEU', chapter: 31, startVerse: 6, endVerse: 8, themes: ['Strength'] },
 
   // Faith
   { bookId: 'HEB', chapter: 11, startVerse: 1, endVerse: 3, themes: ['Faith'] },
@@ -56,6 +72,9 @@ export const VERSE_SELECTIONS = [
   { bookId: 'JAS', chapter: 1, startVerse: 5, endVerse: 8, themes: ['Faith', 'Wisdom'] },
   { bookId: '1PE', chapter: 1, startVerse: 6, endVerse: 9, themes: ['Faith'] },
   { bookId: 'PSA', chapter: 23, startVerse: 1, endVerse: 4, themes: ['Faith', 'Comfort'] },
+  { bookId: 'HEB', chapter: 11, startVerse: 6, endVerse: 8, themes: ['Faith'] },
+  { bookId: '2CO', chapter: 5, startVerse: 6, endVerse: 8, themes: ['Faith'] },
+  { bookId: 'ROM', chapter: 4, startVerse: 18, endVerse: 21, themes: ['Faith'] },
 
   // Comfort
   { bookId: '2CO', chapter: 1, startVerse: 3, endVerse: 5, themes: ['Comfort'] },
@@ -63,6 +82,8 @@ export const VERSE_SELECTIONS = [
   { bookId: 'PSA', chapter: 147, startVerse: 1, endVerse: 3, themes: ['Comfort'] },
   { bookId: 'JHN', chapter: 14, startVerse: 1, endVerse: 3, themes: ['Comfort'] },
   { bookId: 'MAT', chapter: 5, startVerse: 3, endVerse: 6, themes: ['Comfort'] },
+  { bookId: 'ISA', chapter: 66, startVerse: 12, endVerse: 14, themes: ['Comfort'] },
+  { bookId: '1TH', chapter: 4, startVerse: 16, endVerse: 18, themes: ['Comfort', 'Hope'] },
 
   // Wisdom
   { bookId: 'PRO', chapter: 3, startVerse: 5, endVerse: 8, themes: ['Wisdom'] },
@@ -72,6 +93,10 @@ export const VERSE_SELECTIONS = [
   { bookId: 'PRO', chapter: 4, startVerse: 5, endVerse: 9, themes: ['Wisdom'] },
   { bookId: 'COL', chapter: 2, startVerse: 2, endVerse: 4, themes: ['Wisdom'] },
   { bookId: 'PSA', chapter: 19, startVerse: 7, endVerse: 9, themes: ['Wisdom'] },
+  { bookId: 'PRO', chapter: 3, startVerse: 13, endVerse: 15, themes: ['Wisdom'] },
+  { bookId: 'PRO', chapter: 2, startVerse: 1, endVerse: 5, themes: ['Wisdom'] },
+  { bookId: 'PRO', chapter: 9, startVerse: 10, endVerse: 12, themes: ['Wisdom'] },
+  { bookId: 'PSA', chapter: 119, startVerse: 97, endVerse: 100, themes: ['Wisdom'] },
 
   // Gratitude
   { bookId: '1TH', chapter: 5, startVerse: 16, endVerse: 18, themes: ['Gratitude'] },
@@ -80,4 +105,8 @@ export const VERSE_SELECTIONS = [
   { bookId: 'PSA', chapter: 103, startVerse: 1, endVerse: 5, themes: ['Gratitude'] },
   { bookId: 'EPH', chapter: 5, startVerse: 18, endVerse: 20, themes: ['Gratitude'] },
   { bookId: 'PSA', chapter: 95, startVerse: 1, endVerse: 3, themes: ['Gratitude'] },
+  { bookId: 'PSA', chapter: 118, startVerse: 1, endVerse: 4, themes: ['Gratitude'] },
+  { bookId: 'PSA', chapter: 92, startVerse: 1, endVerse: 4, themes: ['Gratitude'] },
+  { bookId: 'COL', chapter: 4, startVerse: 2, endVerse: 4, themes: ['Gratitude'] },
+  { bookId: 'LUK', chapter: 17, startVerse: 15, endVerse: 17, themes: ['Gratitude'] },
 ];
