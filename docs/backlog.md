@@ -21,7 +21,7 @@
 - privacy 页文案无需改动；代码行为与 PRD、隐私页三者一致。
 
 **推荐优先级**：P0（PRD 合规 + 信任风险）。
-**状态**：已改 `track('generate_verse')` / `track('select_theme')` 为无参数调用，build 通过。待部署生效。
+**状态**：已改 `track('generate_verse')` / `track('select_theme')` 为无参数调用，build 通过，已部署生效（2026-10-17）。
 
 ### B-02 清理遗留 `.og-previews/` ✅ 已完成 2026-10-17
 **问题**：`docs` 之外存在未跟踪、未 ignore 的预览文件 `.og-previews/variants-in-context.html`，是早前分享图选型时的临时产物。
@@ -60,7 +60,7 @@
 - 不破坏现有复制按钮行为。
 
 **推荐优先级**：P1。
-**状态**：已加 `share-btn` + `shareVerse()`（`navigator.share` → clipboard 回退，上报通用 `share_verse`），并加 `applyUrlTheme()` 解析 `?theme=` 预选。构建通过，待部署。
+**状态**：已加 `share-btn` + `shareVerse()`（`navigator.share` → clipboard 回退，上报通用 `share_verse`），并加 `applyUrlTheme()` 解析 `?theme=` 预选。已部署生效（2026-10-17，Version `7d98ae97`）。
 
 ### B-06 复制经文时附带出处（❌ 已取消 2026-10-17）
 **描述**：原本提议复制时附带引用。经确认，**保持原始 PRD**：Copy 只复制经文文本（不含引用/主题/按钮文字）。当前代码已符合，无需改动。
