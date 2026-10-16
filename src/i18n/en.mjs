@@ -48,6 +48,8 @@ export const ui = {
   result: {
     copy: 'Copy Verse',
     copied: 'Copied!',
+    share: 'Share',
+    shareCopied: 'Link copied!',
     context: 'Read Context',
     fullChapter: 'Read Full Chapter',
     collapseChapter: 'Collapse Chapter',
@@ -61,6 +63,7 @@ export const ui = {
     themeUnavailable:
       'This topic has no verses available right now. Try “All Verses” or another topic.',
     chapterLoad: 'Could not load the full chapter. Please try again.',
+    shareFailed: 'Could not share or copy the link. Please copy the URL from your browser.',
     retry: 'Retry',
   },
 };

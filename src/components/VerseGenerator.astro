@@ -37,6 +37,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
       </figcaption>
       <div class="verse-actions">
         <button type="button" class="btn btn-secondary" id="copy-btn">{ui.result.copy}</button>
+        <button type="button" class="btn btn-secondary" id="share-btn">{ui.result.share}</button>
         <button type="button" class="btn btn-secondary" id="context-btn" aria-expanded="false">
           {ui.result.context}
         </button>
@@ -74,6 +75,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     verseRef: document.getElementById('verse-ref'),
     verseTheme: document.getElementById('verse-theme'),
     copyBtn: document.getElementById('copy-btn'),
+    shareBtn: document.getElementById('share-btn'),
     contextBtn: document.getElementById('context-btn'),
     panel: document.getElementById('reading-panel'),
     readingContent: document.getElementById('reading-content'),
@@ -268,6 +270,46 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     el.result.scrollIntoView({ block: 'start' });
   }
 
+  function applyUrlTheme() {
+    const param = new URLSearchParams(location.search).get('theme');
+    if (!param) return;
+    const btn = themeButtons.find((b) => b.dataset.theme.toLowerCase() === param.toLowerCase());
+    if (!btn) return;
+    currentTheme = btn.dataset.theme;
+    themeButtons.forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+  }
+
+  async function shareVerse() {
+    if (!currentVerse) return;
+    const theme = currentTheme === 'All' ? '' : currentTheme;
+    const url = `${location.origin}${location.pathname}${theme ? `?theme=${encodeURIComponent(theme)}` : ''}`;
+    const payload = { title: ui.brand, text: currentVerse.text, url };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(payload);
+        track('share_verse');
+        return;
+      } catch (err) {
+        if (err && err.name === 'AbortError') return; // user cancelled — nothing to do
+        // otherwise fall through to copy-link fallback
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      const original = el.shareBtn.textContent;
+      el.shareBtn.textContent = ui.result.shareCopied;
+      announce(ui.result.shareCopied);
+      track('share_verse');
+      setTimeout(() => {
+        el.shareBtn.textContent = original;
+      }, 2000);
+    } catch {
+      showError(ui.errors.shareFailed);
+    }
+  }
+
   // Wire up events
   themeButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -278,6 +320,8 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   });
 
   el.generateBtn.addEventListener('click', generate);
+
+  el.shareBtn.addEventListener('click', shareVerse);
 
   el.copyBtn.addEventListener('click', async () => {
     if (!currentVerse) return;
@@ -312,6 +356,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     .then((r) => r.json())
     .then((data) => {
       verses = data;
+      applyUrlTheme();
       generate();
     })
     .catch(() => {
