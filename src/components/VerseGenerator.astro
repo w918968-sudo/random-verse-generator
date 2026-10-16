@@ -93,8 +93,8 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   let panelState = 'closed'; // 'closed' | 'context' | 'chapter'
   const bags = new Map(); // poolKey -> shuffled verse objects
 
-  function track(name) {
-    if (typeof window.gtag === 'function') window.gtag('event', name);
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params);
   }
   function announce(msg) {
     el.live.textContent = '';
@@ -186,7 +186,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     el.result.hidden = false;
     el.guide.hidden = true;
     el.generateBtn.textContent = ui.generate.again;
-    track('generate_verse');
+    track('generate_verse', { theme: currentTheme });
     scrollToCardIfNeeded();
   }
 
@@ -273,6 +273,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     btn.addEventListener('click', () => {
       currentTheme = btn.dataset.theme;
       themeButtons.forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      track('select_theme', { theme: currentTheme });
     });
   });
 

@@ -12,6 +12,25 @@ export const THEMES = [
   { id: 'Gratitude', desc: 'Verses about thanksgiving and praise.' },
 ];
 
+export const faq = [
+  {
+    q: 'Is this random Bible verse generator free?',
+    a: 'Yes. It is completely free, with no sign-up and no account required. The whole tool runs in your browser.',
+  },
+  {
+    q: 'Which Bible translation is used?',
+    a: 'The World English Bible (Protestant Edition) (WEBP), a public-domain English translation published by eBible.org.',
+  },
+  {
+    q: 'Can I choose a specific topic?',
+    a: 'Yes — choose from hope, peace, love, strength, faith, comfort, wisdom, or gratitude, or leave it on “All Verses” for a completely random pick.',
+  },
+  {
+    q: 'Can I read more of the passage?',
+    a: 'Yes. After a verse appears, use Read Context to see a few verses around it, or Read Full Chapter to open the whole chapter.',
+  },
+];
+
 export const ui = {
   siteName: 'Random Bible Verse Generator',
   metaDescription:

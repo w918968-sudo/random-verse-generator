@@ -9,12 +9,14 @@
     "preview": "astro preview",
     "deploy": "astro build && wrangler deploy",
     "data:build": "node scripts/build-data.mjs",
-    "data:validate": "node scripts/validate.mjs"
+    "data:validate": "node scripts/validate.mjs",
+    "og:image": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
     "astro": "^7.4.0"
   },
   "devDependencies": {
+    "sharp": "^0.35.5",
     "wrangler": "^4.151.1"
   }
 }

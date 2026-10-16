@@ -1,11 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import VerseGenerator from '../components/VerseGenerator.astro';
-import { THEMES, ui } from '../i18n/en.mjs';
-import { TRANSLATION } from '../config.mjs';
+import { THEMES, ui, faq } from '../i18n/en.mjs';
+import { TRANSLATION, SITE_URL } from '../config.mjs';
+
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: ui.siteName,
+  url: SITE_URL,
+  description: ui.metaDescription,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  brand: { '@type': 'Brand', name: ui.brand },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
 
 <Layout title={`${ui.siteName} – Free Bible Verses by Topic`}>
+  <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <p class="brand">
     <img src="/favicon.svg" alt="" width="24" height="24" />
     {ui.brand}
@@ -42,25 +67,11 @@ import { TRANSLATION } from '../config.mjs';
     </p>
 
     <h2>Frequently asked questions</h2>
-    <h3>Is this random Bible verse generator free?</h3>
-    <p>
-      Yes. It is completely free, with no sign-up and no account required. The whole tool runs in
-      your browser.
-    </p>
-    <h3>Which Bible translation is used?</h3>
-    <p>
-      The {TRANSLATION.name} ({TRANSLATION.id}), a public-domain English translation published by
-      eBible.org.
-    </p>
-    <h3>Can I choose a specific topic?</h3>
-    <p>
-      Yes — choose from hope, peace, love, strength, faith, comfort, wisdom, or gratitude, or leave
-      it on “All Verses” for a completely random pick.
-    </p>
-    <h3>Can I read more of the passage?</h3>
-    <p>
-      Yes. After a verse appears, use <strong>Read Context</strong> to see a few verses around it,
-      or <strong>Read Full Chapter</strong> to open the whole chapter.
-    </p>
+    {faq.map((f) => (
+      <>
+        <h3>{f.q}</h3>
+        <p>{f.a}</p>
+      </>
+    ))}
   </section>
 </Layout>
