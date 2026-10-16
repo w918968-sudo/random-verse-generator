@@ -108,13 +108,14 @@
 **推荐优先级**：P2。
 **状态**：在 `global.css` 增加 `@media (prefers-color-scheme: dark)` token 覆盖（暖炭黑底 `#17130E`、表面 `#221C15`、亮墨 `#EDE7DA`），并解耦 `--color-primary`（文本强调）与新增 `--color-primary-solid`/`--color-on-primary`/`--color-primary-hover`/`--color-primary-soft`（实心按钮背景/其上文字/悬停/次级悬停）以在深色下分别保持对比度；`color-scheme` 同步切 dark 使滚动条/控件匹配。浅色 token 未变（视觉零回归）。分享图/ favicon 为静态文件不受影响。build + 12 测试全绿。已部署生效（2026-10-17，Version `14444403`）。
 
-### B-11 PWA / 添加到主屏幕
+### B-11 PWA / 添加到主屏幕 ✅ 已完成 2026-10-17
 **描述**：加 `manifest.json` + service worker，离线可开、可「添加到主屏幕」。
 **验收标准**：
 - Lighthouse PWA 项可安装；离线刷新页面工具仍可用（经文数据已缓存）；
 - 不影响现有静态部署（sw 需随构建生成，注意缓存失效策略）。
 
 **推荐优先级**：P2。
+**状态**：新增 `public/manifest.webmanifest`（standalone + 192/512/maskable 图标）、`scripts/generate-icons.mjs`（`npm run icons`，从 favicon.svg 用 sharp 生成 4 个 PNG：192/512/全出血 maskable 512/apple 180）、`scripts/build-sw.mjs`（构建后扫描 `dist/` 生成 `dist/sw.js`，全部 147 个文件预缓存，缓存名 `versewell-<contenthash>` 按内容哈希失效）。SW 策略：导航与 `/data/*` 网络优先（在线始终最新、离线回退缓存）、哈希静态资源缓存优先；`install` skipWaiting、`activate` 清旧缓存。`build`/`deploy` 脚本串联 sw 生成；注册脚本在 `Layout.astro` 内联且 `import.meta.env.PROD` 门控（开发环境不注册）。浅色/深色 `theme-color` meta 各自匹配。build + 12 测试全绿。
 
 ### B-12 中文界面（i18n）
 **描述**：新增 `src/i18n/zh.mjs`，UI 字符串切中文；经文仍为英文 WEBP。
