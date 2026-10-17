@@ -220,7 +220,7 @@
 **推荐优先级**：P3。
 **状态**：新增动态路由 `src/pages/[theme].astro`（`getStaticPaths()` 由 `THEMES` 生成 8 页 `/hope/`…`/gratitude/`）。每页 title/description/H1 针对主题（如 "Hope Bible Verses"）、`CollectionPage` JSON-LD、主题专属 SEO 段落 + 8 个「More topics」互链。`VerseGenerator` 新增 `initialTheme` prop（`data-initial-theme` → `applyInitialTheme()`，URL `?theme=` 优先）。`sitemap.xml` 收录 8 个主题页（weekly/0.6）。build 13 页 + 12 测试全绿。待部署。
 
-### B-22 云端神经 TTS（感情化朗读，升级 B-13）
+### B-22 云端神经 TTS（感情化朗读，升级 B-13）❌ 已关闭 2026-10-18
 **描述**：把 B-13 的本机 Web Speech 换成云端神经 TTS（如 OpenAI TTS / ElevenLabs），获得更有感情的经文朗诵。
 **验收标准**：
 - 音色自然、有情感，语速/音色可调；
@@ -228,4 +228,4 @@
 - 隐私页说明朗读可能向第三方服务发送经文文本。
 
 **推荐优先级**：P3（需 API key + 按量付费，可能引入后端或前端直连第三方）。
-**状态**：2026-10-17 用户决定先不做（跳过），维持暂缓。
+**状态**：❌ 已关闭 2026-10-18 —— 用户决定保持本机 Web Speech（免费、本地、经文不上传，隐私零改动），不接云端神经 TTS。
