@@ -32,7 +32,7 @@
 - ✅ 经文库扩充到 155 条，主题继续均衡（2026-10-17）
 - ✅ 深色模式（`prefers-color-scheme`，2026-10-17）
 - ✅ PWA / 添加到主屏幕（manifest + service worker，2026-10-17）
-- 中文界面（UI 已集中，新增 `i18n/zh.mjs`）
+- ~~中文界面~~（2026-10-17 取消，偏向海外英文受众）
 - 经文朗读（Web Speech API）
 - 经文卡片图（verse images，v1 排除清单）
 - 生成历史（history，v1 排除清单）
