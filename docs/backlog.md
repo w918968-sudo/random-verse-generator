@@ -208,7 +208,7 @@
 **推荐优先级**：P2。
 **状态**：单选 `currentTheme` 改为多选 `selectedThemes`（`Set`，空=All）。`currentPool()` 取并集（`v.themes.some(t => selectedThemes.has(t))`），`poolKey()` 用排序主题 id 作洗牌袋键；`draw()` 无参化。`syncThemeButtons()` 同步 `aria-pressed`（All 仅在空选时按下）。`applyUrlTheme()` 支持 `?theme=A,B` 逗号多选；`shareVerse()` 序列化多选。徽章显示命中主题（多选用 ` · ` 连接）。主题组 label 改 "Choose one or more topics"。build + 12 测试全绿。待部署。
 
-### B-21 各主题独立 SEO 页面（per-theme SEO pages）
+### B-21 各主题独立 SEO 页面（per-theme SEO pages）✅ 已完成 2026-10-17
 **描述**：为每个主题建落地页（如 `/hope/`），预选该主题 + 专属 SEO 文案，捕获长尾搜索。
 **验收标准**：
 - 每个主题一个 URL，canonical 唯一，title/meta/H1 针对该主题；
@@ -216,6 +216,7 @@
 - sitemap 同步收录所有主题页。
 
 **推荐优先级**：P3。
+**状态**：新增动态路由 `src/pages/[theme].astro`（`getStaticPaths()` 由 `THEMES` 生成 8 页 `/hope/`…`/gratitude/`）。每页 title/description/H1 针对主题（如 "Hope Bible Verses"）、`CollectionPage` JSON-LD、主题专属 SEO 段落 + 8 个「More topics」互链。`VerseGenerator` 新增 `initialTheme` prop（`data-initial-theme` → `applyInitialTheme()`，URL `?theme=` 优先）。`sitemap.xml` 收录 8 个主题页（weekly/0.6）。build 13 页 + 12 测试全绿。待部署。
 
 ### B-22 云端神经 TTS（感情化朗读，升级 B-13）
 **描述**：把 B-13 的本机 Web Speech 换成云端神经 TTS（如 OpenAI TTS / ElevenLabs），获得更有感情的经文朗诵。

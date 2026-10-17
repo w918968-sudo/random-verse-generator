@@ -1,10 +1,16 @@
 ---
 import { THEMES, ui } from '../i18n/en.mjs';
 
+interface Props {
+  initialTheme?: string;
+}
+
+const { initialTheme = '' } = Astro.props;
+
 const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => ({ id: t.id, label: t.id }))];
 ---
 
-<div class="generator">
+<div class="generator" data-initial-theme={initialTheme}>
   <div class="theme-group" role="group" aria-label={ui.themeGroupLabel}>
     {themeButtons.map((t) => (
       <button
@@ -91,6 +97,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   import { ui } from '../i18n/en.mjs';
 
   const el = {
+    generator: document.querySelector('.generator'),
     themeGroup: document.querySelector('.theme-group'),
     generateBtn: document.getElementById('generate-btn'),
     historyBtn: document.getElementById('history-btn'),
@@ -333,6 +340,16 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
       const btn = themeButtons.find((b) => b.dataset.theme.toLowerCase() === part.trim().toLowerCase());
       if (btn && btn.dataset.theme !== 'All') selectedThemes.add(btn.dataset.theme);
     }
+    syncThemeButtons();
+  }
+
+  function applyInitialTheme() {
+    const t = el.generator.dataset.initialTheme;
+    if (!t) return;
+    // An explicit ?theme= in the URL takes precedence over the page's default.
+    if (new URLSearchParams(location.search).get('theme')) return;
+    const btn = themeButtons.find((b) => b.dataset.theme.toLowerCase() === t.toLowerCase());
+    if (btn && btn.dataset.theme !== 'All') selectedThemes.add(btn.dataset.theme);
     syncThemeButtons();
   }
 
@@ -824,6 +841,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     .then((data) => {
       verses = data;
       applyUrlTheme();
+      applyInitialTheme();
       generate();
     })
     .catch(() => {
