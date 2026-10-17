@@ -1,0 +1,704 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+
+const pageTitle = `${ui.findAVerse.title} – ${ui.siteName}`;
+const description =
+  'Describe what you are looking for — a feeling, a situation, or a question — and find a matching Bible verse. Free, private, and it all runs in your browser.';
+const canonical = new URL('/find-a-verse/', SITE_URL).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: ui.findAVerse.title,
+  url: canonical,
+  description,
+};
+
+const examples = [
+  'I feel anxious about the future',
+  'How can I forgive someone who hurt me?',
+  'peace in hard times',
+  'wisdom for making decisions',
+];
+---
+
+<Layout title={pageTitle} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">{ui.findAVerse.title}</h1>
+  <p class="lede">{ui.findAVerse.lede}</p>
+
+  <form class="fav-form" id="fav-form">
+    <label class="sr-only" for="fav-input">{ui.findAVerse.title}</label>
+    <textarea
+      class="fav-textarea"
+      id="fav-input"
+      rows="3"
+      maxlength="500"
+      placeholder={ui.findAVerse.placeholder}
+      autocomplete="off"
+      spellcheck="false"
+    ></textarea>
+    <div class="fav-toolbar">
+      <span class="fav-count" id="fav-count" aria-hidden="true"></span>
+      <div class="fav-toolbar-actions">
+        <button type="button" class="btn btn-secondary" id="fav-cancel" hidden>
+          {ui.findAVerse.cancel}
+        </button>
+        <button type="submit" class="btn btn-primary" id="fav-submit">
+          {ui.findAVerse.submit}
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="fav-examples" id="fav-examples">
+    <span class="fav-examples-label">{ui.findAVerse.examplesLabel}</span>
+    {examples.map((e) => (
+      <button type="button" class="fav-example" data-example={e}>{e}</button>
+    ))}
+  </div>
+
+  <p class="search-status" id="fav-status" role="status">{ui.findAVerse.status.ready}</p>
+  <p class="fav-note" id="fav-keyword-mode" hidden>{ui.findAVerse.keywordMode}</p>
+
+  <div class="result" id="fav-result" hidden>
+    <h2 class="fav-result-label">{ui.findAVerse.result.label}</h2>
+    <figure class="verse-card">
+      <blockquote class="verse-text" id="fav-verse-text"></blockquote>
+      <figcaption class="verse-meta">
+        <span class="badge" id="fav-verse-theme" hidden></span>
+        <span class="verse-ref" id="fav-verse-ref"></span>
+      </figcaption>
+      <p class="fav-explain" id="fav-explain"></p>
+      <div class="verse-actions">
+        <button type="button" class="btn btn-secondary" id="fav-copy">{ui.findAVerse.result.copy}</button>
+        <button type="button" class="btn btn-secondary" id="fav-save" aria-pressed="false">
+          {ui.findAVerse.result.save}
+        </button>
+        <button type="button" class="btn btn-secondary" id="fav-context" aria-expanded="false">
+          {ui.findAVerse.result.context}
+        </button>
+        <button type="button" class="btn btn-secondary" id="fav-chapter" hidden>
+          {ui.findAVerse.result.fullChapter}
+        </button>
+        <button type="button" class="btn btn-secondary" id="fav-collapse" hidden>
+          {ui.findAVerse.result.collapseChapter}
+        </button>
+      </div>
+    </figure>
+    <button type="button" class="btn btn-primary fav-another" id="fav-another">
+      {ui.findAVerse.result.another}
+    </button>
+    <p class="copy-fallback" id="fav-copy-fallback" hidden role="alert">{ui.findAVerse.result.copyFallback}</p>
+
+    <section class="reading-panel" id="fav-panel" hidden aria-live="polite">
+      <div id="fav-reading"></div>
+    </section>
+  </div>
+
+  <div class="guide" id="fav-none" hidden>
+    <p>{ui.findAVerse.noResults}</p>
+    <p><a href="/search/">{ui.findAVerse.searchLink}</a></p>
+  </div>
+
+  <p class="error" id="fav-error" hidden role="alert"></p>
+  <div class="sr-only" id="fav-live" aria-live="polite"></div>
+</Layout>
+
+<style>
+  .fav-form { margin-top: 1.25rem; }
+  .fav-textarea {
+    display: block;
+    width: 100%;
+    min-height: 96px;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font: inherit;
+    line-height: 1.5;
+    resize: vertical;
+  }
+  .fav-textarea:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+
+  .fav-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .fav-toolbar-actions { display: flex; align-items: center; gap: 0.5rem; }
+  .fav-count { font-size: 0.82rem; color: var(--color-ink-soft); }
+
+  .fav-examples { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin-top: 0.9rem; }
+  .fav-examples-label { font-size: 0.82rem; font-weight: 600; color: var(--color-ink-soft); margin-right: 0.15rem; }
+  .fav-example {
+    min-height: 32px;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    color: var(--color-ink-soft);
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .fav-example:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+  .fav-note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+    border-left: 3px solid var(--color-border);
+    padding-left: 0.75rem;
+  }
+
+  .fav-result-label {
+    margin: 1.5rem 0 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  .fav-explain { color: var(--color-ink-soft); font-size: 0.92rem; margin: -0.5rem 0 1.25rem; }
+  .fav-another { margin-top: 1rem; }
+</style>
+
+<script>
+  import { ui } from '../i18n/en.mjs';
+  import { currentTranslation, dataPaths } from '../lib/translations.mjs';
+  import {
+    rankPassages,
+    rankKeywordOnly,
+    normalizeText,
+    tokenize,
+    explainMatch,
+    EMBEDDING_DIM,
+  } from '../lib/semantic-search.mjs';
+
+  // Pinned model + runtime config (must match scripts/semantic.mjs).
+  const MAX_CHARS = 500;
+  const MODEL_ID = 'Xenova/all-MiniLM-L6-v2';
+  const MODEL_REVISION = '751bff37182d3f1213fa05d7196b954e230abad9';
+  const FAVORITES_KEY = 'versewell.favorites';
+
+  const el = {
+    form: document.getElementById('fav-form'),
+    input: document.getElementById('fav-input'),
+    count: document.getElementById('fav-count'),
+    cancelBtn: document.getElementById('fav-cancel'),
+    submitBtn: document.getElementById('fav-submit'),
+    examples: document.getElementById('fav-examples'),
+    status: document.getElementById('fav-status'),
+    keywordNote: document.getElementById('fav-keyword-mode'),
+    result: document.getElementById('fav-result'),
+    verseText: document.getElementById('fav-verse-text'),
+    verseTheme: document.getElementById('fav-verse-theme'),
+    verseRef: document.getElementById('fav-verse-ref'),
+    explain: document.getElementById('fav-explain'),
+    copyBtn: document.getElementById('fav-copy'),
+    saveBtn: document.getElementById('fav-save'),
+    contextBtn: document.getElementById('fav-context'),
+    chapterBtn: document.getElementById('fav-chapter'),
+    collapseBtn: document.getElementById('fav-collapse'),
+    anotherBtn: document.getElementById('fav-another'),
+    copyFallback: document.getElementById('fav-copy-fallback'),
+    panel: document.getElementById('fav-panel'),
+    reading: document.getElementById('fav-reading'),
+    none: document.getElementById('fav-none'),
+    error: document.getElementById('fav-error'),
+    live: document.getElementById('fav-live'),
+  };
+
+  let translation = currentTranslation(); // 'WEBP' | 'KJV'
+
+  // Per-translation index + model state (lazily loaded on first search).
+  let catalog = null; // { books, passages: [[bookId, chapter, verse], ...] }
+  let manifest = null; // { embedding: { scale, zeroPoint, dim }, ... }
+  let vectors = null; // Int8Array (passageCount * dim)
+  let bible = null; // { books, chapters }
+  let texts = null; // normalized verse texts, aligned with vectors
+  let indexLoading = null; // Promise | null
+  let extractor = null; // Transformers.js feature-extraction pipeline
+  let modelLoading = null; // Promise | null
+  let useKeywordFallback = false; // set when the model fails to load
+
+  // Search state — latest-request-wins + per-pool dedup.
+  let seq = 0;
+  let shown = new Set(); // passage indices already shown for the current pool
+  let rankFn = null; // active ranking function (semantic or keyword)
+  let rankArgs = null; // base args for the active ranking function
+
+  let currentVerse = null;
+  let chapterData = null;
+  let panelState = 'closed'; // 'closed' | 'context' | 'chapter'
+  let favorites = [];
+  let curatedThemes = null; // Map<id, themes> for WEBP curated verses (best-effort labels)
+
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params);
+  }
+  function announce(msg) {
+    el.live.textContent = '';
+    el.live.textContent = msg;
+  }
+  function setStatus(msg) {
+    el.status.textContent = msg;
+  }
+  function clearError() {
+    el.error.hidden = true;
+    el.error.textContent = '';
+  }
+  function showError(msg) {
+    el.error.textContent = msg;
+    el.error.hidden = false;
+  }
+  function setBusy(busy) {
+    el.submitBtn.disabled = busy;
+    el.cancelBtn.hidden = !busy;
+    if (busy) el.submitBtn.textContent = ui.findAVerse.status.finding;
+    else el.submitBtn.textContent = ui.findAVerse.submit;
+  }
+
+  function toFloat32(out) {
+    if (out.data && (out.data instanceof Float32Array || out.data instanceof Float64Array)) {
+      return Float32Array.from(out.data);
+    }
+    const list = out.tolist();
+    const flat = Array.isArray(list) && Array.isArray(list[0]) ? list.flat() : list;
+    return Float32Array.from(flat);
+  }
+
+  function pad3(n) {
+    return String(n).padStart(3, '0');
+  }
+  function verseId(bookId, chapter, verse) {
+    return `${bookId.toLowerCase()}-${pad3(chapter)}-${pad3(verse)}-${pad3(verse)}`;
+  }
+  function reference(v) {
+    return `${v.bookName} ${v.chapter}:${v.startVerse}`;
+  }
+
+  // ---- Data loading (lazy, per translation) ----
+  function resetIndex() {
+    catalog = null;
+    manifest = null;
+    vectors = null;
+    bible = null;
+    texts = null;
+    indexLoading = null;
+    curatedThemes = null;
+  }
+
+  function ensureIndex() {
+    if (texts) return Promise.resolve();
+    if (indexLoading) return indexLoading;
+    const dir = dataPaths(translation).semanticDir;
+    indexLoading = Promise.all([
+      fetch(`${dir}/catalog.json`).then((r) => (r.ok ? r.json() : Promise.reject(new Error('catalog')))),
+      fetch(`${dir}/manifest.json`).then((r) => (r.ok ? r.json() : Promise.reject(new Error('manifest')))),
+      fetch(`${dir}/vectors.bin`).then((r) => (r.ok ? r.arrayBuffer() : Promise.reject(new Error('vectors')))),
+      fetch(dataPaths(translation).bible).then((r) => (r.ok ? r.json() : Promise.reject(new Error('bible')))),
+    ])
+      .then(([cat, man, buf, bib]) => {
+        catalog = cat;
+        manifest = man;
+        vectors = new Int8Array(buf);
+        bible = bib;
+        texts = catalog.passages.map(([b, c, v]) => normalizeText(bible.chapters[`${b}.${c}`][v - 1]));
+      })
+      .finally(() => {
+        indexLoading = null;
+      });
+    return indexLoading;
+  }
+
+  function ensureModel() {
+    if (extractor) return Promise.resolve(extractor);
+    if (modelLoading) return modelLoading;
+    modelLoading = import('@huggingface/transformers')
+      .then(async ({ pipeline, env }) => {
+        // Same-origin local model + WASM runtime — no CDN, no external API.
+        env.allowLocalModels = true;
+        env.allowRemoteModels = false;
+        env.localModelPath = dataPaths(translation).modelDir;
+        env.backends.onnx.wasm.wasmPaths = {
+          wasm: '/data/find-a-verse/wasm/ort-wasm-simd-threaded.wasm',
+          mjs: '/data/find-a-verse/wasm/ort-wasm-simd-threaded.mjs',
+        };
+        env.backends.onnx.wasm.numThreads = 1;
+        extractor = await pipeline('feature-extraction', MODEL_ID, {
+          dtype: 'q8',
+          revision: MODEL_REVISION,
+          local_files_only: true,
+        });
+        return extractor;
+      })
+      .then((ex) => {
+        track('semantic_model_loaded');
+        return ex;
+      })
+      .finally(() => {
+        modelLoading = null;
+      });
+    return modelLoading;
+  }
+
+  // ---- Ranking + rendering ----
+  function computeRanked() {
+    return rankFn({ ...rankArgs, exclude: shown });
+  }
+
+  function pickNext() {
+    const ranked = computeRanked();
+    const top = ranked[0];
+    if (!top) return null;
+    shown.add(top.index);
+    return top;
+  }
+
+  function explainText(r) {
+    return ui.findAVerse.explain[explainMatch(r)];
+  }
+
+  function loadCuratedThemes() {
+    if (translation !== 'WEBP') return Promise.resolve();
+    if (curatedThemes) return Promise.resolve();
+    return fetch('/data/verses.json')
+      .then((r) => r.json())
+      .then((verses) => {
+        curatedThemes = new Map();
+        for (const v of verses) if (v.themes && v.themes.length) curatedThemes.set(v.id, v.themes);
+      })
+      .catch(() => {
+        curatedThemes = new Map();
+      });
+  }
+
+  function renderFavButton() {
+    const on = favorites.some((f) => f.id === currentVerse.id);
+    el.saveBtn.textContent = on ? ui.findAVerse.result.saved : ui.findAVerse.result.save;
+    el.saveBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+
+  function renderCard(top) {
+    el.verseText.textContent = currentVerse.text;
+    el.verseRef.textContent = reference(currentVerse);
+    el.explain.textContent = explainText(top);
+    el.copyFallback.hidden = true;
+    el.anotherBtn.hidden = false;
+    // Best-effort curated topic labels (WEBP only, ≤2).
+    const themes = curatedThemes ? curatedThemes.get(currentVerse.id) || [] : [];
+    if (themes.length) {
+      el.verseTheme.hidden = false;
+      el.verseTheme.textContent = themes.slice(0, 2).join(' · ');
+    } else {
+      el.verseTheme.hidden = true;
+    }
+    renderFavButton();
+    closeReading();
+  }
+
+  function renderResult(top) {
+    const [bookId, chapter, verse] = catalog.passages[top.index];
+    currentVerse = {
+      id: verseId(bookId, chapter, verse),
+      bookId,
+      bookName: catalog.books[bookId],
+      chapter,
+      startVerse: verse,
+      endVerse: verse,
+      text: bible.chapters[`${bookId}.${chapter}`][verse - 1],
+      themes: [],
+      usedTheme: null,
+      translationId: translation,
+    };
+    renderCard(top);
+    clearError();
+    el.none.hidden = true;
+    el.result.hidden = false;
+    track('find_verse_result_shown');
+    el.result.scrollIntoView({ block: 'start' });
+  }
+
+  function showFirst() {
+    const top = pickNext();
+    if (!top) {
+      el.result.hidden = true;
+      el.none.hidden = false;
+      return;
+    }
+    renderResult(top);
+  }
+
+  function showAnother() {
+    const top = pickNext();
+    if (!top) {
+      el.anotherBtn.hidden = true;
+      setStatus(ui.findAVerse.result.noMore);
+      return;
+    }
+    renderResult(top);
+  }
+
+  // ---- Search orchestration (latest-request-wins) ----
+  async function runSearch(rawQuery) {
+    const query = normalizeText(rawQuery);
+    const tokens = tokenize(query);
+    if (!tokens.length) return;
+
+    const mySeq = ++seq;
+    shown = new Set();
+    useKeywordFallback = false;
+    el.keywordNote.hidden = true;
+    el.result.hidden = true;
+    el.none.hidden = true;
+    clearError();
+    setBusy(true);
+    announce('');
+
+    try {
+      setStatus(ui.findAVerse.status.loadingIndex);
+      await ensureIndex();
+      if (mySeq !== seq) return;
+
+      try {
+        setStatus(ui.findAVerse.status.loadingModel);
+        await ensureModel();
+        if (mySeq !== seq) return;
+
+        setStatus(ui.findAVerse.status.finding);
+        const out = await extractor(query, { pooling: 'mean', normalize: true });
+        if (mySeq !== seq) return;
+        const qvec = toFloat32(out);
+        rankFn = rankPassages;
+        rankArgs = {
+          queryVec: qvec,
+          vectors,
+          scale: manifest.embedding.scale,
+          zeroPoint: manifest.embedding.zeroPoint,
+          dim: EMBEDDING_DIM,
+          texts,
+          queryTokens: tokens,
+        };
+      } catch {
+        // Semantic path unavailable — degrade to basic keyword matching.
+        useKeywordFallback = true;
+        el.keywordNote.hidden = false;
+        rankFn = rankKeywordOnly;
+        rankArgs = { texts, queryTokens: tokens, threshold: 0.5 };
+        track('semantic_fallback_used');
+        if (mySeq !== seq) return;
+      }
+
+      await loadCuratedThemes();
+      if (mySeq !== seq) return;
+      setBusy(false);
+      setStatus('');
+      showFirst();
+    } catch {
+      if (mySeq !== seq) return;
+      setBusy(false);
+      showError(ui.findAVerse.error);
+    }
+  }
+
+  // ---- Verse card actions ----
+  function makeVerseRow(number, text, isCurrent) {
+    const row = document.createElement('p');
+    row.className = 'chapter-verse' + (isCurrent ? ' is-current' : '');
+    row.id = `fav-v-${number}`;
+    const num = document.createElement('span');
+    num.className = 'verse-num';
+    num.textContent = String(number);
+    const body = document.createElement('span');
+    body.className = 'verse-body';
+    body.textContent = text;
+    row.append(num, body);
+    return row;
+  }
+
+  function getChapterData(bookId, chapter) {
+    const arr = bible.chapters[`${bookId}.${chapter}`];
+    return Promise.resolve({
+      translationId: translation,
+      bookId,
+      bookName: bible.books[bookId],
+      chapter,
+      verses: arr.map((text, i) => ({ number: i + 1, text })),
+    });
+  }
+
+  function closeReading() {
+    panelState = 'closed';
+    el.panel.hidden = true;
+    el.contextBtn.setAttribute('aria-expanded', 'false');
+    el.chapterBtn.hidden = true;
+    el.collapseBtn.hidden = true;
+    el.reading.replaceChildren();
+    chapterData = null;
+  }
+
+  async function openContext() {
+    if (!currentVerse) return;
+    try {
+      const chapter = await getChapterData(currentVerse.bookId, currentVerse.chapter);
+      chapterData = chapter;
+      const list = chapter.verses;
+      const idx = list.findIndex((v) => v.number === currentVerse.startVerse);
+      const from = Math.max(0, idx - 2);
+      const to = Math.min(list.length - 1, idx + 2);
+      const frag = document.createDocumentFragment();
+      list.slice(from, to + 1).forEach((v) => {
+        frag.appendChild(makeVerseRow(v.number, v.text, v.number === currentVerse.startVerse));
+      });
+      el.reading.replaceChildren(frag);
+      panelState = 'context';
+      el.panel.hidden = false;
+      el.contextBtn.setAttribute('aria-expanded', 'true');
+      el.chapterBtn.hidden = false;
+      el.collapseBtn.hidden = true;
+    } catch {
+      showError(ui.errors.chapterLoad);
+    }
+  }
+
+  function openFullChapter() {
+    if (!chapterData || !currentVerse) return;
+    const frag = document.createDocumentFragment();
+    chapterData.verses.forEach((v) => {
+      frag.appendChild(makeVerseRow(v.number, v.text, v.number === currentVerse.startVerse));
+    });
+    el.reading.replaceChildren(frag);
+    panelState = 'chapter';
+    el.chapterBtn.hidden = true;
+    el.collapseBtn.hidden = false;
+    requestAnimationFrame(() => {
+      const first = document.getElementById(`fav-v-${currentVerse.startVerse}`);
+      if (first) first.scrollIntoView({ block: 'center' });
+    });
+  }
+
+  function collapseChapter() {
+    closeReading();
+    el.result.scrollIntoView({ block: 'start' });
+  }
+
+  // ---- Favorites ----
+  function loadFavorites() {
+    try {
+      favorites = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+    } catch {
+      favorites = [];
+    }
+  }
+  function saveFavorites() {
+    try {
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+    } catch {}
+  }
+  function toggleFavorite() {
+    if (!currentVerse) return;
+    const idx = favorites.findIndex((f) => f.id === currentVerse.id);
+    if (idx >= 0) {
+      favorites.splice(idx, 1);
+    } else {
+      favorites.unshift({
+        id: currentVerse.id,
+        bookId: currentVerse.bookId,
+        bookName: currentVerse.bookName,
+        chapter: currentVerse.chapter,
+        startVerse: currentVerse.startVerse,
+        endVerse: currentVerse.endVerse,
+        text: currentVerse.text,
+        themes: currentVerse.themes,
+        usedTheme: currentVerse.usedTheme || currentVerse.themes.join(' · '),
+      });
+    }
+    saveFavorites();
+    renderFavButton();
+    track(idx >= 0 ? 'remove_favorite' : 'add_favorite');
+  }
+
+  // ---- Wire up events ----
+  function updateCount() {
+    el.count.textContent = `${el.input.value.length} / ${MAX_CHARS}`;
+  }
+
+  function submit() {
+    const q = el.input.value.trim();
+    if (!q) return;
+    runSearch(q);
+  }
+
+  el.input.addEventListener('input', updateCount);
+  el.input.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault();
+      submit();
+    }
+  });
+  el.form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submit();
+  });
+  el.cancelBtn.addEventListener('click', () => {
+    seq++; // invalidate any in-flight work
+    setBusy(false);
+    setStatus(ui.findAVerse.status.ready);
+  });
+  el.examples.addEventListener('click', (e) => {
+    const btn = e.target.closest('.fav-example');
+    if (!btn) return;
+    el.input.value = btn.dataset.example || '';
+    updateCount();
+    submit();
+  });
+
+  el.anotherBtn.addEventListener('click', showAnother);
+  el.copyBtn.addEventListener('click', async () => {
+    if (!currentVerse) return;
+    try {
+      await navigator.clipboard.writeText(currentVerse.text);
+      const original = el.copyBtn.textContent;
+      el.copyBtn.textContent = ui.findAVerse.result.copied;
+      announce(ui.findAVerse.result.copied);
+      track('copy_verse');
+      setTimeout(() => {
+        el.copyBtn.textContent = original;
+      }, 2000);
+    } catch {
+      el.copyFallback.hidden = false;
+    }
+  });
+  el.saveBtn.addEventListener('click', toggleFavorite);
+  el.contextBtn.addEventListener('click', () => {
+    if (panelState === 'context' || panelState === 'chapter') closeReading();
+    else openContext();
+  });
+  el.chapterBtn.addEventListener('click', openFullChapter);
+  el.collapseBtn.addEventListener('click', collapseChapter);
+
+  window.addEventListener('translationchange', (e) => {
+    if (!e.detail || e.detail === translation) return;
+    translation = e.detail;
+    seq++;
+    shown = new Set();
+    resetIndex();
+    el.result.hidden = true;
+    el.none.hidden = true;
+    closeReading();
+    clearError();
+    setBusy(false);
+    setStatus(ui.findAVerse.status.ready);
+  });
+
+  updateCount();
+  loadFavorites();
+  track('find_verse_opened');
+</script>

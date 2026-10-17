@@ -3,6 +3,7 @@ dist/
 .astro/
 .DS_Store
 .claude/
+.hf-cache/
 
 # Raw WEBP source (re-downloadable from https://ebible.org/engwebp/).
 # The generated output in public/data/ IS committed; the raw USFM is only

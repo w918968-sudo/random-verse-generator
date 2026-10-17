@@ -35,7 +35,7 @@ export const ui = {
   siteName: 'Random Bible Verse Generator',
   metaDescription:
     'Generate a random Bible verse, or pick a topic like hope, peace, love, strength, faith, comfort, wisdom, or gratitude. Free, from the World English Bible.',
-  nav: { verseOfTheDay: 'Verse of the Day', search: 'Search', about: 'About', privacy: 'Privacy Policy', contact: 'Contact' },
+  nav: { verseOfTheDay: 'Verse of the Day', findAVerse: 'Find a Verse', search: 'Search', about: 'About', privacy: 'Privacy Policy', contact: 'Contact' },
   brand: 'VerseWell',
   install: 'Install App',
   h1: 'Random Bible Verse Generator',
@@ -93,6 +93,45 @@ export const ui = {
     copyFallback: 'Copying failed. Please select the verse text and copy it manually.',
     ariaTheme: 'Theme',
     ariaRef: 'Reference',
+  },
+  findAVerse: {
+    title: 'Find a Verse',
+    lede:
+      'Describe what you are looking for in your own words — a feeling, a situation, or a question — and get a matching verse. Everything runs privately in your browser.',
+    placeholder: 'Describe what you’re looking for…',
+    submit: 'Find a Verse',
+    cancel: 'Cancel',
+    examplesLabel: 'Try an example:',
+    status: {
+      loadingIndex: 'Loading the Bible index…',
+      loadingModel: 'Preparing semantic search…',
+      finding: 'Finding a relevant verse…',
+      ready: 'Describe what you’re looking for, then press “Find a Verse”.',
+    },
+    noResults:
+      'No verse closely matched that. Try rewording, or browse the whole Bible with search instead.',
+    searchLink: 'Search the Bible',
+    keywordMode:
+      'Semantic search is unavailable on this device, so results use basic keyword matching instead.',
+    error: 'Something went wrong. Please try again.',
+    result: {
+      label: 'Most relevant verse',
+      copy: 'Copy Verse',
+      copied: 'Copied!',
+      save: 'Save Verse',
+      saved: 'Saved',
+      context: 'Read Context',
+      fullChapter: 'Read Full Chapter',
+      collapseChapter: 'Collapse Chapter',
+      another: 'Generate Another Relevant Verse',
+      noMore: 'No more relevant verses for this description. Try a new one.',
+      copyFallback: 'Copying failed. Please select the verse text and copy it manually.',
+    },
+    explain: {
+      mixed: 'This verse closely matches both the wording and the theme of your description.',
+      keywords: 'This verse uses wording close to your description.',
+      theme: 'This verse shares a theme with what you described.',
+    },
   },
   errors: {
     themeUnavailable:

@@ -6,7 +6,7 @@ import { ui } from '../i18n/en.mjs';
 
 <Layout title={`Privacy Policy – ${ui.siteName}`}>
   <h1>Privacy Policy</h1>
-  <p><em>Last updated: October 16, 2026</em></p>
+  <p><em>Last updated: October 18, 2026</em></p>
 
   <h2>Overview</h2>
   <p>
@@ -25,6 +25,20 @@ import { ui } from '../i18n/en.mjs';
     The search and browse tools also run entirely in your browser. Your search terms are
     <strong>never</strong> sent to us or to any third party; results are matched locally against the
     verse text bundled with the site.
+  </p>
+
+  <h2>Find a Verse (on-device semantic search)</h2>
+  <p>
+    The “Find a Verse” tool matches what you type to a verse using a small language model and a
+    precomputed search index that run <strong>entirely on your device</strong>. The model and index
+    are downloaded once as ordinary website files (like images or scripts) and are then cached by
+    your browser for reuse. Your query text is processed only in your browser and is
+    <strong>never</strong> sent to us, to any AI service, or to any third party. It is also never
+    placed in the page address, stored in analytics, or written to logs.
+  </p>
+  <p>
+    If your browser or device cannot run the model, the tool falls back to simple local keyword
+    matching, still with no data leaving your device.
   </p>
 
   <h2>Analytics</h2>

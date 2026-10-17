@@ -32,6 +32,9 @@ const files = walk(dist)
     if (url.endsWith('/index.html')) url = url.slice(0, -'index.html'.length);
     return url;
   })
+  // The Find a Verse semantic model/index/WASM are large and only used on that
+  // one page — never precache them (they load lazily, network-first via /data/).
+  .filter((url) => !url.startsWith('/data/find-a-verse/'))
   .sort();
 
 const version = createHash('sha1').update(files.join('\n')).digest('hex').slice(0, 8);

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "translationId": "KJV",
+  "sourceDataHash": "fbe07530f1476f29016a454335086611f6c43962ff839b40d6e57ef8bcc4e6b6",
+  "passageCount": 31102,
+  "model": {
+    "id": "Xenova/all-MiniLM-L6-v2",
+    "revision": "751bff37182d3f1213fa05d7196b954e230abad9",
+    "dtype": "q8",
+    "dim": 384,
+    "pooling": "mean",
+    "normalize": true,
+    "files": {
+      "config.json": "7135149f7cffa1a573466c6e4d8423ed73b62fd2332c575bf738a0d033f70df7",
+      "tokenizer.json": "da0e79933b9ed51798a3ae27893d3c5fa4a201126cef75586296df9b4d2c62a0",
+      "tokenizer_config.json": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+      "onnx/model_quantized.onnx": "afdb6f1a0e45b715d0bb9b11772f032c399babd23bfc31fed1c170afc848bdb1"
+    }
+  },
+  "embedding": {
+    "dim": 384,
+    "pooling": "mean",
+    "normalize": true,
+    "dtype": "int8",
+    "scale": 0.002166046636311088,
+    "zeroPoint": 0,
+    "textNormalization": "lowercase, collapse whitespace"
+  },
+  "fileHashes": {
+    "catalog.json": "a37fa251c45bde467167a7a9b0479882b245f2de1aefd77f996c9ade6c8160b1",
+    "vectors.bin": "cf20a53cc1492fce69c16e2b477184f4b1c783183d579b123e93053054a27209"
+  },
+  "builtAt": "2026-10-17T18:19:39.559Z"
+}

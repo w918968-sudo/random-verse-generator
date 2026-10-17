@@ -1,0 +1,67 @@
+// Find a Verse evaluation set — natural-language query → expected relevant
+// reference(s) (WEBP). Used by eval-semantic.mjs to measure top-1 / top-5
+// retrieval quality against the ≥80% top-1 target.
+//
+// `ref` is the single best answer; `also` lists genuinely equivalent parallel
+// verses (synoptic parallels, repeated liturgical phrases, etc.) that are
+// equally correct answers to the same query. Retrieval is scored against the
+// whole acceptable set — measuring RELEVANCE, not verse-identity, which is the
+// spec's intent. References are [bookId, chapter, verse] tuples in the
+// canonical book-id form (scripts/books.mjs). Verse text is never hand-typed.
+export const EVAL_SET = [
+  { q: 'I feel anxious about the future', ref: ['MAT', 6, 34], also: [['LUK', 12, 26], ['LUK', 12, 29]] },
+  { q: 'Do not worry about tomorrow', ref: ['MAT', 6, 34] },
+  { q: 'I am worried and need peace', ref: ['PHP', 4, 6] },
+  { q: 'God has a plan and a future for me', ref: ['JER', 29, 11] },
+  { q: 'comfort for someone who is grieving', ref: ['MAT', 5, 4] },
+  { q: 'God is close to the brokenhearted', ref: ['PSA', 34, 18] },
+  { q: 'do not be afraid, God is with you', ref: ['ISA', 41, 10], also: [['DEU', 31, 6], ['JOS', 1, 9]] },
+  { q: 'be strong and courageous', ref: ['JOS', 1, 9], also: [['DEU', 31, 6], ['1CO', 16, 13], ['2SA', 10, 12], ['1CH', 19, 13]] },
+  { q: 'peace that passes understanding', ref: ['PHP', 4, 7] },
+  { q: 'peace in the midst of trouble', ref: ['JHN', 16, 33], also: [['JHN', 14, 27]] },
+  { q: 'rest for the weary', ref: ['MAT', 11, 28], also: [['ISA', 28, 12]] },
+  { q: 'hope when everything feels hopeless', ref: ['ROM', 15, 13] },
+  { q: 'forgive someone who hurt me', ref: ['COL', 3, 13], also: [['EPH', 4, 32], ['MAT', 6, 14]] },
+  { q: 'be kind and forgive one another', ref: ['EPH', 4, 32], also: [['COL', 3, 13]] },
+  { q: 'love your neighbor as yourself', ref: ['MRK', 12, 31], also: [['MAT', 22, 39], ['LEV', 19, 18], ['JAS', 2, 8]] },
+  { q: 'God is love', ref: ['1JN', 4, 8], also: [['1JN', 4, 16]] },
+  { q: 'love is patient love is kind', ref: ['1CO', 13, 4] },
+  { q: 'love your enemies', ref: ['MAT', 5, 44], also: [['LUK', 6, 27], ['LUK', 6, 35]] },
+  { q: 'greater love has no one than this', ref: ['JHN', 15, 13] },
+  { q: 'husbands love your wives', ref: ['EPH', 5, 25], also: [['COL', 3, 19], ['EPH', 5, 28]] },
+  { q: 'trust in the Lord with all your heart', ref: ['PRO', 3, 5] },
+  { q: 'faith as small as a mustard seed', ref: ['MAT', 17, 20] },
+  { q: 'I can do all things through Christ', ref: ['PHP', 4, 13] },
+  { q: 'nothing is impossible with God', ref: ['LUK', 1, 37] },
+  { q: 'walk by faith not by sight', ref: ['2CO', 5, 7] },
+  { q: 'God works all things together for good', ref: ['ROM', 8, 28] },
+  { q: 'ask and it will be given to you', ref: ['MAT', 7, 7] },
+  { q: 'the Lord is my shepherd', ref: ['PSA', 23, 1] },
+  { q: 'the Lord is my light and my salvation', ref: ['PSA', 27, 1] },
+  { q: 'strength when I am weak', ref: ['2CO', 12, 10], also: [['ISA', 40, 29]] },
+  { q: 'renew their strength like eagles', ref: ['ISA', 40, 31] },
+  { q: 'God is our refuge and strength', ref: ['PSA', 46, 1] },
+  { q: 'I will fear no evil', ref: ['PSA', 23, 4] },
+  { q: 'put on the full armor of God', ref: ['EPH', 6, 11] },
+  { q: 'wisdom for making decisions', ref: ['PRO', 2, 6], also: [['JAS', 1, 5]] },
+  { q: 'the fear of the Lord is the beginning of wisdom', ref: ['PRO', 9, 10] },
+  { q: 'if any of you lacks wisdom', ref: ['JAS', 1, 5] },
+  { q: 'your word is a lamp to my feet', ref: ['PSA', 119, 105] },
+  { q: 'guide me in your truth', ref: ['PSA', 25, 5] },
+  { q: 'commit your works to the Lord', ref: ['PRO', 16, 3] },
+  { q: 'give thanks in all circumstances', ref: ['1TH', 5, 18] },
+  { q: 'enter his gates with thanksgiving', ref: ['PSA', 100, 4] },
+  { q: 'bless the Lord oh my soul', ref: ['PSA', 103, 1], also: [['PSA', 104, 1]] },
+  { q: 'every good and perfect gift', ref: ['JAS', 1, 17] },
+  { q: 'give thanks to the Lord for he is good', ref: ['PSA', 136, 1], also: [['PSA', 107, 1], ['PSA', 118, 1]] },
+  { q: 'God so loved the world', ref: ['JHN', 3, 16] },
+  { q: 'saved by grace through faith', ref: ['EPH', 2, 8] },
+  { q: 'confess with your mouth that Jesus is Lord', ref: ['ROM', 10, 9] },
+  { q: 'repent and be baptized', ref: ['ACT', 2, 38] },
+  { q: 'God is a father to the fatherless', ref: ['PSA', 68, 5] },
+  { q: 'God will never leave or forsake me', ref: ['HEB', 13, 5], also: [['DEU', 31, 6], ['JOS', 1, 5], ['1KI', 8, 57]] },
+  { q: 'temptation and a way of escape', ref: ['1CO', 10, 13] },
+  { q: 'overcome evil with good', ref: ['ROM', 12, 21] },
+  { q: 'a time to weep and a time to laugh', ref: ['ECC', 3, 4] },
+  { q: 'the fruit of the spirit', ref: ['GAL', 5, 22], also: [['EPH', 5, 9]] },
+];

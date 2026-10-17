@@ -20,5 +20,7 @@ export function dataPaths(id) {
     chaptersDir: kjv ? '/data/chapters-kjv' : '/data/chapters',
     searchIndex: kjv ? '/data/search-index-kjv.json' : '/data/search-index.json',
     bible: kjv ? '/data/bible-kjv.json' : '/data/bible.json',
+    semanticDir: kjv ? '/data/find-a-verse/kjv' : '/data/find-a-verse/webp',
+    modelDir: '/data/find-a-verse/model',
   };
 }
