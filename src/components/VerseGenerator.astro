@@ -106,7 +106,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   const themeButtons = Array.from(el.themeGroup.querySelectorAll('.theme-btn'));
   let verses = []; // library loaded from /data/verses.json
   let currentVerse = null; // { ...verse, usedTheme }
-  let currentTheme = 'All';
+  const selectedThemes = new Set(); // empty = all themes
   let lastDrawnId = null;
   let chapterData = null;
   let panelState = 'closed'; // 'closed' | 'context' | 'chapter'
@@ -140,17 +140,27 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     return a;
   }
 
-  function draw(poolKey) {
-    const pool = poolKey === 'All' ? verses : verses.filter((v) => v.themes.includes(poolKey));
+  function poolKey() {
+    return selectedThemes.size ? [...selectedThemes].sort().join('|') : 'All';
+  }
+
+  function currentPool() {
+    if (!selectedThemes.size) return verses;
+    return verses.filter((v) => v.themes.some((t) => selectedThemes.has(t)));
+  }
+
+  function draw() {
+    const key = poolKey();
+    const pool = currentPool();
     if (!pool.length) return null;
-    let bag = bags.get(poolKey);
+    let bag = bags.get(key);
     if (!bag || bag.length === 0) {
       bag = shuffled(pool);
       if (lastDrawnId && bag.length > 1 && bag[bag.length - 1].id === lastDrawnId) {
         const swapIdx = Math.floor(Math.random() * (bag.length - 1));
         [bag[bag.length - 1], bag[swapIdx]] = [bag[swapIdx], bag[bag.length - 1]];
       }
-      bags.set(poolKey, bag);
+      bags.set(key, bag);
     }
     const v = bag.pop();
     lastDrawnId = v.id;
@@ -196,12 +206,13 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
       showError(ui.errors.themeUnavailable);
       return;
     }
-    const v = draw(currentTheme);
+    const v = draw();
     if (!v) {
       showError(ui.errors.themeUnavailable);
       return;
     }
-    currentVerse = { ...v, usedTheme: currentTheme === 'All' ? null : currentTheme };
+    const matched = selectedThemes.size ? v.themes.filter((t) => selectedThemes.has(t)) : [];
+    currentVerse = { ...v, usedTheme: matched.length ? matched.join(' · ') : null };
     closeReading();
     cancelSpeech();
     renderCard();
@@ -297,15 +308,17 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   function applyUrlTheme() {
     const param = new URLSearchParams(location.search).get('theme');
     if (!param) return;
-    const btn = themeButtons.find((b) => b.dataset.theme.toLowerCase() === param.toLowerCase());
-    if (!btn) return;
-    currentTheme = btn.dataset.theme;
-    themeButtons.forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+    selectedThemes.clear();
+    for (const part of param.split(',')) {
+      const btn = themeButtons.find((b) => b.dataset.theme.toLowerCase() === part.trim().toLowerCase());
+      if (btn && btn.dataset.theme !== 'All') selectedThemes.add(btn.dataset.theme);
+    }
+    syncThemeButtons();
   }
 
   async function shareVerse() {
     if (!currentVerse) return;
-    const theme = currentTheme === 'All' ? '' : currentTheme;
+    const theme = selectedThemes.size ? [...selectedThemes].sort().join(',') : '';
     const url = `${location.origin}${location.pathname}${theme ? `?theme=${encodeURIComponent(theme)}` : ''}`;
     const payload = { title: ui.brand, text: currentVerse.text, url };
 
@@ -590,10 +603,24 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   }
 
   // Wire up events
+  function syncThemeButtons() {
+    themeButtons.forEach((b) => {
+      const id = b.dataset.theme;
+      b.setAttribute('aria-pressed', id === 'All' ? String(selectedThemes.size === 0) : String(selectedThemes.has(id)));
+    });
+  }
+
   themeButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      currentTheme = btn.dataset.theme;
-      themeButtons.forEach((b) => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+      const id = btn.dataset.theme;
+      if (id === 'All') {
+        selectedThemes.clear();
+      } else if (selectedThemes.has(id)) {
+        selectedThemes.delete(id);
+      } else {
+        selectedThemes.add(id);
+      }
+      syncThemeButtons();
       track('select_theme');
     });
   });

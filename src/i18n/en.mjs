@@ -41,7 +41,7 @@ export const ui = {
   h1: 'Random Bible Verse Generator',
   intro:
     'Generate a random Bible verse, or choose a topic to get a verse on that theme. Every verse comes from the World English Bible (Protestant Edition).',
-  themeGroupLabel: 'Choose a topic',
+  themeGroupLabel: 'Choose one or more topics',
   allVerses: 'All Verses',
   generate: { first: 'Generate Verse', again: 'Generate Another Verse' },
   history: 'History',
