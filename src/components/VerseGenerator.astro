@@ -25,11 +25,20 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     <button type="button" class="btn btn-secondary" id="history-btn" aria-expanded="false" hidden>
       {ui.history}
     </button>
+    <button type="button" class="btn btn-secondary" id="favorites-btn" aria-expanded="false">
+      {ui.favorites}
+    </button>
   </div>
 
   <section class="history-panel" id="history-panel" hidden>
     <h3>{ui.historyTitle}</h3>
     <ol class="history-list" id="history-list"></ol>
+  </section>
+
+  <section class="history-panel" id="favorites-panel" hidden>
+    <h3>{ui.favoritesTitle}</h3>
+    <p class="fav-empty" id="favorites-empty" hidden>{ui.favoritesEmpty}</p>
+    <ul class="history-list" id="favorites-list"></ul>
   </section>
 
   <div class="guide" id="guide" role="status">
@@ -44,6 +53,9 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
         <span class="verse-ref" id="verse-ref"></span>
       </figcaption>
       <div class="verse-actions">
+        <button type="button" class="btn btn-secondary" id="fav-btn" aria-pressed="false">
+          {ui.favorite}
+        </button>
         <button type="button" class="btn btn-secondary" id="copy-btn">{ui.result.copy}</button>
         <button type="button" class="btn btn-secondary" id="share-btn">{ui.result.share}</button>
         <button type="button" class="btn btn-secondary" id="image-btn">{ui.result.image}</button>
@@ -84,11 +96,16 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     historyBtn: document.getElementById('history-btn'),
     historyPanel: document.getElementById('history-panel'),
     historyList: document.getElementById('history-list'),
+    favoritesBtn: document.getElementById('favorites-btn'),
+    favoritesPanel: document.getElementById('favorites-panel'),
+    favoritesList: document.getElementById('favorites-list'),
+    favoritesEmpty: document.getElementById('favorites-empty'),
     guide: document.getElementById('guide'),
     result: document.getElementById('result'),
     verseText: document.getElementById('verse-text'),
     verseRef: document.getElementById('verse-ref'),
     verseTheme: document.getElementById('verse-theme'),
+    favBtn: document.getElementById('fav-btn'),
     copyBtn: document.getElementById('copy-btn'),
     shareBtn: document.getElementById('share-btn'),
     imageBtn: document.getElementById('image-btn'),
@@ -113,6 +130,8 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   let speaking = false;
   const HISTORY_MAX = 8;
   let history = []; // session-only recent draws (cleared on refresh)
+  const FAVORITES_KEY = 'versewell.favorites';
+  let favorites = []; // persisted in localStorage
   const bags = new Map(); // poolKey -> shuffled verse objects
 
   function track(name, params) {
@@ -181,6 +200,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     } else {
       el.verseTheme.hidden = true;
     }
+    renderFavButton();
   }
 
   function scrollToCardIfNeeded() {
@@ -602,6 +622,117 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     el.result.scrollIntoView({ block: 'start' });
   }
 
+  function loadFavorites() {
+    try {
+      const raw = localStorage.getItem(FAVORITES_KEY);
+      favorites = raw ? JSON.parse(raw) : [];
+    } catch {
+      favorites = [];
+    }
+  }
+
+  function saveFavorites() {
+    try {
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+    } catch {
+      // Storage full or unavailable — favorites just won't persist this time.
+    }
+  }
+
+  function isFavorite(id) {
+    return favorites.some((f) => f.id === id);
+  }
+
+  function renderFavButton() {
+    if (!currentVerse) return;
+    const on = isFavorite(currentVerse.id);
+    el.favBtn.textContent = on ? ui.favoriteSaved : ui.favorite;
+    el.favBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+
+  function toggleFavorite() {
+    if (!currentVerse) return;
+    const idx = favorites.findIndex((f) => f.id === currentVerse.id);
+    if (idx >= 0) {
+      favorites.splice(idx, 1);
+    } else {
+      favorites.unshift({
+        id: currentVerse.id,
+        bookId: currentVerse.bookId,
+        bookName: currentVerse.bookName,
+        chapter: currentVerse.chapter,
+        startVerse: currentVerse.startVerse,
+        endVerse: currentVerse.endVerse,
+        text: currentVerse.text,
+        themes: currentVerse.themes,
+        usedTheme: currentVerse.usedTheme || currentVerse.themes.join(' · '),
+      });
+    }
+    saveFavorites();
+    renderFavButton();
+    renderFavorites();
+    track(idx >= 0 ? 'remove_favorite' : 'add_favorite');
+  }
+
+  function renderFavorites() {
+    el.favoritesList.replaceChildren();
+    el.favoritesEmpty.hidden = favorites.length !== 0;
+    favorites.forEach((item, i) => {
+      const li = document.createElement('li');
+      li.className = 'fav-item';
+      const open = document.createElement('button');
+      open.type = 'button';
+      open.className = 'history-item';
+      open.dataset.index = String(i);
+      const ref = document.createElement('span');
+      ref.className = 'history-ref';
+      ref.textContent = reference(item);
+      const text = document.createElement('span');
+      text.className = 'history-text';
+      const flat = item.text.replace(/\s+/g, ' ');
+      text.textContent = flat.length > 120 ? flat.slice(0, 120) + '…' : flat;
+      open.append(ref, text);
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'fav-remove';
+      remove.dataset.index = String(i);
+      remove.setAttribute('aria-label', ui.favoriteRemove);
+      remove.textContent = '×';
+      li.append(open, remove);
+      el.favoritesList.appendChild(li);
+    });
+  }
+
+  function closeFavorites() {
+    el.favoritesPanel.hidden = true;
+    el.favoritesBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleFavorites() {
+    if (el.favoritesPanel.hidden) {
+      renderFavorites();
+      el.favoritesPanel.hidden = false;
+      el.favoritesBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      closeFavorites();
+    }
+  }
+
+  function openFavoriteItem(index) {
+    const item = favorites[index];
+    if (!item) return;
+    currentVerse = { ...item };
+    closeReading();
+    cancelSpeech();
+    renderCard();
+    clearError();
+    el.result.hidden = false;
+    el.guide.hidden = true;
+    el.generateBtn.textContent = ui.generate.again;
+    closeFavorites();
+    el.result.scrollIntoView({ block: 'start' });
+  }
+
   // Wire up events
   function syncThemeButtons() {
     themeButtons.forEach((b) => {
@@ -630,6 +761,23 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   el.historyList.addEventListener('click', (e) => {
     const btn = e.target.closest('.history-item');
     if (btn) openHistoryItem(Number(btn.dataset.index));
+  });
+
+  el.favBtn.addEventListener('click', toggleFavorite);
+  el.favoritesBtn.addEventListener('click', toggleFavorites);
+  el.favoritesList.addEventListener('click', (e) => {
+    const removeBtn = e.target.closest('.fav-remove');
+    if (removeBtn) {
+      const i = Number(removeBtn.dataset.index);
+      favorites.splice(i, 1);
+      saveFavorites();
+      renderFavorites();
+      renderFavButton();
+      track('remove_favorite');
+      return;
+    }
+    const openBtn = e.target.closest('.history-item');
+    if (openBtn) openFavoriteItem(Number(openBtn.dataset.index));
   });
 
   el.shareBtn.addEventListener('click', shareVerse);
@@ -670,6 +818,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   el.collapseBtn.addEventListener('click', collapseChapter);
 
   // Load the verse library, then show a verse right away.
+  loadFavorites();
   fetch('/data/verses.json')
     .then((r) => r.json())
     .then((data) => {

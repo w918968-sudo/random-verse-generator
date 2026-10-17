@@ -46,6 +46,12 @@ export const ui = {
   generate: { first: 'Generate Verse', again: 'Generate Another Verse' },
   history: 'History',
   historyTitle: 'Recent Verses',
+  favorites: 'Favorites',
+  favoritesTitle: 'Saved Verses',
+  favorite: 'Save Verse',
+  favoriteSaved: 'Saved',
+  favoritesEmpty: 'No saved verses yet. Press “Save Verse” on a verse to keep it here.',
+  favoriteRemove: 'Remove',
   guide:
     'A verse will appear here automatically. Choose a topic and press “Generate Another Verse” for a new one.',
   result: {

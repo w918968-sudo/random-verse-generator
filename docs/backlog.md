@@ -148,13 +148,14 @@
 **推荐优先级**：P3。
 **状态**：新增 `src/lib/verse-of-day.mjs`（FNV-1a 哈希 `hashString` + `todayUTC()` 取 UTC 日期 `YYYY-MM-DD` + `verseForDate(date,verses)` + `reference()`），构建期与客户端复用同一算法保证一致。新增 `src/pages/verse-of-the-day.astro`：构建期预渲染当日经文（SEO + 无 JS 回退），客户端 `refreshToday()` 拉 `/data/verses.json` 按实际访问日期重算并替换 DOM，故无需每日重建即自动换经文。含 `WebPage` JSON-LD（name/url/description/dateModified/about）。页脚与 `sitemap.xml` 加入 `/verse-of-the-day/`（`changefreq=daily`）。build 5 页 + 12 测试全绿。待部署。
 
-### B-15 经文收藏（localStorage）
+### B-15 经文收藏（localStorage）✅ 已完成 2026-10-17
 **描述**：本地收藏经文，无需账户。
 **验收标准**：
 - 收藏/取消收藏即时生效，刷新后保留；
 - 隐私页补充说明「收藏仅存于本机」。
 
 **推荐优先级**：P3。
+**状态**：verse-actions 加 `fav-btn`（Save Verse ↔ Saved，`aria-pressed` 切换）；action-row 加 `favorites-btn` + 可折叠 `favorites-panel`（`<ul>` 列表，可点击重开 / `×` 移除）。`favorites[]` 持久化到 `localStorage`（key `versewell.favorites`，存完整经文对象含 `usedTheme`）；`loadFavorites()` 初始化、`saveFavorites()` 写入、`renderFavButton()` 同步按钮态（并入 `renderCard()`）。上报通用 `add_favorite`/`remove_favorite`（无经文/主题参数）。隐私页新增「Saved verses (local storage)」说明仅存本机。build 5 页 + 12 测试全绿。待部署。
 
 ### B-16 全文搜索 / 全章浏览
 **描述**：支持按关键词搜索或浏览任意章节。
