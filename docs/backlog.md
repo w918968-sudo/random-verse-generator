@@ -187,13 +187,14 @@
 **推荐优先级**：P2。
 **状态**：verse-actions 加 `image-btn`（Save Image）。`renderVerseImage()` 用 canvas 生成 1080×1350 PNG：米纸底 `#F7F3EA` + 顶部金线 + 经文（Georgia，字号自动缩小适配长经文、按 `\n` 分段换行）+ 引用 + 主题徽章（如有）+ 底部 VerseWell 字标 + 金线。`saveVerseImage()` 优先 `navigator.canShare({files})` 调起系统分享，否则 `<a download>` 下载；文件名 `versewell-<bookId>-<chapter>-<startVerse>.png`。上报通用 `verse_image`。build + 12 测试全绿。待部署。
 
-### B-19 生成历史（history）
+### B-19 生成历史（history）✅ 已完成 2026-10-17
 **描述**：记录本次会话内生成过的经文，可回看。
 **验收标准**：
 - 会话内最近 N 条可回看、可重新打开（复制 / 上下文 / 全章）；
 - 刷新后清空（遵循 v1「no localStorage」默认；若改为持久化需同步更新隐私页）。
 
 **推荐优先级**：P2。
+**状态**：action-row 加 `history-btn`（History，无历史时隐藏）+ 可折叠 `history-panel`（`<ol>` 列表）。会话内 `history[]` 内存数组（上限 8，`unshift`+`pop`），每次 `generate()` 记录、`renderHistory()` 重绘；刷新即清空（无 localStorage）。点击历史项 `openHistoryItem()` 重新打开该经文（可继续复制/上下文/全章/朗读/图片）。列表项用 `textContent` 渲染（无注入风险）。build + 12 测试全绿。待部署。
 
 ### B-20 多主题筛选（multi-topic filter）
 **描述**：允许同时勾选多个主题，结果取所选主题的并集。
