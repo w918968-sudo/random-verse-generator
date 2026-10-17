@@ -35,6 +35,8 @@ const files = walk(dist)
   // The Find a Verse semantic model/index/WASM are large and only used on that
   // one page — never precache them (they load lazily, network-first via /data/).
   .filter((url) => !url.startsWith('/data/find-a-verse/'))
+  // _headers/_redirects are Cloudflare config files, never served as URLs.
+  .filter((url) => !['/_headers', '/_redirects'].includes(url))
   .sort();
 
 const version = createHash('sha1').update(files.join('\n')).digest('hex').slice(0, 8);
