@@ -51,6 +51,7 @@ export const ui = {
     copied: 'Copied!',
     share: 'Share',
     shareCopied: 'Link copied!',
+    image: 'Save Image',
     readAloud: 'Read Aloud',
     stopReading: 'Stop',
     context: 'Read Context',
@@ -67,6 +68,7 @@ export const ui = {
       'This topic has no verses available right now. Try “All Verses” or another topic.',
     chapterLoad: 'Could not load the full chapter. Please try again.',
     shareFailed: 'Could not share or copy the link. Please copy the URL from your browser.',
+    imageFailed: 'Could not create the verse image. Please try again.',
     retry: 'Retry',
   },
 };

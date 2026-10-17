@@ -38,6 +38,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
       <div class="verse-actions">
         <button type="button" class="btn btn-secondary" id="copy-btn">{ui.result.copy}</button>
         <button type="button" class="btn btn-secondary" id="share-btn">{ui.result.share}</button>
+        <button type="button" class="btn btn-secondary" id="image-btn">{ui.result.image}</button>
         <button type="button" class="btn btn-secondary" id="speak-btn" aria-pressed="false">
           {ui.result.readAloud}
         </button>
@@ -79,6 +80,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     verseTheme: document.getElementById('verse-theme'),
     copyBtn: document.getElementById('copy-btn'),
     shareBtn: document.getElementById('share-btn'),
+    imageBtn: document.getElementById('image-btn'),
     speakBtn: document.getElementById('speak-btn'),
     contextBtn: document.getElementById('context-btn'),
     panel: document.getElementById('reading-panel'),
@@ -362,6 +364,162 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     track('read_aloud');
   }
 
+  const SERIF = 'Georgia, "Times New Roman", serif';
+  const SANS = 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  function wrapLine(ctx, text, maxWidth) {
+    const words = text.split(/\s+/);
+    const lines = [];
+    let line = '';
+    for (const w of words) {
+      const test = line ? `${line} ${w}` : w;
+      if (line && ctx.measureText(test).width > maxWidth) {
+        lines.push(line);
+        line = w;
+      } else {
+        line = test;
+      }
+    }
+    if (line) lines.push(line);
+    return lines;
+  }
+
+  function wrapText(ctx, text, maxWidth) {
+    const out = [];
+    for (const para of text.split('\n')) {
+      const p = para.trim();
+      if (!p) {
+        out.push('');
+        continue;
+      }
+      out.push(...wrapLine(ctx, p, maxWidth));
+    }
+    return out;
+  }
+
+  async function renderVerseImage() {
+    const W = 1080;
+    const H = 1350;
+    const padX = 110;
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#F7F3EA';
+    ctx.fillRect(0, 0, W, H);
+
+    // Top gold accent
+    ctx.strokeStyle = '#C9A227';
+    ctx.lineWidth = 6;
+    ctx.beginPath();
+    ctx.moveTo(W / 2 - 60, 120);
+    ctx.lineTo(W / 2 + 60, 120);
+    ctx.stroke();
+
+    // Verse text — auto-shrink so long passages still fit.
+    const textMaxWidth = W - padX * 2;
+    const available = H - 240 - 340;
+    let fontSize = 64;
+    let lines;
+    for (;;) {
+      ctx.font = `${fontSize}px ${SERIF}`;
+      lines = wrapText(ctx, currentVerse.text, textMaxWidth);
+      const lineHeight = Math.round(fontSize * 1.5);
+      if (lines.length * lineHeight <= available || fontSize <= 34) break;
+      fontSize -= 4;
+    }
+    const lineHeight = Math.round(fontSize * 1.5);
+    const blockH = lines.length * lineHeight;
+    let y = (H - blockH) / 2 - 40;
+    ctx.fillStyle = '#2B2620';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = `${fontSize}px ${SERIF}`;
+    for (const line of lines) {
+      if (line) ctx.fillText(line, W / 2, y + lineHeight / 2);
+      y += lineHeight;
+    }
+
+    // Reference
+    ctx.font = `600 42px ${SANS}`;
+    ctx.fillStyle = '#8C4A2F';
+    ctx.fillText(reference(currentVerse), W / 2, y + 60);
+
+    // Theme badge
+    if (currentVerse.usedTheme) {
+      ctx.font = `600 38px ${SANS}`;
+      const label = currentVerse.usedTheme;
+      const bw = ctx.measureText(label).width + 64;
+      const bh = 64;
+      const bx = W / 2 - bw / 2;
+      const by = y + 120;
+      roundRect(ctx, bx, by, bw, bh, bh / 2);
+      ctx.fillStyle = '#F1E5C9';
+      ctx.fill();
+      ctx.strokeStyle = '#C9A227';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+      ctx.fillStyle = '#2B2620';
+      ctx.fillText(label, W / 2, by + bh / 2 + 2);
+    }
+
+    // Brand wordmark
+    ctx.font = `700 42px ${SERIF}`;
+    ctx.fillStyle = '#8C4A2F';
+    ctx.fillText(ui.brand, W / 2, H - 120);
+    ctx.strokeStyle = '#C9A227';
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(W / 2 - 70, H - 84);
+    ctx.lineTo(W / 2 + 70, H - 84);
+    ctx.stroke();
+
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error('toBlob failed'))), 'image/png');
+    });
+  }
+
+  async function saveVerseImage() {
+    if (!currentVerse) return;
+    try {
+      const blob = await renderVerseImage();
+      const filename = `versewell-${currentVerse.bookId}-${currentVerse.chapter}-${currentVerse.startVerse}.png`;
+      const file = new File([blob], filename, { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file], title: ui.brand });
+          track('verse_image');
+          return;
+        } catch (err) {
+          if (err && err.name === 'AbortError') return;
+          // otherwise fall through to download
+        }
+      }
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      track('verse_image');
+    } catch {
+      showError(ui.errors.imageFailed);
+    }
+  }
+
   // Wire up events
   themeButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -374,6 +532,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   el.generateBtn.addEventListener('click', generate);
 
   el.shareBtn.addEventListener('click', shareVerse);
+  el.imageBtn.addEventListener('click', saveVerseImage);
 
   if ('speechSynthesis' in window) {
     el.speakBtn.addEventListener('click', speakVerse);
