@@ -64,17 +64,16 @@ const ga4Loader = GA4_MEASUREMENT_ID
     {GA4_MEASUREMENT_ID && <script is:inline set:html={ga4Loader}></script>}
   </head>
   <body>
+    <button type="button" class="btn btn-secondary install-btn" id="install-btn" hidden>
+      {ui.install}
+    </button>
+
     <main class="container">
       <slot />
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <div class="install-wrap">
-          <button type="button" class="btn btn-secondary install-btn" id="install-btn" hidden>
-            {ui.install}
-          </button>
-        </div>
         <p>
           Scripture taken from the {TRANSLATION.name} ({TRANSLATION.id}), which is in the public
           domain. “World English Bible” is a trademark of eBible.org; this site is not operated by

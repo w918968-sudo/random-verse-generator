@@ -77,8 +77,6 @@ body {
   font-size: 0.9rem;
 }
 .site-footer a { color: var(--color-primary); }
-.install-wrap { display: flex; justify-content: center; }
-.install-btn { margin: 0 0 1rem; }
 
 /* Headings */
 h1, h2, h3 { font-family: var(--font-serif); line-height: 1.25; color: var(--color-ink); }
@@ -120,6 +118,16 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 .btn-primary:hover { background: var(--color-primary-hover); }
 .btn-secondary { background: transparent; color: var(--color-primary); }
 .btn-secondary:hover { background: var(--color-primary-soft); }
+
+/* Install app — floats top-right, only shown when the browser offers installation. */
+.install-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
 
 /* Theme buttons */
 .theme-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
