@@ -100,12 +100,12 @@ body {
   padding: 0.5rem 0 0.7rem;
 }
 .site-nav a {
-  color: var(--color-ink-soft);
+  color: var(--color-primary-solid);
   text-decoration: none;
   font-size: 0.92rem;
 }
-.site-nav a:hover { color: var(--color-primary); }
-.site-nav a[aria-current='page'] { color: var(--color-primary); font-weight: 600; }
+.site-nav a:hover { color: var(--color-primary-hover); }
+.site-nav a[aria-current='page'] { color: var(--color-primary-hover); font-weight: 600; }
 
 /* Footer */
 .site-footer {
