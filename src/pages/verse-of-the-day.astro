@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+import { todayUTC, verseForDate, reference } from '../lib/verse-of-day.mjs';
+import verses from '../../public/data/verses.json';
+
+// Pre-render a real verse (SEO + no-JS). The client script below re-derives the
+// verse for the actual visit date, so the page stays correct without a rebuild.
+const dateStr = todayUTC();
+const verse = verseForDate(dateStr, verses);
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `Verse of the Day – ${ui.siteName}`,
+  url: canonical,
+  description:
+    'A short Bible passage chosen for today, from the World English Bible (Protestant Edition).',
+  dateModified: dateStr,
+  about: verse?.themes?.length
+    ? { '@type': 'Thing', name: verse.themes.join(', ') }
+    : undefined,
+};
+---
+
+<Layout title={`Verse of the Day – ${ui.siteName}`}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">Verse of the Day</h1>
+  <p class="lede">
+    A short Bible passage chosen for today, from the World English Bible (Protestant Edition).
+  </p>
+
+  <figure class="verse-card">
+    <blockquote class="verse-text" id="votd-text">{verse.text}</blockquote>
+    <figcaption class="verse-meta">
+      <span class="badge" id="votd-theme">{verse.themes.join(' · ')}</span>
+      <span class="verse-ref" id="votd-ref">{reference(verse)}</span>
+    </figcaption>
+    <div class="verse-actions">
+      <button type="button" class="btn btn-secondary" id="votd-copy">{ui.result.copy}</button>
+      <a class="btn btn-primary" href="/">{ui.generate.again}</a>
+    </div>
+  </figure>
+
+  <section class="seo-content">
+    <h2>What is the verse of the day?</h2>
+    <p>
+      Each day this page shows a single passage from a curated library of well-known Bible verses.
+      The selection is chosen deterministically from the date, so every visitor sees the same verse
+      on a given day, and it changes on its own the following day.
+    </p>
+    <p>
+      The text is drawn from the World English Bible (Protestant Edition), a public-domain modern
+      English translation, so you are free to quote and share it.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  import { ui } from '../i18n/en.mjs';
+  import { verseForDate, todayUTC, reference } from '../lib/verse-of-day.mjs';
+
+  function track(name) {
+    if (typeof window.gtag === 'function') window.gtag('event', name);
+  }
+
+  // Re-derive the verse for the actual visit date so the page stays current
+  // without a rebuild. The build-time verse above is a graceful no-JS fallback.
+  async function refreshToday() {
+    try {
+      const res = await fetch('/data/verses.json');
+      if (!res.ok) return;
+      const list = await res.json();
+      const v = verseForDate(todayUTC(), list);
+      if (!v) return;
+      document.getElementById('votd-text').textContent = v.text;
+      document.getElementById('votd-ref').textContent = reference(v);
+      const badge = document.getElementById('votd-theme');
+      badge.textContent = v.themes.join(' · ');
+      badge.hidden = v.themes.length === 0;
+    } catch {
+      // Keep the pre-rendered verse on any fetch error.
+    }
+  }
+
+  document.getElementById('votd-copy').addEventListener('click', async () => {
+    const text = document.getElementById('votd-text').textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      const btn = document.getElementById('votd-copy');
+      const original = btn.textContent;
+      btn.textContent = ui.result.copied;
+      track('copy_verse');
+      setTimeout(() => {
+        btn.textContent = original;
+      }, 2000);
+    } catch {
+      // Clipboard unavailable — leave the button as-is.
+    }
+  });
+
+  refreshToday();
+</script>

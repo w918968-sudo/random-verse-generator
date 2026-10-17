@@ -139,13 +139,14 @@
 
 ## P3 — 探索性（可能涉及架构改动）
 
-### B-14 每日经文（Verse of the Day）
+### B-14 每日经文（Verse of the Day）✅ 已完成 2026-10-17
 **描述**：按日期做确定性种子，每天固定一条，URL 形如 `/verse-of-the-day`，SEO 友好。
 **验收标准**：
 - 同一天同一 URL 结果稳定；次日自动更换；
 - 该页有独立 canonical 与结构化数据（可考虑 `Dataset`/`WebPage`）。
 
 **推荐优先级**：P3。
+**状态**：新增 `src/lib/verse-of-day.mjs`（FNV-1a 哈希 `hashString` + `todayUTC()` 取 UTC 日期 `YYYY-MM-DD` + `verseForDate(date,verses)` + `reference()`），构建期与客户端复用同一算法保证一致。新增 `src/pages/verse-of-the-day.astro`：构建期预渲染当日经文（SEO + 无 JS 回退），客户端 `refreshToday()` 拉 `/data/verses.json` 按实际访问日期重算并替换 DOM，故无需每日重建即自动换经文。含 `WebPage` JSON-LD（name/url/description/dateModified/about）。页脚与 `sitemap.xml` 加入 `/verse-of-the-day/`（`changefreq=daily`）。build 5 页 + 12 测试全绿。待部署。
 
 ### B-15 经文收藏（localStorage）
 **描述**：本地收藏经文，无需账户。
