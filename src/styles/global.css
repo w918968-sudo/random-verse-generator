@@ -70,8 +70,8 @@ body {
 
 /* Top navigation */
 .site-header {
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--color-primary-solid);
+  border-bottom: 1px solid var(--color-primary-hover);
 }
 .header-top {
   display: flex;
@@ -88,7 +88,7 @@ body {
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: var(--color-primary);
+  color: var(--color-on-primary);
   text-decoration: none;
 }
 .nav-brand img { display: block; border-radius: 5px; }
@@ -99,20 +99,19 @@ body {
   padding: 0.6rem 0 0.8rem;
 }
 .site-nav a {
-  background: var(--color-primary-solid);
   color: var(--color-on-primary);
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.2;
-  padding: 0.45rem 1rem;
+  padding: 0.45rem 0.9rem;
   border-radius: var(--radius);
-  transition: background-color 0.15s;
+  transition: background-color 0.15s, color 0.15s;
 }
-.site-nav a:hover { background: var(--color-primary-hover); }
+.site-nav a:hover { background: rgba(255, 253, 247, 0.14); }
 .site-nav a[aria-current='page'] {
-  background: var(--color-primary-hover);
-  box-shadow: inset 0 0 0 1px var(--color-on-primary);
+  background: var(--color-on-primary);
+  color: var(--color-primary-solid);
 }
 
 /* Footer */
@@ -187,25 +186,25 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 
 /* Translation picker */
 .translation-picker { display: flex; align-items: center; justify-content: flex-end; gap: 0.4rem; }
-.translation-label { font-size: 0.82rem; color: var(--color-ink-soft); }
+.translation-label { font-size: 0.82rem; color: rgba(255, 253, 247, 0.85); }
 .translation-btn {
   min-height: 30px;
   padding: 0.2rem 0.65rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 253, 247, 0.5);
   border-radius: 999px;
-  background: var(--color-surface);
-  color: var(--color-ink);
+  background: transparent;
+  color: var(--color-on-primary);
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   transition: border-color 0.15s, background-color 0.15s, color 0.15s;
 }
-.translation-btn:hover { border-color: var(--color-primary); }
+.translation-btn:hover { border-color: var(--color-on-primary); }
 .translation-btn[aria-pressed='true'] {
-  background: var(--color-primary-solid);
-  border-color: var(--color-primary-solid);
-  color: var(--color-on-primary);
+  background: var(--color-on-primary);
+  border-color: var(--color-on-primary);
+  color: var(--color-primary-solid);
 }
 
 /* Verse source + topic dropdown */
