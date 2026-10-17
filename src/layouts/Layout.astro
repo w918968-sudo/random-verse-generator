@@ -4,7 +4,7 @@ import {
   SITE_URL,
   GA4_MEASUREMENT_ID,
   SEARCH_CONSOLE_VERIFICATION,
-  TRANSLATION,
+  TRANSLATIONS,
 } from '../config.mjs';
 import { ui } from '../i18n/en.mjs';
 import '../styles/global.css';
@@ -69,15 +69,35 @@ const ga4Loader = GA4_MEASUREMENT_ID
     </button>
 
     <main class="container">
+      <div class="translation-picker" role="group" aria-label={ui.translationLabel}>
+        <span class="translation-label">{ui.translationLabel}</span>
+        {TRANSLATIONS.map((t) => (
+          <button
+            type="button"
+            class="translation-btn"
+            data-translation={t.id}
+            aria-pressed={t.id === 'WEBP' ? 'true' : 'false'}
+          >
+            {t.short}
+          </button>
+        ))}
+      </div>
       <slot />
     </main>
 
     <footer class="site-footer">
       <div class="container">
         <p>
-          Scripture taken from the {TRANSLATION.name} ({TRANSLATION.id}), which is in the public
-          domain. “World English Bible” is a trademark of eBible.org; this site is not operated by
-          or affiliated with eBible.org. Source: <a href={TRANSLATION.sourceUrl}>{TRANSLATION.sourceUrl}</a>.
+          Scripture quotations are from the{' '}
+          {TRANSLATIONS.map((t, i) => (
+            <>{i > 0 ? ' and the ' : ''}{t.name} ({t.short})</>
+          ))}
+          , both in the public domain. “World English Bible” is a trademark of eBible.org; this site
+          is not operated by or affiliated with eBible.org. Sources:{' '}
+          {TRANSLATIONS.map((t, i) => (
+            <>{i > 0 ? ', ' : ''}<a href={t.sourceUrl}>{t.sourceUrl}</a></>
+          ))}
+          .
         </p>
         <p>
           <a href="/verse-of-the-day/">{ui.nav.verseOfTheDay}</a> · <a href="/search/">{ui.nav.search}</a> · <a href="/about/">{ui.nav.about}</a> · <a href="/privacy/">{ui.nav.privacy}</a> · <a
@@ -110,6 +130,25 @@ const ga4Loader = GA4_MEASUREMENT_ID
         await deferredPrompt.userChoice;
         deferredPrompt = null;
         installBtn.hidden = true;
+      });
+
+      // Translation switcher — shared preference; pages listen for the event.
+      const TRANSLATION_KEY = 'versewell.translation';
+      const translationBtns = Array.from(document.querySelectorAll('.translation-btn'));
+      function syncTranslationUI(id) {
+        translationBtns.forEach((b) => b.setAttribute('aria-pressed', b.dataset.translation === id ? 'true' : 'false'));
+      }
+      try {
+        const saved = localStorage.getItem(TRANSLATION_KEY);
+        if (saved === 'KJV') syncTranslationUI('KJV');
+      } catch {}
+      translationBtns.forEach((b) => {
+        b.addEventListener('click', () => {
+          const id = b.dataset.translation;
+          try { localStorage.setItem(TRANSLATION_KEY, id); } catch {}
+          syncTranslationUI(id);
+          window.dispatchEvent(new CustomEvent('translationchange', { detail: id }));
+        });
       });
     </script>
   </body>

@@ -95,6 +95,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
 
 <script>
   import { ui } from '../i18n/en.mjs';
+  import { currentTranslation, dataPaths } from '../lib/translations.mjs';
 
   const el = {
     generator: document.querySelector('.generator'),
@@ -140,6 +141,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   const FAVORITES_KEY = 'versewell.favorites';
   let favorites = []; // persisted in localStorage
   const bags = new Map(); // poolKey -> shuffled verse objects
+  let translation = currentTranslation(); // 'WEBP' | 'KJV'
 
   function track(name, params) {
     if (typeof window.gtag === 'function') window.gtag('event', name, params);
@@ -255,7 +257,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   }
 
   async function loadChapter(bookId, chapter) {
-    const res = await fetch(`/data/chapters/${bookId}/${chapter}.json`);
+    const res = await fetch(`${dataPaths(translation).chaptersDir}/${bookId}/${chapter}.json`);
     if (!res.ok) throw new Error('chapter load failed');
     return res.json();
   }
@@ -834,17 +836,35 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   el.chapterBtn.addEventListener('click', openFullChapter);
   el.collapseBtn.addEventListener('click', collapseChapter);
 
+  function loadLibrary(initial) {
+    el.guide.hidden = false;
+    el.result.hidden = true;
+    el.generateBtn.textContent = ui.generate.first;
+    fetch(dataPaths(translation).verses)
+      .then((r) => r.json())
+      .then((data) => {
+        verses = data;
+        bags.clear();
+        history = [];
+        renderHistory();
+        if (initial) {
+          applyUrlTheme();
+          applyInitialTheme();
+        }
+        generate();
+      })
+      .catch(() => {
+        showError(ui.errors.chapterLoad);
+      });
+  }
+
+  window.addEventListener('translationchange', (e) => {
+    if (!e.detail || e.detail === translation) return;
+    translation = e.detail;
+    loadLibrary(false);
+  });
+
   // Load the verse library, then show a verse right away.
   loadFavorites();
-  fetch('/data/verses.json')
-    .then((r) => r.json())
-    .then((data) => {
-      verses = data;
-      applyUrlTheme();
-      applyInitialTheme();
-      generate();
-    })
-    .catch(() => {
-      showError(ui.errors.chapterLoad);
-    });
+  loadLibrary(true);
 </script>

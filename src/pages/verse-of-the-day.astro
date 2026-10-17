@@ -62,6 +62,9 @@ const schema = {
 <script>
   import { ui } from '../i18n/en.mjs';
   import { verseForDate, todayUTC, reference } from '../lib/verse-of-day.mjs';
+  import { currentTranslation, dataPaths } from '../lib/translations.mjs';
+
+  let translation = currentTranslation();
 
   function track(name) {
     if (typeof window.gtag === 'function') window.gtag('event', name);
@@ -71,7 +74,7 @@ const schema = {
   // without a rebuild. The build-time verse above is a graceful no-JS fallback.
   async function refreshToday() {
     try {
-      const res = await fetch('/data/verses.json');
+      const res = await fetch(dataPaths(translation).verses);
       if (!res.ok) return;
       const list = await res.json();
       const v = verseForDate(todayUTC(), list);
@@ -85,6 +88,12 @@ const schema = {
       // Keep the pre-rendered verse on any fetch error.
     }
   }
+
+  window.addEventListener('translationchange', (e) => {
+    if (!e.detail || e.detail === translation) return;
+    translation = e.detail;
+    refreshToday();
+  });
 
   document.getElementById('votd-copy').addEventListener('click', async () => {
     const text = document.getElementById('votd-text').textContent;

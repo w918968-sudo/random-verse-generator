@@ -30,6 +30,7 @@ function removeNotes(text) {
 
 function cleanSegment(seg) {
   return seg
+    .replace(/¶/g, '')                       // KJV paragraph pilcrow (WEBP has none)
     .replace(/\|[a-z0-9-]+="[^"]*"/g, '')   // Strong's / lemma attributes
     .replace(/\\\+?[a-z0-9]+\*/g, '')        // close markers: \w* \add* \nd* \qs* ...
     .replace(/\\\+?[a-z0-9]+ /g, '')         // open markers + their trailing space: \w \add ...

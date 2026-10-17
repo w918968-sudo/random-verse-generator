@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { SITE_NAME, TRANSLATION } from '../config.mjs';
+import { SITE_NAME, TRANSLATIONS } from '../config.mjs';
 import { ui } from '../i18n/en.mjs';
 ---
 
@@ -18,13 +18,19 @@ import { ui } from '../i18n/en.mjs';
     line of Scripture.
   </p>
 
-  <h2>Translation and source</h2>
+  <h2>Translations and sources</h2>
   <p>
-    All Scripture on this site is taken from the {TRANSLATION.name} ({TRANSLATION.id}). The WEB is
-    a modern English translation of the Bible that has been released into the public domain, so you
-    may freely quote, copy, and share any verse you find here. The text is extracted from the
-    official source at <a href={TRANSLATION.sourceUrl}>{TRANSLATION.sourceUrl}</a>.
+    Scripture on this site is available in two public-domain translations, so you may freely quote,
+    copy, and share any verse you find here.
   </p>
+  <ul>
+    {TRANSLATIONS.map((t) => (
+      <li>
+        <strong>{t.name}</strong> ({t.id}) — extracted from the official source at{' '}
+        <a href={t.sourceUrl}>{t.sourceUrl}</a>. {t.licenseNote}
+      </li>
+    ))}
+  </ul>
   <p>
     “World English Bible” is a trademark of eBible.org. This site is an independent project and is
     not operated by, endorsed by, or affiliated with eBible.org.

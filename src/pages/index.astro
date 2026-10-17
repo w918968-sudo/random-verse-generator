@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import VerseGenerator from '../components/VerseGenerator.astro';
 import { THEMES, ui, faq } from '../i18n/en.mjs';
-import { TRANSLATION, SITE_URL } from '../config.mjs';
+import { TRANSLATIONS, SITE_URL } from '../config.mjs';
 
 const webAppSchema = {
   '@context': 'https://schema.org',
@@ -58,13 +58,21 @@ const faqSchema = {
       ))}
     </ul>
 
-    <h2>About the translation</h2>
+    <h2>About the translations</h2>
     <p>
-      All verses come from the {TRANSLATION.name} ({TRANSLATION.id}), a modern English translation
-      that is in the public domain. This means you are free to quote and share every verse without
-      worrying about copyright. The text is drawn directly from the official source at{' '}
-      <a href={TRANSLATION.sourceUrl}>{TRANSLATION.sourceUrl}</a>.
+      Every verse is available in {TRANSLATIONS.length} public-domain translations: the World
+      English Bible (Protestant Edition) and the King James Version. Both are in the public domain,
+      so you are free to quote and share every verse without worrying about copyright. Pick your
+      preferred translation with the switch above the verse.
     </p>
+    <ul>
+      {TRANSLATIONS.map((t) => (
+        <li>
+          <strong>{t.name}</strong> ({t.id}) — {t.licenseNote} Source:{' '}
+          <a href={t.sourceUrl}>{t.sourceUrl}</a>.
+        </li>
+      ))}
+    </ul>
 
     <h2>Frequently asked questions</h2>
     {faq.map((f) => (

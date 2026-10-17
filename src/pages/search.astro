@@ -4,7 +4,7 @@ import { ui } from '../i18n/en.mjs';
 import { SITE_URL } from '../config.mjs';
 
 const pageTitle = `${ui.search.title} – ${ui.siteName}`;
-const description = `Search Bible verses from the World English Bible (Protestant Edition), or browse by book and chapter.`;
+const description = `Search Bible verses from the World English Bible (Protestant Edition) and the King James Version, or browse by book and chapter.`;
 const canonical = new URL('/search/', SITE_URL).href;
 
 const schema = {
@@ -51,6 +51,7 @@ const schema = {
 
 <script>
   import { ui } from '../i18n/en.mjs';
+  import { currentTranslation, dataPaths } from '../lib/translations.mjs';
 
   const el = {
     form: document.getElementById('search-form'),
@@ -69,6 +70,7 @@ const schema = {
   let books = {}; // bookId -> bookName
   let searchVerses = []; // [bookId, chapter, verse, text][]
   let loaded = false;
+  let translation = currentTranslation();
 
   function track(name) {
     if (typeof window.gtag === 'function') window.gtag('event', name);
@@ -186,7 +188,7 @@ const schema = {
 
   async function openChapter(bookId, chapter, highlightVerse) {
     try {
-      const res = await fetch(`/data/chapters/${bookId}/${chapter}.json`);
+      const res = await fetch(`${dataPaths(translation).chaptersDir}/${bookId}/${chapter}.json`);
       if (!res.ok) throw new Error('chapter load failed');
       const data = await res.json();
       renderChapter(data, highlightVerse);
@@ -254,16 +256,30 @@ const schema = {
 
   const initialQuery = new URLSearchParams(location.search).get('q');
 
-  Promise.all([
-    fetch('/data/browse-index.json').then((r) => r.json()),
-    fetch('/data/search-index.json').then((r) => r.json()),
-  ])
-    .then(([browseData, searchData]) => {
+  function loadSearchIndex() {
+    loaded = false;
+    el.status.textContent = ui.search.loading;
+    el.status.hidden = false;
+    return fetch(dataPaths(translation).searchIndex)
+      .then((r) => r.json())
+      .then((data) => {
+        books = data.books;
+        searchVerses = data.verses;
+        loaded = true;
+        const q = el.input.value.trim();
+        if (q) runSearch(q, false);
+        else el.status.hidden = true;
+      });
+  }
+
+  fetch('/data/browse-index.json')
+    .then((r) => r.json())
+    .then((browseData) => {
       browse = browseData;
-      books = searchData.books;
-      searchVerses = searchData.verses;
-      loaded = true;
       renderBooks();
+      return loadSearchIndex();
+    })
+    .then(() => {
       if (initialQuery) {
         el.input.value = initialQuery;
         runSearch(initialQuery, true);
@@ -273,4 +289,15 @@ const schema = {
       el.status.textContent = ui.search.loadError;
       el.status.hidden = false;
     });
+
+  window.addEventListener('translationchange', (e) => {
+    if (!e.detail || e.detail === translation) return;
+    translation = e.detail;
+    el.panel.hidden = true;
+    el.chapterContent.replaceChildren();
+    loadSearchIndex().catch(() => {
+      el.status.textContent = ui.search.loadError;
+      el.status.hidden = false;
+    });
+  });
 </script>

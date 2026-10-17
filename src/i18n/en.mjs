@@ -18,8 +18,8 @@ export const faq = [
     a: 'Yes. It is completely free, with no sign-up and no account required. The whole tool runs in your browser.',
   },
   {
-    q: 'Which Bible translation is used?',
-    a: 'The World English Bible (Protestant Edition) (WEBP), a public-domain English translation published by eBible.org.',
+    q: 'Which Bible translations are used?',
+    a: 'The World English Bible (Protestant Edition) (WEBP) is the default, and the King James Version (KJV) is also available. Both are in the public domain.',
   },
   {
     q: 'Can I choose a specific topic?',
@@ -40,8 +40,9 @@ export const ui = {
   install: 'Install App',
   h1: 'Random Bible Verse Generator',
   intro:
-    'Generate a random Bible verse, or choose a topic to get a verse on that theme. Every verse comes from the World English Bible (Protestant Edition).',
+    'Generate a random Bible verse, or choose a topic to get a verse on that theme. Every verse is available in the World English Bible (Protestant Edition) and the King James Version.',
   themeGroupLabel: 'Choose one or more topics',
+  translationLabel: 'Translation',
   allVerses: 'All Verses',
   generate: { first: 'Generate Verse', again: 'Generate Another Verse' },
   history: 'History',
@@ -56,7 +57,7 @@ export const ui = {
     'A verse will appear here automatically. Choose a topic and press “Generate Another Verse” for a new one.',
   search: {
     title: 'Search the Bible',
-    lede: 'Search the World English Bible (Protestant Edition), or browse by book and chapter.',
+    lede: 'Search the Bible, or browse by book and chapter. Your selected translation is used for the results.',
     placeholder: 'Search verses…',
     submit: 'Search',
     browseTitle: 'Browse by book',
