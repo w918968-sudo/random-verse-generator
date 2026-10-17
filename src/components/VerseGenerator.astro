@@ -316,6 +316,23 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     }
   }
 
+  let speechVoice = null;
+
+  // Prefer a natural/neural English voice when the platform offers one.
+  function pickSpeechVoice() {
+    if (!('speechSynthesis' in window)) return;
+    const voices = window.speechSynthesis.getVoices();
+    const en = voices.filter((v) => v.lang && v.lang.toLowerCase().startsWith('en'));
+    const pool = en.length ? en : voices;
+    if (!pool.length) return;
+    const natural = pool.find((v) => /natural|neural|enhanced|online/i.test(v.name));
+    const enCore = pool.find((v) => /^en[-_](US|GB)/i.test(v.lang));
+    speechVoice = natural || enCore || pool[0];
+  }
+
+  pickSpeechVoice();
+  window.speechSynthesis?.addEventListener?.('voiceschanged', pickSpeechVoice);
+
   function setSpeaking(on) {
     speaking = on;
     el.speakBtn.textContent = on ? ui.result.stopReading : ui.result.readAloud;
@@ -335,6 +352,9 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     }
     const utterance = new SpeechSynthesisUtterance(currentVerse.text);
     utterance.lang = 'en-US';
+    utterance.rate = 0.85; // slower, more deliberate
+    utterance.pitch = 0.9; // slightly deeper / more solemn
+    if (speechVoice) utterance.voice = speechVoice;
     utterance.onend = () => setSpeaking(false);
     utterance.onerror = () => setSpeaking(false);
     setSpeaking(true);
