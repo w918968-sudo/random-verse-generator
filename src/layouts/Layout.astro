@@ -19,6 +19,9 @@ const pageTitle = title || `${SITE_NAME} – Free Bible Verses by Topic`;
 const pageDesc = description || ui.metaDescription;
 const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 
+const currentPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isActive = (href) => currentPath === href.replace(/\/+$/, '');
+
 const ga4Loader = GA4_MEASUREMENT_ID
   ? `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GA4_MEASUREMENT_ID}');`
   : '';
@@ -68,20 +71,39 @@ const ga4Loader = GA4_MEASUREMENT_ID
       {ui.install}
     </button>
 
-    <main class="container">
-      <div class="translation-picker" role="group" aria-label={ui.translationLabel}>
-        <span class="translation-label">{ui.translationLabel}</span>
-        {TRANSLATIONS.map((t) => (
-          <button
-            type="button"
-            class="translation-btn"
-            data-translation={t.id}
-            aria-pressed={t.id === 'WEBP' ? 'true' : 'false'}
-          >
-            {t.short}
-          </button>
-        ))}
+    <header class="site-header">
+      <div class="container">
+        <div class="header-top">
+          <a class="nav-brand" href="/">
+            <img src="/favicon.svg" alt="" width="22" height="22" />
+            {ui.brand}
+          </a>
+          <div class="translation-picker" role="group" aria-label={ui.translationLabel}>
+            <span class="translation-label">{ui.translationLabel}</span>
+            {TRANSLATIONS.map((t) => (
+              <button
+                type="button"
+                class="translation-btn"
+                data-translation={t.id}
+                aria-pressed={t.id === 'WEBP' ? 'true' : 'false'}
+              >
+                {t.short}
+              </button>
+            ))}
+          </div>
+        </div>
+        <nav class="site-nav" aria-label={ui.nav.navLabel}>
+          <a href="/verse-of-the-day/" aria-current={isActive('/verse-of-the-day/') ? 'page' : undefined}>{ui.nav.verseOfTheDay}</a>
+          <a href="/find-a-verse/" aria-current={isActive('/find-a-verse/') ? 'page' : undefined}>{ui.nav.findAVerse}</a>
+          <a href="/search/" aria-current={isActive('/search/') ? 'page' : undefined}>{ui.nav.search}</a>
+          <a href="/about/" aria-current={isActive('/about/') ? 'page' : undefined}>{ui.nav.about}</a>
+          <a href="/privacy/" aria-current={isActive('/privacy/') ? 'page' : undefined}>{ui.nav.privacy}</a>
+          <a href="/contact/" aria-current={isActive('/contact/') ? 'page' : undefined}>{ui.nav.contact}</a>
+        </nav>
       </div>
+    </header>
+
+    <main class="container">
       <slot />
     </main>
 
