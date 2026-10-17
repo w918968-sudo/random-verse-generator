@@ -51,6 +51,8 @@ export const ui = {
     copied: 'Copied!',
     share: 'Share',
     shareCopied: 'Link copied!',
+    readAloud: 'Read Aloud',
+    stopReading: 'Stop',
     context: 'Read Context',
     fullChapter: 'Read Full Chapter',
     collapseChapter: 'Collapse Chapter',

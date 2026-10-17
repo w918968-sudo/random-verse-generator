@@ -38,6 +38,9 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
       <div class="verse-actions">
         <button type="button" class="btn btn-secondary" id="copy-btn">{ui.result.copy}</button>
         <button type="button" class="btn btn-secondary" id="share-btn">{ui.result.share}</button>
+        <button type="button" class="btn btn-secondary" id="speak-btn" aria-pressed="false">
+          {ui.result.readAloud}
+        </button>
         <button type="button" class="btn btn-secondary" id="context-btn" aria-expanded="false">
           {ui.result.context}
         </button>
@@ -76,6 +79,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     verseTheme: document.getElementById('verse-theme'),
     copyBtn: document.getElementById('copy-btn'),
     shareBtn: document.getElementById('share-btn'),
+    speakBtn: document.getElementById('speak-btn'),
     contextBtn: document.getElementById('context-btn'),
     panel: document.getElementById('reading-panel'),
     readingContent: document.getElementById('reading-content'),
@@ -93,6 +97,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   let lastDrawnId = null;
   let chapterData = null;
   let panelState = 'closed'; // 'closed' | 'context' | 'chapter'
+  let speaking = false;
   const bags = new Map(); // poolKey -> shuffled verse objects
 
   function track(name, params) {
@@ -183,6 +188,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     }
     currentVerse = { ...v, usedTheme: currentTheme === 'All' ? null : currentTheme };
     closeReading();
+    cancelSpeech();
     renderCard();
     clearError();
     el.result.hidden = false;
@@ -310,6 +316,32 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     }
   }
 
+  function setSpeaking(on) {
+    speaking = on;
+    el.speakBtn.textContent = on ? ui.result.stopReading : ui.result.readAloud;
+    el.speakBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+
+  function cancelSpeech() {
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    setSpeaking(false);
+  }
+
+  function speakVerse() {
+    if (!currentVerse || !('speechSynthesis' in window)) return;
+    if (speaking) {
+      cancelSpeech();
+      return;
+    }
+    const utterance = new SpeechSynthesisUtterance(currentVerse.text);
+    utterance.lang = 'en-US';
+    utterance.onend = () => setSpeaking(false);
+    utterance.onerror = () => setSpeaking(false);
+    setSpeaking(true);
+    window.speechSynthesis.speak(utterance);
+    track('read_aloud');
+  }
+
   // Wire up events
   themeButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -322,6 +354,12 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   el.generateBtn.addEventListener('click', generate);
 
   el.shareBtn.addEventListener('click', shareVerse);
+
+  if ('speechSynthesis' in window) {
+    el.speakBtn.addEventListener('click', speakVerse);
+  } else {
+    el.speakBtn.hidden = true;
+  }
 
   el.copyBtn.addEventListener('click', async () => {
     if (!currentVerse) return;
