@@ -19,5 +19,6 @@ export function dataPaths(id) {
     verses: kjv ? '/data/verses-kjv.json' : '/data/verses.json',
     chaptersDir: kjv ? '/data/chapters-kjv' : '/data/chapters',
     searchIndex: kjv ? '/data/search-index-kjv.json' : '/data/search-index.json',
+    bible: kjv ? '/data/bible-kjv.json' : '/data/bible.json',
   };
 }

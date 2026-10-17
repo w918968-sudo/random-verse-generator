@@ -6,23 +6,49 @@ interface Props {
 }
 
 const { initialTheme = '' } = Astro.props;
-
-const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => ({ id: t.id, label: t.id }))];
 ---
 
 <div class="generator" data-initial-theme={initialTheme}>
-  <div class="theme-group" role="group" aria-label={ui.themeGroupLabel}>
-    {themeButtons.map((t) => (
-      <button
-        type="button"
-        class="theme-btn"
-        data-theme={t.id}
-        aria-pressed={t.id === 'All' ? 'true' : 'false'}
-      >
-        {t.label}
-      </button>
-    ))}
+  <div class="source-field">
+    <label class="field-label" for="source-select">{ui.sourceLabel}</label>
+    <select class="source-select" id="source-select">
+      <option value="curated">{ui.sourceCurated}</option>
+      <option value="wholeBible">{ui.sourceWholeBible}</option>
+    </select>
   </div>
+
+  <div class="topic-field" id="topic-field">
+    <span class="field-label" id="topic-label">{ui.themeGroupLabel}</span>
+    <button
+      type="button"
+      class="topic-trigger"
+      id="topic-trigger"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+      aria-controls="topic-menu"
+      aria-labelledby="topic-label"
+    >
+      <span id="topic-summary">{ui.allVerses}</span>
+      <span class="topic-caret" aria-hidden="true">▾</span>
+    </button>
+    <div class="topic-menu" id="topic-menu" hidden>
+      <label class="topic-option">
+        <input type="checkbox" data-theme="All" checked />
+        <span>{ui.allVerses}</span>
+      </label>
+      {THEMES.map((t) => (
+        <label class="topic-option">
+          <input type="checkbox" data-theme={t.id} />
+          <span>{t.id}</span>
+        </label>
+      ))}
+      <div class="topic-menu-actions">
+        <button type="button" class="btn btn-secondary btn-sm" id="topic-clear">{ui.topicClear}</button>
+        <button type="button" class="btn btn-primary btn-sm" id="topic-done">{ui.topicDone}</button>
+      </div>
+    </div>
+  </div>
+  <p class="topic-note" id="topic-note" hidden>{ui.topicWholeBibleNote}</p>
 
   <div class="action-row">
     <button type="button" class="btn btn-primary" id="generate-btn">
@@ -99,7 +125,14 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
 
   const el = {
     generator: document.querySelector('.generator'),
-    themeGroup: document.querySelector('.theme-group'),
+    sourceSelect: document.getElementById('source-select'),
+    topicField: document.getElementById('topic-field'),
+    topicTrigger: document.getElementById('topic-trigger'),
+    topicMenu: document.getElementById('topic-menu'),
+    topicSummary: document.getElementById('topic-summary'),
+    topicClear: document.getElementById('topic-clear'),
+    topicDone: document.getElementById('topic-done'),
+    topicNote: document.getElementById('topic-note'),
     generateBtn: document.getElementById('generate-btn'),
     historyBtn: document.getElementById('history-btn'),
     historyPanel: document.getElementById('history-panel'),
@@ -128,7 +161,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     live: document.getElementById('sr-live'),
   };
 
-  const themeButtons = Array.from(el.themeGroup.querySelectorAll('.theme-btn'));
+  const themeInputs = Array.from(el.topicMenu.querySelectorAll('input[data-theme]'));
   let verses = []; // library loaded from /data/verses.json
   let currentVerse = null; // { ...verse, usedTheme }
   const selectedThemes = new Set(); // empty = all themes
@@ -142,6 +175,12 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   let favorites = []; // persisted in localStorage
   const bags = new Map(); // poolKey -> shuffled verse objects
   let translation = currentTranslation(); // 'WEBP' | 'KJV'
+  let source = 'curated'; // 'curated' | 'wholeBible'
+  let bibleData = null; // { books, chapters } for the current translation
+  let bibleChapters = []; // [{ bookId, chapter, len }] in canonical order
+  let bibleLoading = null; // Promise | null
+  const drawnWholeBible = new Set(); // passage keys drawn this round
+  let wholeBibleTotal = 0; // total verse count (reset threshold)
 
   function track(name, params) {
     if (typeof window.gtag === 'function') window.gtag('event', name, params);
@@ -230,17 +269,24 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     chapterData = null;
   }
 
-  function generate() {
-    if (!verses.length) {
-      showError(ui.errors.themeUnavailable);
-      return;
+  async function generate() {
+    let v;
+    if (source === 'wholeBible') {
+      try {
+        await loadWholeBible();
+      } catch {
+        showError(ui.errors.chapterLoad);
+        return;
+      }
+      v = drawWholeBible();
+    } else {
+      v = draw();
     }
-    const v = draw();
     if (!v) {
       showError(ui.errors.themeUnavailable);
       return;
     }
-    const matched = selectedThemes.size ? v.themes.filter((t) => selectedThemes.has(t)) : [];
+    const matched = source === 'curated' && selectedThemes.size ? v.themes.filter((t) => selectedThemes.has(t)) : [];
     currentVerse = { ...v, usedTheme: matched.length ? matched.join(' · ') : null };
     closeReading();
     cancelSpeech();
@@ -260,6 +306,112 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     const res = await fetch(`${dataPaths(translation).chaptersDir}/${bookId}/${chapter}.json`);
     if (!res.ok) throw new Error('chapter load failed');
     return res.json();
+  }
+
+  // Whole-Bible payload is loaded lazily on first use, per translation. It is
+  // invalidated when the translation changes so we never mix WEBP/KJV text.
+  function splitChapterKey(key) {
+    const dot = key.lastIndexOf('.');
+    return { bookId: key.slice(0, dot), chapter: Number(key.slice(dot + 1)) };
+  }
+
+  function passageKey(bookId, chapter, start, end) {
+    return `${bookId}.${chapter}:${start}-${end}`;
+  }
+
+  function loadWholeBible() {
+    if (bibleData) return Promise.resolve(bibleData);
+    if (bibleLoading) return bibleLoading;
+    bibleLoading = fetch(dataPaths(translation).bible)
+      .then((r) => {
+        if (!r.ok) throw new Error('bible load failed');
+        return r.json();
+      })
+      .then((data) => {
+        bibleChapters = Object.keys(data.chapters).map((key) => {
+          const { bookId, chapter } = splitChapterKey(key);
+          return { bookId, chapter, len: data.chapters[key].length };
+        });
+        wholeBibleTotal = bibleChapters.reduce((n, c) => n + c.len, 0);
+        bibleData = data;
+        bibleLoading = null;
+        return data;
+      })
+      .catch((err) => {
+        bibleLoading = null;
+        throw err;
+      });
+    return bibleLoading;
+  }
+
+  function randomWholeBiblePassage() {
+    const total = wholeBibleTotal;
+    for (let attempt = 0; attempt < 24; attempt++) {
+      let r = Math.floor(Math.random() * total);
+      let ref = null;
+      for (const c of bibleChapters) {
+        if (r < c.len) {
+          ref = c;
+          break;
+        }
+        r -= c.len;
+      }
+      if (!ref) return null;
+      const maxLen = Math.min(3, ref.len - r);
+      const length = maxLen > 1 ? 1 + Math.floor(Math.random() * maxLen) : 1;
+      const startVerse = r + 1;
+      const endVerse = startVerse + length - 1;
+      // A few verses are omitted (empty) in some translations — never draw one.
+      const arr = bibleData.chapters[`${ref.bookId}.${ref.chapter}`];
+      const text = arr.slice(startVerse - 1, endVerse).join(' ').trim();
+      if (!text) continue;
+      const key = passageKey(ref.bookId, ref.chapter, startVerse, endVerse);
+      if (drawnWholeBible.has(key)) continue;
+      return { key, ref, startVerse, endVerse, text };
+    }
+    return null;
+  }
+
+  function drawWholeBible() {
+    if (!bibleData || !wholeBibleTotal) return null;
+    let pick = randomWholeBiblePassage();
+    if (!pick) {
+      // Every start position has been used — start a fresh round.
+      drawnWholeBible.clear();
+      pick = randomWholeBiblePassage();
+      if (!pick) return null;
+    }
+    drawnWholeBible.add(pick.key);
+    if (drawnWholeBible.size >= wholeBibleTotal) drawnWholeBible.clear();
+    return {
+      id: pick.key,
+      bookId: pick.ref.bookId,
+      bookName: bibleData.books[pick.ref.bookId],
+      chapter: pick.ref.chapter,
+      startVerse: pick.startVerse,
+      endVerse: pick.endVerse,
+      text: pick.text,
+      themes: [],
+      translationId: translation,
+    };
+  }
+
+  // Prefer the in-memory whole-Bible data when available (it covers every
+  // chapter); otherwise fetch the curated chapter file.
+  function getChapterData(bookId, chapter) {
+    if (bibleData) {
+      const arr = bibleData.chapters[`${bookId}.${chapter}`];
+      if (arr) {
+        return Promise.resolve({
+          translationId: translation,
+          bookId,
+          bookName: bibleData.books[bookId],
+          chapter,
+          verses: arr.map((text, i) => ({ number: i + 1, text })),
+        });
+      }
+    }
+    return loadChapter(bookId, chapter);
   }
 
   function makeVerseRow(number, text, isCurrent) {
@@ -288,7 +440,7 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   async function openContext() {
     if (!currentVerse) return;
     try {
-      const chapter = await loadChapter(currentVerse.bookId, currentVerse.chapter);
+      const chapter = await getChapterData(currentVerse.bookId, currentVerse.chapter);
       chapterData = chapter;
       const list = chapter.verses;
       const startIdx = list.findIndex((v) => v.number === currentVerse.startVerse);
@@ -339,10 +491,10 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     if (!param) return;
     selectedThemes.clear();
     for (const part of param.split(',')) {
-      const btn = themeButtons.find((b) => b.dataset.theme.toLowerCase() === part.trim().toLowerCase());
-      if (btn && btn.dataset.theme !== 'All') selectedThemes.add(btn.dataset.theme);
+      const input = themeInputs.find((i) => i.dataset.theme.toLowerCase() === part.trim().toLowerCase());
+      if (input && input.dataset.theme !== 'All') selectedThemes.add(input.dataset.theme);
     }
-    syncThemeButtons();
+    syncTopicUI();
   }
 
   function applyInitialTheme() {
@@ -350,9 +502,9 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     if (!t) return;
     // An explicit ?theme= in the URL takes precedence over the page's default.
     if (new URLSearchParams(location.search).get('theme')) return;
-    const btn = themeButtons.find((b) => b.dataset.theme.toLowerCase() === t.toLowerCase());
-    if (btn && btn.dataset.theme !== 'All') selectedThemes.add(btn.dataset.theme);
-    syncThemeButtons();
+    const input = themeInputs.find((i) => i.dataset.theme.toLowerCase() === t.toLowerCase());
+    if (input && input.dataset.theme !== 'All') selectedThemes.add(input.dataset.theme);
+    syncTopicUI();
   }
 
   async function shareVerse() {
@@ -753,26 +905,76 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   }
 
   // Wire up events
-  function syncThemeButtons() {
-    themeButtons.forEach((b) => {
-      const id = b.dataset.theme;
-      b.setAttribute('aria-pressed', id === 'All' ? String(selectedThemes.size === 0) : String(selectedThemes.has(id)));
-    });
+  function updateTopicSummary() {
+    el.topicSummary.textContent = selectedThemes.size ? ui.topicSelected(selectedThemes.size) : ui.allVerses;
   }
 
-  themeButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.theme;
-      if (id === 'All') {
-        selectedThemes.clear();
-      } else if (selectedThemes.has(id)) {
-        selectedThemes.delete(id);
-      } else {
-        selectedThemes.add(id);
-      }
-      syncThemeButtons();
-      track('select_theme');
-    });
+  function syncTopicUI() {
+    for (const input of themeInputs) {
+      const id = input.dataset.theme;
+      input.checked = id === 'All' ? selectedThemes.size === 0 : selectedThemes.has(id);
+    }
+    updateTopicSummary();
+  }
+
+  function openTopicMenu() {
+    el.topicMenu.hidden = false;
+    el.topicTrigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeTopicMenu() {
+    el.topicMenu.hidden = true;
+    el.topicTrigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function syncSourceUI() {
+    const whole = source === 'wholeBible';
+    el.topicTrigger.disabled = whole;
+    el.topicNote.hidden = !whole;
+    closeTopicMenu();
+  }
+
+  el.topicTrigger.addEventListener('click', () => {
+    if (el.topicTrigger.disabled) return;
+    if (el.topicMenu.hidden) openTopicMenu();
+    else closeTopicMenu();
+  });
+
+  el.topicMenu.addEventListener('change', (e) => {
+    const input = e.target.closest('input[data-theme]');
+    if (!input) return;
+    const id = input.dataset.theme;
+    if (id === 'All') selectedThemes.clear();
+    else if (input.checked) selectedThemes.add(id);
+    else selectedThemes.delete(id);
+    syncTopicUI();
+    track('select_theme');
+  });
+
+  el.topicClear.addEventListener('click', () => {
+    selectedThemes.clear();
+    syncTopicUI();
+    track('select_theme');
+  });
+
+  el.topicDone.addEventListener('click', closeTopicMenu);
+
+  document.addEventListener('click', (e) => {
+    if (!el.topicMenu.hidden && !el.topicField.contains(e.target)) closeTopicMenu();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !el.topicMenu.hidden) {
+      closeTopicMenu();
+      el.topicTrigger.focus();
+    }
+  });
+
+  el.sourceSelect.addEventListener('change', () => {
+    source = el.sourceSelect.value;
+    syncSourceUI();
+    track('change_source', { value: source });
+    generate();
   });
 
   el.generateBtn.addEventListener('click', generate);
@@ -844,6 +1046,8 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
       .then((r) => r.json())
       .then((data) => {
         verses = data;
+        const curatedOption = el.sourceSelect.querySelector('option[value="curated"]');
+        if (curatedOption) curatedOption.textContent = ui.sourceCuratedFull(data.length);
         bags.clear();
         history = [];
         renderHistory();
@@ -861,6 +1065,13 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   window.addEventListener('translationchange', (e) => {
     if (!e.detail || e.detail === translation) return;
     translation = e.detail;
+    // Whole-Bible data is translation-specific — drop the cache so the next
+    // generate() reloads it in the new translation.
+    bibleData = null;
+    bibleChapters = [];
+    bibleLoading = null;
+    drawnWholeBible.clear();
+    wholeBibleTotal = 0;
     loadLibrary(false);
   });
 

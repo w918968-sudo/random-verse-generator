@@ -12,8 +12,8 @@ const ROOT = join(__dirname, '..');
 const OUT_DATA = join(ROOT, 'public', 'data');
 
 const TRANSLATIONS = [
-  { id: 'WEBP', dir: 'usfm', suffix: 'engwebp.usfm', versesFile: 'verses.json', chaptersDir: 'chapters', searchFile: 'search-index.json' },
-  { id: 'KJV', dir: 'kjv', suffix: 'eng-kjv2006.usfm', versesFile: 'verses-kjv.json', chaptersDir: 'chapters-kjv', searchFile: 'search-index-kjv.json' },
+  { id: 'WEBP', dir: 'usfm', suffix: 'engwebp.usfm', versesFile: 'verses.json', chaptersDir: 'chapters', searchFile: 'search-index.json', bibleFile: 'bible.json' },
+  { id: 'KJV', dir: 'kjv', suffix: 'eng-kjv2006.usfm', versesFile: 'verses-kjv.json', chaptersDir: 'chapters-kjv', searchFile: 'search-index-kjv.json', bibleFile: 'bible-kjv.json' },
 ];
 
 const makeId = (bookId, chapter, startVerse, endVerse) =>
@@ -106,7 +106,23 @@ for (const tr of TRANSLATIONS) {
   }
   writeFileSync(join(OUT_DATA, tr.searchFile), JSON.stringify({ books: searchBooks, verses: searchVerses }) + '\n');
 
-  console.log(`[${tr.id}] ${verses.length} verses, ${needed.size} chapter files, ${searchVerses.length} searchable verses.`);
+  // Full-Bible payload — all 66 books, all chapters — for the "Whole Bible"
+  // verse source. Compact: chapter texts are arrays (index 0 = verse 1). This
+  // is lazy-loaded client-side, so it is written compact (no pretty-print).
+  const bibleBooks = {};
+  const bibleChapters = {};
+  for (const bookId of Object.keys(BOOKS)) {
+    const book = fullData.get(bookId);
+    if (!book) throw new Error(`missing book ${bookId} (${tr.id})`);
+    bibleBooks[bookId] = BOOKS[bookId];
+    for (const chapter of Object.keys(book).map(Number).sort((a, b) => a - b)) {
+      bibleChapters[`${bookId}.${chapter}`] = book[chapter].map((v) => v.text);
+    }
+  }
+  const bibleTotal = Object.values(bibleChapters).reduce((n, arr) => n + arr.length, 0);
+  writeFileSync(join(OUT_DATA, tr.bibleFile), JSON.stringify({ translationId: tr.id, books: bibleBooks, chapters: bibleChapters }) + '\n');
+
+  console.log(`[${tr.id}] ${verses.length} verses, ${needed.size} chapter files, ${searchVerses.length} searchable verses, ${bibleTotal} whole-Bible verses.`);
 }
 
 console.log(`Browse index: ${browseIndex.length} books.`);

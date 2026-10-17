@@ -12,8 +12,8 @@ const ROOT = join(__dirname, '..');
 const DATA_DIR = join(ROOT, 'public', 'data');
 
 const TRANSLATIONS = [
-  { id: 'WEBP', dir: 'usfm', suffix: 'engwebp.usfm', versesFile: 'verses.json', chaptersDir: 'chapters' },
-  { id: 'KJV', dir: 'kjv', suffix: 'eng-kjv2006.usfm', versesFile: 'verses-kjv.json', chaptersDir: 'chapters-kjv' },
+  { id: 'WEBP', dir: 'usfm', suffix: 'engwebp.usfm', versesFile: 'verses.json', chaptersDir: 'chapters', bibleFile: 'bible.json' },
+  { id: 'KJV', dir: 'kjv', suffix: 'eng-kjv2006.usfm', versesFile: 'verses-kjv.json', chaptersDir: 'chapters-kjv', bibleFile: 'bible-kjv.json' },
 ];
 
 const errors = [];
@@ -120,6 +120,72 @@ for (const tr of TRANSLATIONS) {
       }
       if (obj.verses[i].text !== src[i].text) {
         errors.push(`${file}: verse text mismatch at verse ${obj.verses[i].number}`);
+      }
+    }
+  }
+
+  // Full-Bible payload — must cover all 66 books, every chapter, with text
+  // identical to the source (when available).
+  const bibleFile = join(DATA_DIR, tr.bibleFile);
+  let bible;
+  try {
+    bible = JSON.parse(readFileSync(bibleFile, 'utf8'));
+  } catch {
+    bible = null;
+    errors.push(`${bibleFile}: unreadable/invalid JSON`);
+  }
+  if (bible) {
+    if (bible.translationId !== tr.id) errors.push(`${bibleFile}: translationId != ${tr.id}`);
+    const expectedBooks = Object.keys(BOOKS);
+    if (expectedBooks.length !== Object.keys(bible.books).length || expectedBooks.some((b) => !bible.books[b])) {
+      errors.push(`${bibleFile}: book list mismatch (${Object.keys(bible.books).length} != ${expectedBooks.length})`);
+    }
+    for (const b of expectedBooks) {
+      if (bible.books[b] !== BOOKS[b]) errors.push(`${bibleFile}: bookName ${bible.books[b]} != ${BOOKS[b]}`);
+    }
+    let totalVerses = 0;
+    let omittedVerses = 0;
+    for (const [key, arr] of Object.entries(bible.chapters)) {
+      const dot = key.lastIndexOf('.');
+      const bookId = key.slice(0, dot);
+      const chapter = Number(key.slice(dot + 1));
+      if (!BOOKS[bookId]) errors.push(`${bibleFile}: unknown book in key ${key}`);
+      if (!(Number.isInteger(chapter) && chapter >= 1)) errors.push(`${bibleFile}: bad chapter in key ${key}`);
+      if (!Array.isArray(arr) || arr.length === 0) {
+        errors.push(`${bibleFile}: empty/missing chapter ${key}`);
+        continue;
+      }
+      totalVerses += arr.length;
+      for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== 'string') {
+          errors.push(`${bibleFile}: non-string verse text in ${key} v${i + 1}`);
+        } else if (!arr[i].trim()) {
+          omittedVerses += 1;
+        }
+      }
+    }
+    if (totalVerses < 30000) errors.push(`${bibleFile}: suspiciously few verses (${totalVerses})`);
+    if (omittedVerses) console.log(`Note: ${bibleFile} has ${omittedVerses} omitted (empty) verse(s) — skipped by the generator.`);
+    if (hasSource) {
+      for (const [key, arr] of Object.entries(bible.chapters)) {
+        const dot = key.lastIndexOf('.');
+        const bookId = key.slice(0, dot);
+        const chapter = Number(key.slice(dot + 1));
+        const src = source.get(bookId)?.[chapter];
+        if (!src) {
+          errors.push(`${bibleFile}: ${key} missing in ${tr.id} source`);
+          continue;
+        }
+        if (arr.length !== src.length) {
+          errors.push(`${bibleFile}: ${key} verse count ${arr.length} != source ${src.length}`);
+          continue;
+        }
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] !== src[i].text) {
+            errors.push(`${bibleFile}: ${key} v${i + 1} text mismatch`);
+            break;
+          }
+        }
       }
     }
   }

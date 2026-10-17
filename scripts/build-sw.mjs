@@ -18,8 +18,14 @@ function walk(dir) {
   return out;
 }
 
+// Large data payloads (full Bible, future semantic indexes/models) are loaded
+// lazily at runtime and are network-first via the /data/ handler — precaching
+// them would balloon the install. Skip anything above this size.
+const MAX_PRECACHE_BYTES = 1_000_000;
+
 const files = walk(dist)
   .filter((p) => !p.endsWith(`${sep}sw.js`))
+  .filter((p) => statSync(p).size <= MAX_PRECACHE_BYTES)
   .map((p) => {
     let url = '/' + relative(dist, p).split(sep).join('/');
     // Cloudflare redirects /foo/index.html -> /foo/; precache the canonical URL.
