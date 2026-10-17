@@ -36,7 +36,7 @@
 - ✅ 经文朗读（Web Speech API，2026-10-17）
 - ✅ 经文卡片图（verse images，v1 排除清单，2026-10-17）
 - ✅ 生成历史（history，v1 排除清单，2026-10-17）
-- 多主题筛选（multi-topic filter，v1 排除清单）
+- ✅ 多主题筛选（multi-topic filter，v1 排除清单，2026-10-17）
 
 ## v2.0 — 功能扩展（探索性，P3）
 

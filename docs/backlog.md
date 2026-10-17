@@ -196,7 +196,7 @@
 **推荐优先级**：P2。
 **状态**：action-row 加 `history-btn`（History，无历史时隐藏）+ 可折叠 `history-panel`（`<ol>` 列表）。会话内 `history[]` 内存数组（上限 8，`unshift`+`pop`），每次 `generate()` 记录、`renderHistory()` 重绘；刷新即清空（无 localStorage）。点击历史项 `openHistoryItem()` 重新打开该经文（可继续复制/上下文/全章/朗读/图片）。列表项用 `textContent` 渲染（无注入风险）。build + 12 测试全绿。待部署。
 
-### B-20 多主题筛选（multi-topic filter）
+### B-20 多主题筛选（multi-topic filter）✅ 已完成 2026-10-17
 **描述**：允许同时勾选多个主题，结果取所选主题的并集。
 **验收标准**：
 - 可多选主题，结果为所选主题并集且无重复；
@@ -204,6 +204,7 @@
 - 主题按钮 `aria-pressed` 正确反映多选状态。
 
 **推荐优先级**：P2。
+**状态**：单选 `currentTheme` 改为多选 `selectedThemes`（`Set`，空=All）。`currentPool()` 取并集（`v.themes.some(t => selectedThemes.has(t))`），`poolKey()` 用排序主题 id 作洗牌袋键；`draw()` 无参化。`syncThemeButtons()` 同步 `aria-pressed`（All 仅在空选时按下）。`applyUrlTheme()` 支持 `?theme=A,B` 逗号多选；`shareVerse()` 序列化多选。徽章显示命中主题（多选用 ` · ` 连接）。主题组 label 改 "Choose one or more topics"。build + 12 测试全绿。待部署。
 
 ### B-21 各主题独立 SEO 页面（per-theme SEO pages）
 **描述**：为每个主题建落地页（如 `/hope/`），预选该主题 + 专属 SEO 文案，捕获长尾搜索。
