@@ -44,6 +44,8 @@ export const ui = {
   themeGroupLabel: 'Choose a topic',
   allVerses: 'All Verses',
   generate: { first: 'Generate Verse', again: 'Generate Another Verse' },
+  history: 'History',
+  historyTitle: 'Recent Verses',
   guide:
     'A verse will appear here automatically. Choose a topic and press “Generate Another Verse” for a new one.',
   result: {

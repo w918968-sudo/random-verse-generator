@@ -180,6 +180,7 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
   font-weight: 600;
 }
 .verse-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.action-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 /* Reading panel */
 .reading-panel {
@@ -209,6 +210,34 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
   border-radius: 6px;
   margin-left: -0.6rem;
 }
+
+/* History */
+.history-panel {
+  margin-top: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1rem 0.5rem;
+}
+.history-panel h3 { margin: 0 0 0.5rem; }
+.history-list { list-style: none; margin: 0; padding: 0; }
+.history-list li + li { border-top: 1px solid var(--color-border); }
+.history-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 100%;
+  padding: 0.6rem 0.25rem;
+  text-align: left;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+.history-item:hover .history-ref { color: var(--color-primary-hover); }
+.history-ref { font-weight: 600; color: var(--color-primary); }
+.history-text { color: var(--color-ink-soft); font-size: 0.9rem; }
 
 /* Guide / status / errors */
 .guide { color: var(--color-ink-soft); border-left: 3px solid var(--color-border); padding-left: 1rem; margin-top: 1.25rem; }

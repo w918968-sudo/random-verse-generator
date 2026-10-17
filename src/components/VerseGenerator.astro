@@ -22,7 +22,15 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     <button type="button" class="btn btn-primary" id="generate-btn">
       {ui.generate.first}
     </button>
+    <button type="button" class="btn btn-secondary" id="history-btn" aria-expanded="false" hidden>
+      {ui.history}
+    </button>
   </div>
+
+  <section class="history-panel" id="history-panel" hidden>
+    <h3>{ui.historyTitle}</h3>
+    <ol class="history-list" id="history-list"></ol>
+  </section>
 
   <div class="guide" id="guide" role="status">
     <p>{ui.guide}</p>
@@ -73,6 +81,9 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   const el = {
     themeGroup: document.querySelector('.theme-group'),
     generateBtn: document.getElementById('generate-btn'),
+    historyBtn: document.getElementById('history-btn'),
+    historyPanel: document.getElementById('history-panel'),
+    historyList: document.getElementById('history-list'),
     guide: document.getElementById('guide'),
     result: document.getElementById('result'),
     verseText: document.getElementById('verse-text'),
@@ -100,6 +111,8 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   let chapterData = null;
   let panelState = 'closed'; // 'closed' | 'context' | 'chapter'
   let speaking = false;
+  const HISTORY_MAX = 8;
+  let history = []; // session-only recent draws (cleared on refresh)
   const bags = new Map(); // poolKey -> shuffled verse objects
 
   function track(name, params) {
@@ -192,6 +205,9 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     closeReading();
     cancelSpeech();
     renderCard();
+    history.unshift({ ...currentVerse });
+    if (history.length > HISTORY_MAX) history.pop();
+    renderHistory();
     clearError();
     el.result.hidden = false;
     el.guide.hidden = true;
@@ -520,6 +536,59 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
     }
   }
 
+  function closeHistory() {
+    el.historyPanel.hidden = true;
+    el.historyBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  function renderHistory() {
+    el.historyList.replaceChildren();
+    history.forEach((item, i) => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'history-item';
+      btn.dataset.index = String(i);
+      const ref = document.createElement('span');
+      ref.className = 'history-ref';
+      ref.textContent = reference(item);
+      const text = document.createElement('span');
+      text.className = 'history-text';
+      const flat = item.text.replace(/\s+/g, ' ');
+      text.textContent = flat.length > 120 ? flat.slice(0, 120) + '…' : flat;
+      btn.append(ref, text);
+      li.appendChild(btn);
+      el.historyList.appendChild(li);
+    });
+    el.historyBtn.hidden = history.length === 0;
+    if (!history.length) closeHistory();
+  }
+
+  function toggleHistory() {
+    if (el.historyPanel.hidden) {
+      renderHistory();
+      el.historyPanel.hidden = false;
+      el.historyBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      closeHistory();
+    }
+  }
+
+  function openHistoryItem(index) {
+    const item = history[index];
+    if (!item) return;
+    currentVerse = { ...item };
+    closeReading();
+    cancelSpeech();
+    renderCard();
+    clearError();
+    el.result.hidden = false;
+    el.guide.hidden = true;
+    el.generateBtn.textContent = ui.generate.again;
+    closeHistory();
+    el.result.scrollIntoView({ block: 'start' });
+  }
+
   // Wire up events
   themeButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -530,6 +599,11 @@ const themeButtons = [{ id: 'All', label: ui.allVerses }, ...THEMES.map((t) => (
   });
 
   el.generateBtn.addEventListener('click', generate);
+  el.historyBtn.addEventListener('click', toggleHistory);
+  el.historyList.addEventListener('click', (e) => {
+    const btn = e.target.closest('.history-item');
+    if (btn) openHistoryItem(Number(btn.dataset.index));
+  });
 
   el.shareBtn.addEventListener('click', shareVerse);
   el.imageBtn.addEventListener('click', saveVerseImage);
