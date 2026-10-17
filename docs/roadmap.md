@@ -34,7 +34,7 @@
 - ✅ PWA / 添加到主屏幕（manifest + service worker，2026-10-17）
 - ~~中文界面~~（2026-10-17 取消，偏向海外英文受众）
 - ✅ 经文朗读（Web Speech API，2026-10-17）
-- 经文卡片图（verse images，v1 排除清单）
+- ✅ 经文卡片图（verse images，v1 排除清单，2026-10-17）
 - 生成历史（history，v1 排除清单）
 - 多主题筛选（multi-topic filter，v1 排除清单）
 

@@ -177,7 +177,7 @@
 
 > 以下四项源于原始 PRD 末尾「明确不在 v1」的清单，属规划好的迭代方向，此前遗漏，现补上。
 
-### B-18 经文卡片图（verse images）
+### B-18 经文卡片图（verse images）✅ 已完成 2026-10-17
 **描述**：为当前经文生成一张可保存/分享的图片卡（经文文本 + 引用 + VerseWell 品牌），供用户下载或分享。
 **验收标准**：
 - 一键生成含经文、引用、品牌的清晰图片（如 1080×1350 或 1200×630）；
@@ -185,6 +185,7 @@
 - 不同主题/多节经文下排版仍可读。
 
 **推荐优先级**：P2。
+**状态**：verse-actions 加 `image-btn`（Save Image）。`renderVerseImage()` 用 canvas 生成 1080×1350 PNG：米纸底 `#F7F3EA` + 顶部金线 + 经文（Georgia，字号自动缩小适配长经文、按 `\n` 分段换行）+ 引用 + 主题徽章（如有）+ 底部 VerseWell 字标 + 金线。`saveVerseImage()` 优先 `navigator.canShare({files})` 调起系统分享，否则 `<a download>` 下载；文件名 `versewell-<bookId>-<chapter>-<startVerse>.png`。上报通用 `verse_image`。build + 12 测试全绿。待部署。
 
 ### B-19 生成历史（history）
 **描述**：记录本次会话内生成过的经文，可回看。
