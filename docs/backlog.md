@@ -164,7 +164,7 @@
 - 数据策略需先定：打包更多章节 vs 引入后端（见 [boundaries.md](boundaries.md)）。
 
 **推荐优先级**：P3。
-**状态**：新增 `/search/` 页（标题 "Search the Bible"），含关键词搜索 + 按书/章浏览。数据策略选定为**搜索已打包的 131 章全文**（非全本 66 卷、无后端）——`build-data.mjs` 生成两个索引：`browse-index.json`（bookId→bookName+章列表，规范书序）与 `search-index.json`（`{books, verses:[[bookId,chapter,verse,text]]}`，392KB 压缩后 ~100KB gzip）。搜索为客户端多词 AND 子串匹配、`<mark>` 高亮、上限 25 条；点击结果/章节懒加载 `/data/chapters/<bookId>/<chapter>.json` 内联展示并高亮命中节。支持 `?q=` 深链。GA4 仅通用 `search`/`browse_chapter`（不携带搜索词/经文）。页脚 + sitemap 收录 `/search/`；隐私页补充「搜索/浏览全程本机，搜索词不发送」。build 14 页 + 12 测试全绿。待部署。
+**状态**：新增 `/search/` 页（标题 "Search the Bible"），含关键词搜索 + 按书/章浏览。数据策略选定为**搜索已打包的 131 章全文**（非全本 66 卷、无后端）——`build-data.mjs` 生成两个索引：`browse-index.json`（bookId→bookName+章列表，规范书序）与 `search-index.json`（`{books, verses:[[bookId,chapter,verse,text]]}`，392KB 压缩后 ~100KB gzip）。搜索为客户端多词 AND 子串匹配、`<mark>` 高亮、上限 25 条；点击结果/章节懒加载 `/data/chapters/<bookId>/<chapter>.json` 内联展示并高亮命中节。支持 `?q=` 深链。GA4 仅通用 `search`/`browse_chapter`（不携带搜索词/经文）。页脚 + sitemap 收录 `/search/`；隐私页补充「搜索/浏览全程本机，搜索词不发送」。build 14 页 + 12 测试全绿。已部署生效（2026-10-17，Version `6363af04`）。
 
 ### B-17 多译本 ✅ 已完成 2026-10-17
 **描述**：增加 KJV（公版）等译本，可切换。
@@ -173,7 +173,7 @@
 - 每个新增译本完成许可证审查，版权声明正确展示。
 
 **推荐优先级**：P3。
-**状态**：新增 KJV（eBible.org `eng-kjv2006`，1769 文本，公版；UK Crown copyright 仅限英国印刷本）。数据管线改造为多译本：`build-data.mjs` 按 `TRANSLATIONS`（WEBP/KJV）循环解析 `data/raw/{usfm,kjv}`，输出平行文件 `verses-kjv.json` / `chapters-kjv/` / `search-index-kjv.json`（WEBP 路径不变），`validate.mjs` 逐译本校验 + 跨译本 id 一致性。`usfm.mjs` 补剥 KJV 段落号 `¶`（WEBP 无此符，零影响）。`src/config.mjs` 新增 `TRANSLATIONS`（含 sourceUrl/copyrightUrl/licenseNote）。客户端新增 `src/lib/translations.mjs`（`currentTranslation()` + `dataPaths(id)`，localStorage key `versewell.translation`）；`Layout.astro` 页头加全局译本切换器（CustomEvent `translationchange`），`VerseGenerator`/`search`/`verse-of-the-day` 监听并重载数据。页脚/首页/关于页/搜索页文案改为双语本文案。经文逐字提取、build 时校验（红线合规）。数据校验全绿（WEBP 155 / KJV 155）、build 14 页 + 12 测试全绿。待部署。
+**状态**：新增 KJV（eBible.org `eng-kjv2006`，1769 文本，公版；UK Crown copyright 仅限英国印刷本）。数据管线改造为多译本：`build-data.mjs` 按 `TRANSLATIONS`（WEBP/KJV）循环解析 `data/raw/{usfm,kjv}`，输出平行文件 `verses-kjv.json` / `chapters-kjv/` / `search-index-kjv.json`（WEBP 路径不变），`validate.mjs` 逐译本校验 + 跨译本 id 一致性。`usfm.mjs` 补剥 KJV 段落号 `¶`（WEBP 无此符，零影响）。`src/config.mjs` 新增 `TRANSLATIONS`（含 sourceUrl/copyrightUrl/licenseNote）。客户端新增 `src/lib/translations.mjs`（`currentTranslation()` + `dataPaths(id)`，localStorage key `versewell.translation`）；`Layout.astro` 页头加全局译本切换器（CustomEvent `translationchange`），`VerseGenerator`/`search`/`verse-of-the-day` 监听并重载数据。页脚/首页/关于页/搜索页文案改为双语本文案。经文逐字提取、build 时校验（红线合规）。数据校验全绿（WEBP 155 / KJV 155）、build 14 页 + 12 测试全绿。已部署生效（2026-10-17，Version `6363af04`）。
 
 ---
 
@@ -228,4 +228,4 @@
 - 隐私页说明朗读可能向第三方服务发送经文文本。
 
 **推荐优先级**：P3（需 API key + 按量付费，可能引入后端或前端直连第三方）。
-**状态**：2026-10-17 用户提出后续接入，暂缓。
+**状态**：2026-10-17 用户决定先不做（跳过），维持暂缓。
