@@ -13,6 +13,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://randomversegenerator.info/search/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://randomversegenerator.info/hope/</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>weekly</changefreq>

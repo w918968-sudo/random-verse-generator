@@ -258,6 +258,72 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 .fav-remove:hover { color: var(--color-error); border-color: var(--color-error); }
 .fav-empty { color: var(--color-ink-soft); margin: 0.5rem 0 0; }
 
+/* Search page */
+.search-box { display: flex; gap: 0.5rem; margin-top: 1.25rem; }
+.search-box input[type='search'] {
+  flex: 1 1 auto;
+  min-height: 44px;
+  min-width: 0;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+}
+.search-box input[type='search']:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+.search-status { color: var(--color-ink-soft); margin: 0.75rem 0 0; }
+.search-results { list-style: none; margin: 1rem 0 0; padding: 0; }
+.search-result + .search-result { border-top: 1px solid var(--color-border); }
+.search-result-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: 100%;
+  padding: 0.7rem 0.25rem;
+  text-align: left;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+.search-result-btn:hover .history-ref { color: var(--color-primary-hover); }
+.search-snippet { color: var(--color-ink-soft); font-size: 0.92rem; line-height: 1.5; }
+.search-result-btn mark { background: var(--color-highlight); color: inherit; border-radius: 3px; padding: 0 0.1rem; }
+.book-list { margin-top: 0.5rem; }
+.book { border-bottom: 1px solid var(--color-border); }
+.book-btn {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.5rem 0.25rem;
+  text-align: left;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+.book-btn::before { content: '▸ '; }
+.book-btn[aria-expanded='true']::before { content: '▾ '; }
+.chapter-list { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.25rem 0.5rem 0.75rem; }
+.chapter-btn {
+  min-height: 36px;
+  min-width: 2.5rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.chapter-btn:hover { border-color: var(--color-primary); }
+.chapter-header { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.75rem; }
+.chapter-header h2 { margin: 0; }
+
 /* Guide / status / errors */
 .guide { color: var(--color-ink-soft); border-left: 3px solid var(--color-border); padding-left: 1rem; margin-top: 1.25rem; }
 .error { color: var(--color-error); border-left: 3px solid var(--color-error); padding-left: 1rem; margin-top: 1rem; }

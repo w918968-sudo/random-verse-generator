@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+
+const pageTitle = `${ui.search.title} – ${ui.siteName}`;
+const description = `Search Bible verses from the World English Bible (Protestant Edition), or browse by book and chapter.`;
+const canonical = new URL('/search/', SITE_URL).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: ui.search.title,
+  url: canonical,
+  description,
+};
+---
+
+<Layout title={pageTitle} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">{ui.search.title}</h1>
+  <p class="lede">{ui.search.lede}</p>
+
+  <form class="search-box" id="search-form" role="search">
+    <label class="sr-only" for="search-input">{ui.search.title}</label>
+    <input
+      type="search"
+      id="search-input"
+      placeholder={ui.search.placeholder}
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <button type="submit" class="btn btn-primary">{ui.search.submit}</button>
+  </form>
+
+  <p class="search-status" id="search-status" role="status" hidden></p>
+  <ul class="search-results" id="search-results"></ul>
+
+  <h2>{ui.search.browseTitle}</h2>
+  <div class="book-list" id="book-list"></div>
+
+  <section class="reading-panel" id="chapter-panel" hidden aria-live="polite">
+    <div class="chapter-header">
+      <h2 id="chapter-title"></h2>
+      <button type="button" class="btn btn-secondary" id="chapter-close">{ui.search.close}</button>
+    </div>
+    <div id="chapter-content"></div>
+  </section>
+</Layout>
+
+<script>
+  import { ui } from '../i18n/en.mjs';
+
+  const el = {
+    form: document.getElementById('search-form'),
+    input: document.getElementById('search-input'),
+    status: document.getElementById('search-status'),
+    results: document.getElementById('search-results'),
+    bookList: document.getElementById('book-list'),
+    panel: document.getElementById('chapter-panel'),
+    chapterTitle: document.getElementById('chapter-title'),
+    chapterContent: document.getElementById('chapter-content'),
+    closeBtn: document.getElementById('chapter-close'),
+  };
+
+  const MAX_RESULTS = 25;
+  let browse = []; // [{ bookId, bookName, chapters: [] }]
+  let books = {}; // bookId -> bookName
+  let searchVerses = []; // [bookId, chapter, verse, text][]
+  let loaded = false;
+
+  function track(name) {
+    if (typeof window.gtag === 'function') window.gtag('event', name);
+  }
+
+  function escapeRegExp(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function highlightInto(parent, text, regex) {
+    regex.lastIndex = 0;
+    let last = 0;
+    let m;
+    while ((m = regex.exec(text)) !== null) {
+      if (m.index > last) parent.appendChild(document.createTextNode(text.slice(last, m.index)));
+      const mark = document.createElement('mark');
+      mark.textContent = m[0];
+      parent.appendChild(mark);
+      last = m.index + m[0].length;
+      if (m.index === regex.lastIndex) regex.lastIndex += 1; // guard against zero-width
+    }
+    parent.appendChild(document.createTextNode(text.slice(last)));
+  }
+
+  function snippetAround(text, terms) {
+    const flat = text.replace(/\s+/g, ' ');
+    const lower = flat.toLowerCase();
+    let first = -1;
+    for (const t of terms) {
+      const i = lower.indexOf(t);
+      if (i !== -1 && (first === -1 || i < first)) first = i;
+    }
+    if (first === -1) return flat;
+    const start = Math.max(0, first - 40);
+    const end = Math.min(flat.length, first + 120);
+    return (start > 0 ? '…' : '') + flat.slice(start, end) + (end < flat.length ? '…' : '');
+  }
+
+  function resultRow(bookId, chapter, verse, text, terms, regex) {
+    const li = document.createElement('li');
+    li.className = 'search-result';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'search-result-btn';
+    const ref = document.createElement('span');
+    ref.className = 'history-ref';
+    ref.textContent = `${books[bookId]} ${chapter}:${verse}`;
+    const snip = document.createElement('span');
+    snip.className = 'search-snippet';
+    highlightInto(snip, snippetAround(text, terms), regex);
+    btn.append(ref, snip);
+    btn.addEventListener('click', () => openChapter(bookId, chapter, verse));
+    li.appendChild(btn);
+    return li;
+  }
+
+  function renderResults(matches, terms, regex, capped) {
+    el.results.replaceChildren();
+    el.status.hidden = false;
+    if (!matches.length) {
+      el.status.textContent = ui.search.noResults;
+      return;
+    }
+    el.status.textContent = capped ? ui.search.capped : ui.search.count(matches.length);
+    matches.forEach(([bookId, chapter, verse, text]) =>
+      el.results.appendChild(resultRow(bookId, chapter, verse, text, terms, regex))
+    );
+  }
+
+  function runSearch(raw, trackEvent) {
+    const query = (raw || '').trim().toLowerCase();
+    if (!query) {
+      el.results.replaceChildren();
+      el.status.hidden = true;
+      return;
+    }
+    if (!loaded) {
+      el.status.textContent = ui.search.loading;
+      el.status.hidden = false;
+      return;
+    }
+    const terms = query.split(/\s+/);
+    const regex = new RegExp(terms.map(escapeRegExp).join('|'), 'gi');
+    const matches = [];
+    for (const [bookId, chapter, verse, text] of searchVerses) {
+      const hay = `${books[bookId]} ${chapter}:${verse} ${text}`.toLowerCase();
+      if (terms.every((t) => hay.includes(t))) matches.push([bookId, chapter, verse, text]);
+      if (matches.length >= MAX_RESULTS) break;
+    }
+    renderResults(matches, terms, regex, matches.length >= MAX_RESULTS);
+    if (trackEvent) track('search');
+  }
+
+  function makeVerseRow(number, text, isCurrent) {
+    const row = document.createElement('p');
+    row.className = 'chapter-verse' + (isCurrent ? ' is-current' : '');
+    row.id = `s-v-${number}`;
+    const num = document.createElement('span');
+    num.className = 'verse-num';
+    num.textContent = String(number);
+    const body = document.createElement('span');
+    body.className = 'verse-body';
+    body.textContent = text;
+    row.append(num, body);
+    return row;
+  }
+
+  function renderChapter(data, highlightVerse) {
+    const frag = document.createDocumentFragment();
+    data.verses.forEach((v) => {
+      frag.appendChild(makeVerseRow(v.number, v.text, v.number === highlightVerse));
+    });
+    el.chapterContent.replaceChildren(frag);
+  }
+
+  async function openChapter(bookId, chapter, highlightVerse) {
+    try {
+      const res = await fetch(`/data/chapters/${bookId}/${chapter}.json`);
+      if (!res.ok) throw new Error('chapter load failed');
+      const data = await res.json();
+      renderChapter(data, highlightVerse);
+      el.chapterTitle.textContent = `${data.bookName} ${data.chapter}`;
+      el.panel.hidden = false;
+      track('browse_chapter');
+      el.panel.scrollIntoView({ block: 'start' });
+      if (highlightVerse) {
+        requestAnimationFrame(() => {
+          const v = document.getElementById(`s-v-${highlightVerse}`);
+          if (v) v.scrollIntoView({ block: 'center' });
+        });
+      }
+    } catch {
+      el.status.textContent = ui.search.chapterError;
+      el.status.hidden = false;
+    }
+  }
+
+  function renderBooks() {
+    el.bookList.replaceChildren();
+    browse.forEach((book) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'book';
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'book-btn';
+      btn.textContent = book.bookName;
+      btn.setAttribute('aria-expanded', 'false');
+      const chapters = document.createElement('div');
+      chapters.className = 'chapter-list';
+      chapters.hidden = true;
+      book.chapters.forEach((c) => {
+        const cbtn = document.createElement('button');
+        cbtn.type = 'button';
+        cbtn.className = 'chapter-btn';
+        cbtn.textContent = String(c);
+        cbtn.addEventListener('click', () => openChapter(book.bookId, c, null));
+        chapters.appendChild(cbtn);
+      });
+      btn.addEventListener('click', () => {
+        const open = chapters.hidden;
+        chapters.hidden = !open;
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      wrap.append(btn, chapters);
+      el.bookList.appendChild(wrap);
+    });
+  }
+
+  let debounceTimer;
+  el.input.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => runSearch(el.input.value, false), 200);
+  });
+  el.form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    clearTimeout(debounceTimer);
+    runSearch(el.input.value, true);
+  });
+  el.closeBtn.addEventListener('click', () => {
+    el.panel.hidden = true;
+    el.chapterContent.replaceChildren();
+  });
+
+  const initialQuery = new URLSearchParams(location.search).get('q');
+
+  Promise.all([
+    fetch('/data/browse-index.json').then((r) => r.json()),
+    fetch('/data/search-index.json').then((r) => r.json()),
+  ])
+    .then(([browseData, searchData]) => {
+      browse = browseData;
+      books = searchData.books;
+      searchVerses = searchData.verses;
+      loaded = true;
+      renderBooks();
+      if (initialQuery) {
+        el.input.value = initialQuery;
+        runSearch(initialQuery, true);
+      }
+    })
+    .catch(() => {
+      el.status.textContent = ui.search.loadError;
+      el.status.hidden = false;
+    });
+</script>

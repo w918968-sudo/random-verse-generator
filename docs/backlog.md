@@ -157,13 +157,14 @@
 **推荐优先级**：P3。
 **状态**：verse-actions 加 `fav-btn`（Save Verse ↔ Saved，`aria-pressed` 切换）；action-row 加 `favorites-btn` + 可折叠 `favorites-panel`（`<ul>` 列表，可点击重开 / `×` 移除）。`favorites[]` 持久化到 `localStorage`（key `versewell.favorites`，存完整经文对象含 `usedTheme`）；`loadFavorites()` 初始化、`saveFavorites()` 写入、`renderFavButton()` 同步按钮态（并入 `renderCard()`）。上报通用 `add_favorite`/`remove_favorite`（无经文/主题参数）。隐私页新增「Saved verses (local storage)」说明仅存本机。build 5 页 + 12 测试全绿。待部署。
 
-### B-16 全文搜索 / 全章浏览
+### B-16 全文搜索 / 全章浏览 ✅ 已完成 2026-10-17
 **描述**：支持按关键词搜索或浏览任意章节。
 **验收标准**：
 - 搜索返回相关经文与引用，点击可看全章；
 - 数据策略需先定：打包更多章节 vs 引入后端（见 [boundaries.md](boundaries.md)）。
 
 **推荐优先级**：P3。
+**状态**：新增 `/search/` 页（标题 "Search the Bible"），含关键词搜索 + 按书/章浏览。数据策略选定为**搜索已打包的 131 章全文**（非全本 66 卷、无后端）——`build-data.mjs` 生成两个索引：`browse-index.json`（bookId→bookName+章列表，规范书序）与 `search-index.json`（`{books, verses:[[bookId,chapter,verse,text]]}`，392KB 压缩后 ~100KB gzip）。搜索为客户端多词 AND 子串匹配、`<mark>` 高亮、上限 25 条；点击结果/章节懒加载 `/data/chapters/<bookId>/<chapter>.json` 内联展示并高亮命中节。支持 `?q=` 深链。GA4 仅通用 `search`/`browse_chapter`（不携带搜索词/经文）。页脚 + sitemap 收录 `/search/`；隐私页补充「搜索/浏览全程本机，搜索词不发送」。build 14 页 + 12 测试全绿。待部署。
 
 ### B-17 多译本
 **描述**：增加 KJV（公版）等译本，可切换。

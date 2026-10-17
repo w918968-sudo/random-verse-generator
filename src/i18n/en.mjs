@@ -35,7 +35,7 @@ export const ui = {
   siteName: 'Random Bible Verse Generator',
   metaDescription:
     'Generate a random Bible verse, or pick a topic like hope, peace, love, strength, faith, comfort, wisdom, or gratitude. Free, from the World English Bible.',
-  nav: { verseOfTheDay: 'Verse of the Day', about: 'About', privacy: 'Privacy Policy', contact: 'Contact' },
+  nav: { verseOfTheDay: 'Verse of the Day', search: 'Search', about: 'About', privacy: 'Privacy Policy', contact: 'Contact' },
   brand: 'VerseWell',
   install: 'Install App',
   h1: 'Random Bible Verse Generator',
@@ -54,6 +54,20 @@ export const ui = {
   favoriteRemove: 'Remove',
   guide:
     'A verse will appear here automatically. Choose a topic and press “Generate Another Verse” for a new one.',
+  search: {
+    title: 'Search the Bible',
+    lede: 'Search the World English Bible (Protestant Edition), or browse by book and chapter.',
+    placeholder: 'Search verses…',
+    submit: 'Search',
+    browseTitle: 'Browse by book',
+    close: 'Close',
+    count: (n) => `${n} result${n === 1 ? '' : 's'}`,
+    capped: 'Showing the first 25 matches — try a more specific search.',
+    noResults: 'No verses matched your search. Try a different word.',
+    loading: 'Loading the search index…',
+    loadError: 'Could not load the search index. Please try again.',
+    chapterError: 'Could not load that chapter. Please try again.',
+  },
   result: {
     copy: 'Copy Verse',
     copied: 'Copied!',

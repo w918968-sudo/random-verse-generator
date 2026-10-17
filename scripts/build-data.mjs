@@ -65,7 +65,32 @@ for (const { bookId, chapter } of needed.values()) {
   writeFileSync(join(dir, `${chapter}.json`), JSON.stringify(obj, null, 2) + '\n');
 }
 
-console.log(`Built ${verses.length} verses, ${needed.size} chapter files.`);
+// Build search + browse indexes for the /search/ page: a compact full-text index
+// of every packaged chapter verse, and a book -> chapters manifest.
+const browseIndex = [];
+const searchVerses = [];
+const searchBooks = {};
+const chaptersByBook = new Map(); // bookId -> Set<chapter>
+for (const { bookId, chapter } of needed.values()) {
+  if (!chaptersByBook.has(bookId)) chaptersByBook.set(bookId, new Set());
+  chaptersByBook.get(bookId).add(chapter);
+}
+for (const bookId of Object.keys(BOOKS)) {
+  const chapters = chaptersByBook.get(bookId);
+  if (!chapters) continue;
+  searchBooks[bookId] = BOOKS[bookId];
+  const chapterList = [...chapters].sort((a, b) => a - b);
+  browseIndex.push({ bookId, bookName: BOOKS[bookId], chapters: chapterList });
+  for (const chapter of chapterList) {
+    for (const v of fullData.get(bookId)[chapter]) {
+      searchVerses.push([bookId, chapter, v.number, v.text]);
+    }
+  }
+}
+writeFileSync(join(OUT_DATA, 'browse-index.json'), JSON.stringify(browseIndex) + '\n');
+writeFileSync(join(OUT_DATA, 'search-index.json'), JSON.stringify({ books: searchBooks, verses: searchVerses }) + '\n');
+
+console.log(`Built ${verses.length} verses, ${needed.size} chapter files, ${searchVerses.length} searchable verses across ${browseIndex.length} books.`);
 for (const v of verses) {
   console.log(`${v.id} | ${v.bookName} ${v.chapter}:${v.startVerse}-${v.endVerse} | [${v.themes.join(', ')}] | ${v.text.slice(0, 60).replace(/\n/g, ' / ')}`);
 }
