@@ -126,13 +126,14 @@
 
 **推荐优先级**：P2。
 
-### B-13 经文朗读
+### B-13 经文朗读 ✅ 已完成 2026-10-17
 **描述**：经文卡加「朗读」按钮，用 Web Speech API 朗读。
 **验收标准**：
 - 点击朗读当前经文，再次点击停止；
 - 不支持的浏览器隐藏或禁用按钮。
 
 **推荐优先级**：P2。
+**状态**：在 `verse-actions` 行加 `speak-btn`（`aria-pressed` 切换态，标签在 Read Aloud / Stop 间切换）；`speakVerse()` 用 `SpeechSynthesisUtterance`（`lang='en-US'`）朗读 `currentVerse.text`，`onend`/`onerror` 复位；再次点击或 `generate()` 时 `cancelSpeech()`。不支持 `speechSynthesis` 时按钮 `hidden`。上报通用 `read_aloud` 事件（无经文/主题参数，符合隐私）。build + 12 测试全绿。待部署。
 
 ---
 
