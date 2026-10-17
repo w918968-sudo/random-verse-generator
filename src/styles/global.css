@@ -45,6 +45,7 @@
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -76,6 +77,8 @@ body {
   font-size: 0.9rem;
 }
 .site-footer a { color: var(--color-primary); }
+.install-wrap { display: flex; justify-content: center; }
+.install-btn { margin: 0 0 1rem; }
 
 /* Headings */
 h1, h2, h3 { font-family: var(--font-serif); line-height: 1.25; color: var(--color-ink); }

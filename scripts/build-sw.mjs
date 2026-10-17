@@ -20,7 +20,12 @@ function walk(dir) {
 
 const files = walk(dist)
   .filter((p) => !p.endsWith(`${sep}sw.js`))
-  .map((p) => '/' + relative(dist, p).split(sep).join('/'))
+  .map((p) => {
+    let url = '/' + relative(dist, p).split(sep).join('/');
+    // Cloudflare redirects /foo/index.html -> /foo/; precache the canonical URL.
+    if (url.endsWith('/index.html')) url = url.slice(0, -'index.html'.length);
+    return url;
+  })
   .sort();
 
 const version = createHash('sha1').update(files.join('\n')).digest('hex').slice(0, 8);
@@ -48,12 +53,7 @@ self.addEventListener('activate', (event) => {
 async function cachedNavigation(req) {
   const direct = await caches.match(req);
   if (direct) return direct;
-  const url = new URL(req.url);
-  if (url.pathname.endsWith('/')) {
-    const idx = await caches.match(url.pathname + 'index.html');
-    if (idx) return idx;
-  }
-  return caches.match('/index.html');
+  return caches.match('/');
 }
 
 self.addEventListener('fetch', (event) => {

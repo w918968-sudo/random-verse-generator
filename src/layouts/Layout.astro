@@ -70,6 +70,11 @@ const ga4Loader = GA4_MEASUREMENT_ID
 
     <footer class="site-footer">
       <div class="container">
+        <div class="install-wrap">
+          <button type="button" class="btn btn-secondary install-btn" id="install-btn" hidden>
+            {ui.install}
+          </button>
+        </div>
         <p>
           Scripture taken from the {TRANSLATION.name} ({TRANSLATION.id}), which is in the public
           domain. “World English Bible” is a trademark of eBible.org; this site is not operated by
@@ -87,6 +92,26 @@ const ga4Loader = GA4_MEASUREMENT_ID
           navigator.serviceWorker.register('/sw.js').catch(() => {});
         });
       }
+
+      // Show an explicit install button when the browser offers installation.
+      const installBtn = document.getElementById('install-btn');
+      let deferredPrompt = null;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        if (installBtn) installBtn.hidden = false;
+      });
+      window.addEventListener('appinstalled', () => {
+        deferredPrompt = null;
+        if (installBtn) installBtn.hidden = true;
+      });
+      installBtn?.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        installBtn.hidden = true;
+      });
     </script>
   </body>
 </html>
