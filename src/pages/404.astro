@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/en.mjs';
+---
+
+<Layout
+  title={`Page Not Found – ${ui.siteName}`}
+  description={`The page you were looking for was not found. Head back to ${ui.siteName} to generate a random Bible verse or browse verses by topic.`}
+>
+  <h1 class="hero-title">Page Not Found</h1>
+  <p class="lede">
+    Sorry — that page does not exist. It may have moved, or the address may have a typo.
+  </p>
+
+  <p style="text-align: center">
+    <a class="btn btn-primary" href="/">Generate a Verse</a>{' '}
+    <a class="btn btn-secondary" href="/search/">Search the Bible</a>
+  </p>
+</Layout>

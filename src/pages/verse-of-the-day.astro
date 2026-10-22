@@ -14,10 +14,10 @@ const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: `Verse of the Day – ${ui.siteName}`,
+  name: `Verse of the Day – Today's Bible Verse – ${ui.siteName}`,
   url: canonical,
   description:
-    'A short Bible passage chosen for today, from the World English Bible (Protestant Edition).',
+    "Today's Bible verse, chosen daily from a curated library of well-known passages in the World English Bible (Protestant Edition).",
   dateModified: dateStr,
   about: verse?.themes?.length
     ? { '@type': 'Thing', name: verse.themes.join(', ') }
@@ -25,12 +25,13 @@ const schema = {
 };
 ---
 
-<Layout title={`Verse of the Day – ${ui.siteName}`}>
+<Layout title={`Verse of the Day – Today's Bible Verse – ${ui.siteName}`} description={`Today's Bible verse, chosen daily from a curated library of well-known passages in the World English Bible (Protestant Edition). A fresh daily Bible verse to read, copy, or share.`}>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <h1 class="hero-title">Verse of the Day</h1>
   <p class="lede">
-    A short Bible passage chosen for today, from the World English Bible (Protestant Edition).
+    Today's Bible verse — a short passage chosen daily from a curated library of well-known verses in
+    the World English Bible (Protestant Edition).
   </p>
 
   <figure class="verse-card">

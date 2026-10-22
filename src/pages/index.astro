@@ -25,11 +25,33 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 };
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: ui.siteName,
+  url: SITE_URL,
+  logo: `${SITE_URL}/icons/icon-512.png`,
+};
+
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: ui.siteName,
+  url: SITE_URL,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${SITE_URL}/search/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
 ---
 
 <Layout title={`${ui.siteName} – Free Bible Verses by Topic`}>
   <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
 
   <h1 class="hero-title">{ui.h1}</h1>
   <p class="lede">{ui.intro}</p>
