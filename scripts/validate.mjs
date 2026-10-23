@@ -216,6 +216,42 @@ if (primary.verses.length < 40 || primary.verses.length > 500) {
   errors.push(`library size ${primary.verses.length} outside 40-500`);
 }
 
+// Related-verse index (built by scripts/build-related.mjs from the WEBP
+// semantic vectors) — every curated passage must map to valid, non-self,
+// non-same-chapter targets.
+{
+  const relatedFile = join(DATA_DIR, 'related.json');
+  if (existsSync(relatedFile)) {
+    const rel = JSON.parse(readFileSync(relatedFile, 'utf8'));
+    const byId = new Map(primary.verses.map((v) => [v.id, v]));
+    if (!rel.related) {
+      errors.push(`${relatedFile}: missing "related" map`);
+    } else {
+      for (const v of primary.verses) {
+        const list = rel.related[v.id];
+        if (!Array.isArray(list) || list.length === 0) {
+          errors.push(`${relatedFile}: ${v.id} has no related verses`);
+          continue;
+        }
+        if (new Set(list).size !== list.length) errors.push(`${relatedFile}: ${v.id} has duplicate related ids`);
+        for (const rid of list) {
+          const r = byId.get(rid);
+          if (!r) {
+            errors.push(`${relatedFile}: ${v.id} -> unknown id ${rid}`);
+            continue;
+          }
+          if (rid === v.id) errors.push(`${relatedFile}: ${v.id} is self-related`);
+          if (r.bookId === v.bookId && r.chapter === v.chapter) {
+            errors.push(`${relatedFile}: ${v.id} same-chapter related ${rid}`);
+          }
+        }
+      }
+    }
+  } else {
+    console.log('Note: related.json absent — run `npm run data:related` to generate it.');
+  }
+}
+
 if (missingSources.length) {
   console.log(`Note: raw source absent for [${missingSources.join(', ')}] — text cross-checks skipped (structural checks only).`);
 }

@@ -111,6 +111,10 @@ export const ui = {
     ariaTheme: 'Theme',
     ariaRef: 'Reference',
   },
+  related: {
+    title: 'Related Verses',
+    hint: 'Continue on the same theme:',
+  },
   readingPlan: {
     prev: 'Previous',
     next: 'Next',

@@ -12,6 +12,7 @@
     "data:build": "node scripts/build-data.mjs",
     "data:validate": "node scripts/validate.mjs",
     "data:semantic": "node scripts/build-passage-catalog.mjs && node scripts/build-embeddings.mjs && node scripts/validate-semantic-index.mjs",
+    "data:related": "node scripts/build-related.mjs",
     "data:semantic:validate": "node scripts/validate-semantic-index.mjs",
     "eval:semantic": "node scripts/eval-semantic.mjs",
     "og:image": "node scripts/generate-og-image.mjs",

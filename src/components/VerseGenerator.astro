@@ -120,6 +120,12 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
       </div>
     </section>
 
+    <section class="related" id="related" hidden aria-label={ui.related.title}>
+      <h3 class="related-title">{ui.related.title}</h3>
+      <p class="related-hint">{ui.related.hint}</p>
+      <ul class="related-list" id="related-list"></ul>
+    </section>
+
     <p class="copy-fallback" id="copy-fallback" hidden role="alert">{ui.result.copyFallback}</p>
     <p class="error" id="error" hidden role="alert"></p>
   </div>
@@ -164,6 +170,8 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     readingContent: document.getElementById('reading-content'),
     chapterBtn: document.getElementById('chapter-btn'),
     collapseBtn: document.getElementById('collapse-btn'),
+    related: document.getElementById('related'),
+    relatedList: document.getElementById('related-list'),
     copyFallback: document.getElementById('copy-fallback'),
     error: document.getElementById('error'),
     live: document.getElementById('sr-live'),
@@ -173,6 +181,8 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
   const occasionInputs = Array.from(el.topicMenu.querySelectorAll('input[data-occasion]'));
   const OCCASION_DISPLAY = new Map(OCCASIONS.map((o) => [o.slug, o.id]));
   let verses = []; // library loaded from /data/verses.json
+  let versesById = new Map(); // id -> verse (curated library)
+  let related = null; // Map<id, string[]> from /data/related.json (null = not loaded)
   let currentVerse = null; // { ...verse, usedTheme }
   const selectedThemes = new Set(); // empty = all themes
   const selectedOccasions = new Set(); // empty = all occasions
@@ -267,6 +277,7 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
       el.verseTheme.hidden = true;
     }
     renderFavButton();
+    renderRelated();
   }
 
   function scrollToCardIfNeeded() {
@@ -869,6 +880,49 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     el.favBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
   }
 
+  // Related verses — a small "keep reading" list driven by /data/related.json.
+  // Curated draws only: whole-Bible picks have no id in the related map, so the
+  // section simply stays hidden.
+  function loadRelated() {
+    fetch('/data/related.json')
+      .then((r) => r.json())
+      .then((data) => {
+        related = new Map(Object.entries(data.related || {}));
+        renderRelated();
+      })
+      .catch(() => {
+        related = new Map();
+      });
+  }
+
+  function renderRelated() {
+    el.related.hidden = true;
+    el.relatedList.replaceChildren();
+    if (!related || !currentVerse) return;
+    const ids = related.get(currentVerse.id);
+    if (!ids) return;
+    const items = ids.map((id) => versesById.get(id)).filter(Boolean).slice(0, 3);
+    if (!items.length) return;
+    for (const v of items) {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'related-item';
+      btn.dataset.id = v.id;
+      const ref = document.createElement('span');
+      ref.className = 'related-ref';
+      ref.textContent = reference(v);
+      const text = document.createElement('span');
+      text.className = 'related-text';
+      const flat = v.text.replace(/\s+/g, ' ');
+      text.textContent = flat.length > 110 ? flat.slice(0, 110) + '…' : flat;
+      btn.append(ref, text);
+      li.appendChild(btn);
+      el.relatedList.appendChild(li);
+    }
+    el.related.hidden = false;
+  }
+
   function toggleFavorite() {
     if (!currentVerse) return;
     const idx = favorites.findIndex((f) => f.id === currentVerse.id);
@@ -1068,6 +1122,23 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
   el.shareBtn.addEventListener('click', shareVerse);
   el.imageBtn.addEventListener('click', saveVerseImage);
 
+  el.relatedList.addEventListener('click', (e) => {
+    const btn = e.target.closest('.related-item');
+    if (!btn) return;
+    const v = versesById.get(btn.dataset.id);
+    if (!v) return;
+    currentVerse = { ...v, usedTheme: v.themes.length ? v.themes.join(' · ') : null };
+    closeReading();
+    cancelSpeech();
+    renderCard();
+    clearError();
+    el.result.hidden = false;
+    el.guide.hidden = true;
+    el.generateBtn.textContent = ui.generate.again;
+    track('related_verse_click');
+    el.result.scrollIntoView({ block: 'start' });
+  });
+
   if ('speechSynthesis' in window) {
     el.speakBtn.addEventListener('click', speakVerse);
   } else {
@@ -1110,6 +1181,7 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
       .then((r) => r.json())
       .then((data) => {
         verses = data;
+        versesById = new Map(data.map((v) => [v.id, v]));
         const curatedOption = el.sourceSelect.querySelector('option[value="curated"]');
         if (curatedOption) curatedOption.textContent = ui.sourceCuratedFull(data.length);
         bags.clear();
@@ -1141,7 +1213,9 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     loadLibrary(false);
   });
 
-  // Load the verse library, then show a verse right away.
+  // Load the verse library, then show a verse right away. Related-verses data
+  // is translation-independent, so it is fetched once and never re-read.
   loadFavorites();
+  loadRelated();
   loadLibrary(true);
 </script>
