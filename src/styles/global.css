@@ -389,8 +389,42 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 .history-text { color: var(--color-ink-soft); font-size: 0.9rem; }
 
 /* Favorites */
-.fav-item { display: flex; align-items: stretch; gap: 0.5rem; }
-.fav-item .history-item { flex: 1 1 auto; width: auto; min-width: 0; }
+.fav-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.fav-filter-label { font-size: 0.9rem; color: var(--color-ink-soft); }
+.fav-filter {
+  flex: 0 1 auto;
+  min-height: 36px;
+  max-width: 12rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+}
+.fav-toolbar-spacer { flex: 1 1 auto; }
+.fav-row { display: flex; align-items: stretch; gap: 0.5rem; }
+.fav-row .history-item { flex: 1 1 auto; width: auto; min-width: 0; }
+.fav-note-toggle {
+  flex: 0 0 auto;
+  align-self: center;
+  min-height: 36px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink-soft);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.fav-note-toggle.has-note { color: var(--color-primary); border-color: var(--color-primary); }
 .fav-remove {
   flex: 0 0 auto;
   align-self: center;
@@ -405,6 +439,18 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
   cursor: pointer;
 }
 .fav-remove:hover { color: var(--color-error); border-color: var(--color-error); }
+.fav-note-editor { margin: 0.25rem 0 0.6rem; }
+.fav-note-input {
+  width: 100%;
+  min-height: 60px;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  resize: vertical;
+}
 .fav-empty { color: var(--color-ink-soft); margin: 0.5rem 0 0; }
 
 /* Search page */

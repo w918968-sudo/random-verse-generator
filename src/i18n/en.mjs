@@ -78,6 +78,14 @@ export const ui = {
   favoriteSaved: 'Saved',
   favoritesEmpty: 'No saved verses yet. Press “Save Verse” on a verse to keep it here.',
   favoriteRemove: 'Remove',
+  favoriteNote: 'Note',
+  favoriteNotePlaceholder: 'Write a private note…',
+  favoritesFilterLabel: 'Filter',
+  favoritesFilterEmpty: 'No saved verses have this tag.',
+  favoritesExport: 'Export',
+  favoritesImport: 'Import',
+  favoritesImportDone: (n) => `Imported ${n} verse${n === 1 ? '' : 's'}.`,
+  favoritesImportInvalid: 'Could not import that file. Please choose a VerseWell favorites backup.',
   guide:
     'A verse will appear here automatically. Choose a topic and press “Generate Another Verse” for a new one.',
   search: {

@@ -77,6 +77,14 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
 
   <section class="history-panel" id="favorites-panel" hidden>
     <h3>{ui.favoritesTitle}</h3>
+    <div class="fav-toolbar" id="fav-toolbar" hidden>
+      <label class="fav-filter-label" for="fav-filter">{ui.favoritesFilterLabel}</label>
+      <select id="fav-filter" class="fav-filter"></select>
+      <span class="fav-toolbar-spacer"></span>
+      <button type="button" class="btn btn-secondary btn-sm" id="fav-export">{ui.favoritesExport}</button>
+      <button type="button" class="btn btn-secondary btn-sm" id="fav-import">{ui.favoritesImport}</button>
+      <input type="file" id="fav-import-input" accept="application/json,.json" hidden />
+    </div>
     <p class="fav-empty" id="favorites-empty" hidden>{ui.favoritesEmpty}</p>
     <ul class="history-list" id="favorites-list"></ul>
   </section>
@@ -164,6 +172,11 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     favoritesPanel: document.getElementById('favorites-panel'),
     favoritesList: document.getElementById('favorites-list'),
     favoritesEmpty: document.getElementById('favorites-empty'),
+    favToolbar: document.getElementById('fav-toolbar'),
+    favFilter: document.getElementById('fav-filter'),
+    favExport: document.getElementById('fav-export'),
+    favImport: document.getElementById('fav-import'),
+    favImportInput: document.getElementById('fav-import-input'),
     guide: document.getElementById('guide'),
     result: document.getElementById('result'),
     verseText: document.getElementById('verse-text'),
@@ -208,6 +221,7 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
   let history = []; // session-only recent draws (cleared on refresh)
   const FAVORITES_KEY = 'versewell.favorites';
   let favorites = []; // persisted in localStorage
+  let favoriteFilter = ''; // tag slug filtering the favorites list ('' = all)
   const bags = new Map(); // poolKey -> shuffled verse objects
   let translation = currentTranslation(); // 'WEBP' | 'KJV'
   let source = 'curated'; // 'curated' | 'wholeBible'
@@ -969,6 +983,7 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
         themes: currentVerse.themes,
         occasions: currentVerse.occasions || [],
         usedTheme: currentVerse.usedTheme || currentVerse.themes.join(' · '),
+        note: '',
       });
     }
     saveFavorites();
@@ -977,16 +992,80 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     track(idx >= 0 ? 'remove_favorite' : 'add_favorite');
   }
 
+  function favoriteTags() {
+    const tags = new Set();
+    for (const f of favorites) {
+      for (const t of f.themes || []) tags.add(t);
+      for (const o of f.occasions || []) tags.add(o);
+    }
+    return [...tags].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  }
+
+  function tagLabel(slug) {
+    return OCCASION_DISPLAY.get(slug) || slug;
+  }
+
+  function visibleFavorites() {
+    if (!favoriteFilter) return favorites;
+    return favorites.filter(
+      (f) => (f.themes || []).includes(favoriteFilter) || (f.occasions || []).includes(favoriteFilter),
+    );
+  }
+
+  function favoriteById(id) {
+    return favorites.find((f) => f.id === id);
+  }
+
+  function findFavItemEl(id) {
+    return el.favoritesList.querySelector(`li[data-id="${CSS.escape(id)}"]`);
+  }
+
   function renderFavorites() {
     el.favoritesList.replaceChildren();
-    el.favoritesEmpty.hidden = favorites.length !== 0;
-    favorites.forEach((item, i) => {
+    const hasFavorites = favorites.length !== 0;
+    el.favToolbar.hidden = !hasFavorites;
+    el.favoritesEmpty.hidden = true;
+
+    // Rebuild the tag filter, keeping the current selection when it still exists.
+    const tags = favoriteTags();
+    if (favoriteFilter && !tags.includes(favoriteFilter)) favoriteFilter = '';
+    el.favFilter.replaceChildren();
+    const all = document.createElement('option');
+    all.value = '';
+    all.textContent = ui.allVerses;
+    el.favFilter.appendChild(all);
+    for (const tag of tags) {
+      const opt = document.createElement('option');
+      opt.value = tag;
+      opt.textContent = tagLabel(tag);
+      el.favFilter.appendChild(opt);
+    }
+    el.favFilter.value = favoriteFilter;
+
+    const list = visibleFavorites();
+    if (!hasFavorites) {
+      el.favoritesEmpty.textContent = ui.favoritesEmpty;
+      el.favoritesEmpty.hidden = false;
+      return;
+    }
+    if (!list.length) {
+      el.favoritesEmpty.textContent = ui.favoritesFilterEmpty;
+      el.favoritesEmpty.hidden = false;
+      return;
+    }
+
+    list.forEach((item) => {
       const li = document.createElement('li');
       li.className = 'fav-item';
+      li.dataset.id = item.id;
+
+      const row = document.createElement('div');
+      row.className = 'fav-row';
+
       const open = document.createElement('button');
       open.type = 'button';
       open.className = 'history-item';
-      open.dataset.index = String(i);
+      open.dataset.id = item.id;
       const ref = document.createElement('span');
       ref.className = 'history-ref';
       ref.textContent = reference(item);
@@ -995,15 +1074,122 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
       const flat = item.text.replace(/\s+/g, ' ');
       text.textContent = flat.length > 120 ? flat.slice(0, 120) + '…' : flat;
       open.append(ref, text);
+
+      const noteToggle = document.createElement('button');
+      noteToggle.type = 'button';
+      noteToggle.className = 'fav-note-toggle';
+      noteToggle.dataset.id = item.id;
+      noteToggle.setAttribute('aria-label', ui.favoriteNote);
+      noteToggle.setAttribute('aria-pressed', item.note ? 'true' : 'false');
+      noteToggle.textContent = ui.favoriteNote;
+      if (item.note) noteToggle.classList.add('has-note');
+
       const remove = document.createElement('button');
       remove.type = 'button';
       remove.className = 'fav-remove';
-      remove.dataset.index = String(i);
+      remove.dataset.id = item.id;
       remove.setAttribute('aria-label', ui.favoriteRemove);
       remove.textContent = '×';
-      li.append(open, remove);
+
+      row.append(open, noteToggle, remove);
+      li.appendChild(row);
+
+      const editor = document.createElement('div');
+      editor.className = 'fav-note-editor';
+      editor.hidden = true;
+      const input = document.createElement('textarea');
+      input.className = 'fav-note-input';
+      input.rows = 2;
+      input.placeholder = ui.favoriteNotePlaceholder;
+      input.value = item.note || '';
+      input.addEventListener('change', () => {
+        const next = input.value.trim();
+        if (next === (item.note || '')) return;
+        item.note = next;
+        saveFavorites();
+        noteToggle.setAttribute('aria-pressed', next ? 'true' : 'false');
+        noteToggle.classList.toggle('has-note', !!next);
+        track('favorite_note_saved');
+      });
+      editor.appendChild(input);
+      li.appendChild(editor);
+
       el.favoritesList.appendChild(li);
     });
+  }
+
+  function toggleNoteEditor(id) {
+    const li = findFavItemEl(id);
+    if (!li) return;
+    const editor = li.querySelector('.fav-note-editor');
+    const input = li.querySelector('.fav-note-input');
+    if (!editor || !input) return;
+    const willShow = editor.hidden;
+    editor.hidden = !willShow;
+    if (willShow) input.focus();
+  }
+
+  function exportFavorites() {
+    if (!favorites.length) return;
+    const payload = {
+      app: 'versewell',
+      type: 'favorites',
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      favorites,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `versewell-favorites-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    track('favorites_export');
+  }
+
+  function importFavorites(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(reader.result);
+        const incoming = Array.isArray(data) ? data : Array.isArray(data?.favorites) ? data.favorites : null;
+        if (!incoming) throw new Error('shape');
+        const byId = new Map(favorites.map((f) => [f.id, f]));
+        let added = 0;
+        for (const raw of incoming) {
+          if (!raw || typeof raw.id !== 'string' || typeof raw.text !== 'string' || typeof raw.bookName !== 'string') continue;
+          if (byId.has(raw.id)) continue; // keep the local copy (and its note)
+          byId.set(raw.id, {
+            id: raw.id,
+            bookId: raw.bookId,
+            bookName: raw.bookName,
+            chapter: raw.chapter,
+            startVerse: raw.startVerse,
+            endVerse: raw.endVerse,
+            text: raw.text,
+            themes: Array.isArray(raw.themes) ? raw.themes : [],
+            occasions: Array.isArray(raw.occasions) ? raw.occasions : [],
+            usedTheme: raw.usedTheme,
+            note: typeof raw.note === 'string' ? raw.note : '',
+          });
+          added++;
+        }
+        favorites = [...byId.values()];
+        saveFavorites();
+        renderFavorites();
+        renderFavButton();
+        track('favorites_import');
+        announce(ui.favoritesImportDone(added));
+      } catch {
+        showError(ui.favoritesImportInvalid);
+      }
+    };
+    reader.readAsText(file);
+    el.favImportInput.value = '';
   }
 
   function closeFavorites() {
@@ -1021,8 +1207,8 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     }
   }
 
-  function openFavoriteItem(index) {
-    const item = favorites[index];
+  function openFavoriteItem(id) {
+    const item = favoriteById(id);
     if (!item) return;
     currentVerse = { ...item };
     closeReading();
@@ -1136,17 +1322,28 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
   el.favoritesList.addEventListener('click', (e) => {
     const removeBtn = e.target.closest('.fav-remove');
     if (removeBtn) {
-      const i = Number(removeBtn.dataset.index);
-      favorites.splice(i, 1);
+      favorites = favorites.filter((f) => f.id !== removeBtn.dataset.id);
       saveFavorites();
       renderFavorites();
       renderFavButton();
       track('remove_favorite');
       return;
     }
+    const noteBtn = e.target.closest('.fav-note-toggle');
+    if (noteBtn) {
+      toggleNoteEditor(noteBtn.dataset.id);
+      return;
+    }
     const openBtn = e.target.closest('.history-item');
-    if (openBtn) openFavoriteItem(Number(openBtn.dataset.index));
+    if (openBtn) openFavoriteItem(openBtn.dataset.id);
   });
+  el.favFilter.addEventListener('change', () => {
+    favoriteFilter = el.favFilter.value;
+    renderFavorites();
+  });
+  el.favExport.addEventListener('click', exportFavorites);
+  el.favImport.addEventListener('click', () => el.favImportInput.click());
+  el.favImportInput.addEventListener('change', () => importFavorites(el.favImportInput.files[0]));
 
   el.shareBtn.addEventListener('click', shareVerse);
   el.imageBtn.addEventListener('click', saveVerseImage);
