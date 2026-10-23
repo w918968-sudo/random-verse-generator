@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VerseGenerator from '../components/VerseGenerator.astro';
+import { THEMES, OCCASIONS, ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+
+export function getStaticPaths() {
+  return [
+    ...THEMES.map((t) => ({
+      params: { topic: t.id.toLowerCase() },
+      props: { kind: 'theme', item: { id: t.id, slug: t.id.toLowerCase(), desc: t.desc } },
+    })),
+    ...OCCASIONS.map((o) => ({
+      params: { topic: o.slug },
+      props: { kind: 'occasion', item: o },
+    })),
+  ];
+}
+
+const { kind, item } = Astro.props;
+const isOccasion = kind === 'occasion';
+const pageTitle = `${item.id} Bible Verses – ${ui.siteName}`;
+const topicLabel = isOccasion ? item.id : item.slug;
+const description = `Free ${topicLabel} Bible verses from the World English Bible (Protestant Edition). ${item.desc}`;
+const canonical = new URL(`/${item.slug}/`, SITE_URL).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pageTitle,
+  url: canonical,
+  description,
+};
+
+const themeProp = isOccasion ? '' : item.id;
+const occasionProp = isOccasion ? item.slug : '';
+---
+
+<Layout title={pageTitle} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">{item.id} Bible Verses</h1>
+  <p class="lede">{item.desc}</p>
+
+  <VerseGenerator initialTheme={themeProp} initialOccasion={occasionProp} />
+
+  <section class="seo-content">
+    <h2>About {topicLabel} Bible verses</h2>
+    <p>
+      {
+        isOccasion ? (
+          <>This page brings together Bible verses for {item.id.toLowerCase()} — {item.desc.toLowerCase()} Press
+            “Generate Verse” to draw a random verse for this occasion, or pick a different topic or occasion from the
+            lists below.</>
+        ) : (
+          <>This page brings together {item.slug} verses from the World English Bible (Protestant Edition), a
+            public-domain modern English translation. Press “Generate Verse” to draw a random verse on this topic, or
+            pick a different topic or occasion from the lists below.</>
+        )
+      }
+    </p>
+
+    <h2>More topics</h2>
+    <ul>
+      {THEMES.map((t) => (
+        <li>
+          <a href={`/${t.id.toLowerCase()}/`}>{t.id} Bible Verses</a>
+        </li>
+      ))}
+    </ul>
+
+    <h2>Bible verses for occasions</h2>
+    <ul>
+      {OCCASIONS.map((o) => (
+        <li>
+          <a href={`/${o.slug}/`}>{o.id} Bible Verses</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>

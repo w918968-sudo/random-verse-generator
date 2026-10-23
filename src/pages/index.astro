@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import VerseGenerator from '../components/VerseGenerator.astro';
-import { THEMES, ui, faq } from '../i18n/en.mjs';
+import { THEMES, OCCASIONS, ui, faq } from '../i18n/en.mjs';
 import { TRANSLATIONS, SITE_URL } from '../config.mjs';
 
 const webAppSchema = {
@@ -72,6 +72,15 @@ const webSiteSchema = {
       {THEMES.map((t) => (
         <li>
           <strong>{t.id}</strong> — {t.desc}
+        </li>
+      ))}
+    </ul>
+
+    <h2>Bible verses for occasions</h2>
+    <ul>
+      {OCCASIONS.map((o) => (
+        <li>
+          <a href={`/${o.slug}/`}>{o.id} Bible Verses</a> — {o.desc}
         </li>
       ))}
     </ul>

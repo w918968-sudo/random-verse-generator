@@ -12,6 +12,22 @@ export const THEMES = [
   { id: 'Gratitude', desc: 'Verses about thanksgiving and praise.' },
 ];
 
+export const OCCASIONS = [
+  { id: 'Anxiety', slug: 'anxiety', desc: 'Verses for anxious and worried hearts.' },
+  { id: 'Fear', slug: 'fear', desc: 'Verses about courage and God’s protection.' },
+  { id: 'Encouragement', slug: 'encouragement', desc: 'Verses to lift your spirit and renew hope.' },
+  { id: 'Healing', slug: 'healing', desc: 'Verses about God’s healing for body and soul.' },
+  { id: 'Forgiveness', slug: 'forgiveness', desc: 'Verses about God’s mercy and forgiving others.' },
+  { id: 'Patience', slug: 'patience', desc: 'Verses about patience and waiting on God.' },
+  { id: 'New Beginnings', slug: 'new-beginnings', desc: 'Verses for fresh starts and second chances.' },
+  { id: 'Grief', slug: 'grief', desc: 'Verses of comfort for those who mourn.' },
+  { id: 'Money', slug: 'money', desc: 'Verses about money, contentment, and generosity.' },
+  { id: 'Marriage', slug: 'marriage', desc: 'Verses about love, marriage, and commitment.' },
+  { id: 'Birthday', slug: 'birthday', desc: 'Verses to celebrate life and God’s blessings.' },
+  { id: 'Work', slug: 'work', desc: 'Verses about work, diligence, and purpose.' },
+  { id: 'Friendship', slug: 'friendship', desc: 'Verses about friendship and true companions.' },
+];
+
 export const faq = [
   {
     q: 'Is this random Bible verse generator free?',
@@ -42,6 +58,7 @@ export const ui = {
   intro:
     'Generate a random Bible verse, or choose a topic to get a verse on that theme. Every verse is available in the World English Bible (Protestant Edition) and the King James Version.',
   themeGroupLabel: 'Choose one or more topics',
+  occasionGroupLabel: 'Occasions',
   translationLabel: 'Translation',
   allVerses: 'All Verses',
   sourceLabel: 'Verse Source',

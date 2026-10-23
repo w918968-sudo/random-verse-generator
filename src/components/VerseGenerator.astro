@@ -1,14 +1,15 @@
 ---
-import { THEMES, ui } from '../i18n/en.mjs';
+import { THEMES, OCCASIONS, ui } from '../i18n/en.mjs';
 
 interface Props {
   initialTheme?: string;
+  initialOccasion?: string;
 }
 
-const { initialTheme = '' } = Astro.props;
+const { initialTheme = '', initialOccasion = '' } = Astro.props;
 ---
 
-<div class="generator" data-initial-theme={initialTheme}>
+<div class="generator" data-initial-theme={initialTheme} data-initial-occasion={initialOccasion}>
   <div class="source-field">
     <label class="field-label" for="source-select">{ui.sourceLabel}</label>
     <select class="source-select" id="source-select">
@@ -40,6 +41,13 @@ const { initialTheme = '' } = Astro.props;
         <label class="topic-option">
           <input type="checkbox" data-theme={t.id} />
           <span>{t.id}</span>
+        </label>
+      ))}
+      <span class="topic-group">{ui.occasionGroupLabel}</span>
+      {OCCASIONS.map((o) => (
+        <label class="topic-option">
+          <input type="checkbox" data-occasion={o.slug} />
+          <span>{o.id}</span>
         </label>
       ))}
       <div class="topic-menu-actions">
@@ -120,7 +128,7 @@ const { initialTheme = '' } = Astro.props;
 </div>
 
 <script>
-  import { ui } from '../i18n/en.mjs';
+  import { OCCASIONS, ui } from '../i18n/en.mjs';
   import { currentTranslation, dataPaths } from '../lib/translations.mjs';
 
   const el = {
@@ -162,9 +170,12 @@ const { initialTheme = '' } = Astro.props;
   };
 
   const themeInputs = Array.from(el.topicMenu.querySelectorAll('input[data-theme]'));
+  const occasionInputs = Array.from(el.topicMenu.querySelectorAll('input[data-occasion]'));
+  const OCCASION_DISPLAY = new Map(OCCASIONS.map((o) => [o.slug, o.id]));
   let verses = []; // library loaded from /data/verses.json
   let currentVerse = null; // { ...verse, usedTheme }
   const selectedThemes = new Set(); // empty = all themes
+  const selectedOccasions = new Set(); // empty = all occasions
   let lastDrawnId = null;
   let chapterData = null;
   let panelState = 'closed'; // 'closed' | 'context' | 'chapter'
@@ -208,12 +219,19 @@ const { initialTheme = '' } = Astro.props;
   }
 
   function poolKey() {
-    return selectedThemes.size ? [...selectedThemes].sort().join('|') : 'All';
+    const parts = [];
+    if (selectedThemes.size) parts.push('t:' + [...selectedThemes].sort().join('|'));
+    if (selectedOccasions.size) parts.push('o:' + [...selectedOccasions].sort().join('|'));
+    return parts.length ? parts.join('#') : 'All';
   }
 
   function currentPool() {
-    if (!selectedThemes.size) return verses;
-    return verses.filter((v) => v.themes.some((t) => selectedThemes.has(t)));
+    if (!selectedThemes.size && !selectedOccasions.size) return verses;
+    return verses.filter((v) => {
+      const themeOk = !selectedThemes.size || v.themes.some((t) => selectedThemes.has(t));
+      const occasionOk = !selectedOccasions.size || (v.occasions || []).some((o) => selectedOccasions.has(o));
+      return themeOk && occasionOk;
+    });
   }
 
   function draw() {
@@ -286,8 +304,13 @@ const { initialTheme = '' } = Astro.props;
       showError(ui.errors.themeUnavailable);
       return;
     }
-    const matched = source === 'curated' && selectedThemes.size ? v.themes.filter((t) => selectedThemes.has(t)) : [];
-    currentVerse = { ...v, usedTheme: matched.length ? matched.join(' · ') : null };
+    const matchedThemes = source === 'curated' && selectedThemes.size ? v.themes.filter((t) => selectedThemes.has(t)) : [];
+    const matchedOccasions =
+      source === 'curated' && selectedOccasions.size
+        ? (v.occasions || []).filter((o) => selectedOccasions.has(o)).map((o) => OCCASION_DISPLAY.get(o) || o)
+        : [];
+    const used = [...matchedThemes, ...matchedOccasions];
+    currentVerse = { ...v, usedTheme: used.length ? used.join(' · ') : null };
     closeReading();
     cancelSpeech();
     renderCard();
@@ -497,6 +520,17 @@ const { initialTheme = '' } = Astro.props;
     syncTopicUI();
   }
 
+  function applyUrlOccasion() {
+    const param = new URLSearchParams(location.search).get('occasion');
+    if (!param) return;
+    selectedOccasions.clear();
+    for (const part of param.split(',')) {
+      const input = occasionInputs.find((i) => i.dataset.occasion.toLowerCase() === part.trim().toLowerCase());
+      if (input) selectedOccasions.add(input.dataset.occasion);
+    }
+    syncTopicUI();
+  }
+
   function applyInitialTheme() {
     const t = el.generator.dataset.initialTheme;
     if (!t) return;
@@ -507,10 +541,24 @@ const { initialTheme = '' } = Astro.props;
     syncTopicUI();
   }
 
+  function applyInitialOccasion() {
+    const o = el.generator.dataset.initialOccasion;
+    if (!o) return;
+    // An explicit ?occasion= in the URL takes precedence over the page's default.
+    if (new URLSearchParams(location.search).get('occasion')) return;
+    const input = occasionInputs.find((i) => i.dataset.occasion.toLowerCase() === o.toLowerCase());
+    if (input) selectedOccasions.add(input.dataset.occasion);
+    syncTopicUI();
+  }
+
   async function shareVerse() {
     if (!currentVerse) return;
     const theme = selectedThemes.size ? [...selectedThemes].sort().join(',') : '';
-    const url = `${location.origin}${location.pathname}${theme ? `?theme=${encodeURIComponent(theme)}` : ''}`;
+    const occasion = selectedOccasions.size ? [...selectedOccasions].sort().join(',') : '';
+    const qs = [theme && `theme=${encodeURIComponent(theme)}`, occasion && `occasion=${encodeURIComponent(occasion)}`]
+      .filter(Boolean)
+      .join('&');
+    const url = `${location.origin}${location.pathname}${qs ? `?${qs}` : ''}`;
     const payload = { title: ui.brand, text: currentVerse.text, url };
 
     if (navigator.share) {
@@ -836,6 +884,7 @@ const { initialTheme = '' } = Astro.props;
         endVerse: currentVerse.endVerse,
         text: currentVerse.text,
         themes: currentVerse.themes,
+        occasions: currentVerse.occasions || [],
         usedTheme: currentVerse.usedTheme || currentVerse.themes.join(' · '),
       });
     }
@@ -906,13 +955,17 @@ const { initialTheme = '' } = Astro.props;
 
   // Wire up events
   function updateTopicSummary() {
-    el.topicSummary.textContent = selectedThemes.size ? ui.topicSelected(selectedThemes.size) : ui.allVerses;
+    const n = selectedThemes.size + selectedOccasions.size;
+    el.topicSummary.textContent = n ? ui.topicSelected(n) : ui.allVerses;
   }
 
   function syncTopicUI() {
     for (const input of themeInputs) {
       const id = input.dataset.theme;
-      input.checked = id === 'All' ? selectedThemes.size === 0 : selectedThemes.has(id);
+      input.checked = id === 'All' ? selectedThemes.size === 0 && selectedOccasions.size === 0 : selectedThemes.has(id);
+    }
+    for (const input of occasionInputs) {
+      input.checked = selectedOccasions.has(input.dataset.occasion);
     }
     updateTopicSummary();
   }
@@ -941,18 +994,29 @@ const { initialTheme = '' } = Astro.props;
   });
 
   el.topicMenu.addEventListener('change', (e) => {
-    const input = e.target.closest('input[data-theme]');
-    if (!input) return;
-    const id = input.dataset.theme;
-    if (id === 'All') selectedThemes.clear();
-    else if (input.checked) selectedThemes.add(id);
-    else selectedThemes.delete(id);
+    const themeInput = e.target.closest('input[data-theme]');
+    const occasionInput = e.target.closest('input[data-occasion]');
+    if (themeInput) {
+      const id = themeInput.dataset.theme;
+      if (id === 'All') {
+        selectedThemes.clear();
+        selectedOccasions.clear();
+      } else if (themeInput.checked) selectedThemes.add(id);
+      else selectedThemes.delete(id);
+    } else if (occasionInput) {
+      const slug = occasionInput.dataset.occasion;
+      if (occasionInput.checked) selectedOccasions.add(slug);
+      else selectedOccasions.delete(slug);
+    } else {
+      return;
+    }
     syncTopicUI();
     track('select_theme');
   });
 
   el.topicClear.addEventListener('click', () => {
     selectedThemes.clear();
+    selectedOccasions.clear();
     syncTopicUI();
     track('select_theme');
   });
@@ -1053,7 +1117,9 @@ const { initialTheme = '' } = Astro.props;
         renderHistory();
         if (initial) {
           applyUrlTheme();
+          applyUrlOccasion();
           applyInitialTheme();
+          applyInitialOccasion();
         }
         generate();
       })

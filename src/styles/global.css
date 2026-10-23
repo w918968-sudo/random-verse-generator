@@ -274,6 +274,15 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 }
 .topic-option:hover { background: var(--color-primary-soft); }
 .topic-option input { accent-color: var(--color-primary-solid); }
+.topic-group {
+  display: block;
+  padding: 0.5rem 0.6rem 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
 .topic-menu-actions {
   display: flex;
   justify-content: flex-end;
