@@ -140,6 +140,15 @@ export const ui = {
     focusExit: 'Exit focus mode',
     focusHint: 'Hide everything except the verse.',
   },
+  checkin: {
+    title: 'Reading Streak',
+    streak: (n) => `${n}-day streak`,
+    best: (n) => `Best ${n}`,
+    todayDone: 'checked in today',
+    empty: 'Check in each day you read to build a streak.',
+    do: 'Check in today',
+    done: 'Checked in today',
+  },
   embed: {
     title: 'Embed This Verse',
     hint:
