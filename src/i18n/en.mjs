@@ -115,6 +115,15 @@ export const ui = {
     title: 'Related Verses',
     hint: 'Continue on the same theme:',
   },
+  embed: {
+    title: 'Embed This Verse',
+    hint:
+      'Put today’s Bible verse on your own website or blog. Copy the code below and paste it into your page — the verse updates itself each day.',
+    previewLabel: 'Preview',
+    copy: 'Copy Code',
+    copied: 'Copied!',
+    copyFallback: 'Copying failed. Select the code and copy it manually.',
+  },
   readingPlan: {
     prev: 'Previous',
     next: 'Next',

@@ -1,0 +1,132 @@
+---
+// Embeddable "Verse of the Day" widget — a deliberately bare, self-contained
+// page designed to be loaded in an <iframe> on someone else's site.
+//
+// Privacy red line: this page must NOT load analytics, set cookies, or collect
+// any visitor data, so it renders its own minimal HTML instead of the shared
+// Layout (which injects GA4). The only request it makes is for the public
+// verses.json on our own origin. It is also excluded from search indexes.
+import { SITE_URL } from '../config.mjs';
+import { todayUTC, verseForDate, reference } from '../lib/verse-of-day.mjs';
+import verses from '../../public/data/verses.json';
+
+// Pre-render a real verse (no-JS fallback). The client script re-derives it for
+// the actual visit date, matching the verse-of-the-day page.
+const verse = verseForDate(todayUTC(), verses);
+const backlink = new URL('/verse-of-the-day/', SITE_URL).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verse of the Day</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      /* Warm-paper palette, inlined so the widget is fully self-contained. */
+      :root {
+        color-scheme: light;
+        --bg: #F7F3EA;
+        --surface: #FFFDF7;
+        --ink: #2B2620;
+        --ink-soft: #6B6355;
+        --primary: #8C4A2F;
+        --border: #E4DCC8;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --bg: #17130E;
+          --surface: #221C15;
+          --ink: #EDE7DA;
+          --ink-soft: #B6AC99;
+          --primary: #D89A68;
+          --border: #3A3328;
+        }
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+      }
+      .votd {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        height: 100vh;
+        padding: 1rem 1.1rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+      }
+      .votd-brand {
+        display: flex;
+        align-items: baseline;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--primary);
+        letter-spacing: 0.02em;
+      }
+      .votd-brand em {
+        font-style: normal;
+        font-weight: 500;
+        color: var(--ink-soft);
+      }
+      .votd-text {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1rem;
+        line-height: 1.55;
+        overflow: hidden;
+      }
+      .votd-foot {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-top: auto;
+        font-size: 0.85rem;
+      }
+      .votd-ref { font-weight: 600; color: var(--ink-soft); }
+      .votd-cta { color: var(--primary); font-weight: 600; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <a class="votd" href={backlink} target="_blank" rel="noopener noreferrer">
+      <span class="votd-brand">VerseWell <em>· Verse of the Day</em></span>
+      <span class="votd-text" id="votd-text">{verse.text}</span>
+      <span class="votd-foot">
+        <span class="votd-ref" id="votd-ref">{reference(verse)}</span>
+        <span class="votd-cta">Read the full passage →</span>
+      </span>
+    </a>
+
+    <script>
+      import { verseForDate, todayUTC, reference } from '../lib/verse-of-day.mjs';
+
+      // Always WEBP: third-party embeds run cross-origin with no translation
+      // preference, so the widget shows the same public-domain text for everyone.
+      async function refresh() {
+        try {
+          const res = await fetch('/data/verses.json');
+          if (!res.ok) return;
+          const list = await res.json();
+          const v = verseForDate(todayUTC(), list);
+          if (!v) return;
+          document.getElementById('votd-text').textContent = v.text;
+          document.getElementById('votd-ref').textContent = reference(v);
+        } catch {
+          // Keep the pre-rendered verse on any fetch error.
+        }
+      }
+
+      refresh();
+    </script>
+  </body>
+</html>
