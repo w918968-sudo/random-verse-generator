@@ -370,7 +370,8 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 .reading-focus .install-btn,
 .reading-focus .hero-title,
 .reading-focus .lede,
-.reading-focus .seo-content {
+.reading-focus .seo-content,
+.reading-focus .topic-verses {
   display: none;
 }
 .reading-focus .generator .source-field,
@@ -772,6 +773,39 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
   cursor: default;
 }
 .checkin-btn.is-done::before { content: '✓'; margin-right: 0.4rem; }
+
+/* Static verse list on topic pages (indexable SEO content) */
+.topic-verses { margin-top: 2.5rem; }
+.topic-verses h2 { margin-bottom: 1rem; }
+.topic-verses-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.topic-verse {
+  padding: 1rem 1.1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+.topic-verse-text {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+.topic-verse-ref {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.topic-verses-cta { margin-top: 1.1rem; color: var(--color-ink-soft); }
 
 /* Embed section (verse of the day) */
 .embed-section { margin-top: 2rem; }
