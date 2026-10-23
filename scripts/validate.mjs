@@ -203,10 +203,14 @@ for (const lib of rest) {
   for (const k of keys) if (!primaryKeys.has(k)) errors.push(`${lib.id}: extra reference ${k}`);
 }
 
-// theme minimums + library size (primary translation)
+// theme + occasion minimums + library size (primary translation)
 for (const theme of THEMES) {
   const n = primary.verses.filter((v) => v.themes.includes(theme)).length;
   if (n < 30) errors.push(`theme ${theme}: only ${n} entries (need >= 30)`);
+}
+for (const occasion of OCCASIONS) {
+  const n = primary.verses.filter((v) => v.occasions.includes(occasion)).length;
+  if (n < 30) errors.push(`occasion ${occasion}: only ${n} entries (need >= 30)`);
 }
 if (primary.verses.length < 40 || primary.verses.length > 500) {
   errors.push(`library size ${primary.verses.length} outside 40-500`);

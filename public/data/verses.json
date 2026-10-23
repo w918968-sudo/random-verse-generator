@@ -10,7 +10,12 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "birthday",
+      "encouragement",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -24,7 +29,13 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "birthday",
+      "encouragement",
+      "grief",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -38,7 +49,9 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -53,7 +66,10 @@
       "Hope",
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -67,7 +83,10 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -81,7 +100,10 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -96,7 +118,10 @@
       "Comfort",
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -111,7 +136,9 @@
       "Comfort",
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -139,7 +166,9 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -153,7 +182,10 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -167,7 +199,10 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "new-beginnings",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -181,7 +216,10 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -195,7 +233,9 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -223,7 +263,9 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -251,7 +293,9 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -266,7 +310,9 @@
       "Faith",
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -280,7 +326,11 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "patience",
+      "work"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -295,7 +345,9 @@
       "Gratitude",
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -309,7 +361,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -324,7 +378,9 @@
       "Peace",
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -339,7 +395,9 @@
       "Gratitude",
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "work"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -353,7 +411,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -367,7 +427,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -382,7 +444,9 @@
       "Comfort",
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -396,7 +460,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -410,7 +476,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -424,7 +492,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -580,7 +650,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "forgiveness"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -594,7 +666,11 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "forgiveness",
+      "marriage",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -608,7 +684,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "marriage"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -622,7 +700,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "marriage"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -636,7 +716,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "marriage"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -650,7 +732,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "forgiveness"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -664,7 +748,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "friendship"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -692,7 +778,10 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "forgiveness",
+      "friendship"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -706,7 +795,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "friendship"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -720,7 +811,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "friendship"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -734,7 +827,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "friendship"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -748,7 +843,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "friendship"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -762,7 +859,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "marriage"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -776,7 +875,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "friendship"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -790,7 +891,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "friendship"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -818,7 +921,11 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "forgiveness",
+      "friendship",
+      "marriage"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -846,7 +953,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "forgiveness"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -860,7 +969,10 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "money"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -875,7 +987,11 @@
       "Comfort",
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "encouragement",
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -889,7 +1005,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -903,7 +1021,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -917,7 +1037,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -931,7 +1053,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -945,7 +1069,10 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -960,7 +1087,9 @@
       "Faith",
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -975,7 +1104,11 @@
       "Comfort",
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "fear",
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -990,7 +1123,10 @@
       "Comfort",
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1004,7 +1140,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1018,7 +1156,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1032,7 +1172,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1046,7 +1188,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1074,7 +1218,10 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1088,7 +1235,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1116,7 +1265,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1172,7 +1323,9 @@
     "themes": [
       "Faith"
     ],
-    "occasions": [],
+    "occasions": [
+      "forgiveness"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1186,7 +1339,11 @@
     "themes": [
       "Faith"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "forgiveness",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1244,7 +1401,11 @@
       "Comfort",
       "Faith"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "fear",
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1286,7 +1447,10 @@
     "themes": [
       "Faith"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1328,7 +1492,10 @@
     "themes": [
       "Faith"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1398,7 +1565,9 @@
     "themes": [
       "Faith"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1412,7 +1581,9 @@
     "themes": [
       "Faith"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1426,7 +1597,10 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1440,7 +1614,10 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief",
+      "healing"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1454,7 +1631,10 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief",
+      "healing"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1468,7 +1648,9 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1482,7 +1664,9 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1496,7 +1680,10 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief",
+      "healing"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1511,7 +1698,10 @@
       "Comfort",
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1525,7 +1715,9 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1539,7 +1731,9 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1553,7 +1747,11 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "grief",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1568,7 +1766,9 @@
       "Comfort",
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1582,7 +1782,10 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief",
+      "healing"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1596,7 +1799,9 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "grief"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1610,7 +1815,9 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1624,7 +1831,10 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1764,7 +1974,9 @@
     "themes": [
       "Wisdom"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1792,7 +2004,9 @@
     "themes": [
       "Wisdom"
     ],
-    "occasions": [],
+    "occasions": [
+      "work"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1806,7 +2020,10 @@
     "themes": [
       "Wisdom"
     ],
-    "occasions": [],
+    "occasions": [
+      "money",
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1904,7 +2121,9 @@
     "themes": [
       "Wisdom"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1918,7 +2137,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1932,7 +2153,10 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday",
+      "encouragement"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -1960,7 +2184,12 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday",
+      "forgiveness",
+      "healing",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2156,7 +2385,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2213,7 +2444,9 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2227,7 +2460,9 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2242,7 +2477,10 @@
       "Faith",
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "forgiveness"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2256,7 +2494,11 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement",
+      "grief",
+      "new-beginnings"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2369,7 +2611,10 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "money"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2426,7 +2671,9 @@
       "Comfort",
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2440,7 +2687,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "healing"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2511,7 +2760,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "birthday"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2525,7 +2776,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "forgiveness"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2567,7 +2820,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "marriage"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2595,7 +2850,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "patience"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2609,7 +2866,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "encouragement"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2680,7 +2939,9 @@
     "themes": [
       "Strength"
     ],
-    "occasions": [],
+    "occasions": [
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2792,7 +3053,10 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety",
+      "fear"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2848,7 +3112,9 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2876,7 +3142,9 @@
     "themes": [
       "Comfort"
     ],
-    "occasions": [],
+    "occasions": [
+      "anxiety"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -3059,6 +3327,3385 @@
       "Gratitude"
     ],
     "occasions": [],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-012-022-024",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 12,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "He said to his disciples, “Therefore I tell you, don’t be anxious for your life, what you will eat, nor yet for your body, what you will wear. Life is more than food, and the body is more than clothing. Consider the ravens: they don’t sow, they don’t reap, they have no warehouse or barn, and God feeds them. How much more valuable are you than birds!",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "anxiety"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-006-025-027",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 6,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "Therefore I tell you, don’t be anxious for your life: what you will eat, or what you will drink; nor yet for your body, what you will wear. Isn’t life more than food, and the body more than clothing? See the birds of the sky, that they don’t sow, neither do they reap, nor gather into barns. Your heavenly Father feeds them. Aren’t you of much more value than they? “Which of you by being anxious, can add one moment to his lifespan?",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "anxiety"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-037-007-009",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 37,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "Rest in the LORD, and wait patiently for him.\nDon’t fret because of him who prospers in his way,\nbecause of the man who makes wicked plots happen. Cease from anger, and forsake wrath.\nDon’t fret; it leads only to evildoing. For evildoers shall be cut off,\nbut those who wait for the LORD shall inherit the land.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "anxiety",
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-034-004-006",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 34,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "I sought the LORD, and he answered me,\nand delivered me from all my fears. They looked to him, and were radiant.\nTheir faces shall never be covered with shame. This poor man cried, and the LORD heard him,\nand saved him out of all his troubles.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "anxiety",
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-035-004-006",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 35,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "Tell those who have a fearful heart, “Be strong!\nDon’t be afraid!\nBehold, your God will come with vengeance, God’s retribution.\nHe will come and save you. Then the eyes of the blind will be opened,\nand the ears of the deaf will be unstopped. Then the lame man will leap like a deer,\nand the tongue of the mute will sing;\nfor waters will break out in the wilderness,\nand streams in the desert.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "anxiety",
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-042-005-007",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 42,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "Why are you in despair, my soul?\nWhy are you disturbed within me?\nHope in God!\nFor I shall still praise him for the saving help of his presence. My God, my soul is in despair within me.\nTherefore I remember you from the land of the Jordan,\nthe heights of Hermon, from the hill Mizar. Deep calls to deep at the noise of your waterfalls.\nAll your waves and your billows have swept over me.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "anxiety",
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-016-008-010",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 16,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "I have set the LORD always before me.\nBecause he is at my right hand, I shall not be moved. Therefore my heart is glad, and my tongue rejoices.\nMy body shall also dwell in safety. For you will not leave my soul in Sheol,\nneither will you allow your holy one to see corruption.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "anxiety"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-043-005-007",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 43,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "Don’t be afraid, for I am with you.\nI will bring your offspring from the east,\nand gather you from the west. I will tell the north, ‘Give them up!’\nand tell the south, ‘Don’t hold them back!\nBring my sons from far away,\nand my daughters from the ends of the earth— everyone who is called by my name,\nand whom I have created for my glory,\nwhom I have formed,\nyes, whom I have made.’”",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-112-006-008",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 112,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "For he will never be shaken.\nThe righteous will be remembered forever. He will not be afraid of evil news.\nHis heart is steadfast, trusting in the LORD. His heart is established.\nHe will not be afraid in the end when he sees his adversaries.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2sa-022-002-004",
+    "bookId": "2SA",
+    "bookName": "2 Samuel",
+    "chapter": 22,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "and he said:\n“The LORD is my rock,\nmy fortress,\nand my deliverer, even mine; God is my rock in whom I take refuge;\nmy shield, and the horn of my salvation,\nmy high tower, and my refuge.\nMy savior, you save me from violence. I call on the LORD, who is worthy to be praised;\nSo shall I be saved from my enemies.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-003-024-026",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 3,
+    "startVerse": 24,
+    "endVerse": 26,
+    "text": "When you lie down, you will not be afraid.\nYes, you will lie down, and your sleep will be sweet. Don’t be afraid of sudden fear,\nneither of the desolation of the wicked, when it comes; for the LORD will be your confidence,\nand will keep your foot from being taken.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-010-028-031",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 10,
+    "startVerse": 28,
+    "endVerse": 31,
+    "text": "Don’t be afraid of those who kill the body, but are not able to kill the soul. Rather, fear him who is able to destroy both soul and body in Gehenna. “Aren’t two sparrows sold for an assarion coin? Not one of them falls to the ground apart from your Father’s will. But the very hairs of your head are all numbered. Therefore don’t be afraid. You are of more value than many sparrows.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-008-015-017",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 8,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "For you didn’t receive the spirit of bondage again to fear, but you received the Spirit of adoption, by whom we cry, “Abba! Father!” The Spirit himself testifies with our spirit that we are children of God; and if children, then heirs—heirs of God and joint heirs with Christ, if indeed we suffer with him, that we may also be glorified with him.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jol-002-021-023",
+    "bookId": "JOL",
+    "bookName": "Joel",
+    "chapter": 2,
+    "startVerse": 21,
+    "endVerse": 23,
+    "text": "Land, don’t be afraid.\nBe glad and rejoice, for the LORD has done great things. Don’t be afraid, you animals of the field;\nfor the pastures of the wilderness spring up,\nfor the tree bears its fruit.\nThe fig tree and the vine yield their strength. “Be glad then, you children of Zion,\nand rejoice in the LORD, your God;\nfor he gives you the early rain in just measure,\nand he causes the rain to come down for you,\nthe early rain and the latter rain, as before.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "zep-003-015-017",
+    "bookId": "ZEP",
+    "bookName": "Zephaniah",
+    "chapter": 3,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "The LORD has taken away your judgments. He has thrown out your enemy. The King of Israel, the LORD, is among you. You will not be afraid of evil any more. In that day, it will be said to Jerusalem, “Don’t be afraid, Zion. Don’t let your hands be weak.” The LORD, your God, is among you, a mighty one who will save. He will rejoice over you with joy. He will calm you in his love. He will rejoice over you with singing.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "heb-013-005-007",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 13,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "Be free from the love of money, content with such things as you have, for he has said, “I will in no way leave you, neither will I in any way forsake you.” So that with good courage we say,\n“The Lord is my helper. I will not fear.\nWhat can man do to me?” Remember your leaders, men who spoke to you the word of God, and considering the results of their conduct, imitate their faith.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "fear",
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-051-012-014",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 51,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "“I, even I, am he who comforts you.\nWho are you, that you are afraid of man who shall die,\nand of the son of man who will be made as grass? Have you forgotten the LORD your Maker,\nwho stretched out the heavens,\nand laid the foundations of the earth?\nDo you live in fear continually all day because of the fury of the oppressor,\nwhen he prepares to destroy?\nWhere is the fury of the oppressor? The captive exile will speedily be freed.\nHe will not die and go down into the pit.\nHis bread won’t fail.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "fear"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gal-006-009-011",
+    "bookId": "GAL",
+    "bookName": "Galatians",
+    "chapter": 6,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "Let’s not be weary in doing good, for we will reap in due season if we don’t give up. So then, as we have opportunity, let’s do what is good toward all men, and especially toward those who are of the household of the faith. See with what large letters I write to you with my own hand.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [
+      "encouragement",
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "php-001-006-008",
+    "bookId": "PHP",
+    "bookName": "Philippians",
+    "chapter": 1,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ. It is even right for me to think this way on behalf of all of you, because I have you in my heart, because both in my bonds and in the defense and confirmation of the Good News, you all are partakers with me of grace. For God is my witness, how I long after all of you in the tender mercies of Christ Jesus.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "encouragement"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-015-056-058",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 15,
+    "startVerse": 56,
+    "endVerse": 58,
+    "text": "The sting of death is sin, and the power of sin is the law. But thanks be to God, who gives us the victory through our Lord Jesus Christ. Therefore, my beloved brothers, be steadfast, immovable, always abounding in the Lord’s work, because you know that your labor is not in vain in the Lord.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [
+      "encouragement",
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-008-031-033",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 8,
+    "startVerse": 31,
+    "endVerse": 33,
+    "text": "What then shall we say about these things? If God is for us, who can be against us? He who didn’t spare his own Son, but delivered him up for us all, how would he not also with him freely give us all things? Who could bring a charge against God’s chosen ones? It is God who justifies.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "encouragement"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "heb-010-035-037",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 10,
+    "startVerse": 35,
+    "endVerse": 37,
+    "text": "Therefore don’t throw away your boldness, which has a great reward. For you need endurance so that, having done the will of God, you may receive the promise. “In a very little while,\nhe who comes will come and will not wait.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "encouragement",
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "exo-015-025-027",
+    "bookId": "EXO",
+    "bookName": "Exodus",
+    "chapter": 15,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "Then he cried to the LORD. The LORD showed him a tree, and he threw it into the waters, and the waters were made sweet. There he made a statute and an ordinance for them, and there he tested them. He said, “If you will diligently listen to the LORD your God’s voice, and will do that which is right in his eyes, and will pay attention to his commandments, and keep all his statutes, I will put none of the diseases on you which I have put on the Egyptians; for I am the LORD who heals you.” They came to Elim, where there were twelve springs of water and seventy palm trees. They encamped there by the waters.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jer-017-014-016",
+    "bookId": "JER",
+    "bookName": "Jeremiah",
+    "chapter": 17,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "Heal me, O LORD, and I will be healed.\nSave me, and I will be saved;\nfor you are my praise. Behold, they ask me,\n“Where is the LORD’s word?\nLet it be fulfilled now.” As for me, I have not hurried from being a shepherd after you.\nI haven’t desired the woeful day. You know.\nThat which came out of my lips was before your face.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jer-030-016-018",
+    "bookId": "JER",
+    "bookName": "Jeremiah",
+    "chapter": 30,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "Therefore all those who devour you will be devoured.\nAll your adversaries, everyone of them, will go into captivity.\nThose who plunder you will be plunder.\nI will make all who prey on you become prey. For I will restore health to you,\nand I will heal you of your wounds,” says the LORD,\n“because they have called you an outcast,\nsaying, ‘It is Zion, whom no man seeks after.’” The LORD says:\n“Behold, I will reverse the captivity of Jacob’s tents,\nand have compassion on his dwelling places.\nThe city will be built on its own hill,\nand the palace will be inhabited in its own place.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-041-002-004",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 41,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "The LORD will preserve him, and keep him alive.\nHe shall be blessed on the earth,\nand he will not surrender him to the will of his enemies. The LORD will sustain him on his sickbed,\nand restore him from his bed of illness. I said, “LORD, have mercy on me!\nHeal me, for I have sinned against you.”",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-006-002-004",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 6,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "Have mercy on me, LORD, for I am faint.\nLORD, heal me, for my bones are troubled. My soul is also in great anguish.\nBut you, LORD—how long? Return, LORD. Deliver my soul,\nand save me for your loving kindness’ sake.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-053-004-006",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 53,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "Surely he has borne our sickness\nand carried our suffering;\nyet we considered him plagued,\nstruck by God, and afflicted. But he was pierced for our transgressions.\nHe was crushed for our iniquities.\nThe punishment that brought our peace was on him;\nand by his wounds we are healed. All we like sheep have gone astray.\nEveryone has turned to his own way;\nand the LORD has laid on him the iniquity of us all.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1pe-002-023-025",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 2,
+    "startVerse": 23,
+    "endVerse": 25,
+    "text": "When he was cursed, he didn’t curse back. When he suffered, he didn’t threaten, but committed himself to him who judges righteously. He himself bore our sins in his body on the tree, that we, having died to sins, might live to righteousness. You were healed by his wounds. For you were going astray like sheep; but now you have returned to the Shepherd and Overseer of your souls.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jas-005-014-016",
+    "bookId": "JAS",
+    "bookName": "James",
+    "chapter": 5,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "Is any among you sick? Let him call for the elders of the assembly, and let them pray over him, anointing him with oil in the name of the Lord; and the prayer of faith will heal him who is sick, and the Lord will raise him up. If he has committed sins, he will be forgiven. Confess your sins to one another and pray for one another, that you may be healed. The insistent prayer of a righteous person is powerfully effective.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-107-019-021",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 107,
+    "startVerse": 19,
+    "endVerse": 21,
+    "text": "Then they cry to the LORD in their trouble,\nand he saves them out of their distresses. He sends his word, and heals them,\nand delivers them from their graves. Let them praise the LORD for his loving kindness,\nfor his wonderful deeds to the children of men!",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mal-004-002-004",
+    "bookId": "MAL",
+    "bookName": "Malachi",
+    "chapter": 4,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "But to you who fear my name shall the sun of righteousness arise with healing in its wings. You will go out and leap like calves of the stall. You shall tread down the wicked; for they will be ashes under the soles of your feet in the day that I make,” says the LORD of Armies. “Remember the law of Moses my servant, which I commanded to him in Horeb for all Israel, even statutes and ordinances.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-008-016-018",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 8,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "When evening came, they brought to him many possessed with demons. He cast out the spirits with a word, and healed all who were sick, that it might be fulfilled which was spoken through Isaiah the prophet, saying, “He took our infirmities and bore our diseases.” Now when Jesus saw great multitudes around him, he gave the order to depart to the other side.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-061-001-003",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 61,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "The Lord GOD’s Spirit is on me,\nbecause the LORD has anointed me to preach good news to the humble.\nHe has sent me to bind up the broken hearted,\nto proclaim liberty to the captives\nand release to those who are bound, to proclaim the year of the LORD’s favor\nand the day of vengeance of our God,\nto comfort all who mourn, to provide for those who mourn in Zion,\nto give to them a garland for ashes,\nthe oil of joy for mourning,\nthe garment of praise for the spirit of heaviness,\nthat they may be called trees of righteousness,\nthe planting of the LORD,\nthat he may be glorified.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief",
+      "healing",
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2ch-007-013-015",
+    "bookId": "2CH",
+    "bookName": "2 Chronicles",
+    "chapter": 7,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "“If I shut up the sky so that there is no rain, or if I command the locust to devour the land, or if I send pestilence among my people, if my people who are called by my name will humble themselves, pray, seek my face, and turn from their wicked ways, then I will hear from heaven, will forgive their sin, and will heal their land. Now my eyes will be open and my ears attentive to prayer that is made in this place.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-030-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 30,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "I will extol you, LORD, for you have raised me up,\nand have not made my foes to rejoice over me. LORD my God, I cried to you,\nand you have healed me. LORD, you have brought up my soul from Sheol.\nYou have kept me alive, that I should not go down to the pit.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "act-003-006-008",
+    "bookId": "ACT",
+    "bookName": "Acts",
+    "chapter": 3,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "But Peter said, “I have no silver or gold, but what I have, that I give you. In the name of Jesus Christ of Nazareth, get up and walk!” He took him by the right hand and raised him up. Immediately his feet and his ankle bones received strength. Leaping up, he stood and began to walk. He entered with them into the temple, walking, leaping, and praising God.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jer-033-006-008",
+    "bookId": "JER",
+    "bookName": "Jeremiah",
+    "chapter": 33,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "behold, I will bring it health and healing, and I will cure them; and I will reveal to them abundance of peace and truth. I will restore the fortunes of Judah and Israel, and will build them as at the first. I will cleanse them from all their iniquity by which they have sinned against me. I will pardon all their iniquities by which they have sinned against me and by which they have transgressed against me.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "hos-006-001-003",
+    "bookId": "HOS",
+    "bookName": "Hosea",
+    "chapter": 6,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "“Come! Let’s return to the LORD;\nfor he has torn us to pieces,\nand he will heal us;\nhe has injured us,\nand he will bind up our wounds. After two days he will revive us.\nOn the third day he will raise us up,\nand we will live before him. Let’s acknowledge the LORD.\nLet’s press on to know the LORD.\nAs surely as the sun rises,\nthe LORD will appear.\nHe will come to us like the rain,\nlike the spring rain that waters the earth.”",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing",
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "exo-023-025-027",
+    "bookId": "EXO",
+    "bookName": "Exodus",
+    "chapter": 23,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "You shall serve the LORD your God, and he will bless your bread and your water, and I will take sickness away from among you. No one will miscarry or be barren in your land. I will fulfill the number of your days. I will send my terror before you, and will confuse all the people to whom you come, and I will make all your enemies turn their backs to you.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "deu-007-014-016",
+    "bookId": "DEU",
+    "bookName": "Deuteronomy",
+    "chapter": 7,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "You will be blessed above all peoples. There won’t be male or female barren among you, or among your livestock. The LORD will take away from you all sickness; and he will put none of the evil diseases of Egypt, which you know, on you, but will lay them on all those who hate you. You shall consume all the peoples whom the LORD your God shall deliver to you. Your eye shall not pity them. You shall not serve their gods; for that would be a snare to you.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-004-020-022",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 4,
+    "startVerse": 20,
+    "endVerse": 22,
+    "text": "My son, attend to my words.\nTurn your ear to my sayings. Let them not depart from your eyes.\nKeep them in the center of your heart. For they are life to those who find them,\nand health to their whole body.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-003-007-009",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 3,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "Don’t be wise in your own eyes.\nFear the LORD, and depart from evil. It will be health to your body,\nand nourishment to your bones. Honor the LORD with your substance,\nwith the first fruits of all your increase;",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-017-021-023",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 17,
+    "startVerse": 21,
+    "endVerse": 23,
+    "text": "He who becomes the father of a fool grieves.\nThe father of a fool has no joy. A cheerful heart makes good medicine,\nbut a crushed spirit dries up the bones. A wicked man receives a bribe in secret,\nto pervert the ways of justice.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-058-008-010",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 58,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "Then your light will break out as the morning,\nand your healing will appear quickly;\nthen your righteousness shall go before you,\nand the LORD’s glory will be your rear guard. Then you will call, and the LORD will answer.\nYou will cry for help, and he will say, ‘Here I am.’\n“If you take away from among you the yoke,\nfinger pointing,\nand speaking wickedly; and if you pour out your soul to the hungry,\nand satisfy the afflicted soul,\nthen your light will rise in darkness,\nand your obscurity will be as the noonday;",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2ch-030-018-020",
+    "bookId": "2CH",
+    "bookName": "2 Chronicles",
+    "chapter": 30,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "For a multitude of the people, even many of Ephraim, Manasseh, Issachar, and Zebulun, had not cleansed themselves, yet they ate the Passover other than the way it is written. For Hezekiah had prayed for them, saying, “May the good LORD pardon everyone who sets his heart to seek God, the LORD, the God of his fathers, even if they aren’t clean according to the purification of the sanctuary.” The LORD listened to Hezekiah, and healed the people.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "healing"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-004-030-032",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 4,
+    "startVerse": 30,
+    "endVerse": 32,
+    "text": "Don’t grieve the Holy Spirit of God, in whom you were sealed for the day of redemption. Let all bitterness, wrath, anger, outcry, and slander be put away from you, with all malice. And be kind to one another, tender hearted, forgiving each other, just as God also in Christ forgave you.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-006-014-016",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 6,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "“For if you forgive men their trespasses, your heavenly Father will also forgive you. But if you don’t forgive men their trespasses, neither will your Father forgive your trespasses. “Moreover when you fast, don’t be like the hypocrites, with sad faces. For they disfigure their faces that they may be seen by men to be fasting. Most certainly I tell you, they have received their reward.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-018-021-023",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 18,
+    "startVerse": 21,
+    "endVerse": 23,
+    "text": "Then Peter came and said to him, “Lord, how often shall my brother sin against me, and I forgive him? Until seven times?” Jesus said to him, “I don’t tell you until seven times, but, until seventy times seven. Therefore the Kingdom of Heaven is like a certain king who wanted to settle accounts with his servants.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-006-037-039",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 6,
+    "startVerse": 37,
+    "endVerse": 39,
+    "text": "Don’t judge,\nand you won’t be judged.\nDon’t condemn,\nand you won’t be condemned.\nSet free,\nand you will be set free. “Give, and it will be given to you: good measure, pressed down, shaken together, and running over, will be given to you. For with the same measure you measure it will be measured back to you.” He spoke a parable to them. “Can the blind guide the blind? Won’t they both fall into a pit?",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-023-033-035",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 23,
+    "startVerse": 33,
+    "endVerse": 35,
+    "text": "When they came to the place that is called “The Skull”, they crucified him there with the criminals, one on the right and the other on the left. Jesus said, “Father, forgive them, for they don’t know what they are doing.”\nDividing his garments among them, they cast lots. The people stood watching. The rulers with them also scoffed at him, saying, “He saved others. Let him save himself, if this is the Christ of God, his chosen one!”",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1jn-001-008-010",
+    "bookId": "1JN",
+    "bookName": "1 John",
+    "chapter": 1,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "If we say that we have no sin, we deceive ourselves, and the truth is not in us. If we confess our sins, he is faithful and righteous to forgive us the sins and to cleanse us from all unrighteousness. If we say that we haven’t sinned, we make him a liar, and his word is not in us.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-032-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 32,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Blessed is he whose disobedience is forgiven,\nwhose sin is covered. Blessed is the man to whom the LORD doesn’t impute iniquity,\nin whose spirit there is no deceit. When I kept silence, my bones wasted away through my groaning all day long.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-032-005-007",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 32,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "I acknowledged my sin to you.\nI didn’t hide my iniquity.\nI said, I will confess my transgressions to the LORD,\nand you forgave the iniquity of my sin. Selah. For this, let everyone who is godly pray to you in a time when you may be found.\nSurely when the great waters overflow, they shall not reach to him. You are my hiding place.\nYou will preserve me from trouble.\nYou will surround me with songs of deliverance. Selah.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-043-025-027",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 43,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "I, even I, am he who blots out your transgressions for my own sake;\nand I will not remember your sins. Put me in remembrance.\nLet us plead together.\nDeclare your case,\nthat you may be justified. Your first father sinned,\nand your teachers have transgressed against me.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mic-007-018-020",
+    "bookId": "MIC",
+    "bookName": "Micah",
+    "chapter": 7,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "Who is a God like you, who pardons iniquity,\nand passes over the disobedience of the remnant of his heritage?\nHe doesn’t retain his anger forever,\nbecause he delights in loving kindness. He will again have compassion on us.\nHe will tread our iniquities under foot.\nYou will cast all their sins into the depths of the sea. You will give truth to Jacob,\nand mercy to Abraham,\nas you have sworn to our fathers from the days of old.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-086-004-006",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 86,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "Bring joy to the soul of your servant,\nfor to you, Lord, do I lift up my soul. For you, Lord, are good, and ready to forgive,\nabundant in loving kindness to all those who call on you. Hear, LORD, my prayer.\nListen to the voice of my petitions.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "act-013-038-040",
+    "bookId": "ACT",
+    "bookName": "Acts",
+    "chapter": 13,
+    "startVerse": 38,
+    "endVerse": 40,
+    "text": "Be it known to you therefore, brothers, that through this man is proclaimed to you remission of sins; and by him everyone who believes is justified from all things, from which you could not be justified by the law of Moses. Beware therefore, lest that come on you which is spoken in the prophets:",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-004-006-008",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 4,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Even as David also pronounces blessing on the man to whom God counts righteousness apart from works: “Blessed are they whose iniquities are forgiven,\nwhose sins are covered. Blessed is the man whom the Lord will by no means charge with sin.”",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-001-007-009",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 1,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "In him we have our redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace which he made to abound toward us in all wisdom and prudence, making known to us the mystery of his will, according to his good pleasure which he purposed in him",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-051-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 51,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Have mercy on me, God, according to your loving kindness.\nAccording to the multitude of your tender mercies, blot out my transgressions. Wash me thoroughly from my iniquity.\nCleanse me from my sin. For I know my transgressions.\nMy sin is constantly before me.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-051-009-011",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 51,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "Hide your face from my sins,\nand blot out all of my iniquities. Create in me a clean heart, O God.\nRenew a right spirit within me. Don’t throw me from your presence,\nand don’t take your Holy Spirit from me.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "forgiveness",
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-001-018-020",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 1,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "“Come now, and let’s reason together,” says the LORD:\n“Though your sins are as scarlet, they shall be as white as snow.\nThough they are red like crimson, they shall be as wool. If you are willing and obedient,\nyou will eat the good of the land; but if you refuse and rebel, you will be devoured with the sword;\nfor the LORD’s mouth has spoken it.”",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1jn-002-012-014",
+    "bookId": "1JN",
+    "bookName": "1 John",
+    "chapter": 2,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "I write to you, little children, because your sins are forgiven you for his name’s sake. I write to you, fathers, because you know him who is from the beginning.\nI write to you, young men, because you have overcome the evil one.\nI write to you, little children, because you know the Father. I have written to you, fathers, because you know him who is from the beginning.\nI have written to you, young men, because you are strong, and the word of God remains in you, and you have overcome the evil one.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "heb-008-010-012",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 8,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "“For this is the covenant that I will make with the house of Israel\nafter those days,” says the Lord:\n“I will put my laws into their mind;\nI will also write them on their heart.\nI will be their God,\nand they will be my people. They will not teach every man his fellow citizen\nand every man his brother, saying, ‘Know the Lord,’\nfor all will know me,\nfrom their least to their greatest. For I will be merciful to their unrighteousness.\nI will remember their sins and lawless deeds no more.”",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "forgiveness"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jas-001-002-004",
+    "bookId": "JAS",
+    "bookName": "James",
+    "chapter": 1,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "Count it all joy, my brothers, when you fall into various temptations, knowing that the testing of your faith produces endurance. Let endurance have its perfect work, that you may be perfect and complete, lacking in nothing.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-027-012-014",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 27,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "Don’t deliver me over to the desire of my adversaries,\nfor false witnesses have risen up against me,\nsuch as breathe out cruelty. I am still confident of this:\nI will see the goodness of the LORD in the land of the living. Wait for the LORD.\nBe strong, and let your heart take courage.\nYes, wait for the LORD.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "lam-003-025-027",
+    "bookId": "LAM",
+    "bookName": "Lamentations",
+    "chapter": 3,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "The LORD is good to those who wait for him,\nto the soul who seeks him. It is good that a man should hope\nand quietly wait for the salvation of the LORD. It is good for a man that he bear the yoke in his youth.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2pe-003-008-010",
+    "bookId": "2PE",
+    "bookName": "2 Peter",
+    "chapter": 3,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "But don’t forget this one thing, beloved, that one day is with the Lord as a thousand years, and a thousand years as one day. The Lord is not slow concerning his promise, as some count slowness; but he is patient with us, not wishing that anyone should perish, but that all should come to repentance. But the day of the Lord will come as a thief in the night, in which the heavens will pass away with a great noise, and the elements will be dissolved with fervent heat; and the earth and the works that are in it will be burned up.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-016-031-033",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 16,
+    "startVerse": 31,
+    "endVerse": 33,
+    "text": "Gray hair is a crown of glory.\nIt is attained by a life of righteousness. One who is slow to anger is better than the mighty;\none who rules his spirit, than he who takes a city. The lot is cast into the lap,\nbut its every decision is from the LORD.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "birthday",
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ecc-007-008-010",
+    "bookId": "ECC",
+    "bookName": "Ecclesiastes",
+    "chapter": 7,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "Better is the end of a thing than its beginning.\nThe patient in spirit is better than the proud in spirit. Don’t be hasty in your spirit to be angry, for anger rests in the bosom of fools. Don’t say, “Why were the former days better than these?” For you do not ask wisely about this.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "heb-006-012-014",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 6,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "that you won’t be sluggish, but imitators of those who through faith and perseverance inherited the promises. For when God made a promise to Abraham, since he could swear by no one greater, he swore by himself, saying, “Surely blessing I will bless you, and multiplying I will multiply you.”",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1th-005-014-016",
+    "bookId": "1TH",
+    "bookName": "1 Thessalonians",
+    "chapter": 5,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "We exhort you, brothers: Admonish the disorderly; encourage the faint-hearted; support the weak; be patient toward all. See that no one returns evil for evil to anyone, but always follow after that which is good for one another and for all. Always rejoice.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jas-005-007-009",
+    "bookId": "JAS",
+    "bookName": "James",
+    "chapter": 5,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "Be patient therefore, brothers, until the coming of the Lord. Behold, the farmer waits for the precious fruit of the earth, being patient over it, until it receives the early and late rain. You also be patient. Establish your hearts, for the coming of the Lord is at hand. Don’t grumble, brothers, against one another, so that you won’t be judged. Behold, the judge stands at the door.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-040-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 40,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "I waited patiently for the LORD.\nHe turned to me, and heard my cry. He brought me up also out of a horrible pit,\nout of the miry clay.\nHe set my feet on a rock,\nand gave me a firm place to stand. He has put a new song in my mouth, even praise to our God.\nMany shall see it, and fear, and shall trust in the LORD.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings",
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-062-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 62,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "My soul rests in God alone.\nMy salvation is from him. He alone is my rock, my salvation, and my fortress.\nI will never be greatly shaken. How long will you assault a man?\nWould all of you throw him down,\nlike a leaning wall, like a tottering fence?",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "patience"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2co-005-017-019",
+    "bookId": "2CO",
+    "bookName": "2 Corinthians",
+    "chapter": 5,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "Therefore if anyone is in Christ, he is a new creation. The old things have passed away. Behold, all things have become new. But all things are of God, who reconciled us to himself through Jesus Christ, and gave to us the ministry of reconciliation; namely, that God was in Christ reconciling the world to himself, not reckoning to them their trespasses, and having committed to us the word of reconciliation.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ezk-036-026-028",
+    "bookId": "EZK",
+    "bookName": "Ezekiel",
+    "chapter": 36,
+    "startVerse": 26,
+    "endVerse": 28,
+    "text": "I will also give you a new heart, and I will put a new spirit within you. I will take away the stony heart out of your flesh, and I will give you a heart of flesh. I will put my Spirit within you, and cause you to walk in my statutes. You will keep my ordinances and do them. You will dwell in the land that I gave to your fathers. You will be my people, and I will be your God.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-065-017-019",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 65,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "“For, behold, I create new heavens and a new earth;\nand the former things will not be remembered,\nnor come into mind. But be glad and rejoice forever in that which I create;\nfor, behold, I create Jerusalem to be a delight,\nand her people a joy. I will rejoice in Jerusalem,\nand delight in my people;\nand the voice of weeping and the voice of crying\nwill be heard in her no more.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-004-022-024",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 4,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "that you put away, as concerning your former way of life, the old man that grows corrupt after the lusts of deceit, and that you be renewed in the spirit of your mind, and put on the new man, who in the likeness of God has been created in righteousness and holiness of truth.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-003-009-011",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 3,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "Don’t lie to one another, seeing that you have put off the old man with his doings, and have put on the new man, who is being renewed in knowledge after the image of his Creator, where there can’t be Greek and Jew, circumcision and uncircumcision, barbarian, Scythian, bondservant, or free person; but Christ is all, and in all.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-006-003-005",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 6,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "Or don’t you know that all of us who were baptized into Christ Jesus were baptized into his death? We were buried therefore with him through baptism into death, that just as Christ was raised from the dead through the glory of the Father, so we also might walk in newness of life. For if we have become united with him in the likeness of his death, we will also be part of his resurrection;",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-042-008-010",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 42,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "“I am the LORD.\nThat is my name.\nI will not give my glory to another,\nnor my praise to engraved images. Behold, the former things have happened\nand I declare new things.\nI tell you about them before they come up.” Sing to the LORD a new song,\nand his praise from the end of the earth,\nyou who go down to the sea,\nand all that is therein,\nthe islands and their inhabitants.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jol-002-025-027",
+    "bookId": "JOL",
+    "bookName": "Joel",
+    "chapter": 2,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "I will restore to you the years that the swarming locust has eaten,\nthe great locust, the grasshopper, and the caterpillar,\nmy great army, which I sent among you. You will have plenty to eat and be satisfied,\nand will praise the name of the LORD, your God,\nwho has dealt wondrously with you;\nand my people will never again be disappointed. You will know that I am among Israel,\nand that I am the LORD, your God, and there is no one else;\nand my people will never again be disappointed.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rev-021-005-007",
+    "bookId": "REV",
+    "bookName": "Revelation",
+    "chapter": 21,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "He who sits on the throne said, “Behold, I am making all things new.” He said, “Write, for these words of God are faithful and true.” He said to me, “I am the Alpha and the Omega, the Beginning and the End. I will give freely to him who is thirsty from the spring of the water of life. He who overcomes, I will give him these things. I will be his God, and he will be my son.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-002-004-006",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 2,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "But God, being rich in mercy, for his great love with which he loved us, even when we were dead through our trespasses, made us alive together with Christ—by grace you have been saved— and raised us up with him, and made us to sit with him in the heavenly places in Christ Jesus,",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-002-012-014",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 2,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "having been buried with him in baptism, in which you were also raised with him through faith in the working of God, who raised him from the dead. You were dead through your trespasses and the uncircumcision of your flesh. He made you alive together with him, having forgiven us all our trespasses, wiping out the handwriting in ordinances which was against us. He has taken it out of the way, nailing it to the cross.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-012-001-003",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 12,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Therefore I urge you, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God, which is your spiritual service. Don’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God. For I say through the grace that was given me, to everyone who is among you, not to think of yourself more highly than you ought to think; but to think reasonably, as God has apportioned to each person a measure of faith.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ezk-011-019-021",
+    "bookId": "EZK",
+    "bookName": "Ezekiel",
+    "chapter": 11,
+    "startVerse": 19,
+    "endVerse": 21,
+    "text": "I will give them one heart, and I will put a new spirit within them. I will take the stony heart out of their flesh, and will give them a heart of flesh, that they may walk in my statutes, and keep my ordinances, and do them. They will be my people, and I will be their God. But as for them whose heart walks after the heart of their detestable things and their abominations, I will bring their way on their own heads,’ says the Lord GOD.”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-060-001-003",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 60,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "“Arise, shine; for your light has come,\nand the LORD’s glory has risen on you! For behold, darkness will cover the earth,\nand thick darkness the peoples;\nbut the LORD will arise on you,\nand his glory shall be seen on you. Nations will come to your light,\nand kings to the brightness of your rising.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "new-beginnings"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-030-010-012",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 30,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "Hear, LORD, and have mercy on me.\nLORD, be my helper.” You have turned my mourning into dancing for me.\nYou have removed my sackcloth, and clothed me with gladness, to the end that my heart may sing praise to you, and not be silent.\nLORD my God, I will give thanks to you forever!",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jer-031-015-017",
+    "bookId": "JER",
+    "bookName": "Jeremiah",
+    "chapter": 31,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "The LORD says:\n“A voice is heard in Ramah,\nlamentation and bitter weeping,\nRachel weeping for her children.\nShe refuses to be comforted for her children,\nbecause they are no more.” The LORD says:\n“Refrain your voice from weeping,\nand your eyes from tears,\nfor your work will be rewarded,” says the LORD.\n“They will come again from the land of the enemy. There is hope for your latter end,” says the LORD.\n“Your children will come again to their own territory.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "job-019-025-027",
+    "bookId": "JOB",
+    "bookName": "Job",
+    "chapter": 19,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "But as for me, I know that my Redeemer lives.\nIn the end, he will stand upon the earth. After my skin is destroyed,\nthen I will see God in my flesh, whom I, even I, will see on my side.\nMy eyes will see, and not as a stranger.\n“My heart is consumed within me.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1th-004-013-015",
+    "bookId": "1TH",
+    "bookName": "1 Thessalonians",
+    "chapter": 4,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "But we don’t want you to be ignorant, brothers, concerning those who have fallen asleep, so that you don’t grieve like the rest, who have no hope. For if we believe that Jesus died and rose again, even so God will bring with him those who have fallen asleep in Jesus. For this we tell you by the word of the Lord, that we who are alive, who are left until the coming of the Lord, will in no way precede those who have fallen asleep.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-025-007-009",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 25,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "He will destroy in this mountain the surface of the covering that covers all peoples, and the veil that is spread over all nations. He has swallowed up death forever! The Lord GOD will wipe away tears from off all faces. He will take the reproach of his people away from off all the earth, for the LORD has spoken it. It shall be said in that day, “Behold, this is our God! We have waited for him, and he will save us! This is the LORD! We have waited for him. We will be glad and rejoice in his salvation!”",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-015-054-056",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 15,
+    "startVerse": 54,
+    "endVerse": 56,
+    "text": "But when this perishable body will have become imperishable, and this mortal will have put on immortality, then what is written will happen: “Death is swallowed up in victory.” “Death, where is your sting?\nHades, where is your victory?” The sting of death is sin, and the power of sin is the law.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "lam-003-031-033",
+    "bookId": "LAM",
+    "bookName": "Lamentations",
+    "chapter": 3,
+    "startVerse": 31,
+    "endVerse": 33,
+    "text": "For the Lord will not cast off forever. For though he causes grief,\nyet he will have compassion according to the multitude of his loving kindnesses. For he does not afflict willingly,\nnor grieve the children of men.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-126-004-006",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 126,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "Restore our fortunes again, LORD,\nlike the streams in the Negev. Those who sow in tears will reap in joy. He who goes out weeping, carrying seed for sowing,\nwill certainly come again with joy, carrying his sheaves.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-116-015-017",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 116,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "Precious in the LORD’s sight is the death of his saints. LORD, truly I am your servant.\nI am your servant, the son of your servant girl.\nYou have freed me from my chains. I will offer to you the sacrifice of thanksgiving,\nand will call on the LORD’s name.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "job-014-014-016",
+    "bookId": "JOB",
+    "bookName": "Job",
+    "chapter": 14,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "If a man dies, will he live again?\nI would wait all the days of my warfare,\nuntil my release should come. You would call, and I would answer you.\nYou would have a desire for the work of your hands. But now you count my steps.\nDon’t you watch over my sin?",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rev-007-015-017",
+    "bookId": "REV",
+    "bookName": "Revelation",
+    "chapter": 7,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "Therefore they are before the throne of God, and they serve him day and night in his temple. He who sits on the throne will spread his tabernacle over them. They will never be hungry or thirsty any more. The sun won’t beat on them, nor any heat; for the Lamb who is in the middle of the throne shepherds them and leads them to springs of life-giving waters. And God will wipe away every tear from their eyes.”",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "grief"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-006-019-021",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 6,
+    "startVerse": 19,
+    "endVerse": 21,
+    "text": "“Don’t lay up treasures for yourselves on the earth, where moth and rust consume, and where thieves break through and steal; but lay up for yourselves treasures in heaven, where neither moth nor rust consume, and where thieves don’t break through and steal; for where your treasure is, there your heart will be also.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-006-022-024",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 6,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "“The lamp of the body is the eye. If therefore your eye is sound, your whole body will be full of light. But if your eye is evil, your whole body will be full of darkness. If therefore the light that is in you is darkness, how great is the darkness! “No one can serve two masters, for either he will hate the one and love the other, or else he will be devoted to one and despise the other. You can’t serve both God and Mammon.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1ti-006-006-008",
+    "bookId": "1TI",
+    "bookName": "1 Timothy",
+    "chapter": 6,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "But godliness with contentment is great gain. For we brought nothing into the world, and we certainly can’t carry anything out. But having food and clothing, we will be content with that.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1ti-006-009-011",
+    "bookId": "1TI",
+    "bookName": "1 Timothy",
+    "chapter": 6,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "But those who are determined to be rich fall into a temptation, a snare, and many foolish and harmful lusts, such as drown men in ruin and destruction. For the love of money is a root of all kinds of evil. Some have been led astray from the faith in their greed, and have pierced themselves through with many sorrows. But you, man of God, flee these things, and follow after righteousness, godliness, faith, love, perseverance, and gentleness.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "php-004-018-020",
+    "bookId": "PHP",
+    "bookName": "Philippians",
+    "chapter": 4,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "But I have all things and abound. I am filled, having received from Epaphroditus the things that came from you, a sweet-smelling fragrance, an acceptable and well-pleasing sacrifice to God. My God will supply every need of yours according to his riches in glory in Christ Jesus. Now to our God and Father be the glory forever and ever! Amen.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mal-003-010-012",
+    "bookId": "MAL",
+    "bookName": "Malachi",
+    "chapter": 3,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "Bring the whole tithe into the storehouse, that there may be food in my house, and test me now in this,” says the LORD of Armies, “if I will not open you the windows of heaven, and pour you out a blessing, that there will not be enough room for. I will rebuke the devourer for your sakes, and he shall not destroy the fruits of your ground; neither shall your vine cast its fruit before its time in the field,” says the LORD of Armies. “All nations shall call you blessed, for you will be a delightful land,” says the LORD of Armies.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-003-009-011",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 3,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "Honor the LORD with your substance,\nwith the first fruits of all your increase; so your barns will be filled with plenty,\nand your vats will overflow with new wine. My son, don’t despise the LORD’s discipline,\nneither be weary of his correction;",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-011-024-026",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 11,
+    "startVerse": 24,
+    "endVerse": 26,
+    "text": "There is one who scatters, and increases yet more.\nThere is one who withholds more than is appropriate, but gains poverty. The liberal soul shall be made fat.\nHe who waters shall be watered also himself. People curse someone who withholds grain,\nbut blessing will be on the head of him who sells it.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-022-001-003",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 22,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "A good name is more desirable than great riches,\nand loving favor is better than silver and gold. The rich and the poor have this in common:\nThe LORD is the maker of them all. A prudent man sees danger and hides himself;\nbut the simple pass on, and suffer for it.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-022-006-008",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 22,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Train up a child in the way he should go,\nand when he is old he will not depart from it. The rich rule over the poor.\nThe borrower is servant to the lender. He who sows wickedness reaps trouble,\nand the rod of his fury will be destroyed.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-012-015-017",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 12,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "He said to them, “Beware! Keep yourselves from covetousness, for a man’s life doesn’t consist of the abundance of the things which he possesses.” He spoke a parable to them, saying, “The ground of a certain rich man produced abundantly. He reasoned within himself, saying, ‘What will I do, because I don’t have room to store my crops?’",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-016-010-012",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 16,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "He who is faithful in a very little is faithful also in much. He who is dishonest in a very little is also dishonest in much. If therefore you have not been faithful in the unrighteous mammon, who will commit to your trust the true riches? If you have not been faithful in that which is another’s, who will give you that which is your own?",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2co-009-006-008",
+    "bookId": "2CO",
+    "bookName": "2 Corinthians",
+    "chapter": 9,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Remember this: he who sows sparingly will also reap sparingly. He who sows bountifully will also reap bountifully. Let each man give according as he has determined in his heart, not grudgingly or under compulsion, for God loves a cheerful giver. And God is able to make all grace abound to you, that you, always having all sufficiency in everything, may abound to every good work.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-023-004-006",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 23,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "Don’t weary yourself to be rich.\nIn your wisdom, show restraint. Why do you set your eyes on that which is not?\nFor it certainly sprouts wings like an eagle and flies in the sky. Don’t eat the food of him who has a stingy eye,\nand don’t crave his delicacies,",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ecc-005-010-012",
+    "bookId": "ECC",
+    "bookName": "Ecclesiastes",
+    "chapter": 5,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "He who loves silver shall not be satisfied with silver, nor he who loves abundance, with increase. This also is vanity. When goods increase, those who eat them are increased; and what advantage is there to its owner, except to feast on them with his eyes? The sleep of a laboring man is sweet, whether he eats little or much; but the abundance of the rich will not allow him to sleep.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-013-011-013",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 13,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "Wealth gained dishonestly dwindles away,\nbut he who gathers by hand makes it grow. Hope deferred makes the heart sick,\nbut when longing is fulfilled, it is a tree of life. Whoever despises instruction will pay for it,\nbut he who respects a command will be rewarded.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-030-007-009",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 30,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "“Two things I have asked of you.\nDon’t deny me before I die. Remove far from me falsehood and lies.\nGive me neither poverty nor riches.\nFeed me with the food that is needful for me, lest I be full, deny you, and say, ‘Who is the LORD?’\nor lest I be poor, and steal,\nand so dishonor the name of my God.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "deu-008-017-019",
+    "bookId": "DEU",
+    "bookName": "Deuteronomy",
+    "chapter": 8,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "and lest you say in your heart, “My power and the might of my hand has gotten me this wealth.” But you shall remember the LORD your God, for it is he who gives you power to get wealth, that he may establish his covenant which he swore to your fathers, as it is today. It shall be, if you shall forget the LORD your God, and walk after other gods, and serve them and worship them, I testify against you today that you shall surely perish.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-037-016-018",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 37,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "Better is a little that the righteous has,\nthan the abundance of many wicked. For the arms of the wicked shall be broken,\nbut the LORD upholds the righteous. The LORD knows the days of the perfect.\nTheir inheritance shall be forever.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-021-005-007",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 21,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "The plans of the diligent surely lead to profit;\nand everyone who is hasty surely rushes to poverty. Getting treasures by a lying tongue\nis a fleeting vapor for those who seek death. The violence of the wicked will drive them away,\nbecause they refuse to do what is right.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money",
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "act-020-034-036",
+    "bookId": "ACT",
+    "bookName": "Acts",
+    "chapter": 20,
+    "startVerse": 34,
+    "endVerse": 36,
+    "text": "You yourselves know that these hands served my necessities, and those who were with me. In all things I gave you an example, that so laboring you ought to help the weak, and to remember the words of the Lord Jesus, that he himself said, ‘It is more blessed to give than to receive.’ ” When he had spoken these things, he knelt down and prayed with them all.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money",
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-062-009-011",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 62,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "Surely men of low degree are just a breath,\nand men of high degree are a lie.\nIn the balances they will go up.\nThey are together lighter than a breath. Don’t trust in oppression.\nDon’t become vain in robbery.\nIf riches increase,\ndon’t set your heart on them. God has spoken once;\ntwice I have heard this,\nthat power belongs to God.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1ti-006-017-019",
+    "bookId": "1TI",
+    "bookName": "1 Timothy",
+    "chapter": 6,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "Charge those who are rich in this present age that they not be arrogant, nor have their hope set on the uncertainty of riches, but on the living God, who richly provides us with everything to enjoy; that they do good, that they be rich in good works, that they be ready to distribute, willing to share; laying up in store for themselves a good foundation against the time to come, that they may lay hold of eternal life.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-014-028-030",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 14,
+    "startVerse": 28,
+    "endVerse": 30,
+    "text": "For which of you, desiring to build a tower, doesn’t first sit down and count the cost, to see if he has enough to complete it? Or perhaps, when he has laid a foundation and isn’t able to finish, everyone who sees begins to mock him, saying, ‘This man began to build and wasn’t able to finish.’",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-027-023-025",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 27,
+    "startVerse": 23,
+    "endVerse": 25,
+    "text": "Know well the state of your flocks,\nand pay attention to your herds, for riches are not forever,\nnor does the crown endure to all generations. The hay is removed, and the new growth appears,\nthe grasses of the hills are gathered in.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-015-016-018",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 15,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "Better is little, with the fear of the LORD,\nthan great treasure with trouble. Better is a dinner of herbs, where love is,\nthan a fattened calf with hatred. A wrathful man stirs up contention,\nbut one who is slow to anger appeases strife.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "money"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gen-002-023-025",
+    "bookId": "GEN",
+    "bookName": "Genesis",
+    "chapter": 2,
+    "startVerse": 23,
+    "endVerse": 25,
+    "text": "The man said, “This is now bone of my bones, and flesh of my flesh. She will be called ‘woman,’ because she was taken out of Man.” Therefore a man will leave his father and his mother, and will join with his wife, and they will be one flesh. The man and his wife were both naked, and they were not ashamed.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ecc-004-009-012",
+    "bookId": "ECC",
+    "bookName": "Ecclesiastes",
+    "chapter": 4,
+    "startVerse": 9,
+    "endVerse": 12,
+    "text": "Two are better than one, because they have a good reward for their labor. For if they fall, the one will lift up his fellow; but woe to him who is alone when he falls, and doesn’t have another to lift him up. Again, if two lie together, then they have warmth; but how can one keep warm alone? If a man prevails against one who is alone, two shall withstand him; and a threefold cord is not quickly broken.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship",
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-005-022-024",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 5,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "Wives, be subject to your own husbands, as to the Lord. For the husband is the head of the wife, as Christ also is the head of the assembly, being himself the savior of the body. But as the assembly is subject to Christ, so let the wives also be to their own husbands in everything.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-005-031-033",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 5,
+    "startVerse": 31,
+    "endVerse": 33,
+    "text": "“For this cause a man will leave his father and mother and will be joined to his wife. Then the two will become one flesh.” This mystery is great, but I speak concerning Christ and the assembly. Nevertheless each of you must also love his own wife even as himself; and let the wife see that she respects her husband.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1pe-003-007-009",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 3,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "You husbands, in the same way, live with your wives according to knowledge, giving honor to the woman as to the weaker vessel, as also being joint heirs of the grace of life, that your prayers may not be hindered. Finally, all of you be like-minded, compassionate, loving as brothers, tenderhearted, courteous, not rendering evil for evil or insult for insult; but instead blessing, knowing that you were called to this, that you may inherit a blessing.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-018-020-022",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 18,
+    "startVerse": 20,
+    "endVerse": 22,
+    "text": "A man’s stomach is filled with the fruit of his mouth.\nWith the harvest of his lips he is satisfied. Death and life are in the power of the tongue;\nthose who love it will eat its fruit. Whoever finds a wife finds a good thing,\nand obtains favor of the LORD.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-019-014-016",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 19,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "House and riches are an inheritance from fathers,\nbut a prudent wife is from the LORD. Slothfulness casts into a deep sleep.\nThe idle soul shall suffer hunger. He who keeps the commandment keeps his soul,\nbut he who is contemptuous in his ways shall die.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-031-010-012",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 31,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "Who can find a worthy woman?\nFor her value is far above rubies. The heart of her husband trusts in her.\nHe shall have no lack of gain. She does him good, and not harm,\nall the days of her life.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "sng-008-006-008",
+    "bookId": "SNG",
+    "bookName": "Song of Solomon",
+    "chapter": 8,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Set me as a seal on your heart,\nas a seal on your arm;\nfor love is strong as death.\nJealousy is as cruel as Sheol.\nIts flashes are flashes of fire,\na very flame of the LORD. Many waters can’t quench love,\nneither can floods drown it.\nIf a man would give all the wealth of his house for love,\nhe would be utterly scorned.\nBrothers We have a little sister.\nShe has no breasts.\nWhat shall we do for our sister\nin the day when she is to be spoken for?",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "sng-002-010-012",
+    "bookId": "SNG",
+    "bookName": "Song of Solomon",
+    "chapter": 2,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "My beloved spoke, and said to me,\n“Rise up, my love, my beautiful one, and come away. For behold, the winter is past.\nThe rain is over and gone. The flowers appear on the earth.\nThe time of the singing has come,\nand the voice of the turtledove is heard in our land.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-003-018-020",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 3,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "Wives, be in subjection to your husbands, as is fitting in the Lord. Husbands, love your wives, and don’t be bitter against them. Children, obey your parents in all things, for this pleases the Lord.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-007-002-004",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 7,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "But, because of sexual immoralities, let each man have his own wife, and let each woman have her own husband. Let the husband give his wife the affection owed her, and likewise also the wife her husband. The wife doesn’t have authority over her own body, but the husband does. Likewise also the husband doesn’t have authority over his own body, but the wife does.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mal-002-014-016",
+    "bookId": "MAL",
+    "bookName": "Malachi",
+    "chapter": 2,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "Yet you say, ‘Why?’ Because the LORD has been witness between you and the wife of your youth, against whom you have dealt treacherously, though she is your companion and the wife of your covenant. Did he not make you one, although he had the residue of the Spirit? Why one? He sought godly offspring. Therefore take heed to your spirit, and let no one deal treacherously against the wife of his youth. One who hates and divorces”, says the LORD, the God of Israel, “covers his garment with violence!” says the LORD of Armies. “Therefore pay attention to your spirit, that you don’t be unfaithful.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-012-004-006",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 12,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "A worthy woman is the crown of her husband,\nbut a disgraceful wife is as rottenness in his bones. The thoughts of the righteous are just,\nbut the advice of the wicked is deceitful. The words of the wicked are about lying in wait for blood,\nbut the speech of the upright rescues them.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rut-001-016-018",
+    "bookId": "RUT",
+    "bookName": "Ruth",
+    "chapter": 1,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "Ruth said, “Don’t urge me to leave you, and to return from following you, for where you go, I will go; and where you stay, I will stay. Your people will be my people, and your God my God. Where you die, I will die, and there I will be buried. May the LORD do so to me, and more also, if anything but death parts you and me.” When Naomi saw that she was determined to go with her, she stopped urging her.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship",
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gen-002-018-020",
+    "bookId": "GEN",
+    "bookName": "Genesis",
+    "chapter": 2,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "The LORD God said, “It is not good for the man to be alone. I will make him a helper comparable to him.” Out of the ground the LORD God formed every animal of the field, and every bird of the sky, and brought them to the man to see what he would call them. Whatever the man called every living creature became its name. The man gave names to all livestock, and to the birds of the sky, and to every animal of the field; but for man there was not found a helper comparable to him.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ecc-009-009-011",
+    "bookId": "ECC",
+    "bookName": "Ecclesiastes",
+    "chapter": 9,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "Live joyfully with the wife whom you love all the days of your life of vanity, which he has given you under the sun, all your days of vanity, for that is your portion in life, and in your labor in which you labor under the sun. Whatever your hand finds to do, do it with your might; for there is no work, nor plan, nor knowledge, nor wisdom, in Sheol, where you are going. I returned and saw under the sun that the race is not to the swift, nor the battle to the strong, neither yet bread to the wise, nor yet riches to men of understanding, nor yet favor to men of skill; but time and chance happen to them all.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage",
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-007-010-012",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 7,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "But to the married I command—not I, but the Lord—that the wife not leave her husband (but if she departs, let her remain unmarried, or else be reconciled to her husband), and that the husband not leave his wife. But to the rest I—not the Lord—say, if any brother has an unbelieving wife, and she is content to live with him, let him not leave her.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gen-001-027-029",
+    "bookId": "GEN",
+    "bookName": "Genesis",
+    "chapter": 1,
+    "startVerse": 27,
+    "endVerse": 29,
+    "text": "God created man in his own image. In God’s image he created him; male and female he created them. God blessed them. God said to them, “Be fruitful, multiply, fill the earth, and subdue it. Have dominion over the fish of the sea, over the birds of the sky, and over every living thing that moves on the earth.” God said, “Behold, I have given you every herb yielding seed, which is on the surface of all the earth, and every tree, which bears fruit yielding seed. It will be your food.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-005-028-030",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 5,
+    "startVerse": 28,
+    "endVerse": 30,
+    "text": "Even so husbands also ought to love their own wives as their own bodies. He who loves his own wife loves himself. For no man ever hated his own flesh, but nourishes and cherishes it, even as the Lord also does the assembly, because we are members of his body, of his flesh and bones.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1pe-003-001-003",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 3,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "In the same way, wives, be in subjection to your own husbands, so that, even if any don’t obey the Word, they may be won by the behavior of their wives without a word, seeing your pure behavior in fear. Let your beauty come not from the outward adorning of braiding your hair, and of wearing gold ornaments or of putting on fine clothing,",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "sng-004-009-011",
+    "bookId": "SNG",
+    "bookName": "Song of Solomon",
+    "chapter": 4,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "You have ravished my heart, my sister, my bride.\nYou have ravished my heart with one of your eyes,\nwith one chain of your neck. How beautiful is your love, my sister, my bride!\nHow much better is your love than wine,\nthe fragrance of your perfumes than all kinds of spices! Your lips, my bride, drip like the honeycomb.\nHoney and milk are under your tongue.\nThe smell of your garments is like the smell of Lebanon.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-005-018-020",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 5,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "Let your spring be blessed.\nRejoice in the wife of your youth. A loving doe and a graceful deer—\nlet her breasts satisfy you at all times.\nBe captivated always with her love. For why should you, my son, be captivated with an adulteress?\nWhy embrace the bosom of another?",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "marriage"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-118-024-026",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 118,
+    "startVerse": 24,
+    "endVerse": 26,
+    "text": "This is the day that the LORD has made.\nWe will rejoice and be glad in it! Save us now, we beg you, LORD!\nLORD, we beg you, send prosperity now. Blessed is he who comes in the LORD’s name!\nWe have blessed you out of the LORD’s house.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-139-013-016",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 139,
+    "startVerse": 13,
+    "endVerse": 16,
+    "text": "For you formed my inmost being.\nYou knit me together in my mother’s womb. I will give thanks to you,\nfor I am fearfully and wonderfully made.\nYour works are wonderful.\nMy soul knows that very well. My frame wasn’t hidden from you,\nwhen I was made in secret,\nwoven together in the depths of the earth. Your eyes saw my body.\nIn your book they were all written,\nthe days that were ordained for me,\nwhen as yet there were none of them.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jas-001-017-019",
+    "bookId": "JAS",
+    "bookName": "James",
+    "chapter": 1,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "Every good gift and every perfect gift is from above, coming down from the Father of lights, with whom can be no variation nor turning shadow. Of his own will he gave birth to us by the word of truth, that we should be a kind of first fruits of his creatures. So, then, my beloved brothers, let every man be swift to hear, slow to speak, and slow to anger;",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-020-003-005",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 20,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "remember all your offerings,\nand accept your burned sacrifice. Selah. May he grant you your heart’s desire,\nand fulfill all your counsel. We will triumph in your salvation.\nIn the name of our God, we will set up our banners.\nMay the LORD grant all your requests.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-065-011-013",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 65,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "You crown the year with your bounty.\nYour carts overflow with abundance. The wilderness grasslands overflow.\nThe hills are clothed with gladness. The pastures are covered with flocks.\nThe valleys also are clothed with grain.\nThey shout for joy!\nThey also sing.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-016-005-007",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 16,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "The LORD assigned my portion and my cup.\nYou made my lot secure. The lines have fallen to me in pleasant places.\nYes, I have a good inheritance. I will bless the LORD, who has given me counsel.\nYes, my heart instructs me in the night seasons.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-091-014-016",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 91,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "“Because he has set his love on me, therefore I will deliver him.\nI will set him on high, because he has known my name. He will call on me, and I will answer him.\nI will be with him in trouble.\nI will deliver him, and honor him. I will satisfy him with long life,\nand show him my salvation.”",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "3jn-001-002-004",
+    "bookId": "3JN",
+    "bookName": "3 John",
+    "chapter": 1,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "Beloved, I pray that you may prosper in all things and be healthy, even as your soul prospers. For I rejoiced greatly when brothers came and testified about your truth, even as you walk in truth. I have no greater joy than this: to hear about my children walking in truth.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-046-003-005",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 46,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "“Listen to me, house of Jacob,\nand all the remnant of the house of Israel,\nthat have been carried from their birth,\nthat have been carried from the womb. Even to old age I am he,\nand even to gray hairs I will carry you.\nI have made, and I will bear.\nYes, I will carry, and will deliver. “To whom will you compare me, and consider my equal,\nand compare me, as if we were the same?",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-071-017-019",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 71,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "God, you have taught me from my youth.\nUntil now, I have declared your wondrous works. Yes, even when I am old and gray-haired, God, don’t forsake me,\nuntil I have declared your strength to the next generation,\nyour might to everyone who is to come. God, your righteousness also reaches to the heavens.\nYou have done great things.\nGod, who is like you?",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-128-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 128,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Blessed is everyone who fears the LORD,\nwho walks in his ways. For you will eat the labor of your hands.\nYou will be happy, and it will be well with you. Your wife will be as a fruitful vine in the innermost parts of your house,\nyour children like olive shoots around your table.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-021-002-004",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 21,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "You have given him his heart’s desire,\nand have not withheld the request of his lips. Selah. For you meet him with the blessings of goodness.\nYou set a crown of fine gold on his head. He asked life of you and you gave it to him,\neven length of days forever and ever.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-061-005-007",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 61,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "For you, God, have heard my vows.\nYou have given me the heritage of those who fear your name. You will prolong the king’s life.\nHis years will be for generations. He shall be enthroned in God’s presence forever.\nAppoint your loving kindness and truth, that they may preserve him.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-003-001-003",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 3,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "My son, don’t forget my teaching,\nbut let your heart keep my commandments, for they will add to you length of days,\nyears of life, and peace. Don’t let kindness and truth forsake you.\nBind them around your neck.\nWrite them on the tablet of your heart.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-004-010-012",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 4,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "Listen, my son, and receive my sayings.\nThe years of your life will be many. I have taught you in the way of wisdom.\nI have led you in straight paths. When you go, your steps will not be hampered.\nWhen you run, you will not stumble.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jer-001-005-007",
+    "bookId": "JER",
+    "bookName": "Jeremiah",
+    "chapter": 1,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "“Before I formed you in the womb, I knew you.\nBefore you were born, I sanctified you.\nI have appointed you a prophet to the nations.” Then I said, “Ah, Lord GOD! Behold, I don’t know how to speak; for I am a child.” But the LORD said to me, “Don’t say, ‘I am a child;’ for you must go to whomever I send you, and you must say whatever I command you.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-092-012-014",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 92,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "The righteous shall flourish like the palm tree.\nHe will grow like a cedar in Lebanon. They are planted in the LORD’s house.\nThey will flourish in our God’s courts. They will still produce fruit in old age.\nThey will be full of sap and green,",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-017-006-008",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 17,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Children’s children are the crown of old men;\nthe glory of children is their parents. Excellent speech isn’t fitting for a fool,\nmuch less do lying lips fit a prince. A bribe is a precious stone in the eyes of him who gives it;\nwherever he turns, he prospers.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "birthday"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-003-023-025",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 3,
+    "startVerse": 23,
+    "endVerse": 25,
+    "text": "And whatever you do, work heartily, as for the Lord and not for men, knowing that from the Lord you will receive the reward of the inheritance; for you serve the Lord Christ. But he who does wrong will receive again for the wrong that he has done, and there is no partiality.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-022-027-029",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 22,
+    "startVerse": 27,
+    "endVerse": 29,
+    "text": "If you don’t have means to pay,\nwhy should he take away your bed from under you? Don’t move the ancient boundary stone\nwhich your fathers have set up. Do you see a man skilled in his work?\nHe will serve kings.\nHe won’t serve obscure men.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "eph-006-006-008",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 6,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "not in the way of service only when eyes are on you, as men pleasers, but as servants of Christ, doing the will of God from the heart, with good will doing service as to the Lord and not to men, knowing that whatever good thing each one does, he will receive the same good again from the Lord, whether he is bound or free.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1th-004-011-013",
+    "bookId": "1TH",
+    "bookName": "1 Thessalonians",
+    "chapter": 4,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "and that you make it your ambition to lead a quiet life, and to do your own business, and to work with your own hands, even as we instructed you, that you may walk properly toward those who are outside, and may have need of nothing. But we don’t want you to be ignorant, brothers, concerning those who have fallen asleep, so that you don’t grieve like the rest, who have no hope.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-014-023-025",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 14,
+    "startVerse": 23,
+    "endVerse": 25,
+    "text": "In all hard work there is profit,\nbut the talk of the lips leads only to poverty. The crown of the wise is their riches,\nbut the folly of fools crowns them with folly. A truthful witness saves souls,\nbut a false witness is deceitful.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-012-011-013",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 12,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "He who tills his land shall have plenty of bread,\nbut he who chases fantasies is void of understanding. The wicked desires the plunder of evil men,\nbut the root of the righteous flourishes. An evil man is trapped by sinfulness of lips,\nbut the righteous shall come out of trouble.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-013-004-006",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 13,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "The soul of the sluggard desires, and has nothing,\nbut the desire of the diligent shall be fully satisfied. A righteous man hates lies,\nbut a wicked man brings shame and disgrace. Righteousness guards the way of integrity,\nbut wickedness overthrows the sinner.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-010-004-006",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 10,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "He becomes poor who works with a lazy hand,\nbut the hand of the diligent brings wealth. He who gathers in summer is a wise son,\nbut he who sleeps during the harvest is a son who causes shame. Blessings are on the head of the righteous,\nbut violence covers the mouth of the wicked.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2th-003-010-012",
+    "bookId": "2TH",
+    "bookName": "2 Thessalonians",
+    "chapter": 3,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "For even when we were with you, we commanded you this: “If anyone is not willing to work, don’t let him eat.” For we hear of some who walk among you in rebellion, who don’t work at all, but are busybodies. Now those who are that way, we command and exhort in the Lord Jesus Christ, that they work with quietness and eat their own bread.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-006-006-008",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 6,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Go to the ant, you sluggard.\nConsider her ways, and be wise; which having no chief, overseer, or ruler, provides her bread in the summer,\nand gathers her food in the harvest.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gen-002-015-017",
+    "bookId": "GEN",
+    "bookName": "Genesis",
+    "chapter": 2,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "The LORD God took the man, and put him into the garden of Eden to cultivate and keep it. The LORD God commanded the man, saying, “You may freely eat of every tree of the garden; but you shall not eat of the tree of the knowledge of good and evil; for in the day that you eat of it, you will surely die.”",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "psa-090-015-017",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 90,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "Make us glad for as many days as you have afflicted us,\nfor as many years as we have seen evil. Let your work appear to your servants,\nyour glory to their children. Let the favor of the Lord our God be on us.\nEstablish the work of our hands for us.\nYes, establish the work of our hands.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-003-008-010",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 3,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "Now he who plants and he who waters are the same, but each will receive his own reward according to his own labor. For we are God’s fellow workers. You are God’s farming, God’s building. According to the grace of God which was given to me, as a wise master builder I laid a foundation, and another builds on it. But let each man be careful how he builds on it.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jer-029-005-007",
+    "bookId": "JER",
+    "bookName": "Jeremiah",
+    "chapter": 29,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "“Build houses and dwell in them. Plant gardens and eat their fruit. Take wives and father sons and daughters. Take wives for your sons, and give your daughters to husbands, that they may bear sons and daughters. Multiply there, and don’t be diminished. Seek the peace of the city where I have caused you to be carried away captive, and pray to the LORD for it; for in its peace you will have peace.”",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ecc-002-024-026",
+    "bookId": "ECC",
+    "bookName": "Ecclesiastes",
+    "chapter": 2,
+    "startVerse": 24,
+    "endVerse": 26,
+    "text": "There is nothing better for a man than that he should eat and drink, and make his soul enjoy good in his labor. This also I saw, that it is from the hand of God. For who can eat, or who can have enjoyment, more than I? For to the man who pleases him, God gives wisdom, knowledge, and joy; but to the sinner he gives travail, to gather and to heap up, that he may give to him who pleases God. This also is vanity and a chasing after wind.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-010-031-033",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 10,
+    "startVerse": 31,
+    "endVerse": 33,
+    "text": "Whether therefore you eat or drink, or whatever you do, do all to the glory of God. Give no occasion for stumbling, whether to Jews, to Greeks, or to the assembly of God; even as I also please all men in all things, not seeking my own profit, but the profit of the many, that they may be saved.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-028-019-021",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 28,
+    "startVerse": 19,
+    "endVerse": 21,
+    "text": "One who works his land will have an abundance of food;\nbut one who chases fantasies will have his fill of poverty. A faithful man is rich with blessings;\nbut one who is eager to be rich will not go unpunished. To show partiality is not good,\nyet a man will do wrong for a piece of bread.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-024-026-028",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 24,
+    "startVerse": 26,
+    "endVerse": 28,
+    "text": "An honest answer\nis like a kiss on the lips. Prepare your work outside,\nand get your fields ready.\nAfterwards, build your house. Don’t be a witness against your neighbor without cause.\nDon’t deceive with your lips.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1ti-005-007-009",
+    "bookId": "1TI",
+    "bookName": "1 Timothy",
+    "chapter": 5,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "Also command these things, that they may be without reproach. But if anyone doesn’t provide for his own, and especially his own household, he has denied the faith and is worse than an unbeliever. Let no one be enrolled as a widow under sixty years old, having been the wife of one man,",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-031-013-015",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 31,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "She seeks wool and flax,\nand works eagerly with her hands. She is like the merchant ships.\nShe brings her bread from afar. She rises also while it is yet night,\ngives food to her household,\nand portions for her servant girls.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "ecc-003-012-014",
+    "bookId": "ECC",
+    "bookName": "Ecclesiastes",
+    "chapter": 3,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "I know that there is nothing better for them than to rejoice, and to do good as long as they live. Also that every man should eat and drink, and enjoy good in all his labor, is the gift of God. I know that whatever God does, it shall be forever. Nothing can be added to it, nor anything taken from it; and God has done it, that men should fear before him.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-018-008-010",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 18,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "The words of a gossip are like dainty morsels:\nthey go down into a person’s innermost parts. One who is slack in his work\nis brother to him who is a master of destruction. The LORD’s name is a strong tower:\nthe righteous run to him, and are safe.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-021-025-027",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 21,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "The desire of the sluggard kills him,\nfor his hands refuse to labor. There are those who covet greedily all day long;\nbut the righteous give and don’t withhold. The sacrifice of the wicked is an abomination—\nhow much more, when he brings it with a wicked mind!",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "work"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-017-017-019",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 17,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "A friend loves at all times;\nand a brother is born for adversity. A man void of understanding strikes hands,\nand becomes collateral in the presence of his neighbor. He who loves disobedience loves strife.\nOne who builds a high gate seeks destruction.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-027-017-019",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 27,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "Iron sharpens iron;\nso a man sharpens his friend’s countenance. Whoever tends the fig tree shall eat its fruit.\nHe who looks after his master shall be honored. Like water reflects a face,\nso a man’s heart reflects the man.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-027-009-011",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 27,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "Perfume and incense bring joy to the heart;\nso does earnest counsel from a man’s friend. Don’t forsake your friend and your father’s friend.\nDon’t go to your brother’s house in the day of your disaster.\nA neighbor who is near is better than a distant brother. Be wise, my son,\nand bring joy to my heart,\nthen I can answer my tormentor.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-018-022-024",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 18,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "Whoever finds a wife finds a good thing,\nand obtains favor of the LORD. The poor plead for mercy,\nbut the rich answer harshly. A man of many companions may be ruined,\nbut there is a friend who sticks closer than a brother.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1sa-018-001-003",
+    "bookId": "1SA",
+    "bookName": "1 Samuel",
+    "chapter": 18,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "When he had finished speaking to Saul, the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul. Saul took him that day, and wouldn’t let him go home to his father’s house any more. Then Jonathan and David made a covenant, because he loved him as his own soul.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-027-005-007",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 27,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "Better is open rebuke\nthan hidden love. The wounds of a friend are faithful,\nalthough the kisses of an enemy are profuse. A full soul loathes a honeycomb;\nbut to a hungry soul, every bitter thing is sweet.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1th-005-011-013",
+    "bookId": "1TH",
+    "bookName": "1 Thessalonians",
+    "chapter": 5,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "Therefore exhort one another, and build each other up, even as you also do. But we beg you, brothers, to know those who labor among you, and are over you in the Lord and admonish you, and to respect and honor them in love for their work’s sake.\nBe at peace among yourselves.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gal-006-002-004",
+    "bookId": "GAL",
+    "bookName": "Galatians",
+    "chapter": 6,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "Bear one another’s burdens, and so fulfill the law of Christ. For if a man thinks himself to be something when he is nothing, he deceives himself. But let each man examine his own work, and then he will have reason to boast in himself, and not in someone else.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "php-002-001-004",
+    "bookId": "PHP",
+    "bookName": "Philippians",
+    "chapter": 2,
+    "startVerse": 1,
+    "endVerse": 4,
+    "text": "If therefore there is any exhortation in Christ, if any consolation of love, if any fellowship of the Spirit, if any tender mercies and compassion, make my joy full by being like-minded, having the same love, being of one accord, of one mind; doing nothing through rivalry or through conceit, but in humility, each counting others better than himself; each of you not just looking to his own things, but each of you also to the things of others.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "job-002-011-013",
+    "bookId": "JOB",
+    "bookName": "Job",
+    "chapter": 2,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "Now when Job’s three friends heard of all this evil that had come on him, they each came from his own place: Eliphaz the Temanite, Bildad the Shuhite, and Zophar the Naamathite; and they made an appointment together to come to sympathize with him and to comfort him. When they lifted up their eyes from a distance, and didn’t recognize him, they raised their voices, and wept; and they each tore his robe, and sprinkled dust on their heads toward the sky. So they sat down with him on the ground seven days and seven nights, and no one spoke a word to him, for they saw that his grief was very great.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "pro-012-026-028",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 12,
+    "startVerse": 26,
+    "endVerse": 28,
+    "text": "A righteous person is cautious in friendship,\nbut the way of the wicked leads them astray. The slothful man doesn’t roast his game,\nbut the possessions of diligent men are prized. In the way of righteousness is life;\nin its path there is no death.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jhn-013-034-036",
+    "bookId": "JHN",
+    "bookName": "John",
+    "chapter": 13,
+    "startVerse": 34,
+    "endVerse": 36,
+    "text": "A new commandment I give to you, that you love one another. Just as I have loved you, you also love one another. By this everyone will know that you are my disciples, if you have love for one another.” Simon Peter said to him, “Lord, where are you going?”\nJesus answered, “Where I am going, you can’t follow now, but you will follow afterwards.”",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1jn-003-022-024",
+    "bookId": "1JN",
+    "bookName": "1 John",
+    "chapter": 3,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "so whatever we ask, we receive from him, because we keep his commandments and do the things that are pleasing in his sight. This is his commandment, that we should believe in the name of his Son, Jesus Christ, and love one another, even as he commanded. He who keeps his commandments remains in him, and he in him. By this we know that he remains in us, by the Spirit which he gave us.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-012-014-016",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 12,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "Bless those who persecute you; bless, and don’t curse. Rejoice with those who rejoice. Weep with those who weep. Be of the same mind one toward another. Don’t set your mind on high things, but associate with the humble. Don’t be wise in your own conceits.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1sa-020-040-042",
+    "bookId": "1SA",
+    "bookName": "1 Samuel",
+    "chapter": 20,
+    "startVerse": 40,
+    "endVerse": 42,
+    "text": "Jonathan gave his weapons to his boy, and said to him, “Go, carry them to the city.” As soon as the boy was gone, David arose out of the south, and fell on his face to the ground, and bowed himself three times. They kissed one another and wept with one another, and David wept the most. Jonathan said to David, “Go in peace, because we have both sworn in the LORD’s name, saying, ‘The LORD is between me and you, and between my offspring and your offspring, forever.’” He arose and departed; and Jonathan went into the city.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-006-031-033",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 6,
+    "startVerse": 31,
+    "endVerse": 33,
+    "text": "“As you would like people to do to you, do exactly so to them. “If you love those who love you, what credit is that to you? For even sinners love those who love them. If you do good to those who do good to you, what credit is that to you? For even sinners do the same.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-001-010-012",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 1,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "Now I beg you, brothers, through the name of our Lord, Jesus Christ, that you all speak the same thing, and that there be no divisions among you, but that you be perfected together in the same mind and in the same judgment. For it has been reported to me concerning you, my brothers, by those who are from Chloe’s household, that there are contentions among you. Now I mean this, that each one of you says, “I follow Paul,” “I follow Apollos,” “I follow Cephas,” and, “I follow Christ.”",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "php-001-027-029",
+    "bookId": "PHP",
+    "bookName": "Philippians",
+    "chapter": 1,
+    "startVerse": 27,
+    "endVerse": 29,
+    "text": "Only let your way of life be worthy of the Good News of Christ, that whether I come and see you or am absent, I may hear of your state, that you stand firm in one spirit, with one soul striving for the faith of the Good News; and in nothing frightened by the adversaries, which is for them a proof of destruction, but to you of salvation, and that from God. Because it has been granted to you on behalf of Christ, not only to believe in him, but also to suffer on his behalf,",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1th-003-011-013",
+    "bookId": "1TH",
+    "bookName": "1 Thessalonians",
+    "chapter": 3,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "Now may our God and Father himself, and our Lord Jesus Christ, direct our way to you. May the Lord make you to increase and abound in love toward one another and toward all men, even as we also do toward you, to the end he may establish your hearts blameless in holiness before our God and Father at the coming of our Lord Jesus with all his saints.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "friendship"
+    ],
     "translationId": "WEBP"
   }
 ]
