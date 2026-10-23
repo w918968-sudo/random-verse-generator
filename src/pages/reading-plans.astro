@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+import { READING_PLANS } from '../data/reading-plans.mjs';
+
+const canonical = new URL('/reading-plans/', SITE_URL).href;
+const totalDays = READING_PLANS.reduce((n, p) => n + p.days.length, 0);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Bible Reading Plans – ${ui.siteName}`,
+  url: canonical,
+  description:
+    'Free Bible reading plans — short, guided plans of a few days to a month, each with one hand-picked passage per day from the World English Bible (Protestant Edition).',
+};
+---
+
+<Layout title={`Bible Reading Plans – ${ui.siteName}`} description={`Free Bible reading plans — ${READING_PLANS.length} short guided plans from 7 to 30 days, each with one hand-picked passage per day. Track your progress and read the World English Bible (Protestant Edition).`}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">Bible Reading Plans</h1>
+  <p class="lede">
+    Short, guided reading plans — from a week to a month — with one hand-picked passage for each
+    day. Your progress is saved privately in your browser, so you can pick up right where you left
+    off.
+  </p>
+
+  <div class="plan-grid">
+    {READING_PLANS.map((p) => (
+      <a class="plan-card" href={`/reading-plan/${p.slug}/`}>
+        <h2>{p.title}</h2>
+        <p class="plan-meta">{p.days.length} days</p>
+        <p>{p.description}</p>
+      </a>
+    ))}
+  </div>
+
+  <section class="seo-content">
+    <h2>How these Bible reading plans work</h2>
+    <p>
+      Each plan gives you one passage a day, drawn from the World English Bible (Protestant
+      Edition), a public-domain modern English translation. Press “Mark Day Complete” to move
+      forward, and your place is saved automatically on this device — no account, no sign-up. You
+      can also switch between the WEBP and the King James Version using the translation picker.
+    </p>
+    <p>
+      Prefer a single verse on demand instead of a daily plan? <a href="/">Generate a random
+      verse</a>, read the <a href="/verse-of-the-day/">verse of the day</a>, or browse all{' '}
+      {totalDays} planned readings by topic below.
+    </p>
+  </section>
+</Layout>

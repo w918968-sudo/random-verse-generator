@@ -1,0 +1,245 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { ui } from '../../i18n/en.mjs';
+import { SITE_URL } from '../../config.mjs';
+import { reference } from '../../lib/verse-of-day.mjs';
+import { READING_PLANS } from '../../data/reading-plans.mjs';
+import verses from '../../../public/data/verses.json';
+
+export function getStaticPaths() {
+  return READING_PLANS.map((p) => ({ params: { slug: p.slug }, props: { plan: p } }));
+}
+
+const { plan } = Astro.props;
+const total = plan.days.length;
+const dayVerses = plan.days.map((id) => verses.find((v) => v.id === id)).filter(Boolean);
+const canonical = new URL(`/reading-plan/${plan.slug}/`, SITE_URL).href;
+const pageTitle = `${plan.title} – ${total}-Day Bible Reading Plan – ${ui.siteName}`;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: pageTitle,
+    url: canonical,
+    description: plan.description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Reading Plans', item: `${SITE_URL}/reading-plans/` },
+      { '@type': 'ListItem', position: 3, name: plan.title, item: canonical },
+    ],
+  },
+];
+---
+
+<Layout title={pageTitle} description={`${plan.title} — a free ${total}-day Bible reading plan. ${plan.description} One hand-picked passage each day, in the World English Bible (Protestant Edition) and the King James Version.`}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/reading-plans/">Reading Plans</a>{' '}
+    <span aria-hidden="true">›</span> <span>{plan.title}</span>
+  </nav>
+
+  <h1 class="hero-title">{plan.title}</h1>
+  <p class="lede">
+    {plan.description} Read one passage a day; your place is saved automatically in this browser.
+  </p>
+
+  <div class="plan-progress">
+    <span id="rp-day-label" class="plan-day-label">{ui.readingPlan.dayOf(1, total)}</span>
+    <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax={total} aria-valuenow={0}>
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <div class="plan-done" id="plan-done" hidden>
+    <p>{ui.readingPlan.completed}</p>
+    <button type="button" class="btn btn-primary" id="rp-restart">{ui.readingPlan.restart}</button>
+  </div>
+
+  <figure class="verse-card">
+    <blockquote class="verse-text" id="rp-text">{dayVerses[0].text}</blockquote>
+    <figcaption class="verse-meta">
+      <span class="verse-ref" id="rp-ref">{reference(dayVerses[0])}</span>
+    </figcaption>
+    <div class="verse-actions">
+      <button type="button" class="btn btn-secondary" id="rp-prev" disabled>{ui.readingPlan.prev}</button>
+      <button type="button" class="btn btn-primary" id="rp-complete">{ui.readingPlan.complete}</button>
+      <button type="button" class="btn btn-secondary" id="rp-next">{ui.readingPlan.next}</button>
+      <button type="button" class="btn btn-secondary" id="rp-copy">{ui.result.copy}</button>
+    </div>
+  </figure>
+
+  <div class="plan-days" id="plan-days" aria-label="Plan days">
+    {dayVerses.map((_, i) => (
+      <button type="button" class="day-pill" data-day={i + 1} aria-label={`Day ${i + 1}`}>
+        {i + 1}
+      </button>
+    ))}
+  </div>
+
+  <section class="seo-content">
+    <h2>The full {total}-day plan</h2>
+    <ol class="top-list">
+      {dayVerses.map((v, i) => (
+        <li>
+          <strong>Day {i + 1} · {reference(v)}</strong> — {v.text}
+        </li>
+      ))}
+    </ol>
+
+    <h2>About this reading plan</h2>
+    <p>
+      Each day of this plan is a short passage from the World English Bible (Protestant Edition), a
+      public-domain modern English translation, also available in the King James Version. Press
+      “Mark Day Complete” to advance — your progress is kept only in this browser and never sent to
+      a server.
+    </p>
+    <p>
+      Browse <a href="/reading-plans/">all Bible reading plans</a>, or <a href="/">generate a random
+      verse</a> when you want a single verse on demand.
+    </p>
+  </section>
+</Layout>
+
+<script define:vars={{ slug: plan.slug, dayIds: plan.days }}>
+  import { ui } from '../../i18n/en.mjs';
+  import { reference } from '../../lib/verse-of-day.mjs';
+  import { currentTranslation, dataPaths } from '../../lib/translations.mjs';
+
+  const total = dayIds.length;
+  const STORAGE_KEY = `versewell.plan.${slug}`;
+
+  let translation = currentTranslation();
+  let verseCache = null; // Map(id -> verse) for the current translation
+  let progress = readProgress();
+  let idx = progress;
+
+  const $ = (id) => document.getElementById(id);
+
+  function readProgress() {
+    try {
+      const n = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+      if (Number.isFinite(n)) return Math.max(0, Math.min(n, total));
+    } catch {}
+    return 0;
+  }
+
+  function saveProgress() {
+    try {
+      localStorage.setItem(STORAGE_KEY, String(progress));
+    } catch {}
+  }
+
+  function track(name) {
+    if (typeof window.gtag === 'function') window.gtag('event', name);
+  }
+
+  async function loadVerses() {
+    try {
+      const res = await fetch(dataPaths(translation).verses);
+      if (!res.ok) return;
+      const list = await res.json();
+      verseCache = new Map(list.map((v) => [v.id, v]));
+    } catch {
+      verseCache = null;
+    }
+  }
+
+  function verseAt(i) {
+    if (!verseCache) return null;
+    return verseCache.get(dayIds[i]) || null;
+  }
+
+  function render() {
+    const v = verseAt(idx);
+    if (v) {
+      $('rp-text').textContent = v.text;
+      $('rp-ref').textContent = reference(v);
+    }
+    $('rp-day-label').textContent = ui.readingPlan.dayOf(idx + 1, total);
+
+    const pct = Math.round((progress / total) * 100);
+    $('progress-fill').style.width = `${pct}%`;
+    const bar = $('progress-fill').closest('.progress-track');
+    bar.setAttribute('aria-valuenow', String(progress));
+
+    // Day pills: done / current ("on" day) / upcoming, plus the viewed day.
+    document.querySelectorAll('.day-pill').forEach((pill) => {
+      const day = Number(pill.dataset.day);
+      pill.classList.toggle('day-pill--done', day <= progress);
+      pill.classList.toggle('day-pill--active', day - 1 === idx);
+      pill.setAttribute('aria-current', day - 1 === idx ? 'step' : 'false');
+    });
+
+    $('rp-prev').disabled = idx === 0;
+    $('rp-next').disabled = idx === total - 1;
+
+    const done = progress >= total;
+    $('plan-done').hidden = !done;
+    $('rp-complete').hidden = done;
+  }
+
+  async function setIdx(n) {
+    idx = Math.max(0, Math.min(n, total - 1));
+    if (!verseCache) await loadVerses();
+    render();
+  }
+
+  $('rp-prev').addEventListener('click', () => setIdx(idx - 1));
+  $('rp-next').addEventListener('click', () => setIdx(idx + 1));
+
+  document.querySelectorAll('.day-pill').forEach((pill) => {
+    pill.addEventListener('click', () => setIdx(Number(pill.dataset.day) - 1));
+  });
+
+  $('rp-complete').addEventListener('click', async () => {
+    if (idx + 1 > progress) {
+      progress = idx + 1;
+      saveProgress();
+      track('reading_plan_day_complete');
+    }
+    idx = Math.min(progress, total - 1);
+    if (!verseCache) await loadVerses();
+    render();
+  });
+
+  $('rp-restart').addEventListener('click', async () => {
+    progress = 0;
+    idx = 0;
+    saveProgress();
+    track('reading_plan_restart');
+    if (!verseCache) await loadVerses();
+    render();
+  });
+
+  $('rp-copy').addEventListener('click', async () => {
+    const text = $('rp-text').textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      const btn = $('rp-copy');
+      const original = btn.textContent;
+      btn.textContent = ui.result.copied;
+      track('copy_verse');
+      setTimeout(() => {
+        btn.textContent = original;
+      }, 2000);
+    } catch {
+      // Clipboard unavailable — leave the button as-is.
+    }
+  });
+
+  window.addEventListener('translationchange', async (e) => {
+    if (!e.detail || e.detail === translation) return;
+    translation = e.detail;
+    verseCache = null;
+    await loadVerses();
+    render();
+  });
+
+  loadVerses().then(render);
+</script>
