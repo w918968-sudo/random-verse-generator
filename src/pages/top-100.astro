@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+import { reference } from '../lib/verse-of-day.mjs';
+import { TOP_100 } from '../data/top-100.mjs';
+import verses from '../../public/data/verses.json';
+
+// Join the curated ranking against the built verse data (verbatim text,
+// translation-aware). Order follows the curated list.
+const top = TOP_100.map((id) => verses.find((v) => v.id === id)).filter(Boolean);
+const canonical = new URL('/top-100/', SITE_URL).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Top 100 Most Popular Bible Verses – ${ui.siteName}`,
+  url: canonical,
+  numberOfItems: top.length,
+  itemListElement: top.map((v, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: reference(v),
+  })),
+};
+---
+
+<Layout title={`Top 100 Most Popular Bible Verses – ${ui.siteName}`} description={`The 100 most popular and well-known Bible verses, ranked in order. Read, copy, and share the most famous passages from the World English Bible (Protestant Edition).`}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">Top 100 Most Popular Bible Verses</h1>
+  <p class="lede">
+    The 100 most well-known and widely loved passages in the Bible, ranked in order — from John
+    3:16 to the verses people turn to for comfort, hope, and strength.
+  </p>
+
+  <section class="seo-content">
+    <ol class="top-list">
+      {top.map((v) => (
+        <li>
+          <strong>{reference(v)}</strong> — {v.text}
+        </li>
+      ))}
+    </ol>
+
+    <h2>About these verses</h2>
+    <p>
+      This list brings together the best-known passages from across the Bible, drawn from the World
+      English Bible (Protestant Edition), a public-domain modern English translation. Every verse is
+      free to quote and share. Want more? Browse every <a href="/verses-by-book/">verse by book</a>,
+      read the <a href="/psalms/">book of Psalms</a>, or <a href="/">generate a random verse</a>.
+    </p>
+  </section>
+</Layout>

@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+import { reference } from '../lib/verse-of-day.mjs';
+import { BOOKS } from '../../scripts/books.mjs';
+import verses from '../../public/data/verses.json';
+
+// Group the curated library by book, in canonical (66-book) order.
+const byBook = Object.keys(BOOKS)
+  .map((bookId) => ({
+    bookId,
+    name: BOOKS[bookId],
+    verses: verses
+      .filter((v) => v.bookId === bookId)
+      .sort((a, b) => a.chapter - b.chapter || a.startVerse - b.startVerse),
+  }))
+  .filter((g) => g.verses.length);
+
+const canonical = new URL('/verses-by-book/', SITE_URL).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Bible Verses by Book – ${ui.siteName}`,
+  url: canonical,
+  description:
+    'Browse the curated library of well-known Bible verses organized by book, from Genesis to Revelation, in the World English Bible (Protestant Edition).',
+};
+---
+
+<Layout title={`Bible Verses by Book – ${ui.siteName}`} description={`Browse ${verses.length} hand-picked Bible verses organized by book, from Genesis to Revelation, in the World English Bible (Protestant Edition).`}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">Bible Verses by Book</h1>
+  <p class="lede">
+    Browse {verses.length} hand-picked Bible verses organized by book — from Genesis to Revelation —
+    in the World English Bible (Protestant Edition).
+  </p>
+
+  <nav class="book-index" aria-label="Books of the Bible">
+    {byBook.map((g) => (
+      <a href={`#book-${g.bookId}`}>{g.name}</a>
+    ))}
+  </nav>
+
+  <section class="seo-content">
+    {byBook.map((g) => (
+      <>
+        <h2 id={`book-${g.bookId}`}>{g.name}</h2>
+        <ul>
+          {g.verses.map((v) => (
+            <li>
+              <strong>{reference(v)}</strong> — {v.text}
+            </li>
+          ))}
+        </ul>
+      </>
+    ))}
+
+    <h2>About these verses</h2>
+    <p>
+      These are highlights drawn from across the whole Bible — hand-picked, well-known passages in
+      the World English Bible (Protestant Edition), a public-domain modern English translation. See
+      the <a href="/top-100/">top 100 most popular verses</a>, or <a href="/">generate a random
+      verse</a>.
+    </p>
+  </section>
+</Layout>
