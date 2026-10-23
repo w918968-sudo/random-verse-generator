@@ -590,6 +590,32 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 }
 .related-text { display: block; font-size: 0.9rem; line-height: 1.45; color: var(--color-ink-soft); }
 
+/* Reflection (ponder prompt under the verse card) */
+.reflection {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  background: var(--color-primary-soft);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius);
+}
+.reflection-title {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.reflection-question {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+.reflection-next { margin-top: 0.6rem; }
+
 /* Embed section (verse of the day) */
 .embed-section { margin-top: 2rem; }
 .embed-hint { color: var(--color-ink-soft); }

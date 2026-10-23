@@ -108,6 +108,14 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
       </div>
     </figure>
 
+    <section class="reflection" id="reflection" hidden aria-label={ui.reflection.title}>
+      <h3 class="reflection-title">{ui.reflection.title}</h3>
+      <p class="reflection-question" id="reflection-question"></p>
+      <button type="button" class="btn btn-secondary btn-sm reflection-next" id="reflection-next">
+        {ui.reflection.another}
+      </button>
+    </section>
+
     <section class="reading-panel" id="reading-panel" hidden aria-live="polite">
       <div id="reading-content"></div>
       <div class="verse-actions">
@@ -136,6 +144,7 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
 <script>
   import { OCCASIONS, ui } from '../i18n/en.mjs';
   import { currentTranslation, dataPaths } from '../lib/translations.mjs';
+  import { questionsFor } from '../data/reflection-questions.mjs';
 
   const el = {
     generator: document.querySelector('.generator'),
@@ -166,6 +175,9 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     imageBtn: document.getElementById('image-btn'),
     speakBtn: document.getElementById('speak-btn'),
     contextBtn: document.getElementById('context-btn'),
+    reflection: document.getElementById('reflection'),
+    reflectionQuestion: document.getElementById('reflection-question'),
+    reflectionNext: document.getElementById('reflection-next'),
     panel: document.getElementById('reading-panel'),
     readingContent: document.getElementById('reading-content'),
     chapterBtn: document.getElementById('chapter-btn'),
@@ -183,6 +195,8 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
   let verses = []; // library loaded from /data/verses.json
   let versesById = new Map(); // id -> verse (curated library)
   let related = null; // Map<id, string[]> from /data/related.json (null = not loaded)
+  let reflectionQuestions = []; // current verse's matching prompts
+  let reflectionIndex = -1; // index of the prompt currently shown
   let currentVerse = null; // { ...verse, usedTheme }
   const selectedThemes = new Set(); // empty = all themes
   const selectedOccasions = new Set(); // empty = all occasions
@@ -278,6 +292,7 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     }
     renderFavButton();
     renderRelated();
+    renderReflection();
   }
 
   function scrollToCardIfNeeded() {
@@ -923,6 +938,20 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     el.related.hidden = false;
   }
 
+  // Reflection — a single "ponder this" prompt matched to the verse's themes
+  // and occasions. Shown for both curated and whole-Bible draws (the latter
+  // fall back to the general pool).
+  function renderReflection() {
+    el.reflection.hidden = true;
+    if (!currentVerse) return;
+    const qs = questionsFor(currentVerse);
+    if (!qs.length) return;
+    reflectionQuestions = qs;
+    reflectionIndex = Math.floor(Math.random() * qs.length);
+    el.reflectionQuestion.textContent = qs[reflectionIndex];
+    el.reflection.hidden = false;
+  }
+
   function toggleFavorite() {
     if (!currentVerse) return;
     const idx = favorites.findIndex((f) => f.id === currentVerse.id);
@@ -1137,6 +1166,17 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     el.generateBtn.textContent = ui.generate.again;
     track('related_verse_click');
     el.result.scrollIntoView({ block: 'start' });
+  });
+
+  el.reflectionNext.addEventListener('click', () => {
+    if (reflectionQuestions.length < 2) return;
+    let next;
+    do {
+      next = Math.floor(Math.random() * reflectionQuestions.length);
+    } while (next === reflectionIndex);
+    reflectionIndex = next;
+    el.reflectionQuestion.textContent = reflectionQuestions[next];
+    track('reflection_question_click');
   });
 
   if ('speechSynthesis' in window) {

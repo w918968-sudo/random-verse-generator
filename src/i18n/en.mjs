@@ -115,6 +115,10 @@ export const ui = {
     title: 'Related Verses',
     hint: 'Continue on the same theme:',
   },
+  reflection: {
+    title: 'Reflect',
+    another: 'Another question',
+  },
   embed: {
     title: 'Embed This Verse',
     hint:
