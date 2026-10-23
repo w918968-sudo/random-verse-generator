@@ -2186,5 +2186,879 @@
     ],
     "occasions": [],
     "translationId": "KJV"
+  },
+  {
+    "id": "psa-062-005-008",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 62,
+    "startVerse": 5,
+    "endVerse": 8,
+    "text": "My soul, wait thou only upon God; for my expectation is from him. He only is my rock and my salvation: he is my defence; I shall not be moved. In God is my salvation and my glory: the rock of my strength, and my refuge, is in God. Trust in him at all times; ye people, pour out your heart before him: God is a refuge for us. Selah.",
+    "themes": [
+      "Hope",
+      "Strength"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1pe-001-013-015",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 1,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "Wherefore gird up the loins of your mind, be sober, and hope to the end for the grace that is to be brought unto you at the revelation of Jesus Christ; As obedient children, not fashioning yourselves according to the former lusts in your ignorance: But as he which hath called you is holy, so be ye holy in all manner of conversation;",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "tit-003-004-007",
+    "bookId": "TIT",
+    "bookName": "Titus",
+    "chapter": 3,
+    "startVerse": 4,
+    "endVerse": 7,
+    "text": "But after that the kindness and love of God our Saviour toward man appeared, Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Holy Ghost; Which he shed on us abundantly through Jesus Christ our Saviour; That being justified by his grace, we should be made heirs according to the hope of eternal life.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1th-005-008-010",
+    "bookId": "1TH",
+    "bookName": "1 Thessalonians",
+    "chapter": 5,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "But let us, who are of the day, be sober, putting on the breastplate of faith and love; and for an helmet, the hope of salvation. For God hath not appointed us to wrath, but to obtain salvation by our Lord Jesus Christ, Who died for us, that, whether we wake or sleep, we should live together with him.",
+    "themes": [
+      "Faith",
+      "Hope"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "2co-004-016-018",
+    "bookId": "2CO",
+    "bookName": "2 Corinthians",
+    "chapter": 4,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "For which cause we faint not; but though our outward man perish, yet the inward man is renewed day by day. For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory; While we look not at the things which are seen, but at the things which are not seen: for the things which are seen are temporal; but the things which are not seen are eternal.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "col-001-003-005",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 1,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "We give thanks to God and the Father of our Lord Jesus Christ, praying always for you, Since we heard of your faith in Christ Jesus, and of the love which ye have to all the saints, For the hope which is laid up for you in heaven, whereof ye heard before in the word of the truth of the gospel;",
+    "themes": [
+      "Gratitude",
+      "Hope"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1ti-004-008-010",
+    "bookId": "1TI",
+    "bookName": "1 Timothy",
+    "chapter": 4,
+    "startVerse": 8,
+    "endVerse": 10,
+    "text": "For bodily exercise profiteth little: but godliness is profitable unto all things, having promise of the life that now is, and of that which is to come. This is a faithful saying and worthy of all acceptation. For therefore we both labour and suffer reproach, because we trust in the living God, who is the Saviour of all men, specially of those that believe.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-071-014-016",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 71,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "But I will hope continually, and will yet praise thee more and more. My mouth shall shew forth thy righteousness and thy salvation all the day; for I know not the numbers thereof. I will go in the strength of the Lord GOD: I will make mention of thy righteousness, even of thine only.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "jhn-020-019-021",
+    "bookId": "JHN",
+    "bookName": "John",
+    "chapter": 20,
+    "startVerse": 19,
+    "endVerse": 21,
+    "text": "Then the same day at evening, being the first day of the week, when the doors were shut where the disciples were assembled for fear of the Jews, came Jesus and stood in the midst, and saith unto them, Peace be unto you. And when he had so said, he shewed unto them his hands and his side. Then were the disciples glad, when they saw the Lord. Then said Jesus to them again, Peace be unto you: as my Father hath sent me, even so send I you.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "2co-013-011-013",
+    "bookId": "2CO",
+    "bookName": "2 Corinthians",
+    "chapter": 13,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "Finally, brethren, farewell. Be perfect, be of good comfort, be of one mind, live in peace; and the God of love and peace shall be with you. Greet one another with an holy kiss. All the saints salute you.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1pe-003-010-012",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 3,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "For he that will love life, and see good days, let him refrain his tongue from evil, and his lips that they speak no guile: Let him eschew evil, and do good; let him seek peace, and ensue it. For the eyes of the Lord are over the righteous, and his ears are open unto their prayers: but the face of the Lord is against them that do evil.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "rom-012-017-019",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 12,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "Recompense to no man evil for evil. Provide things honest in the sight of all men. If it be possible, as much as lieth in you, live peaceably with all men. Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "mat-006-031-034",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 6,
+    "startVerse": 31,
+    "endVerse": 34,
+    "text": "Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed? (For after all these things do the Gentiles seek:) for your heavenly Father knoweth that ye have need of all these things. But seek ye first the kingdom of God, and his righteousness; and all these things shall be added unto you. Take therefore no thought for the morrow: for the morrow shall take thought for the things of itself. Sufficient unto the day is the evil thereof.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-133-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 133,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Behold, how good and how pleasant it is for brethren to dwell together in unity! It is like the precious ointment upon the head, that ran down upon the beard, even Aaron’s beard: that went down to the skirts of his garments; As the dew of Hermon, and as the dew that descended upon the mountains of Zion: for there the LORD commanded the blessing, even life for evermore.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "isa-057-019-021",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 57,
+    "startVerse": 19,
+    "endVerse": 21,
+    "text": "I create the fruit of the lips; Peace, peace to him that is far off, and to him that is near, saith the LORD; and I will heal him. But the wicked are like the troubled sea, when it cannot rest, whose waters cast up mire and dirt. There is no peace, saith my God, to the wicked.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "mic-004-003-005",
+    "bookId": "MIC",
+    "bookName": "Micah",
+    "chapter": 4,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "And he shall judge among many people, and rebuke strong nations afar off; and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more. But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of the LORD of hosts hath spoken it. For all people will walk every one in the name of his god, and we will walk in the name of the LORD our God for ever and ever.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "isa-054-010-013",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 54,
+    "startVerse": 10,
+    "endVerse": 13,
+    "text": "For the mountains shall depart, and the hills be removed; but my kindness shall not depart from thee, neither shall the covenant of my peace be removed, saith the LORD that hath mercy on thee. O thou afflicted, tossed with tempest, and not comforted, behold, I will lay thy stones with fair colours, and lay thy foundations with sapphires. And I will make thy windows of agates, and thy gates of carbuncles, and all thy borders of pleasant stones. And all thy children shall be taught of the LORD; and great shall be the peace of thy children.",
+    "themes": [
+      "Comfort",
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "act-010-036-038",
+    "bookId": "ACT",
+    "bookName": "Acts",
+    "chapter": 10,
+    "startVerse": 36,
+    "endVerse": 38,
+    "text": "The word which God sent unto the children of Israel, preaching peace by Jesus Christ: (he is Lord of all:) That word, I say, ye know, which was published throughout all Judæa, and began from Galilee, after the baptism which John preached; How God anointed Jesus of Nazareth with the Holy Ghost and with power: who went about doing good, and healing all that were oppressed of the devil; for God was with him.",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1jn-003-001-003",
+    "bookId": "1JN",
+    "bookName": "1 John",
+    "chapter": 3,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Behold, what manner of love the Father hath bestowed upon us, that we should be called the sons of God: therefore the world knoweth us not, because it knew him not. Beloved, now are we the sons of God, and it doth not yet appear what we shall be: but we know that, when he shall appear, we shall be like him; for we shall see him as he is. And every man that hath this hope in him purifieth himself, even as he is pure.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1jn-005-001-003",
+    "bookId": "1JN",
+    "bookName": "1 John",
+    "chapter": 5,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Whosoever believeth that Jesus is the Christ is born of God: and every one that loveth him that begat loveth him also that is begotten of him. By this we know that we love the children of God, when we love God, and keep his commandments. For this is the love of God, that we keep his commandments: and his commandments are not grievous.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "deu-007-009-011",
+    "bookId": "DEU",
+    "bookName": "Deuteronomy",
+    "chapter": 7,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "Know therefore that the LORD thy God, he is God, the faithful God, which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations; And repayeth them that hate him to their face, to destroy them: he will not be slack to him that hateth him, he will repay him to his face. Thou shalt therefore keep the commandments, and the statutes, and the judgments, which I command thee this day, to do them.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-136-023-026",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 136,
+    "startVerse": 23,
+    "endVerse": 26,
+    "text": "Who remembered us in our low estate: for his mercy endureth for ever: And hath redeemed us from our enemies: for his mercy endureth for ever. Who giveth food to all flesh: for his mercy endureth for ever. O give thanks unto the God of heaven: for his mercy endureth for ever.",
+    "themes": [
+      "Gratitude",
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-063-003-005",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 63,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "Because thy lovingkindness is better than life, my lips shall praise thee. Thus will I bless thee while I live: I will lift up my hands in thy name. My soul shall be satisfied as with marrow and fatness; and my mouth shall praise thee with joyful lips:",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-103-008-011",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 103,
+    "startVerse": 8,
+    "endVerse": 11,
+    "text": "The LORD is merciful and gracious, slow to anger, and plenteous in mercy. He will not always chide: neither will he keep his anger for ever. He hath not dealt with us after our sins; nor rewarded us according to our iniquities. For as the heaven is high above the earth, so great is his mercy toward them that fear him.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "isa-063-007-009",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 63,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "I will mention the lovingkindnesses of the LORD, and the praises of the LORD, according to all that the LORD hath bestowed on us, and the great goodness toward the house of Israel, which he hath bestowed on them according to his mercies, and according to the multitude of his lovingkindnesses. For he said, Surely they are my people, children that will not lie: so he was their Saviour. In all their affliction he was afflicted, and the angel of his presence saved them: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1co-013-001-003",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 13,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Though I speak with the tongues of men and of angels, and have not charity, I am become as sounding brass, or a tinkling cymbal. And though I have the gift of prophecy, and understand all mysteries, and all knowledge; and though I have all faith, so that I could remove mountains, and have not charity, I am nothing. And though I bestow all my goods to feed the poor, and though I give my body to be burned, and have not charity, it profiteth me nothing.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "eph-005-025-027",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 5,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "Husbands, love your wives, even as Christ also loved the church, and gave himself for it; That he might sanctify and cleanse it with the washing of water by the word, That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy and without blemish.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "eph-003-014-017",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 3,
+    "startVerse": 14,
+    "endVerse": 17,
+    "text": "For this cause I bow my knees unto the Father of our Lord Jesus Christ, Of whom the whole family in heaven and earth is named, That he would grant you, according to the riches of his glory, to be strengthened with might by his Spirit in the inner man; That Christ may dwell in your hearts by faith; that ye, being rooted and grounded in love,",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "col-001-009-011",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 1,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "For this cause we also, since the day we heard it, do not cease to pray for you, and to desire that ye might be filled with the knowledge of his will in all wisdom and spiritual understanding; That ye might walk worthy of the Lord unto all pleasing, being fruitful in every good work, and increasing in the knowledge of God; Strengthened with all might, according to his glorious power, unto all patience and longsuffering with joyfulness;",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-084-005-007",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 84,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "Blessed is the man whose strength is in thee; in whose heart are the ways of them. Who passing through the valley of Baca make it a well; the rain also filleth the pools. They go from strength to strength, every one of them in Zion appeareth before God.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "2ti-002-001-003",
+    "bookId": "2TI",
+    "bookName": "2 Timothy",
+    "chapter": 2,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Thou therefore, my son, be strong in the grace that is in Christ Jesus. And the things that thou hast heard of me among many witnesses, the same commit thou to faithful men, who shall be able to teach others also. Thou therefore endure hardness, as a good soldier of Jesus Christ.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-119-028-030",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 119,
+    "startVerse": 28,
+    "endVerse": 30,
+    "text": "My soul melteth for heaviness: strengthen thou me according unto thy word. Remove from me the way of lying: and grant me thy law graciously. I have chosen the way of truth: thy judgments have I laid before me.",
+    "themes": [
+      "Strength",
+      "Wisdom"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "2sa-022-032-034",
+    "bookId": "2SA",
+    "bookName": "2 Samuel",
+    "chapter": 22,
+    "startVerse": 32,
+    "endVerse": 34,
+    "text": "For who is God, save the LORD? and who is a rock, save our God? God is my strength and power: and he maketh my way perfect. He maketh my feet like hinds’ feet: and setteth me upon my high places.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-089-021-023",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 89,
+    "startVerse": 21,
+    "endVerse": 23,
+    "text": "With whom my hand shall be established: mine arm also shall strengthen him. The enemy shall not exact upon him; nor the son of wickedness afflict him. And I will beat down his foes before his face, and plague them that hate him.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-118-006-008",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 118,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "The LORD is on my side; I will not fear: what can man do unto me? The LORD taketh my part with them that help me: therefore shall I see my desire upon them that hate me. It is better to trust in the LORD than to put confidence in man.",
+    "themes": [
+      "Strength"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "gal-003-026-029",
+    "bookId": "GAL",
+    "bookName": "Galatians",
+    "chapter": 3,
+    "startVerse": 26,
+    "endVerse": 29,
+    "text": "For ye are all the children of God by faith in Christ Jesus. For as many of you as have been baptized into Christ have put on Christ. There is neither Jew nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in Christ Jesus. And if ye be Christ’s, then are ye Abraham’s seed, and heirs according to the promise.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "gal-002-016-018",
+    "bookId": "GAL",
+    "bookName": "Galatians",
+    "chapter": 2,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "Knowing that a man is not justified by the works of the law, but by the faith of Jesus Christ, even we have believed in Jesus Christ, that we might be justified by the faith of Christ, and not by the works of the law: for by the works of the law shall no flesh be justified. But if, while we seek to be justified by Christ, we ourselves also are found sinners, is therefore Christ the minister of sin? God forbid. For if I build again the things which I destroyed, I make myself a transgressor.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "rom-003-022-024",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 3,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "Even the righteousness of God which is by faith of Jesus Christ unto all and upon all them that believe: for there is no difference: For all have sinned, and come short of the glory of God; Being justified freely by his grace through the redemption that is in Christ Jesus:",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "act-016-031-033",
+    "bookId": "ACT",
+    "bookName": "Acts",
+    "chapter": 16,
+    "startVerse": 31,
+    "endVerse": 33,
+    "text": "And they said, Believe on the Lord Jesus Christ, and thou shalt be saved, and thy house. And they spake unto him the word of the Lord, and to all that were in his house. And he took them the same hour of the night, and washed their stripes; and was baptized, he and all his, straightway.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1pe-002-006-008",
+    "bookId": "1PE",
+    "bookName": "1 Peter",
+    "chapter": 2,
+    "startVerse": 6,
+    "endVerse": 8,
+    "text": "Wherefore also it is contained in the scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded. Unto you therefore which believe he is precious: but unto them which be disobedient, the stone which the builders disallowed, the same is made the head of the corner, And a stone of stumbling, and a rock of offence, even to them which stumble at the word, being disobedient: whereunto also they were appointed.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "heb-004-001-003",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 4,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Let us therefore fear, lest, a promise being left us of entering into his rest, any of you should seem to come short of it. For unto us was the gospel preached, as well as unto them: but the word preached did not profit them, not being mixed with faith in them that heard it. For we which have believed do enter into rest, as he said, As I have sworn in my wrath, if they shall enter into my rest: although the works were finished from the foundation of the world.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "heb-011-013-016",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 11,
+    "startVerse": 13,
+    "endVerse": 16,
+    "text": "These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth. For they that say such things declare plainly that they seek a country. And truly, if they had been mindful of that country from whence they came out, they might have had opportunity to have returned. But now they desire a better country, that is, an heavenly: wherefore God is not ashamed to be called their God: for he hath prepared for them a city.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "isa-043-001-003",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 43,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "But now thus saith the LORD that created thee, O Jacob, and he that formed thee, O Israel, Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine. When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee. For I am the LORD thy God, the Holy One of Israel, thy Saviour: I gave Egypt for thy ransom, Ethiopia and Seba for thee.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-119-050-052",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 119,
+    "startVerse": 50,
+    "endVerse": 52,
+    "text": "This is my comfort in my affliction: for thy word hath quickened me. The proud have had me greatly in derision: yet have I not declined from thy law. I remembered thy judgments of old, O LORD; and have comforted myself.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "isa-051-011-013",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 51,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "Therefore the redeemed of the LORD shall return, and come with singing unto Zion; and everlasting joy shall be upon their head: they shall obtain gladness and joy; and sorrow and mourning shall flee away. I, even I, am he that comforteth you: who art thou, that thou shouldest be afraid of a man that shall die, and of the son of man which shall be made as grass; And forgettest the LORD thy maker, that hath stretched forth the heavens, and laid the foundations of the earth; and hast feared continually every day because of the fury of the oppressor, as if he were ready to destroy? and where is the fury of the oppressor?",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-086-015-017",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 86,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "But thou, O Lord, art a God full of compassion, and gracious, longsuffering, and plenteous in mercy and truth. O turn unto me, and have mercy upon me; give thy strength unto thy servant, and save the son of thine handmaid. Shew me a token for good; that they which hate me may see it, and be ashamed: because thou, LORD, hast holpen me, and comforted me.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-145-018-020",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 145,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "The LORD is nigh unto all them that call upon him, to all that call upon him in truth. He will fulfil the desire of them that fear him: he also will hear their cry, and will save them. The LORD preserveth all them that love him: but all the wicked will he destroy.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "deu-033-027-029",
+    "bookId": "DEU",
+    "bookName": "Deuteronomy",
+    "chapter": 33,
+    "startVerse": 27,
+    "endVerse": 29,
+    "text": "The eternal God is thy refuge, and underneath are the everlasting arms: and he shall thrust out the enemy from before thee; and shall say, Destroy them. Israel then shall dwell in safety alone: the fountain of Jacob shall be upon a land of corn and wine; also his heavens shall drop down dew. Happy art thou, O Israel: who is like unto thee, O people saved by the LORD, the shield of thy help, and who is the sword of thy excellency! and thine enemies shall be found liars unto thee; and thou shalt tread upon their high places.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-121-005-008",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 121,
+    "startVerse": 5,
+    "endVerse": 8,
+    "text": "The LORD is thy keeper: the LORD is thy shade upon thy right hand. The sun shall not smite thee by day, nor the moon by night. The LORD shall preserve thee from all evil: he shall preserve thy soul. The LORD shall preserve thy going out and thy coming in from this time forth, and even for evermore.",
+    "themes": [
+      "Comfort"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "pro-022-017-019",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 22,
+    "startVerse": 17,
+    "endVerse": 19,
+    "text": "Bow down thine ear, and hear the words of the wise, and apply thine heart unto my knowledge. For it is a pleasant thing if thou keep them within thee; they shall withal be fitted in thy lips. That thy trust may be in the LORD, I have made known to thee this day, even to thee.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "pro-024-003-005",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 24,
+    "startVerse": 3,
+    "endVerse": 5,
+    "text": "Through wisdom is an house builded; and by understanding it is established: And by knowledge shall the chambers be filled with all precious and pleasant riches. A wise man is strong; yea, a man of knowledge increaseth strength.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "eph-005-015-017",
+    "bookId": "EPH",
+    "bookName": "Ephesians",
+    "chapter": 5,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "See then that ye walk circumspectly, not as fools, but as wise, Redeeming the time, because the days are evil. Wherefore be ye not unwise, but understanding what the will of the Lord is.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1co-003-018-020",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 3,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "Let no man deceive himself. If any man among you seemeth to be wise in this world, let him become a fool, that he may be wise. For the wisdom of this world is foolishness with God. For it is written, He taketh the wise in their own craftiness. And again, The Lord knoweth the thoughts of the wise, that they are vain.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "pro-002-010-012",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 2,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "When wisdom entereth into thine heart, and knowledge is pleasant unto thy soul; Discretion shall preserve thee, understanding shall keep thee: To deliver thee from the way of the evil man, from the man that speaketh froward things;",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "pro-001-002-004",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 1,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "To know wisdom and instruction; to perceive the words of understanding; To receive the instruction of wisdom, justice, and judgment, and equity; To give subtilty to the simple, to the young man knowledge and discretion.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "pro-016-020-022",
+    "bookId": "PRO",
+    "bookName": "Proverbs",
+    "chapter": 16,
+    "startVerse": 20,
+    "endVerse": 22,
+    "text": "He that handleth a matter wisely shall find good: and whoso trusteth in the LORD, happy is he. The wise in heart shall be called prudent: and the sweetness of the lips increaseth learning. Understanding is a wellspring of life unto him that hath it: but the instruction of fools is folly.",
+    "themes": [
+      "Wisdom"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-106-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 106,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Praise ye the LORD. O give thanks unto the LORD; for he is good: for his mercy endureth for ever. Who can utter the mighty acts of the LORD? who can shew forth all his praise? Blessed are they that keep judgment, and he that doeth righteousness at all times.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-105-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 105,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "O give thanks unto the LORD; call upon his name: make known his deeds among the people. Sing unto him, sing psalms unto him: talk ye of all his wondrous works. Glory ye in his holy name: let the heart of them rejoice that seek the LORD.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "1th-001-002-004",
+    "bookId": "1TH",
+    "bookName": "1 Thessalonians",
+    "chapter": 1,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "We give thanks to God always for you all, making mention of you in our prayers; Remembering without ceasing your work of faith, and labour of love, and patience of hope in our Lord Jesus Christ, in the sight of God and our Father; Knowing, brethren beloved, your election of God.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "col-001-012-014",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 1,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "Giving thanks unto the Father, which hath made us meet to be partakers of the inheritance of the saints in light: Who hath delivered us from the power of darkness, and hath translated us into the kingdom of his dear Son: In whom we have redemption through his blood, even the forgiveness of sins:",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "psa-066-001-003",
+    "bookId": "PSA",
+    "bookName": "Psalm",
+    "chapter": 66,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "Make a joyful noise unto God, all ye lands: Sing forth the honour of his name: make his praise glorious. Say unto God, How terrible art thou in thy works! through the greatness of thy power shall thine enemies submit themselves unto thee.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
+  },
+  {
+    "id": "jon-002-007-009",
+    "bookId": "JON",
+    "bookName": "Jonah",
+    "chapter": 2,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "When my soul fainted within me I remembered the LORD: and my prayer came in unto thee, into thine holy temple. They that observe lying vanities forsake their own mercy. But I will sacrifice unto thee with the voice of thanksgiving; I will pay that that I have vowed. Salvation is of the LORD.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [],
+    "translationId": "KJV"
   }
 ]

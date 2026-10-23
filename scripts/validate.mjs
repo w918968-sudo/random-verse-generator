@@ -206,10 +206,10 @@ for (const lib of rest) {
 // theme minimums + library size (primary translation)
 for (const theme of THEMES) {
   const n = primary.verses.filter((v) => v.themes.includes(theme)).length;
-  if (n < 8) errors.push(`theme ${theme}: only ${n} entries (need >= 8)`);
+  if (n < 30) errors.push(`theme ${theme}: only ${n} entries (need >= 30)`);
 }
-if (primary.verses.length < 40 || primary.verses.length > 200) {
-  errors.push(`library size ${primary.verses.length} outside 40-200`);
+if (primary.verses.length < 40 || primary.verses.length > 500) {
+  errors.push(`library size ${primary.verses.length} outside 40-500`);
 }
 
 if (missingSources.length) {

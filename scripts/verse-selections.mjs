@@ -184,4 +184,84 @@ export const VERSE_SELECTIONS = [
   { bookId: 'PSA', chapter: 9, startVerse: 1, endVerse: 3, themes: ['Gratitude'] },
   { bookId: 'PHP', chapter: 1, startVerse: 3, endVerse: 5, themes: ['Gratitude'] },
   { bookId: 'PSA', chapter: 34, startVerse: 1, endVerse: 3, themes: ['Gratitude'] },
+
+  // ---- v2 additions (T2): 8 themes to 30 each (cross-keyword reuse allowed) ----
+
+  // Hope (+8)
+  { bookId: 'PSA', chapter: 62, startVerse: 5, endVerse: 8, themes: ['Hope', 'Strength'] },
+  { bookId: '1PE', chapter: 1, startVerse: 13, endVerse: 15, themes: ['Hope'] },
+  { bookId: 'TIT', chapter: 3, startVerse: 4, endVerse: 7, themes: ['Hope'] },
+  { bookId: '1TH', chapter: 5, startVerse: 8, endVerse: 10, themes: ['Hope', 'Faith'] },
+  { bookId: '2CO', chapter: 4, startVerse: 16, endVerse: 18, themes: ['Hope'] },
+  { bookId: 'COL', chapter: 1, startVerse: 3, endVerse: 5, themes: ['Hope', 'Gratitude'] },
+  { bookId: '1TI', chapter: 4, startVerse: 8, endVerse: 10, themes: ['Hope'] },
+  { bookId: 'PSA', chapter: 71, startVerse: 14, endVerse: 16, themes: ['Hope'] },
+
+  // Peace (+10)
+  { bookId: 'JHN', chapter: 20, startVerse: 19, endVerse: 21, themes: ['Peace'] },
+  { bookId: '2CO', chapter: 13, startVerse: 11, endVerse: 13, themes: ['Peace'] },
+  { bookId: '1PE', chapter: 3, startVerse: 10, endVerse: 12, themes: ['Peace'] },
+  { bookId: 'ROM', chapter: 12, startVerse: 17, endVerse: 19, themes: ['Peace'] },
+  { bookId: 'MAT', chapter: 6, startVerse: 31, endVerse: 34, themes: ['Peace'] },
+  { bookId: 'PSA', chapter: 133, startVerse: 1, endVerse: 3, themes: ['Peace'] },
+  { bookId: 'ISA', chapter: 57, startVerse: 19, endVerse: 21, themes: ['Peace'] },
+  { bookId: 'MIC', chapter: 4, startVerse: 3, endVerse: 5, themes: ['Peace'] },
+  { bookId: 'ISA', chapter: 54, startVerse: 10, endVerse: 13, themes: ['Peace', 'Comfort'] },
+  { bookId: 'ACT', chapter: 10, startVerse: 36, endVerse: 38, themes: ['Peace'] },
+
+  // Love (+9)
+  { bookId: '1JN', chapter: 3, startVerse: 1, endVerse: 3, themes: ['Love'] },
+  { bookId: '1JN', chapter: 5, startVerse: 1, endVerse: 3, themes: ['Love'] },
+  { bookId: 'DEU', chapter: 7, startVerse: 9, endVerse: 11, themes: ['Love'] },
+  { bookId: 'PSA', chapter: 136, startVerse: 23, endVerse: 26, themes: ['Love', 'Gratitude'] },
+  { bookId: 'PSA', chapter: 63, startVerse: 3, endVerse: 5, themes: ['Love'] },
+  { bookId: 'PSA', chapter: 103, startVerse: 8, endVerse: 11, themes: ['Love'] },
+  { bookId: 'ISA', chapter: 63, startVerse: 7, endVerse: 9, themes: ['Love'] },
+  { bookId: '1CO', chapter: 13, startVerse: 1, endVerse: 3, themes: ['Love'] },
+  { bookId: 'EPH', chapter: 5, startVerse: 25, endVerse: 27, themes: ['Love'] },
+
+  // Strength (+8)
+  { bookId: 'EPH', chapter: 3, startVerse: 14, endVerse: 17, themes: ['Strength'] },
+  { bookId: 'COL', chapter: 1, startVerse: 9, endVerse: 11, themes: ['Strength'] },
+  { bookId: 'PSA', chapter: 84, startVerse: 5, endVerse: 7, themes: ['Strength'] },
+  { bookId: '2TI', chapter: 2, startVerse: 1, endVerse: 3, themes: ['Strength'] },
+  { bookId: 'PSA', chapter: 119, startVerse: 28, endVerse: 30, themes: ['Strength', 'Wisdom'] },
+  { bookId: '2SA', chapter: 22, startVerse: 32, endVerse: 34, themes: ['Strength'] },
+  { bookId: 'PSA', chapter: 89, startVerse: 21, endVerse: 23, themes: ['Strength'] },
+  { bookId: 'PSA', chapter: 118, startVerse: 6, endVerse: 8, themes: ['Strength'] },
+
+  // Faith (+8)
+  { bookId: 'GAL', chapter: 3, startVerse: 26, endVerse: 29, themes: ['Faith'] },
+  { bookId: 'GAL', chapter: 2, startVerse: 16, endVerse: 18, themes: ['Faith'] },
+  { bookId: 'ROM', chapter: 3, startVerse: 22, endVerse: 24, themes: ['Faith'] },
+  { bookId: 'ACT', chapter: 16, startVerse: 31, endVerse: 33, themes: ['Faith'] },
+  { bookId: '1PE', chapter: 2, startVerse: 6, endVerse: 8, themes: ['Faith'] },
+  { bookId: 'HEB', chapter: 4, startVerse: 1, endVerse: 3, themes: ['Faith'] },
+  { bookId: 'HEB', chapter: 11, startVerse: 13, endVerse: 16, themes: ['Faith'] },
+
+  // Comfort (+8)
+  { bookId: 'ISA', chapter: 43, startVerse: 1, endVerse: 3, themes: ['Comfort'] },
+  { bookId: 'PSA', chapter: 119, startVerse: 50, endVerse: 52, themes: ['Comfort'] },
+  { bookId: 'ISA', chapter: 51, startVerse: 11, endVerse: 13, themes: ['Comfort'] },
+  { bookId: 'PSA', chapter: 86, startVerse: 15, endVerse: 17, themes: ['Comfort'] },
+  { bookId: 'PSA', chapter: 145, startVerse: 18, endVerse: 20, themes: ['Comfort'] },
+  { bookId: 'DEU', chapter: 33, startVerse: 27, endVerse: 29, themes: ['Comfort'] },
+  { bookId: 'PSA', chapter: 121, startVerse: 5, endVerse: 8, themes: ['Comfort'] },
+
+  // Wisdom (+8)
+  { bookId: 'PRO', chapter: 22, startVerse: 17, endVerse: 19, themes: ['Wisdom'] },
+  { bookId: 'PRO', chapter: 24, startVerse: 3, endVerse: 5, themes: ['Wisdom'] },
+  { bookId: 'EPH', chapter: 5, startVerse: 15, endVerse: 17, themes: ['Wisdom'] },
+  { bookId: '1CO', chapter: 3, startVerse: 18, endVerse: 20, themes: ['Wisdom'] },
+  { bookId: 'PRO', chapter: 2, startVerse: 10, endVerse: 12, themes: ['Wisdom'] },
+  { bookId: 'PRO', chapter: 1, startVerse: 2, endVerse: 4, themes: ['Wisdom'] },
+  { bookId: 'PRO', chapter: 16, startVerse: 20, endVerse: 22, themes: ['Wisdom'] },
+
+  // Gratitude (+8)
+  { bookId: 'PSA', chapter: 106, startVerse: 1, endVerse: 3, themes: ['Gratitude'] },
+  { bookId: 'PSA', chapter: 105, startVerse: 1, endVerse: 3, themes: ['Gratitude'] },
+  { bookId: '1TH', chapter: 1, startVerse: 2, endVerse: 4, themes: ['Gratitude'] },
+  { bookId: 'COL', chapter: 1, startVerse: 12, endVerse: 14, themes: ['Gratitude'] },
+  { bookId: 'PSA', chapter: 66, startVerse: 1, endVerse: 3, themes: ['Gratitude'] },
+  { bookId: 'JON', chapter: 2, startVerse: 7, endVerse: 9, themes: ['Gratitude'] },
 ];

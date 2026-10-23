@@ -1,0 +1,20 @@
+{
+  "translationId": "WEBP",
+  "bookId": "PSA",
+  "bookName": "Psalm",
+  "chapter": 133,
+  "verses": [
+    {
+      "number": 1,
+      "text": "See how good and how pleasant it is\nfor brothers to live together in unity!"
+    },
+    {
+      "number": 2,
+      "text": "It is like the precious oil on the head,\nthat ran down on the beard,\neven Aaron’s beard,\nthat came down on the edge of his robes,"
+    },
+    {
+      "number": 3,
+      "text": "like the dew of Hermon,\nthat comes down on the hills of Zion;\nfor there the LORD gives the blessing,\neven life forever more."
+    }
+  ]
+}
