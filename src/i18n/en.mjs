@@ -127,6 +127,19 @@ export const ui = {
     title: 'Reflect',
     another: 'Another question',
   },
+  reading: {
+    settings: 'Aa',
+    sizeLabel: 'Text size',
+    sizeDown: 'Smaller text',
+    sizeUp: 'Larger text',
+    lineLabel: 'Line spacing',
+    lineCompact: 'Compact',
+    lineNormal: 'Normal',
+    lineRelaxed: 'Relaxed',
+    focus: 'Focus mode',
+    focusExit: 'Exit focus mode',
+    focusHint: 'Hide everything except the verse.',
+  },
   embed: {
     title: 'Embed This Verse',
     hint:

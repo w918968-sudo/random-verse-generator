@@ -311,8 +311,8 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 }
 .verse-text {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
-  line-height: 1.6;
+  font-size: calc(1.35rem * var(--reader-scale, 1));
+  line-height: calc(1.6 * var(--reader-line-scale, 1));
   margin: 0 0 1rem;
   white-space: pre-line;
 }
@@ -331,6 +331,59 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 .verse-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 .action-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
+/* Reading settings (font size / line spacing / focus mode) */
+.reading-controls {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+.reading-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.reading-row + .reading-row { margin-top: 0.75rem; }
+.reading-label { font-size: 0.9rem; color: var(--color-ink-soft); min-width: 5.5rem; }
+.reading-value { min-width: 3rem; text-align: center; font-size: 0.9rem; font-weight: 600; color: var(--color-ink); }
+.reading-step { min-width: 2.6rem; }
+.reading-segment { display: inline-flex; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
+.reading-seg {
+  min-height: 36px;
+  padding: 0 0.8rem;
+  border: 0;
+  border-right: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink-soft);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.reading-seg:last-child { border-right: 0; }
+.reading-seg.is-active {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.reading-hint { font-size: 0.85rem; color: var(--color-ink-soft); }
+
+/* Focus mode — keep only the verse and its reading surface. */
+.reading-focus .site-header,
+.reading-focus .site-footer,
+.reading-focus .install-btn,
+.reading-focus .hero-title,
+.reading-focus .lede,
+.reading-focus .seo-content {
+  display: none;
+}
+.reading-focus .generator .source-field,
+.reading-focus .generator .topic-field,
+.reading-focus .generator .topic-note,
+.reading-focus .generator .action-row,
+.reading-focus .generator .guide,
+.reading-focus .generator .history-panel {
+  display: none;
+}
+.reading-focus .generator .result { margin-top: 0; }
+.reading-focus .verse-card { margin-top: 0.5rem; }
+
 /* Reading panel */
 .reading-panel {
   margin-top: 1rem;
@@ -340,7 +393,7 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
   padding: 1.25rem 1.25rem 1.5rem;
 }
 .reading-panel h3 { margin-top: 0; }
-.chapter-verse { display: flex; gap: 0.6rem; margin: 0 0 0.6rem; line-height: 1.55; }
+.chapter-verse { display: flex; gap: 0.6rem; margin: 0 0 0.6rem; line-height: calc(1.55 * var(--reader-line-scale, 1)); }
 .chapter-verse .verse-num {
   flex: 0 0 auto;
   min-width: 1.6rem;
@@ -685,6 +738,6 @@ h3 { font-size: 1.05rem; margin-top: 1.5rem; font-family: var(--font-sans); font
 /* Responsive */
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }
-  .verse-text { font-size: 1.2rem; }
+  .verse-text { font-size: calc(1.2rem * var(--reader-scale, 1)); }
   .container { padding: 0 1rem; }
 }

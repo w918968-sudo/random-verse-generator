@@ -113,6 +113,35 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
         <button type="button" class="btn btn-secondary" id="context-btn" aria-expanded="false">
           {ui.result.context}
         </button>
+        <button type="button" class="btn btn-secondary" id="reading-btn" aria-expanded="false">
+          {ui.reading.settings}
+        </button>
+      </div>
+      <div class="reading-controls" id="reading-controls" hidden>
+        <div class="reading-row">
+          <span class="reading-label">{ui.reading.sizeLabel}</span>
+          <button type="button" class="btn btn-secondary btn-sm reading-step" id="reading-size-down" aria-label={ui.reading.sizeDown}>
+            A−
+          </button>
+          <span class="reading-value" id="reading-size-value"></span>
+          <button type="button" class="btn btn-secondary btn-sm reading-step" id="reading-size-up" aria-label={ui.reading.sizeUp}>
+            A+
+          </button>
+        </div>
+        <div class="reading-row">
+          <span class="reading-label">{ui.reading.lineLabel}</span>
+          <div class="reading-segment" role="group" aria-label={ui.reading.lineLabel}>
+            <button type="button" class="reading-seg" data-line="compact">{ui.reading.lineCompact}</button>
+            <button type="button" class="reading-seg" data-line="normal">{ui.reading.lineNormal}</button>
+            <button type="button" class="reading-seg" data-line="relaxed">{ui.reading.lineRelaxed}</button>
+          </div>
+        </div>
+        <div class="reading-row">
+          <button type="button" class="btn btn-secondary btn-sm" id="reading-focus" aria-pressed="false">
+            {ui.reading.focus}
+          </button>
+          <span class="reading-hint">{ui.reading.focusHint}</span>
+        </div>
       </div>
     </figure>
 
@@ -188,6 +217,13 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     imageBtn: document.getElementById('image-btn'),
     speakBtn: document.getElementById('speak-btn'),
     contextBtn: document.getElementById('context-btn'),
+    readingBtn: document.getElementById('reading-btn'),
+    readingControls: document.getElementById('reading-controls'),
+    readingSizeDown: document.getElementById('reading-size-down'),
+    readingSizeUp: document.getElementById('reading-size-up'),
+    readingSizeValue: document.getElementById('reading-size-value'),
+    readingSegButtons: Array.from(document.querySelectorAll('.reading-seg')),
+    readingFocus: document.getElementById('reading-focus'),
     reflection: document.getElementById('reflection'),
     reflectionQuestion: document.getElementById('reflection-question'),
     reflectionNext: document.getElementById('reflection-next'),
@@ -222,6 +258,10 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
   const FAVORITES_KEY = 'versewell.favorites';
   let favorites = []; // persisted in localStorage
   let favoriteFilter = ''; // tag slug filtering the favorites list ('' = all)
+  const READING_KEY = 'versewell.reading';
+  const SIZE_SCALES = [0.9, 1, 1.1, 1.2, 1.3]; // font-size multipliers by step index
+  const LINE_SCALES = { compact: 0.9, normal: 1, relaxed: 1.15 }; // line-height multipliers
+  let reading = { size: 1, line: 'normal', focus: false }; // size = index into SIZE_SCALES
   const bags = new Map(); // poolKey -> shuffled verse objects
   let translation = currentTranslation(); // 'WEBP' | 'KJV'
   let source = 'curated'; // 'curated' | 'wholeBible'
@@ -898,6 +938,48 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
     }
   }
 
+  // Reading settings — font size, line spacing, and focus mode. Persisted and
+  // applied via CSS variables on <html> so they cascade to every reading surface.
+  function loadReading() {
+    try {
+      const raw = localStorage.getItem(READING_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (Number.isInteger(parsed.size) && parsed.size >= 0 && parsed.size < SIZE_SCALES.length) reading.size = parsed.size;
+      if (parsed.line in LINE_SCALES) reading.line = parsed.line;
+      reading.focus = !!parsed.focus;
+    } catch {
+      // Corrupt or unavailable — keep defaults.
+    }
+  }
+
+  function saveReading() {
+    try {
+      localStorage.setItem(READING_KEY, JSON.stringify(reading));
+    } catch {
+      // Storage full or unavailable — settings just won't persist this time.
+    }
+  }
+
+  function applyReading() {
+    document.documentElement.style.setProperty('--reader-scale', String(SIZE_SCALES[reading.size]));
+    document.documentElement.style.setProperty('--reader-line-scale', String(LINE_SCALES[reading.line]));
+    document.documentElement.classList.toggle('reading-focus', reading.focus);
+    syncReadingUI();
+  }
+
+  function syncReadingUI() {
+    el.readingBtn.setAttribute('aria-expanded', el.readingControls.hidden ? 'false' : 'true');
+    el.readingSizeValue.textContent = `${Math.round(SIZE_SCALES[reading.size] * 100)}%`;
+    for (const b of el.readingSegButtons) {
+      const active = b.dataset.line === reading.line;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    }
+    el.readingFocus.setAttribute('aria-pressed', reading.focus ? 'true' : 'false');
+    el.readingFocus.textContent = reading.focus ? ui.reading.focusExit : ui.reading.focus;
+  }
+
   function isFavorite(id) {
     return favorites.some((f) => f.id === id);
   }
@@ -1345,6 +1427,40 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
   el.favImport.addEventListener('click', () => el.favImportInput.click());
   el.favImportInput.addEventListener('change', () => importFavorites(el.favImportInput.files[0]));
 
+  el.readingBtn.addEventListener('click', () => {
+    el.readingControls.hidden = !el.readingControls.hidden;
+    syncReadingUI();
+  });
+  el.readingSizeDown.addEventListener('click', () => {
+    if (reading.size <= 0) return;
+    reading.size--;
+    saveReading();
+    applyReading();
+    track('reading_size_change');
+  });
+  el.readingSizeUp.addEventListener('click', () => {
+    if (reading.size >= SIZE_SCALES.length - 1) return;
+    reading.size++;
+    saveReading();
+    applyReading();
+    track('reading_size_change');
+  });
+  el.readingSegButtons.forEach((b) => {
+    b.addEventListener('click', () => {
+      if (reading.line === b.dataset.line) return;
+      reading.line = b.dataset.line;
+      saveReading();
+      applyReading();
+      track('reading_line_change');
+    });
+  });
+  el.readingFocus.addEventListener('click', () => {
+    reading.focus = !reading.focus;
+    saveReading();
+    applyReading();
+    track('reading_focus_toggle');
+  });
+
   el.shareBtn.addEventListener('click', shareVerse);
   el.imageBtn.addEventListener('click', saveVerseImage);
 
@@ -1453,6 +1569,8 @@ const { initialTheme = '', initialOccasion = '' } = Astro.props;
   // Load the verse library, then show a verse right away. Related-verses data
   // is translation-independent, so it is fetched once and never re-read.
   loadFavorites();
+  loadReading();
+  applyReading();
   loadRelated();
   loadLibrary(true);
 </script>
