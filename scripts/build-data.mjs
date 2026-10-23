@@ -73,6 +73,7 @@ for (const tr of TRANSLATIONS) {
       endVerse: sel.endVerse,
       text: extractRange(chapterVerses, sel.startVerse, sel.endVerse),
       themes: [...sel.themes].sort(),
+      occasions: [...(sel.occasions || [])].sort(),
       translationId: tr.id,
     };
   });

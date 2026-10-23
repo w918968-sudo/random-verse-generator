@@ -5,7 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { BOOKS } from './books.mjs';
 import { parseBook, extractRange } from './usfm.mjs';
-import { THEMES } from './verse-selections.mjs';
+import { THEMES, OCCASIONS } from './verse-selections.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -54,7 +54,7 @@ for (const tr of TRANSLATIONS) {
     if (seenIds.has(v.id)) errors.push(`duplicate id: ${v.id} (${tr.id})`);
     seenIds.add(v.id);
 
-    for (const f of ['id', 'bookId', 'bookName', 'chapter', 'startVerse', 'endVerse', 'text', 'themes', 'translationId']) {
+    for (const f of ['id', 'bookId', 'bookName', 'chapter', 'startVerse', 'endVerse', 'text', 'themes', 'occasions', 'translationId']) {
       if (v[f] == null || v[f] === '') errors.push(`${tag}: missing ${f}`);
     }
     if (v.translationId !== tr.id) errors.push(`${tag}: translationId != ${tr.id}`);
@@ -62,6 +62,9 @@ for (const tr of TRANSLATIONS) {
     if (v.bookName !== BOOKS[v.bookId]) errors.push(`${tag}: bookName ${v.bookName} != ${BOOKS[v.bookId]}`);
     if (!Array.isArray(v.themes) || v.themes.length === 0) errors.push(`${tag}: no themes`);
     else for (const t of v.themes) if (!THEMES.includes(t)) errors.push(`${tag}: unknown theme ${t}`);
+
+    if (!Array.isArray(v.occasions)) errors.push(`${tag}: bad occasions`);
+    else for (const o of v.occasions) if (!OCCASIONS.includes(o)) errors.push(`${tag}: unknown occasion ${o}`);
 
     if (!(Number.isInteger(v.chapter) && v.chapter >= 1)) errors.push(`${tag}: bad chapter`);
     if (!(Number.isInteger(v.startVerse) && Number.isInteger(v.endVerse) && v.startVerse >= 1 && v.endVerse >= v.startVerse)) {

@@ -5,6 +5,14 @@
 
 export const THEMES = ['Hope', 'Peace', 'Love', 'Strength', 'Faith', 'Comfort', 'Wisdom', 'Gratitude'];
 
+// Occasions feed the v2 landing pages (separate from themes, which feed the
+// homepage generator). Each selection MAY carry an `occasions: []` tag; the
+// field is optional and defaults to [] when absent.
+export const OCCASIONS = [
+  'anxiety', 'fear', 'encouragement', 'healing', 'forgiveness', 'patience',
+  'new-beginnings', 'grief', 'money', 'marriage', 'birthday', 'work', 'friendship',
+];
+
 export const VERSE_SELECTIONS = [
   // Hope
   { bookId: 'JER', chapter: 29, startVerse: 11, endVerse: 13, themes: ['Hope'] },
