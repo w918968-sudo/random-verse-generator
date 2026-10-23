@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+import { todayUTC, verseForDate, reference } from '../lib/verse-of-day.mjs';
+import verses from '../../public/data/verses.json';
+
+// Restrict the daily draw to the Book of Psalms, so this page is always a
+// Psalm (unlike the general verse-of-the-day). Same deterministic date-hash
+// approach: the client script re-derives it for the actual visit date.
+const psalms = verses.filter((v) => v.bookId === 'PSA');
+const dateStr = todayUTC();
+const psalm = verseForDate(dateStr, psalms);
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `Psalm of the Day – Today's Psalm – ${ui.siteName}`,
+  url: canonical,
+  description:
+    "Today's Psalm, chosen daily from a curated library of well-known Psalms in the World English Bible (Protestant Edition).",
+  dateModified: dateStr,
+  about: psalm?.themes?.length
+    ? { '@type': 'Thing', name: psalm.themes.join(', ') }
+    : undefined,
+};
+---
+
+<Layout title={`Psalm of the Day – Today's Psalm – ${ui.siteName}`} description={`Today's Psalm, chosen daily from a curated library of well-known Psalms in the World English Bible (Protestant Edition). A fresh daily Psalm to read, copy, or share.`}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">Psalm of the Day</h1>
+  <p class="lede">
+    Today's Psalm — a passage from the Book of Psalms, chosen daily from a curated library of
+    well-known Psalms in the World English Bible (Protestant Edition).
+  </p>
+
+  <figure class="verse-card">
+    <blockquote class="verse-text" id="psalm-text">{psalm.text}</blockquote>
+    <figcaption class="verse-meta">
+      <span class="badge" id="psalm-theme">{psalm.themes.join(' · ')}</span>
+      <span class="verse-ref" id="psalm-ref">{reference(psalm)}</span>
+    </figcaption>
+    <div class="verse-actions">
+      <button type="button" class="btn btn-secondary" id="psalm-copy">{ui.result.copy}</button>
+      <a class="btn btn-primary" href="/psalms/">{ui.nav.psalms}</a>
+    </div>
+  </figure>
+
+  <section class="seo-content">
+    <h2>What is the Psalm of the day?</h2>
+    <p>
+      Each day this page shows a single passage from the Book of Psalms. The selection is chosen
+      deterministically from the date, so every visitor sees the same Psalm on a given day, and it
+      changes on its own the following day.
+    </p>
+    <p>
+      The text is drawn from the World English Bible (Protestant Edition), a public-domain modern
+      English translation, so you are free to quote and share it. Browse the full <a href="/psalms/">book of
+      Psalms</a>, or read a <a href="/verse-of-the-day/">verse of the day</a> from any book.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  import { ui } from '../i18n/en.mjs';
+  import { verseForDate, todayUTC, reference } from '../lib/verse-of-day.mjs';
+  import { currentTranslation, dataPaths } from '../lib/translations.mjs';
+
+  let translation = currentTranslation();
+
+  function track(name) {
+    if (typeof window.gtag === 'function') window.gtag('event', name);
+  }
+
+  // Re-derive the Psalm for the actual visit date and current translation, so
+  // the page stays correct without a rebuild. The build-time Psalm above is a
+  // graceful no-JS fallback.
+  async function refreshToday() {
+    try {
+      const res = await fetch(dataPaths(translation).verses);
+      if (!res.ok) return;
+      const list = await res.json();
+      const psalms = list.filter((v) => v.bookId === 'PSA');
+      const v = verseForDate(todayUTC(), psalms);
+      if (!v) return;
+      document.getElementById('psalm-text').textContent = v.text;
+      document.getElementById('psalm-ref').textContent = reference(v);
+      const badge = document.getElementById('psalm-theme');
+      badge.textContent = v.themes.join(' · ');
+      badge.hidden = v.themes.length === 0;
+    } catch {
+      // Keep the pre-rendered Psalm on any fetch error.
+    }
+  }
+
+  window.addEventListener('translationchange', (e) => {
+    if (!e.detail || e.detail === translation) return;
+    translation = e.detail;
+    refreshToday();
+  });
+
+  document.getElementById('psalm-copy').addEventListener('click', async () => {
+    const text = document.getElementById('psalm-text').textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      const btn = document.getElementById('psalm-copy');
+      const original = btn.textContent;
+      btn.textContent = ui.result.copied;
+      track('copy_verse');
+      setTimeout(() => {
+        btn.textContent = original;
+      }, 2000);
+    } catch {
+      // Clipboard unavailable — leave the button as-is.
+    }
+  });
+
+  refreshToday();
+</script>

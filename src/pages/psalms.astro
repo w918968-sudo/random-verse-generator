@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { THEMES, ui } from '../i18n/en.mjs';
+import { SITE_URL } from '../config.mjs';
+import { reference } from '../lib/verse-of-day.mjs';
+import verses from '../../public/data/verses.json';
+
+// Curated Book of Psalms hub. The 93 hand-picked Psalm passages in the library,
+// ordered by chapter and grouped by theme for browsing + long-tail search.
+const psalms = verses
+  .filter((v) => v.bookId === 'PSA')
+  .sort((a, b) => a.chapter - b.chapter || a.startVerse - b.startVerse);
+
+const byTheme = THEMES.map((t) => ({
+  theme: t,
+  psalms: psalms.filter((p) => (p.themes || []).includes(t.id)),
+})).filter((g) => g.psalms.length);
+
+// Pre-render a well-known Psalm (23:1–4) as the no-JS initial card; the client
+// script re-rolls randomly on demand.
+const initial = psalms.find((p) => p.chapter === 23) || psalms[0];
+const canonical = new URL('/psalms/', SITE_URL).href;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Psalms – Bible Verses from the Book of Psalms – ${ui.siteName}`,
+  url: canonical,
+  description:
+    'Browse hand-picked Psalms from the World English Bible (Protestant Edition), grouped by topic — Psalms for comfort, hope, strength, and more.',
+  about: { '@type': 'Book', name: 'Psalms' },
+};
+---
+
+<Layout title={`Psalms – Bible Verses from the Book of Psalms – ${ui.siteName}`} description={`Browse ${psalms.length} hand-picked Psalms from the World English Bible (Protestant Edition), grouped by topic. Psalms for comfort, hope, strength, gratitude, and more — plus a Psalm of the Day.`}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <h1 class="hero-title">Psalms — Bible Verses from the Book of Psalms</h1>
+  <p class="lede">
+    Browse {psalms.length} hand-picked Psalms from the World English Bible (Protestant Edition),
+    grouped by topic. Draw a random Psalm, or read the Psalm of the Day.
+  </p>
+
+  <figure class="verse-card">
+    <blockquote class="verse-text" id="rp-text">{initial.text}</blockquote>
+    <figcaption class="verse-meta">
+      <span class="badge" id="rp-theme">{initial.themes.join(' · ')}</span>
+      <span class="verse-ref" id="rp-ref">{reference(initial)}</span>
+    </figcaption>
+    <div class="verse-actions">
+      <button type="button" class="btn btn-secondary" id="rp-again">Give me another Psalm</button>
+      <button type="button" class="btn btn-secondary" id="rp-copy">{ui.result.copy}</button>
+      <a class="btn btn-primary" href="/psalm-of-the-day/">{ui.nav.psalmOfTheDay}</a>
+    </div>
+  </figure>
+
+  <section class="seo-content">
+    <h2>Psalms by topic</h2>
+    <p>
+      The Book of Psalms speaks to every season of life. These passages are grouped by theme so you
+      can find a Psalm for whatever you are facing — comfort in grief, strength in hard times, or
+      gratitude in praise.
+    </p>
+    {byTheme.map(({ theme, psalms: group }) => (
+      <>
+        <h3>Psalms of {theme.id}</h3>
+        <ul>
+          {group.map((p) => (
+            <li>
+              <strong>{reference(p)}</strong> — {p.text}
+            </li>
+          ))}
+        </ul>
+      </>
+    ))}
+
+    <h2>Read the full Book of Psalms</h2>
+    <p>
+      These are hand-picked highlights. To read all 150 chapters of the Book of Psalms, open{' '}
+      <a href="/find-a-verse/">Find a Verse</a> and browse by book and chapter, or search for a
+      particular Psalm.
+    </p>
+  </section>
+</Layout>
+
+<script>
+  import { ui } from '../i18n/en.mjs';
+  import { reference } from '../lib/verse-of-day.mjs';
+  import { currentTranslation, dataPaths } from '../lib/translations.mjs';
+
+  let translation = currentTranslation();
+  let pool = null; // cached Psalm list for the current translation
+  let lastRef = null;
+
+  function track(name) {
+    if (typeof window.gtag === 'function') window.gtag('event', name);
+  }
+
+  async function loadPool() {
+    const res = await fetch(dataPaths(translation).verses);
+    if (!res.ok) throw new Error('verses load failed');
+    const list = await res.json();
+    return list.filter((v) => v.bookId === 'PSA');
+  }
+
+  function render(v) {
+    document.getElementById('rp-text').textContent = v.text;
+    document.getElementById('rp-ref').textContent = reference(v);
+    const badge = document.getElementById('rp-theme');
+    badge.textContent = v.themes.join(' · ');
+    badge.hidden = v.themes.length === 0;
+    lastRef = reference(v);
+  }
+
+  async function draw() {
+    try {
+      if (!pool) pool = await loadPool();
+      let v = pool[Math.floor(Math.random() * pool.length)];
+      // Avoid an immediate repeat when the pool has more than one Psalm.
+      if (pool.length > 1 && reference(v) === lastRef) {
+        v = pool[(pool.indexOf(v) + 1) % pool.length];
+      }
+      render(v);
+      track('random_psalm');
+    } catch {
+      // Keep the pre-rendered Psalm on any fetch error.
+    }
+  }
+
+  document.getElementById('rp-again').addEventListener('click', draw);
+  document.getElementById('rp-copy').addEventListener('click', async () => {
+    const text = document.getElementById('rp-text').textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      const btn = document.getElementById('rp-copy');
+      const original = btn.textContent;
+      btn.textContent = ui.result.copied;
+      track('copy_verse');
+      setTimeout(() => {
+        btn.textContent = original;
+      }, 2000);
+    } catch {
+      // Clipboard unavailable — leave the button as-is.
+    }
+  });
+
+  window.addEventListener('translationchange', (e) => {
+    if (!e.detail || e.detail === translation) return;
+    translation = e.detail;
+    pool = null;
+    draw();
+  });
+</script>
