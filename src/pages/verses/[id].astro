@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { ui } from '../../i18n/en.mjs';
+import { SITE_URL } from '../../config.mjs';
+import { reference } from '../../lib/verse-of-day.mjs';
+import verses from '../../../public/data/verses.json';
+import relatedData from '../../../public/data/related.json';
+
+export function getStaticPaths() {
+  return verses.map((v) => ({ params: { id: v.id }, props: { verse: v } }));
+}
+
+const byId = new Map(verses.map((v) => [v.id, v]));
+const { verse } = Astro.props;
+const ref = reference(verse);
+
+function excerpt(text, n = 160) {
+  const clean = String(text).replace(/\s+/g, ' ').trim();
+  return clean.length <= n ? clean : `${clean.slice(0, n - 1).replace(/\s+\S*$/, '')}…`;
+}
+
+const pageTitle = `${ref} – ${ui.siteName}`;
+const description = `Read ${ref} in the World English Bible (Protestant Edition): “${excerpt(verse.text)}”`;
+const canonical = new URL(`/verses/${verse.id}/`, SITE_URL).href;
+
+const relatedVerses = (relatedData.related?.[verse.id] || [])
+  .map((id) => byId.get(id))
+  .filter(Boolean)
+  .slice(0, 4);
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: ref,
+    url: canonical,
+    description,
+    mainEntity: {
+      '@type': 'CreativeWork',
+      name: ref,
+      text: verse.text,
+      citation: ref,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Verses by Book', item: `${SITE_URL}/verses-by-book/` },
+      { '@type': 'ListItem', position: 3, name: ref, item: canonical },
+    ],
+  },
+];
+---
+
+<Layout title={pageTitle} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/verses-by-book/">Verses by Book</a>{' '}
+    <span aria-hidden="true">›</span> <span>{ref}</span>
+  </nav>
+
+  <h1 class="hero-title">{ref}</h1>
+
+  <figure class="verse-card">
+    <blockquote class="verse-text">{verse.text}</blockquote>
+    <figcaption class="verse-meta">
+      {verse.themes.length > 0 && (
+        <span class="badges">
+          {verse.themes.map((t) => (
+            <a class="badge" href={`/${t.toLowerCase()}/`}>{t}</a>
+          ))}
+        </span>
+      )}
+      <span class="verse-ref">{ref}</span>
+    </figcaption>
+    <div class="verse-actions">
+      <a class="btn btn-primary" href="/">Generate a Random Verse</a>
+      <a class="btn btn-secondary" href={`/verses-by-book/#${verse.id}`}>All Verses by Book</a>
+    </div>
+  </figure>
+
+  {relatedVerses.length > 0 && (
+    <section class="related-verses">
+      <h2>Related verses</h2>
+      <ul class="related-list">
+        {relatedVerses.map((r) => (
+          <li>
+            <a href={`/verses/${r.id}/`}>
+              <span class="related-ref">{reference(r)}</span>
+              <span class="related-text">{r.text}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section class="seo-content">
+    <h2>About {ref}</h2>
+    <p>
+      {ref} is part of the {ui.siteName} curated library, shown here in the World English Bible
+      (Protestant Edition) — a public-domain modern English translation — and also available in the
+      King James Version.
+    </p>
+    {verse.occasions.length > 0 && (
+      <p>
+        Also read verses for:{' '}
+        {verse.occasions.map((o, i) => (
+          <>{i > 0 && ', '}<a href={`/${o}/`}>{o.replace(/-/g, ' ')}</a></>
+        ))}
+        .
+      </p>
+    )}
+    <p>
+      <a href="/">Generate a random Bible verse</a>, or <a href="/verses-by-book/">browse all verses by
+      book</a>.
+    </p>
+  </section>
+</Layout>

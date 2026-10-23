@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import Layout from '../layouts/Layout.astro';
 import VerseGenerator from '../components/VerseGenerator.astro';
 import { THEMES, OCCASIONS, ui } from '../i18n/en.mjs';
+import { TOPIC_FAQ } from '../data/topic-faq.mjs';
 import { SITE_URL } from '../config.mjs';
 
 export function getStaticPaths() {
@@ -30,7 +31,7 @@ const canonical = new URL(`/${item.slug}/`, SITE_URL).href;
 // verse text never appears in the page HTML — which leaves long-tail pages with
 // almost no crawlable content. Pre-render a deterministic "top 10" list from the
 // same /data/verses.json the client uses, so the two can never drift apart.
-const VERSES_COUNT = 10;
+const VERSES_COUNT = 30;
 
 function reference(v) {
   const range = v.startVerse === v.endVerse ? String(v.startVerse) : `${v.startVerse}–${v.endVerse}`;
@@ -41,15 +42,29 @@ const versesPath = join(process.cwd(), 'public', 'data', 'verses.json');
 const topicVerses = JSON.parse(readFileSync(versesPath, 'utf8'))
   .filter((v) => (isOccasion ? (v.occasions || []).includes(item.slug) : v.themes.includes(item.id)))
   .slice(0, VERSES_COUNT);
-const versesHeading = `Top 10 ${item.id} Bible verses`;
+const versesHeading = `Top ${VERSES_COUNT} ${item.id} Bible verses`;
+const topicFaq = TOPIC_FAQ[item.slug] || [];
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: pageTitle,
-  url: canonical,
-  description,
-};
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: pageTitle,
+    url: canonical,
+    description,
+  },
+  ...(topicFaq.length
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: topicFaq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }]
+    : []),
+];
 
 const themeProp = isOccasion ? '' : item.id;
 const occasionProp = isOccasion ? item.slug : '';
@@ -69,12 +84,28 @@ const occasionProp = isOccasion ? item.slug : '';
       {topicVerses.map((v) => (
         <li class="topic-verse">
           <p class="topic-verse-text">{v.text}</p>
-          <p class="topic-verse-ref">{reference(v)}</p>
+          <p class="topic-verse-ref">
+            <a href={`/verses/${v.id}/`}>{reference(v)}</a>
+          </p>
         </li>
       ))}
     </ol>
     <p class="topic-verses-cta">Press “Generate Verse” above to draw a random verse on this topic.</p>
   </section>
+
+  {topicFaq.length > 0 && (
+    <section class="topic-faq">
+      <h2>Frequently asked questions</h2>
+      <div class="topic-faq-list">
+        {topicFaq.map((f) => (
+          <details class="topic-faq-item">
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )}
 
   <section class="seo-content">
     <h2>About {topicLabel} Bible verses</h2>

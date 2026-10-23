@@ -69,7 +69,11 @@
 
 关键路径：T1 → T2 → T3 → T4 → T5 → T6；T7–T9 可并行；T10–T13 收尾。
 
-**后续立项（阶段 E）**：T14 落地页静态经文正文（SEO）——21 页补可收录的静态 Top 10 经文列表（见 backlog T14）。
+**后续立项（阶段 E/F，2026-10-23）**：
+- T14 落地页静态经文正文（SEO）——21 页补可收录的静态 Top 10 经文列表（见 backlog T14）。✅ 已完成并上线
+- T15 落地页内容加深 + FAQ 富结果——Top 30 静态经文 + 每页 FAQPage schema（见 backlog T15）。
+- T16 经文详情页——427 条经文各建 `/verses/<id>/`（见 backlog T16）。
+- T17 节日/季节落地页——christmas / easter / thanksgiving（见 backlog T17）。
 
 ## 不做（明确排除，除非重新立项）
 

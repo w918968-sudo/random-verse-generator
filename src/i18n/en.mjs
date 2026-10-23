@@ -26,6 +26,9 @@ export const OCCASIONS = [
   { id: 'Birthday', slug: 'birthday', desc: 'Verses to celebrate life and God’s blessings.' },
   { id: 'Work', slug: 'work', desc: 'Verses about work, diligence, and purpose.' },
   { id: 'Friendship', slug: 'friendship', desc: 'Verses about friendship and true companions.' },
+  { id: 'Christmas', slug: 'christmas', desc: 'Verses about the birth of Jesus and the light of Christmas.' },
+  { id: 'Easter', slug: 'easter', desc: 'Verses about the resurrection of Jesus and new life.' },
+  { id: 'Thanksgiving', slug: 'thanksgiving', desc: 'Verses of gratitude and thanksgiving to God.' },
 ];
 
 export const faq = [

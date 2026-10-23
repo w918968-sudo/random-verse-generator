@@ -101,6 +101,7 @@
       "Hope"
     ],
     "occasions": [
+      "easter",
       "encouragement",
       "new-beginnings"
     ],
@@ -119,6 +120,7 @@
       "Hope"
     ],
     "occasions": [
+      "easter",
       "grief",
       "new-beginnings"
     ],
@@ -279,7 +281,9 @@
     "themes": [
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "christmas"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -311,6 +315,7 @@
       "Hope"
     ],
     "occasions": [
+      "christmas",
       "new-beginnings"
     ],
     "translationId": "WEBP"
@@ -346,7 +351,9 @@
       "Peace"
     ],
     "occasions": [
-      "anxiety"
+      "anxiety",
+      "christmas",
+      "thanksgiving"
     ],
     "translationId": "WEBP"
   },
@@ -396,6 +403,7 @@
       "Peace"
     ],
     "occasions": [
+      "thanksgiving",
       "work"
     ],
     "translationId": "WEBP"
@@ -428,7 +436,8 @@
       "Peace"
     ],
     "occasions": [
-      "birthday"
+      "birthday",
+      "christmas"
     ],
     "translationId": "WEBP"
   },
@@ -445,7 +454,8 @@
       "Peace"
     ],
     "occasions": [
-      "anxiety"
+      "anxiety",
+      "christmas"
     ],
     "translationId": "WEBP"
   },
@@ -508,7 +518,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "christmas"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -651,6 +663,7 @@
       "Love"
     ],
     "occasions": [
+      "christmas",
       "forgiveness"
     ],
     "translationId": "WEBP"
@@ -779,6 +792,7 @@
       "Love"
     ],
     "occasions": [
+      "christmas",
       "forgiveness",
       "friendship"
     ],
@@ -1699,6 +1713,7 @@
       "Hope"
     ],
     "occasions": [
+      "easter",
       "encouragement",
       "grief"
     ],
@@ -2138,7 +2153,8 @@
       "Gratitude"
     ],
     "occasions": [
-      "birthday"
+      "birthday",
+      "thanksgiving"
     ],
     "translationId": "WEBP"
   },
@@ -2155,7 +2171,8 @@
     ],
     "occasions": [
       "birthday",
-      "encouragement"
+      "encouragement",
+      "thanksgiving"
     ],
     "translationId": "WEBP"
   },
@@ -2170,7 +2187,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2188,7 +2207,8 @@
       "birthday",
       "forgiveness",
       "healing",
-      "new-beginnings"
+      "new-beginnings",
+      "thanksgiving"
     ],
     "translationId": "WEBP"
   },
@@ -2203,7 +2223,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2217,7 +2239,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2231,7 +2255,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2245,7 +2271,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2259,7 +2287,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2273,7 +2303,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2287,7 +2319,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2301,7 +2335,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2315,7 +2351,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2329,7 +2367,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2343,7 +2383,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2357,7 +2399,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2371,7 +2415,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2386,7 +2432,8 @@
       "Gratitude"
     ],
     "occasions": [
-      "birthday"
+      "birthday",
+      "thanksgiving"
     ],
     "translationId": "WEBP"
   },
@@ -2401,7 +2448,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2415,7 +2464,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2461,6 +2512,7 @@
       "Hope"
     ],
     "occasions": [
+      "christmas",
       "new-beginnings"
     ],
     "translationId": "WEBP"
@@ -2513,7 +2565,9 @@
       "Gratitude",
       "Hope"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2555,7 +2609,9 @@
     "themes": [
       "Peace"
     ],
-    "occasions": [],
+    "occasions": [
+      "easter"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2703,7 +2759,9 @@
     "themes": [
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "christmas"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -2746,7 +2804,9 @@
       "Gratitude",
       "Love"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -3256,7 +3316,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -3270,7 +3332,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -3284,7 +3348,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -3298,7 +3364,10 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "christmas",
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -3312,7 +3381,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -3326,7 +3397,9 @@
     "themes": [
       "Gratitude"
     ],
-    "occasions": [],
+    "occasions": [
+      "thanksgiving"
+    ],
     "translationId": "WEBP"
   },
   {
@@ -4571,6 +4644,7 @@
       "Hope"
     ],
     "occasions": [
+      "easter",
       "new-beginnings"
     ],
     "translationId": "WEBP"
@@ -4651,6 +4725,7 @@
       "Faith"
     ],
     "occasions": [
+      "easter",
       "new-beginnings"
     ],
     "translationId": "WEBP"
@@ -4699,6 +4774,7 @@
       "Hope"
     ],
     "occasions": [
+      "easter",
       "new-beginnings"
     ],
     "translationId": "WEBP"
@@ -4715,6 +4791,7 @@
       "Faith"
     ],
     "occasions": [
+      "easter",
       "new-beginnings"
     ],
     "translationId": "WEBP"
@@ -4731,6 +4808,7 @@
       "Faith"
     ],
     "occasions": [
+      "easter",
       "new-beginnings"
     ],
     "translationId": "WEBP"
@@ -4779,6 +4857,7 @@
       "Hope"
     ],
     "occasions": [
+      "christmas",
       "new-beginnings"
     ],
     "translationId": "WEBP"
@@ -4827,6 +4906,7 @@
       "Hope"
     ],
     "occasions": [
+      "easter",
       "grief"
     ],
     "translationId": "WEBP"
@@ -4843,6 +4923,7 @@
       "Comfort"
     ],
     "occasions": [
+      "easter",
       "grief"
     ],
     "translationId": "WEBP"
@@ -4875,6 +4956,7 @@
       "Hope"
     ],
     "occasions": [
+      "easter",
       "grief"
     ],
     "translationId": "WEBP"
@@ -6705,6 +6787,582 @@
     ],
     "occasions": [
       "friendship"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-009-005-007",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 9,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "For all the armor of the armed man in the noisy battle, and the garments rolled in blood, will be for burning, fuel for the fire. For a child is born to us. A son is given to us; and the government will be on his shoulders. His name will be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace. Of the increase of his government and of peace there shall be no end, on David’s throne, and on his kingdom, to establish it, and to uphold it with justice and with righteousness from that time on, even forever. The zeal of the LORD of Armies will perform this.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "isa-007-014-016",
+    "bookId": "ISA",
+    "bookName": "Isaiah",
+    "chapter": 7,
+    "startVerse": 14,
+    "endVerse": 16,
+    "text": "Therefore the Lord himself will give you a sign. Behold, the virgin will conceive, and bear a son, and shall call his name Immanuel. He shall eat butter and honey when he knows to refuse the evil and choose the good. For before the child knows to refuse the evil and choose the good, the land whose two kings you abhor shall be forsaken.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mic-005-002-004",
+    "bookId": "MIC",
+    "bookName": "Micah",
+    "chapter": 5,
+    "startVerse": 2,
+    "endVerse": 4,
+    "text": "But you, Bethlehem Ephrathah,\nbeing small among the clans of Judah,\nout of you one will come out to me who is to be ruler in Israel;\nwhose goings out are from of old, from ancient times. Therefore he will abandon them until the time that she who is in labor gives birth.\nThen the rest of his brothers will return to the children of Israel. He shall stand, and shall shepherd in the strength of the LORD,\nin the majesty of the name of the LORD his God.\nThey will live, for then he will be great to the ends of the earth.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-001-020-023",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 1,
+    "startVerse": 20,
+    "endVerse": 23,
+    "text": "But when he thought about these things, behold, an angel of the Lord appeared to him in a dream, saying, “Joseph, son of David, don’t be afraid to take to yourself Mary as your wife, for that which is conceived in her is of the Holy Spirit. She shall give birth to a son. You shall name him Jesus, for it is he who shall save his people from their sins.” Now all this has happened that it might be fulfilled which was spoken by the Lord through the prophet, saying, “Behold, the virgin shall be with child,\nand shall give birth to a son.\nThey shall call his name Immanuel,”\nwhich is, being interpreted, “God with us.”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-002-009-011",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 2,
+    "startVerse": 9,
+    "endVerse": 11,
+    "text": "They, having heard the king, went their way; and behold, the star, which they saw in the east, went before them until it came and stood over where the young child was. When they saw the star, they rejoiced with exceedingly great joy. They came into the house and saw the young child with Mary, his mother, and they fell down and worshiped him. Opening their treasures, they offered to him gifts: gold, frankincense, and myrrh.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-001-030-033",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 1,
+    "startVerse": 30,
+    "endVerse": 33,
+    "text": "The angel said to her, “Don’t be afraid, Mary, for you have found favor with God. Behold, you will conceive in your womb and give birth to a son, and shall name him ‘Jesus.’ He will be great and will be called the Son of the Most High. The Lord God will give him the throne of his father David, and he will reign over the house of Jacob forever. There will be no end to his Kingdom.”",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-001-046-049",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 1,
+    "startVerse": 46,
+    "endVerse": 49,
+    "text": "Mary said,\n“My soul magnifies the Lord. My spirit has rejoiced in God my Savior, for he has looked at the humble state of his servant.\nFor behold, from now on, all generations will call me blessed. For he who is mighty has done great things for me.\nHoly is his name.",
+    "themes": [
+      "Gratitude"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-002-008-012",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 2,
+    "startVerse": 8,
+    "endVerse": 12,
+    "text": "There were shepherds in the same country staying in the field, and keeping watch by night over their flock. Behold, an angel of the Lord stood by them, and the glory of the Lord shone around them, and they were terrified. The angel said to them, “Don’t be afraid, for behold, I bring you good news of great joy which will be to all the people. For there is born to you today, in David’s city, a Savior, who is Christ the Lord. This is the sign to you: you will find a baby wrapped in strips of cloth, lying in a feeding trough.”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-002-013-015",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 2,
+    "startVerse": 13,
+    "endVerse": 15,
+    "text": "Suddenly, there was with the angel a multitude of the heavenly army praising God and saying, “Glory to God in the highest,\non earth peace, good will toward men.” When the angels went away from them into the sky, the shepherds said to one another, “Let’s go to Bethlehem, now, and see this thing that has happened, which the Lord has made known to us.”",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-002-029-032",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 2,
+    "startVerse": 29,
+    "endVerse": 32,
+    "text": "“Now you are releasing your servant, Master,\naccording to your word, in peace; for my eyes have seen your salvation, which you have prepared before the face of all peoples; a light for revelation to the nations,\nand the glory of your people Israel.”",
+    "themes": [
+      "Peace"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jhn-001-001-005",
+    "bookId": "JHN",
+    "bookName": "John",
+    "chapter": 1,
+    "startVerse": 1,
+    "endVerse": 5,
+    "text": "In the beginning was the Word, and the Word was with God, and the Word was God. The same was in the beginning with God. All things were made through him. Without him, nothing was made that has been made. In him was life, and the life was the light of men. The light shines in the darkness, and the darkness hasn’t overcome it.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jhn-001-012-014",
+    "bookId": "JHN",
+    "bookName": "John",
+    "chapter": 1,
+    "startVerse": 12,
+    "endVerse": 14,
+    "text": "But as many as received him, to them he gave the right to become God’s children, to those who believe in his name: who were born, not of blood, nor of the will of the flesh, nor of the will of man, but of God. The Word became flesh and lived among us. We saw his glory, such glory as of the only born Son of the Father, full of grace and truth.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "gal-004-004-006",
+    "bookId": "GAL",
+    "bookName": "Galatians",
+    "chapter": 4,
+    "startVerse": 4,
+    "endVerse": 6,
+    "text": "But when the fullness of the time came, God sent out his Son, born to a woman, born under the law, that he might redeem those who were under the law, that we might receive the adoption as children. And because you are children, God sent out the Spirit of his Son into your hearts, crying, “Abba, Father!”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "php-002-005-008",
+    "bookId": "PHP",
+    "bookName": "Philippians",
+    "chapter": 2,
+    "startVerse": 5,
+    "endVerse": 8,
+    "text": "Have this in your mind, which was also in Christ Jesus, who, existing in the form of God, didn’t consider equality with God a thing to be grasped, but emptied himself, taking the form of a servant, being made in the likeness of men. And being found in human form, he humbled himself, becoming obedient to the point of death, yes, the death of the cross.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "2co-008-007-009",
+    "bookId": "2CO",
+    "bookName": "2 Corinthians",
+    "chapter": 8,
+    "startVerse": 7,
+    "endVerse": 9,
+    "text": "But as you abound in everything—in faith, utterance, knowledge, all earnestness, and in your love to us—see that you also abound in this grace. I speak not by way of commandment, but as proving through the earnestness of others the sincerity also of your love. For you know the grace of our Lord Jesus Christ, that though he was rich, yet for your sakes he became poor, that you through his poverty might become rich.",
+    "themes": [
+      "Love"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-001-015-017",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 1,
+    "startVerse": 15,
+    "endVerse": 17,
+    "text": "He is the image of the invisible God, the firstborn of all creation. For by him all things were created in the heavens and on the earth, visible things and invisible things, whether thrones or dominions or principalities or powers. All things have been created through him and for him. He is before all things, and in him all things are held together.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "heb-001-001-003",
+    "bookId": "HEB",
+    "bookName": "Hebrews",
+    "chapter": 1,
+    "startVerse": 1,
+    "endVerse": 3,
+    "text": "God, having in the past spoken to the fathers through the prophets at many times and in various ways, has at the end of these days spoken to us by his Son, whom he appointed heir of all things, through whom also he made the worlds. His Son is the radiance of his glory, the very image of his substance, and upholding all things by the word of his power, who, when he had by himself purified us of our sins, sat down on the right hand of the Majesty on high,",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-001-076-079",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 1,
+    "startVerse": 76,
+    "endVerse": 79,
+    "text": "And you, child, will be called a prophet of the Most High;\nfor you will go before the face of the Lord to prepare his ways, to give knowledge of salvation to his people by the remission of their sins, because of the tender mercy of our God,\nby which the dawn from on high will visit us, to shine on those who sit in darkness and the shadow of death;\nto guide our feet into the way of peace.”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "christmas"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-028-005-007",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 28,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "The angel answered the women, “Don’t be afraid, for I know that you seek Jesus, who has been crucified. He is not here, for he has risen, just like he said. Come, see the place where the Lord was lying. Go quickly and tell his disciples, ‘He has risen from the dead, and behold, he goes before you into Galilee; there you will see him.’ Behold, I have told you.”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mat-028-018-020",
+    "bookId": "MAT",
+    "bookName": "Matthew",
+    "chapter": 28,
+    "startVerse": 18,
+    "endVerse": 20,
+    "text": "Jesus came to them and spoke to them, saying, “All authority has been given to me in heaven and on earth. Go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all things that I commanded you. Behold, I am with you always, even to the end of the age.” Amen.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "mrk-016-005-007",
+    "bookId": "MRK",
+    "bookName": "Mark",
+    "chapter": 16,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "Entering into the tomb, they saw a young man sitting on the right side, dressed in a white robe; and they were amazed. He said to them, “Don’t be amazed. You seek Jesus, the Nazarene, who has been crucified. He has risen! He is not here. See the place where they laid him! But go, tell his disciples and Peter, ‘He goes before you into Galilee. There you will see him, as he said to you.’”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-024-005-007",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 24,
+    "startVerse": 5,
+    "endVerse": 7,
+    "text": "Becoming terrified, they bowed their faces down to the earth.\nThe men said to them, “Why do you seek the living among the dead? He isn’t here, but is risen. Remember what he told you when he was still in Galilee, saying that the Son of Man must be delivered up into the hands of sinful men and be crucified, and the third day rise again?”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "luk-024-044-048",
+    "bookId": "LUK",
+    "bookName": "Luke",
+    "chapter": 24,
+    "startVerse": 44,
+    "endVerse": 48,
+    "text": "He said to them, “This is what I told you while I was still with you, that all things which are written in the law of Moses, the prophets, and the psalms concerning me must be fulfilled.” Then he opened their minds, that they might understand the Scriptures. He said to them, “Thus it is written, and thus it was necessary for the Christ to suffer and to rise from the dead the third day, and that repentance and remission of sins should be preached in his name to all the nations, beginning at Jerusalem. You are witnesses of these things.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jhn-011-025-027",
+    "bookId": "JHN",
+    "bookName": "John",
+    "chapter": 11,
+    "startVerse": 25,
+    "endVerse": 27,
+    "text": "Jesus said to her, “I am the resurrection and the life. He who believes in me will still live, even if he dies. Whoever lives and believes in me will never die. Do you believe this?” She said to him, “Yes, Lord. I have come to believe that you are the Christ, God’s Son, he who comes into the world.”",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "jhn-020-027-029",
+    "bookId": "JHN",
+    "bookName": "John",
+    "chapter": 20,
+    "startVerse": 27,
+    "endVerse": 29,
+    "text": "Then he said to Thomas, “Reach here your finger, and see my hands. Reach here your hand, and put it into my side. Don’t be unbelieving, but believing.” Thomas answered him, “My Lord and my God!” Jesus said to him, “Because you have seen me, you have believed. Blessed are those who have not seen and have believed.”",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-006-008-011",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 6,
+    "startVerse": 8,
+    "endVerse": 11,
+    "text": "But if we died with Christ, we believe that we will also live with him, knowing that Christ, being raised from the dead, dies no more. Death no longer has dominion over him! For the death that he died, he died to sin one time; but the life that he lives, he lives to God. Thus consider yourselves also to be dead to sin, but alive to God in Christ Jesus our Lord.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-008-011-013",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 8,
+    "startVerse": 11,
+    "endVerse": 13,
+    "text": "But if the Spirit of him who raised up Jesus from the dead dwells in you, he who raised up Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you. So then, brothers, we are debtors, not to the flesh, to live after the flesh. For if you live after the flesh, you must die; but if by the Spirit you put to death the deeds of the body, you will live.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-015-003-007",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 15,
+    "startVerse": 3,
+    "endVerse": 7,
+    "text": "For I delivered to you first of all that which I also received: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures, and that he appeared to Cephas, then to the twelve. Then he appeared to over five hundred brothers at once, most of whom remain until now, but some have also fallen asleep. Then he appeared to James, then to all the apostles,",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "1co-015-020-022",
+    "bookId": "1CO",
+    "bookName": "1 Corinthians",
+    "chapter": 15,
+    "startVerse": 20,
+    "endVerse": 22,
+    "text": "But now Christ has been raised from the dead. He became the first fruit of those who are asleep. For since death came by man, the resurrection of the dead also came by man. For as in Adam all die, so also in Christ all will be made alive.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "php-003-010-012",
+    "bookId": "PHP",
+    "bookName": "Philippians",
+    "chapter": 3,
+    "startVerse": 10,
+    "endVerse": 12,
+    "text": "that I may know him and the power of his resurrection, and the fellowship of his sufferings, becoming conformed to his death, if by any means I may attain to the resurrection from the dead. Not that I have already obtained, or am already made perfect; but I press on, that I may take hold of that for which also I was taken hold of by Christ Jesus.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "col-003-001-004",
+    "bookId": "COL",
+    "bookName": "Colossians",
+    "chapter": 3,
+    "startVerse": 1,
+    "endVerse": 4,
+    "text": "If then you were raised together with Christ, seek the things that are above, where Christ is, seated on the right hand of God. Set your mind on the things that are above, not on the things that are on the earth. For you died, and your life is hidden with Christ in God. When Christ, our life, is revealed, then you will also be revealed with him in glory.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "act-002-022-024",
+    "bookId": "ACT",
+    "bookName": "Acts",
+    "chapter": 2,
+    "startVerse": 22,
+    "endVerse": 24,
+    "text": "“Men of Israel, hear these words! Jesus of Nazareth, a man approved by God to you by mighty works and wonders and signs which God did by him among you, even as you yourselves know, him, being delivered up by the determined counsel and foreknowledge of God, you have taken by the hand of lawless men, crucified and killed; whom God raised up, having freed him from the agony of death, because it was not possible that he should be held by it.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "act-002-032-036",
+    "bookId": "ACT",
+    "bookName": "Acts",
+    "chapter": 2,
+    "startVerse": 32,
+    "endVerse": 36,
+    "text": "This Jesus God raised up, to which we all are witnesses. Being therefore exalted by the right hand of God, and having received from the Father the promise of the Holy Spirit, he has poured out this which you now see and hear. For David didn’t ascend into the heavens, but he says himself,\n‘The Lord said to my Lord, “Sit by my right hand until I make your enemies a footstool for your feet.”’ “Let all the house of Israel therefore know certainly that God has made him both Lord and Christ, this Jesus whom you crucified.”",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-001-001-004",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 1,
+    "startVerse": 1,
+    "endVerse": 4,
+    "text": "Paul, a servant of Jesus Christ, called to be an apostle, set apart for the Good News of God, which he promised before through his prophets in the holy Scriptures, concerning his Son, who was born of the offspring of David according to the flesh, who was declared to be the Son of God with power according to the Spirit of holiness, by the resurrection from the dead, Jesus Christ our Lord,",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rev-001-016-018",
+    "bookId": "REV",
+    "bookName": "Revelation",
+    "chapter": 1,
+    "startVerse": 16,
+    "endVerse": 18,
+    "text": "He had seven stars in his right hand. Out of his mouth proceeded a sharp two-edged sword. His face was like the sun shining at its brightest. When I saw him, I fell at his feet like a dead man.\nHe laid his right hand on me, saying, “Don’t be afraid. I am the first and the last, and the Living one. I was dead, and behold, I am alive forever and ever. Amen. I have the keys of Death and of Hades.",
+    "themes": [
+      "Hope"
+    ],
+    "occasions": [
+      "easter"
+    ],
+    "translationId": "WEBP"
+  },
+  {
+    "id": "rom-004-023-025",
+    "bookId": "ROM",
+    "bookName": "Romans",
+    "chapter": 4,
+    "startVerse": 23,
+    "endVerse": 25,
+    "text": "Now it was not written that it was accounted to him for his sake alone, but for our sake also, to whom it will be accounted, who believe in him who raised Jesus our Lord from the dead, who was delivered up for our trespasses, and was raised for our justification.",
+    "themes": [
+      "Faith"
+    ],
+    "occasions": [
+      "easter"
     ],
     "translationId": "WEBP"
   }

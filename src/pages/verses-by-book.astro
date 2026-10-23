@@ -50,8 +50,8 @@ const schema = {
         <h2 id={`book-${g.bookId}`}>{g.name}</h2>
         <ul>
           {g.verses.map((v) => (
-            <li>
-              <strong>{reference(v)}</strong> — {v.text}
+            <li id={v.id}>
+              <strong><a href={`/verses/${v.id}/`}>{reference(v)}</a></strong> — {v.text}
             </li>
           ))}
         </ul>

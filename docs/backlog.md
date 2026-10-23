@@ -236,7 +236,7 @@
 
 > 目标：先把流量做起来。数据决策已锁定：21 关键词 × 30 条、`occasions[]` 与 `themes[]` 分开、跨关键词复用、策展由 Claude 全做。四阶段 A→D，关键路径 T1→T2→T3→T4→T5→T6。
 
-> **✅ 全部完成（2026-10-23）**：T1–T13 已实现、测试/构建全绿并部署上线。逐项 commit 与要点见项目记忆 `project-status.md` 的「v2 进度」段。
+> **✅ T1–T14 已完成并上线（2026-10-23）**；T15–T17（阶段 E/F 内容扩展）进行中，见下方。逐项 commit 与要点见项目记忆 `project-status.md` 的「v2 进度」段。
 
 ### T1 `occasions` 数据字段（阶段 A）✅ 已完成 2026-10-23
 **描述**：`verse-selections.mjs` 增加 `OCCASIONS` 常量（13 场景 slug）；`VERSE_SELECTIONS` 条目可带 `occasions[]`；`build-data.mjs` 输出 `occasions`；`validate.mjs` 校验 occasions 值 ∈ OCCASIONS。
@@ -317,3 +317,27 @@
 - 确定性排序（同话题每次构建顺序一致，不随机）；
 - 不破坏现有生成器/交互/JSON-LD；build 43 页 + test 24 全绿；
 - GA4 隐私红线不变（纯静态 HTML，无新事件、无新参数）。
+
+### T15 落地页内容加深 + FAQ 富结果（阶段 E，SEO）
+**描述**：21 个主题/场景落地页从「Top 10 静态经文」扩到「Top 30 静态经文」，并为每个话题新增 3–4 个专属 FAQ 问答（`FAQPage` JSON-LD），争取 Google 精选摘要 / People Also Ask。
+**验收标准**：
+- 21 页静态 HTML 各含 ≥30 条经文的引用与全文，文本与 `/data/verses.json` 逐字一致、确定性排序；
+- 每页含 3–4 个话题专属 FAQ（`FAQPage` 结构化数据合法，`mainEntity` 与正文一致）；
+- 每条静态经文链接到对应 `/verses/<id>/` 详情页（T16 内链）；
+- 不破坏生成器/现有 JSON-LD（`CollectionPage` 保留）；build 页数正确 + test 24 全绿；GA4 不变。
+
+### T16 经文详情页（阶段 E，SEO，最大流量杠杆）
+**描述**：427 条精选经文各建一个独立静态页 `/verses/<id>/`（正文 + 引用 + 主题/场景徽章 + 相关经文互链 + 面包屑），索引 URL 从 ~35 扩到 ~460。
+**验收标准**：
+- 427 页全部构建成功，canonical 唯一，title/description 针对引用；
+- 正文与 `/data/verses.json` 逐字一致；相关经文来自 `/data/related.json` 且 id 有效；
+- `WebPage` + `BreadcrumbList` 结构化数据合法；
+- `sitemap.xml` 改为程序化生成，收录全部 427 页及全站所有可索引页；
+- `/verses-by-book/` 列表每条链接到详情页（内链枢纽）；build 页数 + test 全绿；GA4 不变。
+
+### T17 节日/季节落地页（阶段 F，流量）
+**描述**：新增 3 个场景 christmas / easter / thanksgiving（并入 OCCASIONS，自动复用 T4/T15 的落地页 + FAQ 机制），各 ≥30 条经文（复用现有经文重打标签 + 新增出生/复活相关经文）。
+**验收标准**：
+- `/christmas/` `/easter/` `/thanksgiving/` 三页可访问、canonical 唯一、各 ≥30 条经文；
+- `validate.mjs`「每场景 ≥30」全绿；新增引用均为 3–5 节连续、WEBP/KJV 源存在、文本逐字一致；
+- 三页并入 sitemap、FAQ 数据、首页场景入口；build 页数 + test 全绿；GA4 不变。
